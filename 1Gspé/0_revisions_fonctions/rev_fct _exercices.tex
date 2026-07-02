@@ -1,11 +1,11 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage{feuilleexo}
+\usepackage{../../feuilleexo}
 
 %%%à modifier à chaque fois
-\renewcommand{\type}{Exercices}
+
 \renewcommand{\niveau}{Première}
-\newcommand{\titrechap}{Fonctions polynômes du second degré}
+\newcommand{\titrechap}{Fonctions, généralités}
 
 \begin{document}
 
@@ -26,42 +26,73 @@
 
 \begin{multicols}{2}
 
-\section{Formes d'une fonction polynôme du second degré}
+\section{Représentation graphique}
 
-\begin{exo}
-On considère $f(x) = 2x^2 - 12x + 7$.
+\begin{exo}[Rappels]
+On considère une fonction $f$ dont la représentation graphique est donnée ci-dessous.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-2.5, xmax=2.9,
+    ymin=-6, ymax=2,
+    domain=-2:2,
+    samples=300,
+    grid=major,
+    xtick={-2,-1,0,1,2,3},
+    ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
+    xlabel={$x$},
+    ylabel={$y$},
+    width=9cm,
+    height=8cm
+]
+
+\addplot[
+    blue,
+    very thick
+] {2/3*(x-2)*(x+1.5)*(x-1)-1}
+node[pos=0.92, above right] {$\mathcal{C}_f$};
+
+\end{axis}
+\end{tikzpicture}
+
 \begin{enumerate}[leftmargin=*]
-    \item Donner les coefficients $a$, $b$ et $c$ de la forme développée.
-    \item Vérifier que la forme canonique de $f$ est $f(x) = 2(x-3)^2 - 11$.
-    \item En déduire la forme factorisée de $f$, si elle existe.
+    \item Quel est l'ensemble de définition de \(f\) ?
+    \item Donner les images de \(-2\), \(0\) et \(1\) par \(\).
+    \item Donner les éventuels antécédents de -1 et de 1.
+    \item Résoudre \(f(x)=0\).
+    \item Établir le tableau de signes de \(f\) sur son ensemble de définition.
+    \item Résoudre \(f(x) \geq 0\).
+    \item Dresser le tableau de variations de \(f\) sur son ensemble de définition.
+    \item Le point de coordonnées \((-2;-5)\) appartient-il à \(\mathcal{C}_f\)
 \end{enumerate}
 \end{exo}
 
-\begin{exo}
-Développer puis réduire les expressions suivantes.
-\begin{tasks}(2)
-\task $3(x-1)^2+4$
-\task $-2(x+5)^2-1$
-\task $(x-2)(3x+7)$
-\task $\dfrac12(x+4)^2-6$
-\end{tasks}
+
+\begin{exo}[][appro]
+On donne le tableau de signe suivant :
+
+
+Tracer une fonction admettant ce tableau de variations.
 \end{exo}
 
-\begin{exo}[Compléter les étapes][appro]
-Soit $g(x) = x^2 + 6x - 1$. On veut écrire $g$ sous forme canonique.
-\begin{leftbar}
-$g(x) = x^2 + 6x - 1$
+\begin{exo}[][appro]
+On donne le tableau de variations suivant :
 
-$\phantom{g(x)} = (x + \dots)^2 - \dots - 1$
 
-$\phantom{g(x)} = (x + \dots)^2 - \dots$
-\end{leftbar}
-Compléter les pointillés, puis donner le sommet de la parabole représentant $g$.
+Tracer une fonction admettant ce tableau de variations.
+\end{exo}
+
+\begin{exo}[][appro]
+    Tracer la courbe représentative \(\mathcal{C}_g\) de la fonction affine \(g\) telle que \begin{itemize}
+        \item L'image de -1 est 4 ;
+        \item Le point de coordonnées (1, 0) appartient à \(\mathcal{C}_g\)
+    \end{itemize}
 \end{exo}
 
 \section{Équations et signe du trinôme}
 
-\begin{exo}
+\begin{exo}[Rappels][appro]
 Résoudre dans $\R$ les équations suivantes.
 \begin{tasks}(2)
 \task $x^2-5x+6=0$

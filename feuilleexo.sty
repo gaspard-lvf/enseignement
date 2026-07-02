@@ -1,0 +1,208 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% feuilleexo.sty
+%%% Package pour la mise en forme des feuilles d'exercices de mathématiques.
+%%% Basé sur le préambule fourni, allégé des éléments non utilisés / fragiles
+%%% (packages sans dépendance claire, symboles de marge non démontrés, etc.)
+%%%
+%%% Nouveautés par rapport au préambule d'origine :
+%%%   - \begin{prerequis}...\end{prerequis}  : encadré "Pré-requis" en tête de feuille
+%%%   - \begin{exo}[Titre][type] : environnement d'exercice avec symbole de
+%%%     classement ( • , petit triangle plein, "Bac" ) ancré dans la marge
+%%%     GAUCHE DE LA COLONNE COURANTE (fonctionne donc en mode multicols,
+%%%     contrairement à \marginpar/marginnote qui ne connaissent que la
+%%%     marge de la page et disparaissent en 2e colonne).
+%%%   - \legendeicones : rappel imprimable de la signification des 3 symboles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{feuilleexo}[2026/07/02 v1.0 Feuille d'exercices de maths]
+
+%%%PACKAGES DE BASE
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[french]{babel}
+\RequirePackage{multicol}
+\RequirePackage[left=2.1cm, right=2.1cm, bottom=2.7cm, top=2.7cm]{geometry}
+\RequirePackage{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{fancybox}
+\RequirePackage{lastpage}
+\RequirePackage{stmaryrd}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{graphicx}
+\RequirePackage{nonfloat}
+\RequirePackage{amsmath,amsfonts,amsthm,amssymb}
+\RequirePackage{enumitem}
+\RequirePackage{titlesec}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tasks}
+\RequirePackage{framed}
+\RequirePackage{fourier} % typographie du template d'origine
+\RequirePackage{pifont}
+\RequirePackage{etoolbox} % \ifblank, \ifstrequal (environnement exo)
+\RequirePackage{xparse}   % arguments optionnels propres pour \begin{exo}
+\RequirePackage{tkz-tab}
+
+%%%ESPACE ENTRE COLONNES (doit laisser la place aux symboles de marge —
+%%% voir plus bas — quand la feuille utilise \begin{multicols}{2})
+\setlength{\columnsep}{1.3cm}
+
+%%%PACKAGES TIKZ / GRAPHIQUES (pour tracer des courbes, paraboles, etc.)
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%%%RACCOURCIS D'ENSEMBLES
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\oa}{\overrightarrow}
+\newcommand{\ol}{\overline}
+
+%%%CHAMPS À RENSEIGNER DANS LE DOCUMENT (\renewcommand dans main.tex)
+\providecommand{\type}{}
+\providecommand{\niveau}{}
+
+%%%EN-TÊTE ET PIED DE PAGE
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Exercices}
+\fancyhead[R]{\niveau}
+\fancyfoot[R]{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+\setlength\parindent{0pt}
+
+%%%STYLE DES SECTIONS
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{\arabic{subsection}.}
+\renewcommand\thesubsubsection{\alph{subsubsection})}
+
+\titleformat{\section}
+  {\scshape \Large \bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont \large \bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\large }{\thesubsubsection}{1em}{}
+
+%%%STYLE DES ITEMIZE
+\setitemize[1]{label=\textbullet}
+
+%%%LEFTBAR (citation / passage mis en retrait, ex. démonstration à commenter)
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\hspace{0.5cm}\vrule width 0.4pt \hspace{0pt}}%
+  \MakeFramed{\advance\hsize -\width\FrameRestore}}%
+ {\endMakeFramed}
+
+%%%TITRE DE LA FEUILLE
+\newcommand{\montitre}[1]{
+\begin{center}
+\doublebox{
+ \Large \scshape
+ #1}
+\end{center}
+}
+
+%%%CITATION / ÉPIGRAPHE (facultative, en tête de feuille)
+\newcommand{\epigraphe}[4]{
+\begin{minipage}{0.05\textwidth}
+\hspace{1pt}
+\end{minipage} \hfill
+\begin{minipage}{0.9\textwidth}
+\center
+\small
+\og #1 \fg{}
+\flushright {\footnotesize \textsc{#2}, \textit{#3} (#4)}
+\end{minipage}\\[\baselineskip]
+}
+
+%%%ENCADRÉ GÉNÉRIQUE
+\newcommand{\cbox}[1]{\begin{tcolorbox}[lower separated=false, colback=white]
+#1
+\end{tcolorbox}}
+
+%%%ENCADRÉ PRÉ-REQUIS (nouveauté)
+%%% Usage : \begin{prerequis} ... \end{prerequis}
+%%%         \begin{prerequis}[Rappels] ... \end{prerequis}  (titre personnalisé)
+\newtcolorbox{prerequis}[1][Pré-requis]{
+  colback=white, colframe=black,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white,
+  title=#1,
+  before upper={\begin{multicols}{2}},
+  after upper={\end{multicols}}
+}
+
+%%%THEOREM STYLES
+
+\newtheoremstyle{enonce}
+{}
+{}
+{}
+{}
+{\bfseries}
+{ :}
+{3pt}
+{}
+\theoremstyle{enonce}
+\newtheorem*{defi}{Définition}
+\newtheorem*{defis}{Définitions}
+\newtheorem*{prop}{Propriété}
+\newtheorem*{props}{Propriétés}
+\newtheorem*{thm}{Théorème}
+\newtheorem*{defiprop}{Définition-propriété}
+
+\theoremstyle{remark}
+\newtheorem*{demo}{Démonstration}
+\newtheorem*{exple}{Exemple}
+\newtheorem*{exples}{Exemples}
+\newtheorem*{rem}{Remarque}
+\newtheorem*{rems}{Remarques}
+\newtheorem*{note}{Notation}
+\newtheorem*{met}{Méthode}
+\newtheorem*{app}{Application}
+\newtheorem*{ill}{Illustration géométrique}
+
+%%%ENVIRONNEMENT EXERCICE + SYMBOLE DE CLASSEMENT (nouveauté)
+%%% Usage :
+%%%   \begin{exo} ... \end{exo}                    exercice de base (•)
+%%%   \begin{exo}[][appro] ... \end{exo}            approfondissement (▲)
+%%%   \begin{exo}[][bac] ... \end{exo}              type Bac ("Bac")
+%%%   \begin{exo}[Aire maximale][bac] ... \end{exo}  avec titre + type
+%%%
+%%% Le symbole est posé au fer gauche de la colonne courante (\llap), donc
+%%% il reste visible aussi bien en 1 colonne qu'en 2 colonnes (multicols).
+
+\newcounter{exo}
+
+\newcommand{\@exoicone}[1]{%
+  \ifstrequal{#1}{appro}{\scalebox{0.9}{$\blacktriangle$}}{%
+  \ifstrequal{#1}{bac}{\fbox{\footnotesize\textbf{Bac}}}{%
+  \textbullet}}%
+}
+
+\NewDocumentEnvironment{exo}{ O{} O{base} }{%
+  \par\addvspace{10pt}\noindent
+  \refstepcounter{exo}%
+  \llap{\@exoicone{#2}\hspace{8pt}}%
+  \textbf{\scshape Exercice~\theexo}\ifblank{#1}{}{ \textnormal{(#1)}}\textbf{.}~\ignorespaces
+}{%
+  \par\addvspace{4pt}%
+}
+
+%%% Légende à placer sous le titre de la feuille, pour rappeler le code
+\newcommand{\legendeicones}{%
+\begin{center}
+\footnotesize
+\textbullet\ Application directe
+\qquad
+\scalebox{0.9}{$\blacktriangle$}\ Approfondissement
+\qquad
+\fbox{\footnotesize\textbf{Bac}}\ Type Bac
+\end{center}}
+
+\endinput
