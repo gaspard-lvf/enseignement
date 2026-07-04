@@ -1,15 +1,16 @@
-\documentclass[10pt,a4paper]{article}
+        \documentclass[10pt,a4paper]{article}
 
 \usepackage{../../feuilleexo}
 
 %%%à modifier à chaque fois
 
-\renewcommand{\niveau}{Première}
-\newcommand{\titrechap}{Fonctions, généralités}
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Fonctions, généralités}
+\renewcommand{\numchap}{0}
+\renewcommand{\theme}{Fonctions}
 
 \begin{document}
 
-\montitre{Exercices : \titrechap}
 
 %\legendeicones
 
@@ -18,7 +19,7 @@
 \begin{prerequis}
 \begin{itemize}
     \item Développer et factoriser une expression algébrique (double distributivité, identités remarquables).
-    \item Résoudre une équation du premier degré et un produit nul.
+    \item Résoudre une équation du premier degré une équation produit nul.
     \item Connaître le vocabulaire d'une fonction : image, antécédent, sens de variation, extremum.
     \item Lire et compléter un tableau de valeurs, placer des points dans un repère.
 \end{itemize}
@@ -28,7 +29,7 @@
 
 \section{Représentation graphique}
 
-\begin{exo}[Rappels]
+\begin{exo}[Rappels][]
 On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous.
 
 \begin{tikzpicture}
@@ -75,6 +76,68 @@ On donne le tableau de signe suivant :
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1.1,espcl=1.3]{\(x\) /1, \(f(x)\) /1}{\(-4\),\(-2\),\(1\),\(3\),\(5\)}
+\tkzTabLine{,+,0,-,0,+,0,-,}
+\end{tikzpicture}
+\end{center}
+
+Tracer une fonction admettant ce tableau de signes.
+\end{exo}
+
+\begin{exo}[][appro]
+On donne le tableau de variations suivant :
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.1,espcl=1.3]{\(x\) /1, \(f\) /2}{\(-4\),\(0\),\(4\),\(5\)}
+\tkzTabVar{+/\(4\),-/\(-2\),+/\(6\),-/\(-2\)}
+\end{tikzpicture}
+\end{center}
+
+Tracer une fonction admettant ce tableau de variations.
+\end{exo}
+
+\begin{exo}[][avance]
+    Est-il possible de tracer une fonction ayant pour tableaux de signe et de variations les deux tableaux ci-dessus ? Justifier.
+\end{exo}
+
+\begin{exo}[][appro]
+    Tracer la courbe représentative \(\mathcal{C}_g\) de la fonction affine \(g\) telle que \begin{itemize}
+        \item L'image de -1 est 4 ;
+        \item Le point de coordonnées (1, 0) appartient à \(\mathcal{C}_g\)
+    \end{itemize}
+\end{exo}
+
+
+    \section{Fonctions affines}
+
+\begin{exo}[Rappels][]
+On considère la fonction affine définie sur \(\mathbb{R}\) \(f(x)=2x+1\).
+
+
+\begin{enumerate}[leftmargin=*]
+    \item Quel est le sens de variation de \(f\).
+    \item Détermnier le (ou les) antécédent(s) de \(0\).
+    \item Tracer l'allure de la représentation graphique de \(f\).
+    
+    \smallskip
+
+    \textit{i.e : faire apparaître graphiquement le signe du coefficient directeur et de l'ordonnée à l'origine.}
+    \item Dresser le tableau de signe de \(f\).
+    
+    \smallskip
+    
+    \textit{Remarque : cela revient à résoudre l'inéquation \(f(x)\geq 0\).}
+    \item 
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}[][appro]
+On donne le tableau de signe suivant :
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.1,espcl=1.3]{\(x\) /1, \(f(x)\) /1}{\(-4\),\(-2\),\(1\),\(3\),\(5\)}
 \tkzTabLine{,-,0,+,0,-,0,+,}
 \end{tikzpicture}
 \end{center}
@@ -95,7 +158,7 @@ On donne le tableau de variations suivant :
 Tracer une fonction admettant ce tableau de variations.
 \end{exo}
 
-\begin{exo}
+\begin{exo}[][avance]
     Est-il possible de tracer une fonction ayant pour tableaux de signe et de variations les deux tableaux ci-dessus ? Justifier.
 \end{exo}
 
@@ -105,7 +168,7 @@ Tracer une fonction admettant ce tableau de variations.
         \item Le point de coordonnées (1, 0) appartient à \(\mathcal{C}_g\)
     \end{itemize}
 \end{exo}
-
+    
 \end{multicols}
 
 \end{document}

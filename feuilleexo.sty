@@ -63,14 +63,18 @@
 \newcommand{\ol}{\overline}
 
 %%%CHAMPS À RENSEIGNER DANS LE DOCUMENT (\renewcommand dans main.tex)
-\providecommand{\type}{}
 \providecommand{\niveau}{}
+\providecommand{\chapitre}{}
+\providecommand{\numchap}{}
+\providecommand{\theme}{}
 
 %%%EN-TÊTE ET PIED DE PAGE
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{Exercices}
+\fancyhead[C]{\large\scshape{\chapitre}}
 \fancyhead[R]{\niveau}
+\fancyfoot[L]{\theme \;: Ch.\numchap}
 \fancyfoot[R]{\thepage \hspace{1pt} / \pageref{LastPage}}
 
 \setlength\parindent{0pt}
@@ -180,9 +184,10 @@
 \newcounter{exo}
 
 \newcommand{\@exoicone}[1]{%
-  \ifstrequal{#1}{appro}{\scalebox{0.9}{$\blacktriangle$}}{%
+  \ifstrequal{#1}{avance}{$\star$}{%
+  \ifstrequal{#1}{appro}{\scalebox{0.75}{$\blacktriangle$}}{%
   \ifstrequal{#1}{bac}{\fbox{\footnotesize\textbf{Bac}}}{%
-  \textbullet}}%
+  \scalebox{1.15}{\textbullet}}}}%
 }
 
 \NewDocumentEnvironment{exo}{ O{} O{base} }{%
