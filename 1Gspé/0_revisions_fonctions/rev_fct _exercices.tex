@@ -1,4 +1,11 @@
-        \documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
 
 \usepackage{../../feuilleexo}
 
@@ -70,6 +77,10 @@ node[pos=0.92, above right] {\(\mathcal{C}_f\)};
     \item Le point de coordonnées \((-2;-5)\) appartient-il à \(\mathcal{C}_f\)
 \end{enumerate}
 \end{exo}
+
+\prof{
+Commentaires prof pour cet exercice :
+}
 
 
 \begin{exo}[][appro]
