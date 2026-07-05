@@ -1,0 +1,21 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "make",
+            "command": "make",
+            "args": [
+                "fiche",
+                "FILE=%DOC%"
+            ]
+        }
+    ],
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "Build",
+            "tools": [
+                "make"
+            ]
+        }
+    ]
+}
