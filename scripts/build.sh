@@ -32,8 +32,11 @@ else
 
     latexmk -pdf \
         -interaction=nonstopmode \
+        -outdir=build \
         -jobname="$BASE-eleve" \
         "$BASE.tex"
+
+    mv "build/$BASE-eleve.pdf" ./
 
     echo "Compilation professeur"
 
@@ -41,9 +44,11 @@ else
 
     latexmk -pdf \
         -interaction=nonstopmode \
+        -outdir=build \
         -jobname="$BASE-prof" \
         "$BASE.tex"
 
+    mv "build/$BASE-prof.pdf" ./
     rm version.tex
 
 fi
