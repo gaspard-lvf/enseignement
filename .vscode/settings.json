@@ -4,18 +4,18 @@
             "name": "make",
             "command": "make",
             "args": [
+                "-f",
+                "%WORKSPACE_FOLDER%/Makefile",
                 "fiche",
-                "FILE=%DOC%"
+                "FILE=%DOC%",
+                "WORKSPACE_FOLDER=%WORKSPACE_FOLDER%"
             ]
         }
     ],
-
     "latex-workshop.latex.recipes": [
         {
             "name": "Build",
-            "tools": [
-                "make"
-            ]
+            "tools": ["make"]
         }
     ]
 }

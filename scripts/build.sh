@@ -27,6 +27,7 @@ else
 
     echo "Compilation élève"
 
+    rm -f version.tex   
     echo '\def\version{eleve}' > version.tex
 
     latexmk -pdf \

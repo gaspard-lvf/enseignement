@@ -199,6 +199,20 @@
   \par\addvspace{4pt}%
 }
 
+
+%%% Pour la version prof/élève
+
+\usepackage{etoolbox}
+
+\newbool{prof}
+\ifdefstring{\version}{prof}
+  {\booltrue{prof}}
+  {\boolfalse{prof}}
+
+\newcommand{\prof}[1]{%
+  \ifbool{prof}{#1}{}%
+}
+
 %%% Légende à placer sous le titre de la feuille, pour rappeler le code
 \newcommand{\legendeicones}{%
 \begin{center}
@@ -211,3 +225,5 @@
 \end{center}}
 
 \endinput
+
+
