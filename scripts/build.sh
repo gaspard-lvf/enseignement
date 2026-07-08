@@ -14,7 +14,12 @@ BASE=$(basename "$FILE" .tex)
 
 cd "$DIR"
 
-MODE=$(grep -oP '\\newcommand\{\\buildmode\}\{\K[^}]+' "$BASE.tex")
+MODE=$(awk '
+/\\newcommand{\\buildmode}/ {
+    match($0, /\{(simple|double)\}/)
+    print substr($0, RSTART+1, RLENGTH-2)
+}' "$BASE.tex")
+
 
 if [ "$MODE" = "simple" ]; then
     echo "Compilation simple"
