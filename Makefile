@@ -1,13 +1,14 @@
 .PHONY: fiche all clean
 
+ROOT := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+
 fiche:
-	@echo $(VAR)
 	@test -n "$(FILE)" || (echo "Usage : make fiche FILE=fiche.tex" && exit 1)
-	$(WORKSPACE_FOLDER)/scripts/build.sh "$(FILE)"
+	"$(ROOT)/scripts/build.sh" "$(FILE)"
 
 all:
-	@for f in *.tex ; do \
-		$(MAKE) fiche FILE="$$f"; \
+	@find . -name "*.tex" | while read f ; do \
+		$(MAKE) fiche FILE="$$f" ; \
 	done
 
 clean:

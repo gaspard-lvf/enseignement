@@ -8,18 +8,25 @@ if [ -z "$FILE" ]; then
     echo "Usage : build.sh fichier.tex"
     exit 1
 fi
-
-DIR=$(dirname "$FILE")
-BASE=$(basename "$FILE" .tex)
+# File : chemin complet du fichier .tex depuis la racine du projet.
+DIR=$(dirname "$FILE")          # Chemin du répertoire contenant le fichier .tex.
+BASE=$(basename "$FILE" .tex)   # Nom du fichier .tex sans l'extension.
 
 cd "$DIR"
+pwd
+ls
 
+if [ ! -f "$BASE.tex" ]; then
+    echo "Erreur : impossible de trouver '$BASE.tex'"
+    exit 1
+fi
+
+# On récupère le mode de compilation (simple ou double) depuis le fichier .tex.
 MODE=$(awk '
 /\\newcommand{\\buildmode}/ {
     match($0, /\{(simple|double)\}/)
     print substr($0, RSTART+1, RLENGTH-2)
 }' "$BASE.tex")
-
 
 if [ "$MODE" = "simple" ]; then
     echo "Compilation simple"
