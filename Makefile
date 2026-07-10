@@ -1,6 +1,10 @@
 .PHONY: fiche all clean
 
+ifdef WORKSPACE_FOLDER
+ROOT := $(WORKSPACE_FOLDER)
+else
 ROOT := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+endif
 
 fiche:
 	@test -n "$(FILE)" || (echo "Usage : make fiche FILE=fiche.tex" && exit 1)
