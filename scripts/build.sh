@@ -35,6 +35,8 @@ if [ "$MODE" = "simple" ]; then
         -interaction=nonstopmode \
         "$BASE.tex"
 
+    mv "build/$BASE-eleve.pdf" ./
+    
 else
 
     echo "Compilation élève"
