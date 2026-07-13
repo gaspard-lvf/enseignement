@@ -49,10 +49,10 @@ echo "Compilation élève"
     latexmk -pdf \
         -interaction=nonstopmode \
         -outdir=build \
-        -jobname="$BASE-prof" \
+        -jobname="$BASE" \
         "$BASE.tex"
 
-    mv "build/$BASE-prof.pdf" ./
+    cp "build/$BASE.pdf" ./
     rm version.tex
 
    
@@ -65,7 +65,7 @@ else
         -outdir=build \
         "$BASE.tex"
 
-    mv "build/$BASE.pdf" ./
+    cp "build/$BASE.pdf" ./
    
 
 fi
