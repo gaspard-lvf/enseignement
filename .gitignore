@@ -2,8 +2,13 @@
 *.pdf
 archives/
 seconde/
-*/build/
+build/
 *.aux
 *.fls
 *.gz
 *.fdb_latexmk
+*.tmp
+version.tex
+.DS_Store
+.~lock.*#
+SBM/

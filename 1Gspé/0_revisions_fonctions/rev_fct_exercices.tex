@@ -1,4 +1,11 @@
-        \documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
 
 \usepackage{../../feuilleexo}
 
@@ -61,13 +68,13 @@ node[pos=0.92, above right] {\(\mathcal{C}_f\)};
 
 \begin{enumerate}[leftmargin=*]
     \item Quel est l'ensemble de définition de \(f\) ?
-    \item Donner les images de \(-2\), \(0\) et \(1\) par \(\).
+    \item Donner les images de \(-2\), \(0\) et \(1\) par \(f\).
     \item Donner les éventuels antécédents de -1 et de 1.
     \item Résoudre \(f(x)=0\).
     \item Établir le tableau de signes de \(f\) sur son ensemble de définition.
     \item Résoudre \(f(x) \geq 0\).
     \item Dresser le tableau de variations de \(f\) sur son ensemble de définition.
-    \item Le point de coordonnées \((-2;-5)\) appartient-il à \(\mathcal{C}_f\)
+    \item Le point de coordonnées \((-2;-5)\) appartient-il à \(\mathcal{C}_f\) ?
 \end{enumerate}
 \end{exo}
 
@@ -102,6 +109,18 @@ Tracer une fonction admettant ce tableau de variations.
     Est-il possible de tracer une fonction ayant pour tableaux de signe et de variations les deux tableaux ci-dessus ? Justifier.
 \end{exo}
 
+\prof{
+   {\color{red} Contradiction non évidente pour des élèves en début de première. Plusieurs méthodes possibles :
+   
+   \smallskip
+
+    - Remarquer que la valeur en 4 est négative dans le premier tableau et positive dans le 2e.
+
+    \smallskip
+    
+    - Approche intuitive du TVI.
+}}
+
 \begin{exo}[][appro]
     Tracer la courbe représentative \(\mathcal{C}_g\) de la fonction affine \(g\) telle que \begin{itemize}
         \item L'image de -1 est 4 ;
@@ -117,7 +136,7 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
 
 \begin{enumerate}[leftmargin=*]
     \item Quel est le sens de variation de \(f\).
-    \item Détermnier le (ou les) antécédent(s) de \(0\).
+    \item Déterminer le (ou les) antécédent(s) de \(0\).
     \item Tracer l'allure de la représentation graphique de \(f\).
     
     \smallskip
@@ -130,11 +149,18 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
     \textit{Remarque : cela revient à résoudre l'inéquation \(f(x)\geq 0\).}
 \end{enumerate}
 \end{exo}
-
+\prof{
+{\color{red}\begin{itemize}
+    \item Laisser le choix de la méthode pour la question 4. 
+    \item Pendant la phase de correction, détailler très clairement les deux méthodes. C'est un exemple du cours. Ils doivent savoir utiliser les deux pour les exercices suivants.
+    \item Faire remarquer que dresser un tableau de signe revient à résoudre une inéquation. Expliciter que l'on peut y arriver par plusieurs méthodes (par le calcul, ou par le calcul et en utilisant un argument géométrique).
+    \item Pour les variables didactiques : On commence qu'avec des nombres positifs. $f(x) = 2x+1$ donne $x=-\frac{1}{2}$. Cela permet de revoir la valeur décimale de $\frac{1}{2}$.
+\end{itemize}}
+}
 
 \begin{exo}[][]
 
-    Les fonction affines suivantes sont toutes définies sur \(\mathbb{R}\). Pour chacune d'entre elle, établir leur tableau de signes par les deux méthode vues dans l'exercice précédent.
+    Les fonctions affines suivantes sont toutes définies sur \(\mathbb{R}\). Pour chacune d'entre elles, établir son tableau de signes par les deux méthodes vues dans l'exercice précédent.
 
     \begin{tasks}(2)
         \task \(f(x)= 4x-3\)
@@ -145,13 +171,20 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
     
 \end{exo}
 
+\prof{
+{\color{red} \begin{itemize}
+    \item Solutions des équations permettent de revoir les valeurs des fractions de références.
+    \item Demander explicitement à ce qu'ils tracent approximativement la courbe représentative.
+    \item Détailler \(\frac{3}{4}=3\times\frac{1}{4}=3\times 0.25=0.75\)
+\end{itemize}}
+}
 
 \begin{exo}[][appro]
-    Soit \(m\) et \(p\) deux nombre réel strictement positif. On considère la fonction affine \(f\) définie sur \(\mathbb{R}\) par \(f(x)=mx+p\).
+    Soit \(m\) et \(p\) deux nombres réels strictement positifs. On considère la fonction affine \(f\) définie sur \(\mathbb{R}\) par \(f(x)=mx+p\).
 
     \smallskip
 
-    Déterminer sont tableau de variations.
+    Déterminer son tableau de variations.
     
 \end{exo}
 \end{multicols}

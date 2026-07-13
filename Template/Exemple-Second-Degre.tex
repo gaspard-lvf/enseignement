@@ -1,15 +1,22 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage{feuilleexo}
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{../feuilleexo}
 
 %%%à modifier à chaque fois
-\renewcommand{\type}{Exercices}
-\renewcommand{\niveau}{Première}
-\newcommand{\titrechap}{Fonctions polynômes du second degré}
+
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Fonctions polynômes du second degré}
+\renewcommand{\numchap}{1}
+\renewcommand{\theme}{Fonctions}
 
 \begin{document}
-
-\montitre{Exercices : \titrechap}
 
 %\legendeicones
 
