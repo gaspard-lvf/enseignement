@@ -28,18 +28,8 @@ MODE=$(awk '
     print substr($0, RSTART+1, RLENGTH-2)
 }' "$BASE.tex")
 
-if [ "$MODE" = "simple" ]; then
-    echo "Compilation simple"
-
-    latexmk -pdf \
-        -interaction=nonstopmode \
-        "$BASE.tex"
-
-    mv "build/$BASE-eleve.pdf" ./
-    
-else
-
-    echo "Compilation élève"
+if [ "$MODE" = "double" ]; then
+echo "Compilation élève"
 
     rm -f version.tex   
     echo '\def\version{eleve}' > version.tex
@@ -64,5 +54,18 @@ else
 
     mv "build/$BASE-prof.pdf" ./
     rm version.tex
+
+   
+    
+else
+ echo "Compilation simple"
+
+    latexmk -pdf \
+        -interaction=nonstopmode \
+        -outdir=build \
+        "$BASE.tex"
+
+    mv "build/$BASE.pdf" ./
+   
 
 fi

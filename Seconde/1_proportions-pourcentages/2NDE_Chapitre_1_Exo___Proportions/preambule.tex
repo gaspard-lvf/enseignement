@@ -1,0 +1,180 @@
+
+
+%%%PACKAGES
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{multicol}
+\usepackage[left=2.1cm, right=2.1cm, bottom=2.7cm, top=2.7cm]{geometry}
+\usepackage{titling}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{fancybox}
+\usepackage{lastpage}
+\usepackage{stmaryrd}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{amsmath,amsfonts,amsthm,amssymb} 
+\usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox}
+\usepackage{tabto,lipsum}
+\usepackage{marginnote}[] %%%pour les symboles dans la marge
+\usepackage{tasks} % pour aligner des enumerate
+\usepackage{framed}
+
+%%%PACKAGE SYMBOLES
+\usepackage{pifont}
+\usepackage{fourier}
+\usepackage{ticollege} %pour le symbole calculatrice
+
+%%%PACKAGES TIKZ
+\usepackage{tikz}
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usetikzlibrary{arrows}
+\usepackage{mathrsfs}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+
+
+
+%%%RACCOURCIS
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\oa}{\overrightarrow}
+\newcommand{\ol}{\overline}
+
+
+%%% en haut et en bas
+\fancyhf{}
+\fancyhead[L]{\type}
+\fancyhead[R]{\niveau}
+\fancyfoot[L]{Ch.\numchap : \titrechap}
+\fancyfoot[R]{\thepage \hspace{1pt} / \pageref{LastPage}}
+
+
+%%%ENCADRÉS
+%énoncés importants
+\newcommand{\cbox}[1]{\begin{tcolorbox}[lower separated=false, colback=white]
+#1
+\end{tcolorbox}}
+%%%LEFTBAR
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\hspace{1cm}\vrule width 0.4pt \hspace{10pt}}%
+  \MakeFramed{\advance\hsize -\width\FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\setlength\parindent{0pt}
+
+
+%%% STYLE DES SECTIONS
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{\arabic{subsection}.}
+\renewcommand\thesubsubsection{\alph{subsubsection})}
+
+\titleformat{\section}
+  {\scshape \Large \bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont  \large \bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\large }{\thesubsubsection}{1em}{}
+
+%%%STYLE DES ITEMIZE
+\setitemize[1]{label=\textbullet}
+
+
+%%%THEOREM STYLES
+
+\newtheoremstyle{exercices}
+{}                % Space above
+{}                % Space below
+{}        % Theorem body font % (default is "\upshape")
+{}                % Indent amount
+{\bfseries}       % Theorem head font % (default is \mdseries)
+{}               % Punctuation after theorem head % default: no punctuation
+{10pt}               % Space after theorem head
+{}                % Theorem head spec
+\theoremstyle{exercices}
+\newtheorem{exo}{Exercice}
+
+\newtheoremstyle{enonce}
+{}                % Space above
+{}                % Space below
+{}        % Theorem body font % (default is "\upshape")
+{}                % Indent amount
+{\bfseries}       % Theorem head font % (default is \mdseries)
+{ :}               % Punctuation after theorem head % default: no punctuation
+{3pt}               % Space after theorem head
+{}                % Theorem head spec
+\theoremstyle{enonce}
+\newtheorem*{defi}{Définition}
+\newtheorem*{defis}{Définitions}
+\newtheorem*{prop}{Propriété}
+\newtheorem*{props}{Propriétés}
+\newtheorem*{thm}{Théorème}
+\newtheorem*{defiprop}{Définition-propriété}
+
+\theoremstyle{remark}
+\newtheorem*{demo}{Démonstration}
+\newtheorem*{exple}{Exemple}
+\newtheorem*{exples}{Exemples}
+\newtheorem*{rem}{Remarque}
+\newtheorem*{rems}{Remarques}
+\newtheorem*{note}{Notation}
+\newtheorem*{met}{Méthode}
+\newtheorem*{app}{Application}
+\newtheorem*{ill}{Illustration géométrique}
+
+%%%TITRE
+\newcommand{\montitre}[1]{
+\begin{center}
+%\vspace{-0.5cm}
+\doublebox{
+ \Large \scshape 
+ #1}
+\end{center}
+}
+
+
+%%%CITATION
+\renewcommand{\citation}[4]{
+\begin{minipage}{0.25\textwidth}
+\hspace{1pt}
+\end{minipage} \hfill
+\begin{minipage}{0.7\textwidth}
+\center
+\small
+\og #1 \fg{}
+\flushright {\footnotesize \textsc{#2}, \textit{#3} (#4)}
+\end{minipage}\\[\baselineskip]
+}
+
+
+%%%SYMBOLES MARGE
+\newcommand{\acomp}{\reversemarginpar
+\marginnote{\leafNW}}
+
+\newcommand{\attention}{\reversemarginpar
+\marginnote{\warning}}
+
+\newcommand{\PCQCI}{\reversemarginpar
+\marginnote{\ding{106}}}
+
+\newcommand{\todo}{\reversemarginpar
+\marginnote{\ding{217}}}
+
+\newcommand{\calc}{\reversemarginpar
+\marginnote{\TiCCalc*[calcscale=0.4, calcrotate=0]}}
+
