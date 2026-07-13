@@ -36,11 +36,11 @@ echo "Compilation élève"
 
     latexmk -pdf \
         -interaction=nonstopmode \
-        -outdir=build \
+        -auxdir=build \
         -jobname="$BASE-eleve" \
         "$BASE.tex"
 
-    mv "build/$BASE-eleve.pdf" ./
+    #mv "build/$BASE-eleve.pdf" ./
 
     echo "Compilation professeur"
 
@@ -48,11 +48,11 @@ echo "Compilation élève"
 
     latexmk -pdf \
         -interaction=nonstopmode \
-        -outdir=build \
+        -auxdir=build \
         -jobname="$BASE" \
         "$BASE.tex"
 
-    cp "build/$BASE.pdf" ./
+    #cp "build/$BASE.pdf" ./
     rm version.tex
 
    
@@ -62,10 +62,10 @@ else
 
     latexmk -pdf \
         -interaction=nonstopmode \
-        -outdir=build \
+        -auxdir=build \
         "$BASE.tex"
 
-    cp "build/$BASE.pdf" ./
+    #cp "build/$BASE.pdf" ./
    
 
 fi
