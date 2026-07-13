@@ -35,24 +35,23 @@ echo "Compilation élève"
     echo '\def\version{eleve}' > version.tex
 
     latexmk -pdf \
+        -synctex=1 \
         -interaction=nonstopmode \
         -auxdir=build \
         -jobname="$BASE-eleve" \
         "$BASE.tex"
-
-    #mv "build/$BASE-eleve.pdf" ./
 
     echo "Compilation professeur"
 
     echo '\def\version{prof}' > version.tex
 
     latexmk -pdf \
+        -synctex=1 \
         -interaction=nonstopmode \
         -auxdir=build \
         -jobname="$BASE" \
         "$BASE.tex"
 
-    #cp "build/$BASE.pdf" ./
     rm version.tex
 
    
@@ -61,11 +60,9 @@ else
  echo "Compilation simple"
 
     latexmk -pdf \
+        -synctex=1 \
         -interaction=nonstopmode \
         -auxdir=build \
         "$BASE.tex"
-
-    #cp "build/$BASE.pdf" ./
-   
 
 fi
