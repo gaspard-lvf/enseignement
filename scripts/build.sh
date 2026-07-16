@@ -2,7 +2,8 @@
 
 set -e
 
-FILE="$1"
+MODE_COMPILATION="$1"
+FILE="$2"
 
 if [ -z "$FILE" ]; then
     echo "Usage : build.sh fichier.tex"
@@ -21,48 +22,67 @@ if [ ! -f "$BASE.tex" ]; then
     exit 1
 fi
 
-# On récupère le mode de compilation (simple ou double) depuis le fichier .tex.
-MODE=$(awk '
-/\\newcommand{\\buildmode}/ {
-    match($0, /\{(simple|double)\}/)
-    print substr($0, RSTART+1, RLENGTH-2)
-}' "$BASE.tex")
+case $MODE_COMPILATION in
+    rapide)
+        echo "Compilation rapide"
+        rm -rf build
+        mkdir build
+        echo '\def\version{prof}' > version.tex
+        pdflatex -synctex=1 \
+            -output-directory=./build/ \
+            "$BASE.tex"
 
-if [ "$MODE" = "double" ]; then
-echo "Compilation élève"
+        rm version.tex
+        mv "build/$BASE.synctex.gz" "$BASE.synctex.gz"
+        mv "build/$BASE.pdf" "$BASE.pdf"
+        exit 0
+        ;;
+    propre)
+            # On récupère le mode de compilation (simple ou double) depuis le fichier .tex.
+        MODE=$(awk '
+        /\\newcommand{\\buildmode}/ {
+            match($0, /\{(simple|double)\}/)
+            print substr($0, RSTART+1, RLENGTH-2)
+        }' "$BASE.tex")
 
-    rm -f version.tex   
-    echo '\def\version{eleve}' > version.tex
+        if [ "$MODE" = "double" ]; then
+        echo "Compilation élève"
 
-    latexmk -pdf \
-        -synctex=1 \
-        -interaction=nonstopmode \
-        -auxdir=build \
-        -jobname="$BASE-eleve" \
-        "$BASE.tex"
+            rm -f version.tex   
+            echo '\def\version{eleve}' > version.tex
 
-    echo "Compilation professeur"
+            latexmk -pdf \
+                -synctex=1 \
+                -interaction=nonstopmode \
+                -outdir=build \
+                -jobname="$BASE-eleve" \
+                "$BASE.tex"
 
-    echo '\def\version{prof}' > version.tex
+            echo "Compilation professeur"
 
-    latexmk -pdf \
-        -synctex=1 \
-        -interaction=nonstopmode \
-        -auxdir=build \
-        -jobname="$BASE" \
-        "$BASE.tex"
+            echo '\def\version{prof}' > version.tex
 
-    rm version.tex
+            latexmk -pdf \
+                -synctex=1 \
+                -interaction=nonstopmode \
+                -auxdir=build \
+                -jobname="$BASE" \
+                "$BASE.tex"
 
-   
-    
-else
- echo "Compilation simple"
+            rm version.tex
 
-    latexmk -pdf \
-        -synctex=1 \
-        -interaction=nonstopmode \
-        -auxdir=build \
-        "$BASE.tex"
+        
+            
+        else
+        echo "Compilation simple"
 
-fi
+            latexmk -pdf \
+                -synctex=1 \
+                -interaction=nonstopmode \
+                -auxdir=build \
+                "$BASE.tex"
+
+        fi
+        ;;
+    esac
+

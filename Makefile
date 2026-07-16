@@ -6,13 +6,17 @@ else
 ROOT := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 endif
 
-fiche:
-	@test -n "$(FILE)" || (echo "Usage : make fiche FILE=fiche.tex" && exit 1)
-	"$(ROOT)/scripts/build.sh" "$(FILE)"
+rapide:
+	@test -n "$(FILE)" || (echo "Usage : make rapide FILE=fiche.tex" && exit 1)
+	"$(ROOT)/scripts/build.sh" rapide "$(FILE)"
+
+propre:
+	@test -n "$(FILE)" || (echo "Usage : make propre FILE=fiche.tex" && exit 1)
+	"$(ROOT)/scripts/build.sh" propre "$(FILE)"
 
 all:
 	@find . -name "*.tex" | while read f ; do \
-		$(MAKE) fiche FILE="$$f" ; \
+		$(MAKE) propre FILE="$$f" ; \
 	done
 
 clean:
