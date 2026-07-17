@@ -205,7 +205,9 @@
   colback=white, colframe=blue,
   boxrule=0.6pt, arc=0pt,
   left=8pt, right=8pt, top=5pt, bottom=5pt,
-  fonttitle=\bfseries\scshape, coltitle=black,
+  fonttitle=\scshape\fontfamily{qag}\selectfont,
+  fontupper=\small\fontfamily{qag}\selectfont,
+  coltitle=black,
   colbacktitle=white, coltext=blue, 
   coltitle=blue,
   title=#1,
@@ -213,6 +215,7 @@
 
 \newenvironment{profEnvironment}{%
   \begin{commentairesProf}
+    %\fontfamily{qcr}\selectfont
 }
 {%
   \end{commentairesProf}
