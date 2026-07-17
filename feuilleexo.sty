@@ -201,6 +201,22 @@
 
 
 %%% Pour la version prof/élève
+\newtcolorbox{commentairesProf}[1][Commentaires]{
+  colback=white, colframe=blue,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white, coltext=blue, 
+  coltitle=blue,
+  title=#1,
+}
+
+\newenvironment{profEnvironment}{%
+  \begin{commentairesProf}
+}
+{%
+  \end{commentairesProf}
+}
 
 \usepackage{etoolbox}
 
@@ -210,7 +226,11 @@
   {\boolfalse{prof}}
 
 \newcommand{\prof}[1]{%
-  \ifbool{prof}{#1}{}%
+  \ifbool{prof}{
+    \begin{profEnvironment}
+      #1
+    \end{profEnvironment}
+    }{}%
 }
 
 %%% Légende à placer sous le titre de la feuille, pour rappeler le code
