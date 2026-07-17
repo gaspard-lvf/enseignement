@@ -25,16 +25,15 @@ fi
 case $MODE_COMPILATION in
     rapide)
         echo "Compilation rapide"
-        rm -rf build
-        mkdir build
+        #rm -rf build
+        #mkdir build
         echo '\def\version{prof}' > version.tex
         pdflatex -synctex=1 \
             -output-directory=./build/ \
             "$BASE.tex"
 
         rm version.tex
-        mv "build/$BASE.synctex.gz" "$BASE.synctex.gz"
-        mv "build/$BASE.pdf" "$BASE.pdf"
+        
         exit 0
         ;;
     propre)
@@ -65,13 +64,13 @@ case $MODE_COMPILATION in
             latexmk -pdf \
                 -synctex=1 \
                 -interaction=nonstopmode \
-                -auxdir=build \
+                -outdir=build \
                 -jobname="$BASE" \
                 "$BASE.tex"
 
             rm version.tex
 
-        
+            cp "build/$BASE.pdf" "$BASE.pdf"
             
         else
         echo "Compilation simple"
@@ -79,9 +78,10 @@ case $MODE_COMPILATION in
             latexmk -pdf \
                 -synctex=1 \
                 -interaction=nonstopmode \
-                -auxdir=build \
+                -outdir=build \
                 "$BASE.tex"
 
+        cp "build/$BASE.pdf" "$BASE.pdf"
         fi
         ;;
     esac
