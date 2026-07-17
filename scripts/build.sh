@@ -25,8 +25,7 @@ fi
 case $MODE_COMPILATION in
     rapide)
         echo "Compilation rapide"
-        #rm -rf build
-        #mkdir build
+        mkdir -p build
         echo '\def\version{prof}' > version.tex
         pdflatex -synctex=1 \
             -output-directory=./build/ \
