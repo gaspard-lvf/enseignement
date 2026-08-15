@@ -5,7 +5,6 @@
 %%% (packages sans dépendance claire, symboles de marge non démontrés, etc.)
 %%%
 %%% Nouveautés par rapport au préambule d'origine :
-%%%   - \begin{prerequis}...\end{prerequis}  : encadré "Pré-requis" en tête de feuille
 %%%   - \begin{exo}[Titre][type] : environnement d'exercice avec symbole de
 %%%     classement ( • , petit triangle plein, "Bac" ) ancré dans la marge
 %%%     GAUCHE DE LA COLONNE COURANTE (fonctionne donc en mode multicols,
@@ -126,20 +125,6 @@
 \newcommand{\cbox}[1]{\begin{tcolorbox}[lower separated=false, colback=white]
 #1
 \end{tcolorbox}}
-
-%%%ENCADRÉ PRÉ-REQUIS (nouveauté)
-%%% Usage : \begin{prerequis} ... \end{prerequis}
-%%%         \begin{prerequis}[Rappels] ... \end{prerequis}  (titre personnalisé)
-\newtcolorbox{prerequis}[1][Pré-requis]{
-  colback=white, colframe=black,
-  boxrule=0.6pt, arc=0pt,
-  left=8pt, right=8pt, top=5pt, bottom=5pt,
-  fonttitle=\bfseries\scshape, coltitle=black,
-  colbacktitle=white,
-  title=#1,
-  before upper={\begin{multicols}{2}},
-  after upper={\end{multicols}}
-}
 
 %%%THEOREM STYLES
 

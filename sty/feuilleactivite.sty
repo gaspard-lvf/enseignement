@@ -1,0 +1,15 @@
+\RequirePackage{feuille}
+
+%%%ENCADRÉ objectifs (nouveauté)
+%%% Usage : \begin{objectifs} ... \end{objectifs}
+%%%         \begin{objectifs}[Rappels] ... \end{objectifs}  (titre personnalisé)
+\newtcolorbox{objectifs}[1][Objectifs]{
+  colback=white, colframe=black,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white,
+  title=#1,
+  before upper={\begin{multicols}{2}},
+  after upper={\end{multicols}}
+}

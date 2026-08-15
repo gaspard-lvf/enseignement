@@ -1,0 +1,15 @@
+\RequirePackage{feuille}
+
+%%%ENCADRÉ PRÉ-REQUIS (nouveauté)
+%%% Usage : \begin{prerequis} ... \end{prerequis}
+%%%         \begin{prerequis}[Rappels] ... \end{prerequis}  (titre personnalisé)
+\newtcolorbox{prerequis}[1][Pré-requis]{
+  colback=white, colframe=black,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white,
+  title=#1,
+  before upper={\begin{multicols}{2}},
+  after upper={\end{multicols}}
+}

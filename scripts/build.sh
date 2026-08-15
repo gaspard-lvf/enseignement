@@ -2,11 +2,17 @@
 
 set -e
 
+# Racine du projet
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Répertoire contenant les fichiers .sty personnels
+export TEXINPUTS="$PROJECT_DIR/sty:"
+
 MODE_COMPILATION="$1"
 FILE="$2"
 
 if [ -z "$FILE" ]; then
-    echo "Usage : build.sh fichier.tex"
+    echo "Usage : build.sh mode fichier.tex"
     exit 1
 fi
 # File : chemin complet du fichier .tex depuis la racine du projet.
