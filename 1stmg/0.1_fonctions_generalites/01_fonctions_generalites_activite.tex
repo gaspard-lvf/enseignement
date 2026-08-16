@@ -28,6 +28,7 @@
     \item Lire et comprendre un graphique comme la représentation d'une fonction.
     \item Se réapproprier le vocabulaire des fonction.
     \item Lire et compléter un tableau de valeurs.
+    \item Tracer une fonction à partir d'un tableau de valeurs.
 \end{itemize}
 \end{objectifs}
 
@@ -43,7 +44,7 @@ Le graphique ci-dessous représente l'évolution de la température en °C à Sa
     \renewcommand{\arraystretch}{2} %donne la distance entre les lignes%
     %\setlength{\tabcolsep}{1cm} %donne la distance entre les colonnes%
     \begin{center}
-    \begin{tabular}{|p{5cm}|p{12cm}|}
+    \begin{tabular}{|p{5cm}|p{10cm}|}
     \hline
     Questions & Réponses \\
     \hline
@@ -83,22 +84,22 @@ Le graphique ci-dessous représente l'évolution de la température en °C à Sa
 
 
         \begin{center}
-    \begin{tabular}{|p{5cm}|p{12cm}|}
+    \begin{tabular}{|p{5cm}|p{10cm}|}
     \hline
     Questions & Réponses \\
     \hline
     \hline
     Quel est l'ensemble de définition de la fonction ? & L'ensemble de définition de la fonction est l'intervalle \([2\ ;\; 21]\) \\
     \hline
-     Quelle est l'image de 7 par la fonction \(f\) ? &  \vspace{1cm}   \\
+     Quelle est l'image de 7 par la fonction \(f\) ? &  \vspace{0.5cm}   \\
     \hline
-    \vspace{1cm} &  \\
+    \vspace{0.5cm} &  \\
     \hline
-    Sur quelles intervalles la température est-elle décroissante ? & \\ 
+    Sur quelles intervalles la température est-elle décroissante ? & \vspace{0.5cm} \\ 
     \hline
-    \vspace{1cm}  & La température est croissante sur l'intervalle \([9\ ; \ 12]\)  \\ 
+    \vspace{0.5cm}  & La température est croissante sur l'intervalle \([9\ ; \ 12]\)  \\ 
     \hline
-     \vspace{1cm} &  \\
+     \vspace{0.5cm} &  \\
     \hline
     \end{tabular}
     \end{center}
@@ -112,17 +113,30 @@ On considère la fonction \(f\) définie sur l'intervalle \([0\ ;\ 5]\) par \(f(
 \begin{multicols}{2}
     \begin{enumerate}
     \item Complétez le tableau de valeurs suivant.
-    \begin{tabular}{|c|c|c|c|c|c|c|}
-    \hline
-    \(x\) & 0 & 1 & 2 & 3 & 4 & 5 \\
-    \hline
-    \(f(x)\) &  &  &  &  &  &  \\
-    \hline
-    \end{tabular}
-
     
-    \item Complétez le graphique suivant
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5} %donne la distance entre les lignes%
+        \setlength{\tabcolsep}{0.3cm} %donne la distance entre les colonnes%
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \(x\) & 0 & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        \(f(x)\) &  &  &  &  &  &  \\
+        \hline
+        \end{tabular}
+    \end{center}
 
+    \vfill\null
+    
+    \item À l'aide du tableau, tracer la courbe représentative de la fonction.
+    
+    \hspace{-1cm}\begin{tikzpicture}[yscale=0.4, xscale=1.3]
+        \draw[step=1.0,black!30!white,thin] (0,0) grid (5.5,19.5);
+        \draw[->] (-0.1,0) -- (5.5,0) node[right] {\(x\)};
+        \draw[->] (0,-0.5) -- (0,20) node[left] {\(f(x)\)};
+        \foreach \x in {0,1,2,3,4,5} \draw (\x,0.5) -- (\x,-0.5) node[below] {\(\x\)};
+        \foreach \y in {0,4,...,16} \draw (0.1,\y) -- (-0.1,\y) node[left] {\(\y\)};
+    \end{tikzpicture}
     \end{enumerate}
 \end{multicols}
 \end{document}
