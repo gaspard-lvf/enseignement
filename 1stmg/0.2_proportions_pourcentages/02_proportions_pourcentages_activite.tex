@@ -1,0 +1,191 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleactivite}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1M}
+\renewcommand{\chapitre}{Proportions, pourcentages}
+\renewcommand{\numchap}{0.2} 
+\renewcommand{\theme}{Statistiques}
+
+\begin{document}
+
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\begin{objectifs}
+\begin{itemize}
+    \item Calculer une proportion et la mettre sous différentes formes. 
+    \item Comprendre une proportion comme un coefficient de proportionalité.
+    \item Retrouver un sous-effectif et un effectif total à partir d'une proportion.
+    \item Calculer mentalement une proportion avec des valeurs simples.
+    \item Choisir la réponse la plus vraisemblable dans un QCM.
+\end{itemize}
+\end{objectifs}
+
+\prof{
+    Au début du cours, bien rappeler ce qu'est une proportion, un sous-effectif et un effectif total. Rappeler les différentes formes que peuvent prendre une proportion. Faire un exemple détaillé et le laisser au tableau pendant qu'ils travaillent.
+}
+
+\section{Rappels sur les proportion et les pourcentages}
+\begin{exo}[][]
+Dans chacun des cas suivants, calculer la proportion et l'écrire sous forme de fraction, de nombre décimal et de pourcentage.
+\begin{enumerate}
+    \item Dans une classe de 25 élèves, 4 sont des gauchers.
+    \item Dans un collège, 50 élèves sur 500 sont demi-pensionnaires.
+    \item Dans un lycée de 100 professeurs, 9 sont professeurs de mathématiques.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][]
+La saison 2022-2023 de la ligue 1 de football comptait 65\% d'entraîneurs français.
+\begin{enumerate}
+    \item Au total, la ligue 1 comptait 20 entraîneurs. Combien d'entraîneurs français y avait-il ?
+    \item S'il y avait 60 entraîneurs au total, combien d'entraîneurs français y aurait-il ?
+    \item \begin{enumerate}
+        \item Complétez le tableau de proportionnalité ci-dessous.
+            \begin{center}
+            \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            Nombre d'entraîneurs français &    &    &    & 65 & 130 &  \\
+            \hline
+            Nombre total d'entraîneurs    & 20 & 40 & 60 & 100&     & 500  \\
+            \hline
+            \end{tabular}
+            \end{center}
+        \item Combien d'entraîneurs y aurait-il si la ligue 1 comptait 130 entraîneurs français  ?
+        \item Quel est le coefficient de proportionnalité du tableau ?  À quoi correspond-il dans le contexte de l'exercice ?
+    \end{enumerate}
+\end{enumerate} 
+\end{exo}
+\prof{
+    Possibilité d'enlever la question 3c pour la faire à l'oral. À l'oral, faire le lien avec les élèves entre les lignes et les effectifs.\\
+    À l'aide du tableau de proportionnalité, rappeler la méthode pour calculer un sous-effectif et un effecif total.
+}
+
+\begin{exo}[][]
+\begin{enumerate}
+    \item Dans une classe de 30 élèves, 40\% sont des filles.
+    \begin{enumerate}
+        \item Combien y a-t-il de filles dans la classe ?
+        \item Combien y a-t-il de garçons dans la classe ?
+    \end{enumerate}
+    \item Dans un collège, 60\% des élèves sont demi-pensionnaires.
+    \begin{enumerate}
+        \item Si le collège compte 600 élèves, combien y a-t-il de demi-pensionnaires ?
+        \item Si le collège compte 150 demi-pensionnaires, combien y a-t-il d'élèves au total ?
+    \end{enumerate}
+\end{enumerate}
+\end{exo}
+\prof{
+    Pour la correction de la question 2, tracer un tableau de proportionnalité.
+}
+
+\begin{exo}[QCM][bac]
+\begin{enumerate}
+    \item Écrire le nombre \(\dfrac{3}{5}\) sous forme de pourcentage.
+    \begin{tasks}(4)
+        \task 0,6\%
+        \task 30\%
+        \task 35\%
+        \task 60\%
+    \end{tasks}
+    \item Un lycée compte 500 élèves. 20\% d'entre eux sont externes. Le nombre d'externe est :
+    \begin{tasks}(4)
+        \task 10
+        \task 20
+        \task 100
+        \task 520
+    \end{tasks}
+    \item Lors d'une élection, le quart des électeurs a voté pour le candidat A, 20\% a voté pour B, 34\% a voté pour C et le reste a voté pour D. Le candidat qui a eu le \underline{moins} de voix est :\begin{tasks}(4)
+        \task A
+        \task B
+        \task C
+        \task D
+    \end{tasks}
+\end{enumerate}
+\end{exo}
+
+\section{fréquences conditionnelles et marginales}
+
+\begin{exo}[][]
+Dans un lycée, on a répertorié l'effectif d'élève pratiquant une deuxième langue vivante en fonction de leur niveau :
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    %\setlength{\tabcolsep}{20pt}
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        & \textbf{LV2 espagnol} & \textbf{LV2 allemand} & \textbf{LV2 italien} & \textbf{Total} \\
+        \hline
+        \textbf{2nde} & 50 & 30 & 20 &  \\
+        \hline
+        \textbf{1ère} & 40 & 20 & 10 &  \\
+        \hline
+        \textbf{Terminale} & 45 & 10 & 25 & \\
+        \hline
+        \textbf{Total} &  & &  &  \\
+        \hline
+    \end{tabular}
+\end{center}
+\begin{enumerate}
+    \item Remplir les totaux de chaque ligne et de chaque colonne.
+    \medbreak
+    Ce sont les \textbf{effectifs marginaux} par ligne et par colonne.
+    \item Quelle est la proportion (ou fréquence) d'élèves de seconde en LV2 allemand ?
+    \item Quelle est la proportion d'élèves de première en LV2 italien ?
+    \medbreak
+    C'est une \textbf{fréquence marginale} 
+    \item Parmi les élèves en LV2 espagnol, quel est la proportion d'élèves de terminale ?
+    \medbreak
+    C'est une \textbf{fréquence conditionnelle} 
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][]
+Voici les cinq pays ayant obtenu le plus de médailles aux Jeux Olympiques de 2024 : 
+\begin{center}
+   % \setlength{\tabcolsep}{20pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & \textbf{Or } & \textbf{Argent}& \textbf{Bronze} & \textbf{Total} \\
+\hline
+\textbf{Etats-Unis} &   &   & 42 & 126 \\
+\hline
+\textbf{Chine} & 40 & 27 & 24 &   \\
+\hline
+\textbf{Japon} & 20 & 12 & 13 & 45\\
+\hline
+\textbf{Australie} & 18 & 19 & 16 & 53\\
+\hline
+\textbf{France} & 16 &    & 22 & 64\\
+\hline
+\textbf{Total} & 134 & 128 & 117 & 379 \\
+\hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+    \item Remplir les cases vides du tableau.  
+    \item Calculer chacunes des proportions suivantes. Pour chaque proportion, préciser s'il s'agit d'une fréquence marginale ou conditionnelle.
+    \begin{enumerate}
+        \item La proportion de médailles obtenues par l'Australie parmi toutes les médailles d'argent.
+        \item La proportion de médailles d'or obtenues par les Etats-Unis.
+        \item La proportion de médailles obtenues par la France.
+        \item La proportion de médailles de bronze obtenues par le Japon.
+        \item La proportion de médailles d'or obtenues par la Chine parmi toutes les médailles d'or.
+        \item La proportion de médailles de bronzeparmi toutes les médailles obtenues par la France.
+        \item La proportion de médailles de bronze
+    \end{enumerate}
+\end{enumerate}
+\end{exo}
+\end{document}
