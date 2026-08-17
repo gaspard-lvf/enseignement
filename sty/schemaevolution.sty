@@ -1,0 +1,22 @@
+\newcommand{\schemaevolution}[4]{
+    \begin{center}
+\begin{tikzpicture}
+\node[draw,rectangle, minimum width=2cm, minimum height=1cm] (A) at (0,0) {$#1$};
+\node[draw,rectangle, minimum width=2cm, minimum height=1cm] (B) at (5,0) {$#2$};
+\draw[->] (A) -- (B) node[midway,above]{$#3$} node[midway,below=10pt] {$#4$};
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\schemaDeuxevolutions}[9]{
+    \begin{center}
+        \begin{tikzpicture}[scale=.68]
+            \node[draw,rectangle, minimum width=2cm, minimum height=1cm] (A) at (0,0) {$#1$};
+            \node[draw,rectangle, minimum width=2cm, minimum height=1cm] (B) at (5,0) {$#2$};
+            \node[draw,rectangle, minimum width=2cm, minimum height=1cm] (C) at (10,0) {$#3$};
+            \draw[->] (A) -- (B) node[midway,above]{$#4\%$} node[midway,below]{$\times #5$};
+            \draw[->] (B) -- (C) node[midway,above]{$#6 \%$} node[midway,below]{$\times #7$};
+            \draw[->] (A) to [out=25,in=155] node[midway,below=2mm]{$#8$} node[midway,above=2mm]{$#9$} (C);
+        \end{tikzpicture}
+    \end{center}
+}
