@@ -44,6 +44,9 @@
 \RequirePackage{eurosym}
 \RequirePackage{soul}
 
+\RequirePackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
 %%%ESPACE ENTRE COLONNES (doit laisser la place aux symboles de marge —
 %%% voir plus bas — quand la feuille utilise \begin{multicols}{2})
 \setlength{\columnsep}{1.3cm}
