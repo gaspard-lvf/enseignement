@@ -1,0 +1,297 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleexo}
+\usepackage{schemaevolution}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1M}
+\renewcommand{\chapitre}{Probabilités conditionnelles}
+\renewcommand{\numchap}{0.5} 
+\renewcommand{\theme}{Probabilités}
+
+\begin{document}
+
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\begin{prerequis}
+\begin{itemize}
+    \item Savoir calculer une proportion et la mettre sous différentes formes
+    \item Lire et interpréter un tableau à double entrée.
+\end{itemize}
+
+\end{prerequis}
+\begin{multicols}{2}
+
+\prof{
+    Préalablement, faire des rappels à l'aide d'exemples simples (lancer de dés). Rappeler Loi de proba, univers et issus. Ensuite parler d'évènement (bien faire la différence avec les issues)
+}
+\section{Loi de probabilité, univers, issus}
+
+\begin{exo}[D'après PISA][]
+Un géologue a affirmé : "Au cours des 20 prochaines années, la probabilité que se produise un tremblement de terre à Mathville est de 2 sur 3.\\
+Parmi les propositions suivantes, laquelle exprime le mieux ce que veut dire le géologue ?
+\begin{enumerate}[label=\Alph* : ]
+    \item Puisque \(\dfrac{2}{3}\times 20 \approx 13,3\), un tremblement de terre se produira dans la ville dans 13 à 14 ans.
+    \item Puisque \(\dfrac{2}{3}>\dfrac{1}{2}\), on est sûr qu'il se produira un tremblement de terre à Mathville dans les 20 ans.
+    \item La probabilité  d'avoir un tremblement de terre dans les 20 prochaines années est plus forte que celle de ne pas en avoir.
+    \item On ne peut rien dire, car personne n'est sûr du moment où le tremblement de terre se produit.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Une urne contient 10 boules numérotées de 0 à 9. La boule 0 est d'une couleur noire mate, les boules impaires sont rouges brillantes, les autres sont vert brillantes.\medskip
+    Pour chaque situation suivante, donner la loi de probabilité.
+    \begin{enumerate}
+        \item On tire une boule et on regarde le nombre obtenu
+        \item On tire une boule et on regarde sa couleur
+        \item On tire une boule et on regarde son éclat (mat ou brillant)
+    \end{enumerate}
+\end{exo}
+
+\prof{
+    Ici, on pourrait demander à l'oral de proposer un exemple d'évènement à deux ou trois issues pour chacune des lois.
+}
+
+\section{Évènements : Union, intersection, complémentaire}
+\prof{
+    Pour chacune de ces expériences, demander à l'oral quel est l'ensemble des issues. \\
+}
+\begin{exo}
+    On choisit un élève au hasard dans une classe. On considère les évènements suivants.\begin{itemize}
+        \item A : "Il porte des lunettes"
+        \item B : "Il n'a aucun stylo"
+    \end{itemize}
+    Décrire par une phrase les évènements suivants :\begin{tasks}(4)
+        \task \(\overline{A}\)
+        \task \(A\cap B\)
+        \task \(A \cup B\)
+        \task \(A\cap \overline{B}\)
+    \end{tasks}
+\end{exo}
+
+
+\begin{exo}
+    Un lycée compte 200 professeurs dont la répartition est donnée ci-dessous.
+
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         & Homme & Femme  & Total \\
+        \hline
+        Moins de 30 ans & 28 & 26 & 54 \\
+        \hline
+        Plus de 30 ans & 42 & 104 & 146 \\
+        \hline 
+        Total & 70 & 130 &  200\\
+        \hline
+    \end{tabular}
+
+    On choisit au hasard un professeur de ce lycée. On note \(H\) : "le professeur choisit est un homme" et \(J\) : "Le professeur choisit a moins de 30 ans".
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Que signifie \(\overline{H}\) ?
+            \item Déterminer \(P(\overline{H})\).
+        \end{enumerate}
+        \item \begin{enumerate}
+            \item Que signifie \(\overline{H} \cap J\) ?
+            \item Déterminer \(P(\overline{H} \cap J)\).
+        \end{enumerate}
+        \item \begin{enumerate}
+            \item Que signifie \(H\cup J\) ?
+            \item Déterminer \(P(H \cup J)\).
+        \end{enumerate}
+        \item On change maintenant d'expérience : on tire une personne au hasard \textbf{parmi les plus de 30 ans}.
+        \begin{enumerate}
+            \item Dans cette nouvelle expérience, quelle est la probabilité de tirer un homme ?
+            \item Comment pourrait-on noter cette nouvelle probabilité ?
+        \end{enumerate}
+    \end{enumerate}
+\end{exo}
+
+\prof{
+    Pour la dernière question, insister sur le fait que c'est pas la même expérience, et la relation entre les deux évènements n'est pas symétrique. \\
+    ==> Du coup on peut aussi essayer de faire verbaliser la probabilité conditionnelle "réciproque".
+}
+
+\section{Probabilités conditionnnelles}
+
+\begin{exo}[][]
+On a placé dans un panier des poivrons jaunes ou rouges, provenant de France ou d'Espagne, selon la répartition suivante :
+
+\begin{tabular}{|c|c|c|c|}
+    \hline
+     & \textbf{Jaune} & \textbf{Rouge} & \textbf{Total}  \\ \hline
+   \textbf{France} &1 &        2       &   3             \\ \hline
+   \textbf{Espagne}&4 &        5       &   9             \\ \hline
+   \textbf{Total}  &5 &        7       &   12             \\ \hline
+\end{tabular}
+
+On choisit au hasard un poivron dans le panier. On note \(F\) l'évènement "le poivron vient de France" et \(J\) l'évènement "le poivron est jaune".
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Combien y a-t-il de poivrons jaunes ?
+        \item Combien y a-t-il de poivrons jaunes venant de France ?
+        \item En déduire \(P_J(F)\)
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Combien y a-t-il de poivrons venant de France ?
+        \item En déduire \(P_F(J)\)
+    \end{enumerate}
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Copier-coller du livre scolaire : \medbreak
+
+    De nombreux domaines utilisent les statistiques et les probabilités : en biologie, on utilise les probabilités pour prendre en compte les variations de comportement des phénomènes naturels (réplication de l'ADN, propagation d'un virus, évolution de la faune et de la flore, etc.), en économie, on utilise les statistiques pour évaluer les risques financiers, gérer les stocks, décider d'une stratégie.
+Le traitement de données utilise les probabilités pour détecter des erreurs de mesures, des « bruits ». Enfin, l'intelligence artificielle et l'apprentissage automatisé se basent sur les statistiques.
+}
+
+\begin{exo}[][]
+Une entreprise de vêtements souhaite analyser l'efficacité d'une campagne publicitaire menée sur les réseaux sociaux.
+
+Elle interroge 400 clients ayant acheté un produit au cours du mois dernier.
+
+
+On choisit au hasard un client parmi les 200 clients interrogés.
+
+On note :
+\begin{itemize}
+    \item $A$ : « le client a vu la publicité » ;
+    \item $B$ : « le client a acheté le produit présenté dans la publicité ».
+\end{itemize}
+
+On considère le tableau suivant :
+\begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & $B$ & $\overline{B}$ & Total \\
+        \hline
+        $A$ & 70 & 10 & 80 \\
+        \hline
+        $\overline{A}$ & 100 & 220 & 320 \\
+        \hline
+        Total & 170 & 230 & 400 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Calculer et interpréter $P(A\cap B)$, puis $P(\overline{A}\cap B)$.
+        \item Comparer $P(A\cap B)$ et $P(\overline{A}\cap B)$. Peut-on en tirer une conclusion sur l'efficacité de la publicité ?
+    \end{enumerate}
+
+    \item \begin{enumerate}
+        \item Calculer et interpréter $P_A(B)$, puis $P_{\overline{A}}( B)$.
+        \item Conclure sur l'efficacité de la publicité.
+    \end{enumerate}
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][bac]
+    
+Un test a été conçu pour déterminer si une personne à le COVID ou non. Une phase d'essai a été menée pour déterminer sa fiabilité sur un échantillon représentatif de la population de 2000 personnes.
+
+On sait que parmi les 2000 personnes testées : 
+
+\begin{itemize}
+    \item \(25\%\) sont malades
+    \item Parmi les malades \(\frac{1}{4}\) a été testée négative.
+    \item Parmi les patient sain 1 personne sur 10 a été testée positive
+\end{itemize}   
+
+\bigskip
+
+
+ \begin{tabular}{|c|c|c|c|}
+    \hline
+    & Patient malade & Patient sain &Total\\
+    \hline
+    Test positif &  & & \\
+    \hline
+    Test négatif &  &  &  \\
+    \hline
+    Total &  &  & 2000\\
+    \hline
+    \end{tabular}
+
+\bigskip
+
+\begin{enumerate}
+    \item Compléter le tableau à l'aide des informations de l'énoncé.
+    \item On notera \(O\) l'événement : "le test est positif" et \(M\) l'événement "le patient est malade". 
+    
+    \begin{enumerate}
+        \item Écrire l'événement le patient est sain et est testé positif à l'aide des lettres \(O\) et \(M\).
+        \item Donner la probabilité qu'un patient soit tésté positif et ne soit pas malade.
+        \item Donner sous forme décimale \(P_O(M)\).
+        \item Donner sous forme décimale la probabilité qu'un patient soit sain sachant qu'il est testé positif sous forme décimale.
+        \item En utilisant les résultats des deux questions précédentes, donner votre avis sur l'efficacité de ce test.
+    \end{enumerate}
+
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}[Extrait du sujet des centres étrangers Afrique 2026][bac]
+
+    On interroge 200 élèves sur leur moyen de transport pour venir au lycée. 
+
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+    & \textbf{Filles} & \textbf{Garçons} & \textbf{Total} \\ \hline
+    \textbf{Bus }& 90 &  & 150 \\ \hline
+    \textbf{Autre}& 15 & 35 & 50    \\ \hline
+    \textbf{Total} & 105 & 95 & 200 \\ \hline
+    \end{tabular}
+
+    Pour chacune des réponses suivantes, indiquer si elle est vraie ou fausse en justifiant la réponse.
+    \begin{itemize}
+        \item \underline{Affirmation 1  :} La probabilité qu'il se rende au lycée en bus est de \(\dfrac{3}{4}\)
+        \item \underline{Affirmation 2  :} Sachant que l'élève a pris le bus, la probabilité que ce soit un garçon est de 0,6.
+    \end{itemize}
+\end{exo}
+
+
+\begin{exo}[][appro]
+    Le tableau ci-dessous donne le type de lycées où sont scolarisées les élèves en voie générale dans trois départements d'Île-de-France :
+
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Département & Lycées publiques & Lycées privées   \\
+        \hline
+        Hauts-de-Seine (92) & 31 768 & 11 842 \\
+        \hline
+        Seine-Saint-Denis (93) & 37 437 & 6 358 \\
+        \hline 
+        Paris (75) & 34 681 & 23 320 \\
+        \hline
+    \end{tabular}
+
+    On choisit au hasard un élève dans un de ces trois département. On note \(A\) l'évènement "L'élève vient d'un lycée publique", \(H\), \(S\) et \(P\) les évènements "L'élève vient des Hauts-de-Seine", "il vient de Seine-Saint-Denis" et "Il vient de Paris"
+
+    \begin{enumerate}
+        \item Quelle est la probabilité que l'élève soit scolarisé dans l'enseignement publique sachant qu'il habite en Seine-Saint-Denis ?
+        \item Selon vous, dans quel département un élève a le plus de chance d'être scolarisé dans l'enseignement publique ?
+    \end{enumerate}
+\end{exo}
+
+\prof{
+    On peut faire le dernier exercice sans la calculatrice car \(P_P(A)\) et \(P_H(A)\) sont simples à comparer. 
+}
+
+
+\end{multicols}
+\end{document}
