@@ -78,7 +78,7 @@
 \fancyhead[L]{Exercices}
 \fancyhead[C]{\large\scshape{\chapitre}}
 \fancyhead[R]{\niveau}
-\fancyfoot[L]{\theme \;: Ch.\numchap}
+\fancyfoot[L]{Ch.\numchap \;: \theme}
 \fancyfoot[R]{\thepage \hspace{1pt} / \pageref{LastPage}}
 
 \setlength\parindent{0pt}
@@ -177,7 +177,8 @@
   \ifstrequal{#1}{avance}{$\star$}{%
   \ifstrequal{#1}{appro}{\scalebox{0.75}{$\blacktriangle$}}{%
   \ifstrequal{#1}{bac}{\fbox{\footnotesize\textbf{Bac}}}{%
-  \scalebox{1.15}{\textbullet}}}}%
+  \ifstrequal{#1}{ccf}{\fbox{\footnotesize\textbf{CCF}}}{%
+  \scalebox{1.15}{\textbullet}}}}}%
 }
 
 \NewDocumentEnvironment{exo}{ O{} O{base} }{%
