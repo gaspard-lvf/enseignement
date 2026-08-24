@@ -13,3 +13,10 @@
   before upper={\begin{multicols}{2}},
   after upper={\end{multicols}}
 }
+
+\NewDocumentEnvironment{definition}{s}{%
+    \begin{cbox}
+    \textbf{Définition\IfBooleanT{#1}{s} :}
+}{%
+    \end{cbox}
+}

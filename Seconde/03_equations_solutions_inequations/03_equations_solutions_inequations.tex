@@ -1,0 +1,42 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleexo}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{2nde}
+\renewcommand{\chapitre}{Équations, solution d'inéquations}
+\renewcommand{\numchap}{0.3} 
+\renewcommand{\theme}{Nombres et calcul}
+
+\begin{document}
+
+\prof{
+    On peut parler d'abscisse d'un point sur une droite.
+}
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\begin{prerequis}
+\begin{itemize}
+    \item 
+\end{itemize}
+\end{prerequis}
+
+\prof{
+
+}
+
+\begin{multicols}{2}
+
+\end{multicols}
+\end{document}

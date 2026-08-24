@@ -48,9 +48,9 @@
 \begin{exo}[][]
 Pour chacunes des fonctions suivantes, dire celles qui sont affines. Pour celles qui le sont, déterminer leur coefficient directeur et leur ordonnée à l'origine.
 \begin{tasks}(2)
-\task \(f(x) = \dfrac{1}{x}\)
 \task \(g(x) = 5x-4\)
 \task \(h(x) = 5x\)
+\task \(f(x) = \dfrac{1}{x}\)
 \task \(i(x) = -x+10\)
 \task \(j(x) = -10\)
 \task \(k(x) = x+\dfrac{7}{3}\)
@@ -64,7 +64,7 @@ Pour chacunes des fonctions suivantes, dire celles qui sont affines. Pour celles
 }
 
 \begin{exo}
-On considère la fonction affine \(k\) définie par \(k(x) = -2x + 1\) où \(x\) est un nombre.
+On considère la fonction affine \(k\) définie sur \(R\) par \(k(x) = -2x + 1\) où \(x\) est un nombre.
 \begin{enumerate}
     \item Compléter le tableau de valeurs de la fonction :
     \begin{center}
@@ -80,11 +80,13 @@ On considère la fonction affine \(k\) définie par \(k(x) = -2x + 1\) où \(x\)
     
     \begin{tikzpicture}
         \begin{axis}[
+            xscale=0.7,
             axis lines = middle,
             xmajorgrids=true,
             ymajorgrids=true,
             %xlabel = \(x\),
             %ylabel = {\(k(x)\)},
+            ytick distance=1,
             xmin = -1.7,
             xmax = 2.7,
             ymin = -3.5,
@@ -142,6 +144,8 @@ On considère la fonction affine \(k\) définie par \(k(x) = -2x + 1\) où \(x\)
             axis lines = middle,
             xmajorgrids=true,
             ymajorgrids=true,
+            xtick distance=1,
+            ytick distance=1,
             %xlabel = \(x\),
             %ylabel = {\(k(x)\)},
             xmin = -5.1,
@@ -192,9 +196,10 @@ Retrouver les formules pour chacunes des droites suivantes
         \begin{tikzpicture}
         \begin{axis}[
             axis lines = middle,
-            xmajorgrids=true,
+            grid=both,
             ytick distance = 20,
             ymajorgrids=true,
+            minor y tick num=1,
             xlabel = \textbf{Durée de l'intervention (en h)},
             ylabel = \textbf{Prix payé (\euro)},
             xmin = 0,
@@ -233,6 +238,22 @@ Retrouver les formules pour chacunes des droites suivantes
     Obligation de justifier le tableau de signe par  un schéma. Ce sera le cas pour l'interro
 }
 
+\begin{exo}[Méthode][]
+
+    On considère la fonction \(k\) définie sur \(\R\) par \(k(x) = -5(x-4)(x+2)\)
+    \begin{enumerate}
+        \item Faire les tableaux de signe sur \(\R\) des fonctions \(f(x) = x-4\) et \(g(x) =x+2\).
+        \item Compléter le tableau suivant pour avoir le signe de la fonction \(k\)
+    \end{enumerate}
+
+    \begin{tikzpicture}
+        \tkzTabInit[espcl=2]{$x$ / 1 , -5 / 1 , \(x-4\) / 1, \(x+2\) / 1, \(k(x)\) / 1}{$-\infty $, $\dots$, \(\dots\), \(+\infty \)}
+        \tkzTabLine{, , , , }
+        \tkzTabLine{, , , , }
+        \tkzTabVar{, , , , }
+    \end{tikzpicture}
+\end{exo}
+
 \begin{exo}[][bac]
     On considère les fonction affines \(f\) et \(g\) définies par \(f(x) = x-4\) et \(g(x) = x+1\).\\
     On considère également la fonction \(m\) définie par \(m(x)=2x^2-6x-8\)
@@ -250,20 +271,43 @@ Retrouver les formules pour chacunes des droites suivantes
     \end{itemize}
 }
 
-\begin{exo}[Vrai-faux][avance]
-    On considère la fonction \(g\) définie par \(g(x) = 3x^-9x+6\)
-    \begin{enumerate}
-        \item Développer l'expression \(3(x-2)(x-1)\)
-        \item En déduire le tableau de signe de \(g\)
-    \end{enumerate}
+\begin{exo}[][appro]
+    Voici le tableau de signe d'une fonction \(f\) :\\
+
+    \begin{tikzpicture}
+        \tkzTabInit[espcl=1]{$x$ / 1 ,  \( \) / 1}{$-\infty $, \(-3\), \(5\), \(+\infty \)}
+        \tkzTabLine{,+, z, -, z, +}
+    \end{tikzpicture}
+
+    Trouver deux expressions algébriques de fonctions qui ont ce tableau de signes.
 \end{exo}
 
-\begin{exo}[][avance]
-    On considère la fonction \(h\) définie par \(h(t) = t^2+2t+1\)
-    \begin{enumerate}
-        \item Développer l'expression \((t+1)^2\)
-        \item En déduire le tableau de signe de \(h\)
-    \end{enumerate}
+\begin{exo}[Vrai-faux][avance]
+
+    \begin{itemize}
+        \item \textbf{Affirmation 1 : } On considère la fonction \(g\) définie par \(g(x) =(x+1)(x+5)\) \\
+        Son tableau de signe est le suivant :
+
+            \begin{tikzpicture}
+                \tkzTabInit[espcl=1]{$x$ / 1 ,  \(g(x)\) / 1}{$-\infty $, \(1\), \(5\), \(+\infty \)}
+                \tkzTabLine{,+, z, -, z, +,}
+            \end{tikzpicture}
+        \item \textbf{Affirmation 2 : } On considère la fonction \(h\) définie par \(h(x) =-5(x+1)(x-12)\) \\
+        Son tableau de signe est le suivant :
+
+            \begin{tikzpicture}
+                \tkzTabInit[espcl=1]{$x$ / 1 ,  \(h(x)\) / 1}{$-\infty $, \(-1\), \(12\), \(+\infty \)}
+                \tkzTabLine{,-, z, +, z, -}
+            \end{tikzpicture}
+        \item \textbf{Affirmation 3 : } On considère la fonction \(k\) définie par \(k(x) =x^2-3x+2\) \\
+        Son tableau de signe est le suivant :
+
+            \begin{tikzpicture}
+                \tkzTabInit[espcl=1]{$x$ / 1 ,  \(k(x)\) / 1}{$-\infty $, \(1\), \(2\), \(+\infty \)}
+                \tkzTabLine{,+, z, -, z, +}
+            \end{tikzpicture}
+    \end{itemize}
+    
 \end{exo}
 
 \end{multicols}

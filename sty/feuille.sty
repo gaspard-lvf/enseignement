@@ -127,9 +127,11 @@
 }
 
 %%%ENCADRÉ GÉNÉRIQUE
-\newcommand{\cbox}[1]{\begin{tcolorbox}[lower separated=false, colback=white]
-#1
-\end{tcolorbox}}
+\newenvironment{cbox}{%
+    \begin{tcolorbox}[lower separated=false, colback=white]
+}{%
+    \end{tcolorbox}
+}
 
 %%%THEOREM STYLES
 
