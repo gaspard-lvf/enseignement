@@ -44,6 +44,24 @@
 \section{Equations}
 \begin{exo}[][]
 
+Placez les nombres suivant sur l'axe gradué ci-dessous : -2, 0 , \(\dfrac{1}{2}\), \(\dfrac{3}{2}\), \(-\dfrac{7}{3}\), \(\dfrac{21}{5}\).
+
+\vspace{1cm}
+\begin{tikzpicture}[scale=1.5]
+\draw[->] (-5.5,0)--(5.5,0);
+\foreach \x in {-5,..., 4}{
+    \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+    \draw (\x+0.5,0.07)--(\x+0.5,-0.07) ;
+    \foreach \minx in {0.1, 0.2, ..., 0.9}{
+        \draw (\x+\minx, 0.05)--(\x+\minx, -0.05);
+    }
+}
+    \draw (5,0.1)--(5,-0.1) node[below] {\(5\)};
+\end{tikzpicture}
+\end{exo}
+
+\begin{exo}[][]
+
     Dans chacun des cas ci-dessous, vérifier si le nombre proposé est solution. Sinon, proposer une solution.
     \begin{tasks}(3)
     \task \( x+4 = 10\) \hspace{0.5cm} \(x=5\)
@@ -85,9 +103,7 @@ Résoudre chacune des équations suivantes, puis placer les solutions sur l'axe 
 \end{exo}
 
 \prof{
-    L'axe est peut-être perturbant. Est-ce qu'il vaut pas mieux leur faire tracer eux-même ?  \\
-
-    Idée : Avant cet exercice, mettre un exercice avant où ils doivent seulement placer des fractions sur un axe.
+    L'axe est peut-être perturbant. Est-ce qu'il vaut pas mieux leur faire tracer eux-même ? 
 }
 
 
