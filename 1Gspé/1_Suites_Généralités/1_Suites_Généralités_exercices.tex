@@ -1,0 +1,324 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleexo}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Suites, généralités}
+\renewcommand{\numchap}{1}
+\renewcommand{\theme}{Suites}
+
+\begin{document}
+
+
+
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\begin{prerequis}
+\begin{itemize}
+    \item Calculer l'image d'un nombre par une fonction, notation \(f(x)\).
+    \item Résoudre une équation ou une inéquation du premier degré.
+    \item Reconnaître et prolonger un motif géométrique ou numérique simple.
+    \item Placer des points dans un repère à partir d'un tableau de valeurs.
+\end{itemize}
+\end{prerequis}
+
+\begin{multicols}{2}
+
+\section{Notations et premiers termes}
+
+\begin{exo}[Rappels][]
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n = 3n-2\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_0\), \(u_1\) et \(u_5\).
+    \item Calculer \(u_{10}\).
+    \item Résoudre l'équation \(u_n = 100\). Que peut-on en déduire ?
+    \item Un élève affirme que \(u_{n+1} = 3n+1\). A-t-il raison ? Justifier.
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Bien insister sur la différence entre \(u_n\) (fonction de \(n\)) et l'écriture fonctionnelle \(f(x)\) vue au chapitre précédent : même logique, notation en indice.
+    \item Question 3 : réinvestissement direct de la résolution d'équation. Faire remarquer que la solution doit être un entier naturel pour être un rang valide.
+    \item Question 4 : erreur classique (confondre \(u_{n+1}\) et \(u_n+1\)). À faire verbaliser explicitement par les élèves.
+\end{itemize}
+}
+
+\begin{exo}[][]
+On considère la suite \((v_n)\) définie pour tout entier naturel \(n\) par \(v_n = n^2-1\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(v_0\), \(v_1\), \(v_2\) et \(v_3\).
+    \item Exprimer, en fonction de \(n\), les termes \(v_{n+1}\) et \(v_{n-1}\).
+    \item Le nombre \(48\) est-il un terme de la suite \((v_n)\) ?
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][appro]
+On considère la suite \((w_n)\) définie pour tout entier naturel \(n\) par \(w_n = \dfrac{2n+1}{n+2}\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Justifier que \(w_n\) est bien défini pour tout entier naturel \(n\).
+    \item Calculer \(w_0\), \(w_1\) et \(w_2\).
+    \item Exprimer \(w_{n+1}\) en fonction de \(n\).
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Objectif : montrer que l'expression de \(u_{n+1}\) en fonction de \(n\) s'obtient en substituant \(n+1\) à \(n\) partout, y compris dans une expression plus complexe (fraction). Anticipe les confusions du type \(w_{n+1} = w_n + 1\).
+}
+
+\section{Modes de génération d'une suite}
+
+\begin{exo}[Rappels][]
+Pour chacune des suites suivantes, préciser si elle est définie de façon explicite (en fonction de \(n\)) ou par récurrence (en fonction du terme précédent).
+
+\begin{tasks}(2)
+    \task \(a_n = 5n+2\)
+    \task \(b_{n+1} = b_n + 3\), \(b_0 = 1\)
+    \task \(c_{n+1} = 2c_n - 1\), \(c_0 = 4\)
+    \task \(d_n = \dfrac{n}{n+1}\)
+\end{tasks}
+\end{exo}
+
+\prof{
+    Vocabulaire à fixer : \og explicite \fg{} (formule directe donnant \(u_n\) en fonction de \(n\)) vs. \og par récurrence \fg{} (formule donnant \(u_{n+1}\) en fonction de \(u_n\), avec un terme initial). Faire justifier à l'oral pour chaque suite.
+}
+
+\begin{exo}[][]
+On considère la suite \((u_n)\) définie par récurrence par \(u_0 = 2\) et, pour tout entier naturel \(n\), \(u_{n+1} = 2u_n - 3\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_1\), \(u_2\) et \(u_3\).
+    \item Peut-on calculer directement \(u_{10}\) sans calculer les termes précédents ? Justifier.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][]
+On considère la suite \((v_n)\) définie par récurrence par \(v_0 = 100\) et, pour tout entier naturel \(n\), \(v_{n+1} = 0.9v_n + 5\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Cette suite pourrait modéliser une situation concrète. Proposer un contexte réaliste.
+    \item Calculer les termes \(v_1\), \(v_2\) et \(v_3\) (arrondir au dixième si nécessaire).
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Motif][appro]
+On construit une suite de figures avec des allumettes. La figure de rang \(1\) est un triangle (\(3\) allumettes). Pour passer d'une figure à la suivante, on accole un nouveau triangle sur le côté droit de la dernière figure obtenue.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \draw (0,0) -- (1,0) -- (0.5,0.87) -- cycle;
+    \node at (0.5,-0.5) {Figure 1};
+
+    \draw (2.5,0) -- (3.5,0) -- (3,0.87) -- cycle;
+    \draw (3.5,0) -- (4.5,0) -- (4,0.87) -- cycle;
+    \node at (3.5,-0.5) {Figure 2};
+
+    \draw (6,0) -- (7,0) -- (6.5,0.87) -- cycle;
+    \draw (7,0) -- (8,0) -- (7.5,0.87) -- cycle;
+    \draw (8,0) -- (9,0) -- (8.5,0.87) -- cycle;
+    \node at (7.5,-0.5) {Figure 3};
+\end{tikzpicture}
+\end{center}
+
+On note \(a_n\) le nombre d'allumettes utilisées pour construire la figure de rang \(n\), pour \(n \geq 1\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(a_1\), \(a_2\) et \(a_3\).
+    \item Combien d'allumettes faut-il ajouter pour passer de la figure \(n\) à la figure \(n+1\) ?
+    \item En déduire une relation entre \(a_{n+1}\) et \(a_n\).
+    \item Exprimer \(a_n\) en fonction de \(n\).
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Faire dénombrer \(a_1=3\), \(a_2=5\), \(a_3=7\) : \(2\) allumettes supplémentaires par figure (un côté est déjà commun avec le triangle précédent).
+    \item Relation de récurrence attendue : \(a_{n+1} = a_n + 2\).
+    \item Formule explicite attendue : \(a_n = 2n+1\), à valider en retrouvant \(a_1, a_2, a_3\).
+    \item Bon exercice de transition entre les trois modes de génération vus dans cette section.
+\end{itemize}
+}
+
+\begin{exo}[Algorithme][avance]
+On considère l'algorithme suivant, où \texttt{N} est un entier naturel donné par l'utilisateur.
+
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+\(u \leftarrow 1\) \\
+\textbf{Pour} \(i\) \textbf{allant de} \(1\) \textbf{à} \(N\) \\
+\quad \(u \leftarrow 3u - 1\) \\
+\textbf{Fin Pour} \\
+\textbf{Afficher} \(u\) \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=*]
+    \item Faire fonctionner cet algorithme pour \(N=3\) en indiquant les valeurs successives de \(u\).
+    \item On note \((u_n)\) la suite des valeurs successives prises par la variable \(u\), avec \(u_0=1\). Ce dernier correspond à la valeur de \(u\) avant d'entrer dans la boucle. Exprimer \(u_{n+1}\) en fonction de \(u_n\).
+    \item Quelle valeur affiche l'algorithme pour \(N=3\) ? Retrouver ce résultat à l'aide de la question 1.
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Objectif : faire le lien entre le fonctionnement d'une boucle \og Pour \fg{} et une suite définie par récurrence : chaque tour de boucle correspond au passage de \(u_n\) à \(u_{n+1}\). Cet exercice prépare l'écriture d'algorithmes calculant des termes de suites.
+}
+
+\section{Sens de variation}
+
+\begin{exo}[Rappels][]
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n = -2n+5\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_0\), \(u_1\), \(u_2\) et \(u_3\).
+    \item Calculer \(u_{n+1}-u_n\) en fonction de \(n\).
+    \item En déduire le sens de variation de la suite \((u_n)\).
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Introduire la méthode générale : étudier le signe de \(u_{n+1}-u_n\).
+    \item Faire le lien avec le sens de variation observé numériquement à la question 1, puis justifié algébriquement à la question 2.
+    \item Vocabulaire à fixer : croissante, décroissante, constante, et le cas \og non monotone \fg{}.
+\end{itemize}
+}
+
+\begin{exo}[][]
+Pour chacune des suites suivantes, calculer \(u_{n+1}-u_n\) en fonction de \(n\), puis en déduire son sens de variation.
+
+\begin{tasks}(2)
+    \task \(u_n = 4n-1\)
+    \task \(u_n = -n^2\)
+    \task \(u_n = \dfrac{1}{n+1}\)
+    \task \(u_n = 5\)
+\end{tasks}
+\end{exo}
+
+\begin{exo}[][appro]
+On considère la suite \((u_n)\) définie par récurrence par \(u_0=1\) et, pour tout entier naturel \(n\), \(u_{n+1}=u_n+2n+1\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_1\), \(u_2\) et \(u_3\).
+    \item Sans calculer \(u_{n+1}-u_n\) directement, justifier à l'aide de la relation de récurrence que la suite \((u_n)\) est croissante.
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Idée clé : pour une suite définie par récurrence sous la forme \(u_{n+1}=u_n+f(n)\), le signe de \(f(n)\) donne directement le sens de variation, sans calculer explicitement \(u_{n+1}-u_n\). Ici \(2n+1 > 0\) pour tout \(n \geq 0\).
+}
+
+\begin{exo}[Vrai ou faux][avance]
+Une suite \((u_n)\) est telle que \(u_0 < u_1\). Les affirmations suivantes sont-elles vraies ou fausses ? Justifier chaque réponse, à l'aide d'un contre-exemple si besoin.
+
+\begin{enumerate}[leftmargin=*]
+    \item La suite \((u_n)\) est nécessairement croissante.
+    \item Si \(u_{n+1}-u_n\) est constant, alors la suite \((u_n)\) est croissante.
+    \item Une suite peut être croissante puis décroissante.
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Point de vigilance essentiel : \(u_0 < u_1\) ne suffit pas à garantir la croissance de la suite entière (contre-exemple à construire, par exemple une suite qui augmente puis diminue). Cela prépare la définition rigoureuse du sens de variation \og pour tout \(n\) \fg{}.
+}
+
+\section{Représentation graphique : nuage de points}
+
+\begin{exo}[Rappels][]
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n = 0.5n^2-2n+3\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_0\), \(u_1\), \(u_2\), \(u_3\) et \(u_4\).
+    \item Recopier et compléter le tableau de valeurs suivant.
+
+    \smallskip
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \(n\) & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        \(u_n\) & & & & & \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \item Représenter le nuage de points de coordonnées \((n\,;u_n)\) pour \(n\) allant de \(0\) à \(4\) dans un repère.
+    \item À l'aide du nuage de points, conjecturer le sens de variation de la suite \((u_n)\).
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Rappeler qu'un nuage de points d'une suite est constitué de points \textbf{isolés}, non reliés entre eux (contrairement à la courbe d'une fonction).
+    \item La conjecture graphique de la question 4 sera à confirmer algébriquement (voir section précédente) : bon moment pour articuler les deux approches.
+\end{itemize}
+}
+
+\begin{exo}[][]
+On donne ci-dessous le nuage de points représentant les premiers termes d'une suite \((u_n)\).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-0.5, xmax=6.5,
+    ymin=-0.5, ymax=7,
+    xtick={0,1,2,3,4,5,6},
+    ytick={0,1,2,3,4,5,6},
+    xlabel={\(n\)},
+    ylabel={\(u_n\)},
+    width=8cm,
+    height=7cm
+]
+\addplot[only marks, mark=*, mark size=2pt, blue] coordinates {
+    (0,6) (1,4.5) (2,3.5) (3,3) (4,2.8) (5,2.7) (6,2.65)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=*]
+    \item Donner une valeur approchée de \(u_0\), \(u_2\) et \(u_5\).
+    \item Conjecturer le sens de variation de la suite \((u_n)\).
+    \item Un élève affirme : \og Comme les points semblent se rapprocher d'une même hauteur, la suite finira par être constante. \fg{} Que penser de cette affirmation ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Question 3 : ouverture vers la notion de limite (hors programme à ce stade), à ne pas développer mais à ne pas fermer non plus. L'objectif est de faire percevoir la différence entre \og se rapprocher de \fg{} et \og atteindre \fg{}.
+}
+
+\begin{exo}[][appro]
+On considère la suite \((u_n)\) définie par récurrence par \(u_0=1\) et, pour tout entier naturel \(n\), \(u_{n+1}=-u_n+4\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_0\), \(u_1\), \(u_2\), \(u_3\) et \(u_4\).
+    \item Représenter le nuage de points correspondant.
+    \item La suite \((u_n)\) est-elle croissante ? Décroissante ? Que remarque-t-on ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+    Suite oscillante (alternance \(1\); \(3\); \(1\); \(3\); \ldots) : ni croissante, ni décroissante, ni constante. Utile pour montrer que toutes les suites ne sont pas monotones, et que le nuage de points permet de le voir immédiatement.
+}
+
+\end{multicols}
+
+\end{document}
