@@ -31,7 +31,7 @@
     \item Connaître le vocabulaire d'une fonction : image, antécédent, sens de variation, extremum.
     \item Lire et compléter un tableau de valeurs, placer des points dans un repère.
     \item  Résoudre une équation du premier degré,  une inéquation du premier degré, une équation produit nul.
-    \item Développer et factoriser une expression algébrique (double distributivité, identités remarquables).
+    \item Développer et factoriser une expression algébrique (double distributivité).
     
     
 \end{itemize}
@@ -163,7 +163,7 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
 }
 
 \begin{exo}[][]
-    Parmi les quatre droite représentées ci-dessous, une seule peut être la représentation graphique de \(g(x) = 2x-3\). Dire laquelle en justifiant. \begin{multicols}{4}
+    Parmi les quatre droites représentées ci-dessous, une seule peut être la représentation graphique de \(g(x) = 2x-3\). Dire laquelle en justifiant. \begin{multicols}{4}
         \hspace{0.5cm} \(d_1\)\\
         \begin{tikzpicture}[scale=0.8]
             \draw(-1,0)--(1,0);
@@ -193,6 +193,8 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
         \end{tikzpicture}
     \end{multicols}
 \end{exo}
+
+\vspace{2cm}
 
 \begin{exo}[][]
 
@@ -277,7 +279,7 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
 
 
 \begin{exo}[Rappels][]
-On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(2x-3)(x+1)\). On remarque que cette fonction est le produit des deux fonctions affines \(u(x)=2x-3\) et \(v(x)=x+1\).
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(5x-2)(-2x-1)\). On remarque que cette fonction est le produit des deux fonctions affines \(u(x)=5x-2\) et \(v(x)=-2x-1\).
 
 \begin{enumerate}[leftmargin=*]
     \item Dresser le tableau de signes de \(u\), puis celui de \(v\).
@@ -298,62 +300,70 @@ Pour chacune des fonctions suivantes, écrites comme un produit de deux fonction
 
 \begin{tasks}(2)
     \task \(f(x)=(2x-1)(3x+2)\)
-    \task \(g(x)=(3x+1)(-2x+4)\)
+    \task \(g(x)=(3x+1)(-2x)\)
     \task \(h(x)=(-x+4)(5-x)\)
     \task \(i(x)=(5x-1)(5x+1)\)
 \end{tasks}
+
+Pour chacune de ces fonctions déterminer les intervalles sur lesquels elles sont strictement négative.
+
 \end{exo}
 
 \begin{exo}[][appro]
-On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(x-1)(x+2)\).
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^2+x-2\). L'objectif de l'exercice est de déterminer le tableau de signe de \(f\).
 
 \begin{enumerate}[leftmargin=*]
-    \item Développer l'expression \(f(x)\).
-    \item À l'aide du développement précédent, calculer \(f(0)\) et \(f(3)\). Vérifier ces deux résultats en utilisant l'écriture factorisée de \(f\).
-    \item Dresser le tableau de signes de \(f\) puis résoudre \(f(x) < 0\).
+    \item Développer l'expression  algébrique suivante : \((x-1)(x+2)\).
+    \item En déduire que \(f(x)=(x-1)(x+2)\)
+    \item En déduire le tableau de signe de la fonction de l'énoncé.
 \end{enumerate}
 \end{exo}
 
-\begin{exo}[][appro]
-Résoudre les inéquations suivantes à l'aide d'un tableau de signes.
-
-\begin{tasks}(2)
-    \task \((x+5)(3-x) \geq 0\)
-    \task \((2x-4)(x-4) \leq 0\)
-    \task \((-x+1)(x+1) > 0\)
-    \task \(x(4x-8) < 0\)
-\end{tasks}
-\end{exo}
 \prof{
-    Pour \(i(x)=x(4x-8)\), faire remarquer que la fonction \(u(x)=x\) est déjà une fonction affine (de coefficient directeur 1 et d'ordonnée à l'origine 0), ce qui permet de retrouver la méthode sans étape de reconnaissance supplémentaire.
+    \begin{itemize}
+        \item Avant de commencer l'exo. Faire verbaliser aux élèves la (les) raison(s) pour laquelle il est compliqué de réaliser ce tableau de signe.
+        \item Ouverture sur l'un des gros objectifs de l'année.
+        \item Question 2 rédiger : On a montré que ... On sait déjà que. ... donc \textbf{ par transitivité de l'égalité} on a ...
+    \end{itemize}
 }
 
-\begin{exo}[][avance]
-Une entreprise fabrique et vend des objets. Pour \(x\) centaines d'objets produits (\(x \in [0;10]\)), le bénéfice réalisé, en milliers d'euros, est modélisé par
-\[B(x) = (x-1)(8-x).\]
-
-\begin{enumerate}[leftmargin=*]
-    \item Justifier que \(B(x)\) est le produit de deux fonctions affines que l'on précisera.
-    \item Dresser le tableau de signes de \(B\) sur \([0;10]\).
-    \item En déduire, avec une phrase, pour quelles quantités produites l'entreprise réalise un bénéfice strictement positif.
-    \item L'entreprise peut-elle réaliser un bénéfice de 20 milliers d'euros ? Justifier à l'aide d'un tableau de variations ou d'un graphique.
-\end{enumerate}
+\begin{exo}[][appro]
+    La trajectoire d'une balle lancée verticalement vers le haut est donnée par la fonction \(h(t)=-5t^2+20t+15\), où \(h(t)\) est la hauteur en mètres et \(t\) le temps en secondes.
+        \begin{enumerate}
+            \item Déterminer l'ensemble de définition de \(h\).
+            \item Montrer que \(h(t)=(t-3)(-5t+5)\)
+            \item En déduire le temps au bout duquel la balle va toucher le sol.
+        \end{enumerate}
 \end{exo}
+
+
 \prof{
-    Question 4 : sans outil pour trouver le maximum du produit à ce stade de l'année, on attend une lecture graphique ou une conjecture à l'aide de la calculatrice. L'objectif est surtout de mettre en évidence les limites de la méthode par tableau de signes seule.
+    \begin{itemize}
+        \item Répondre à la première question en s'adaptant aux réponses des élèves.
+        \item Revenir sur la première question à la fin de l'exercice. Parler d'ensemble de définition mathématiques et "domaine pratique" (convention entre nous).
+    \end{itemize}
 }
 
 \begin{exo}[Vrai ou faux][avance]
-On considère deux fonctions affines \(u\) et \(v\), et \(f=u\times v\). Les affirmations suivantes sont-elles vraies ou fausses ? Justifier chaque réponse.
+On considère deux fonctions affines \(u\) et \(v\). Posons \(f=u\times v\). Les affirmations suivantes sont-elles vraies ou fausses ? Justifier chaque réponse.
 
 \begin{enumerate}[leftmargin=*]
-    \item Si \(u\) et \(v\) sont toutes les deux strictement croissantes, alors \(f\) est strictement croissante.
+    \item \(f\) s'annule deux fois.
+    \item On considère \(h=5f\).\\ \(h\) admet le même tableau de signe que \(f\).
+    \item On considère \(h=f+2\).\\ \(h\) admet le même tableau de signe que \(f\).
     \item Le signe de \(f\) ne peut changer qu'aux valeurs qui annulent \(u\) ou \(v\).
-    \item Si \(u\) ne s'annule jamais, alors \(f\) ne s'annule jamais.
+    \item On considère \(g=u'\times v'\) où \(u'\) et \(v'\) sont toutes deux distinctes de \(u\) et \(v\). Le tableau de signe de \(g\) peut être le même que celui de \(f\).
+    \item Le tableau de variation de \(f\) peut être le suivant :
+        \begin{tikzpicture}
+        \tkzTabInit[lgt=1.1,espcl=1.3]{\(x\) /1, \(f\) /2}{\(-\infty\),\(0\),\(4\),\(+\infty\)}
+        \tkzTabVar{-/\(-\infty\),+/\(5\),-/\(-3\),+/\(+\infty\)}
+        \end{tikzpicture}
 \end{enumerate}
 \end{exo}
 \prof{
-    Question 1 : fausse en général, contre-exemple utile pour rappeler qu'un produit de fonctions croissantes n'est pas toujours croissant (ex : \(u(x)=x\), \(v(x)=x-1\), le produit décroît puis croît). Bonne occasion de préparer le terrain pour l'étude du second degré.
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
 }
 
 \end{multicols}
