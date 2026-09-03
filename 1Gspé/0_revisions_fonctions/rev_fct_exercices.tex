@@ -194,4 +194,89 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
 
 
 \section{Produit de fonctions affines}
+
+\begin{multicols}{2}
+
+\begin{exo}[Rappels][]
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(2x-3)(x+1)\), c'est-à-dire le produit des deux fonctions affines \(u(x)=2x-3\) et \(v(x)=x+1\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Dresser le tableau de signes de \(u\), puis celui de \(v\).
+    \item En déduire, à l'aide de la règle des signes d'un produit, le tableau de signes de \(f\).
+    \item Résoudre l'inéquation \(f(x) \geq 0\).
+\end{enumerate}
+\end{exo}
+\prof{
+\begin{itemize}
+    \item Objectif : réinvestir le tableau de signes d'une fonction affine (section 2) dans le cas d'un produit.
+    \item Bien faire apparaître les deux lignes de signes (\(u\) et \(v\)) avant de les combiner sur la ligne de \(f\), en insistant sur la règle des signes.
+    \item Rappeler que les valeurs qui annulent \(u\) ou \(v\) annulent \(f\).
+\end{itemize}
+}
+
+\begin{exo}[][]
+Pour chacune des fonctions suivantes, écrites comme un produit de deux fonctions affines, dresser le tableau de signes.
+
+\begin{tasks}(2)
+    \task \(f(x)=(x-2)(x+3)\)
+    \task \(g(x)=(3x+1)(2-x)\)
+    \task \(h(x)=(-x+4)(-2x-5)\)
+    \task \(i(x)=(5x-1)(5x+1)\)
+\end{tasks}
+\end{exo}
+
+\begin{exo}[][appro]
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(x-1)(x+2)\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Développer l'expression \(f(x)\).
+    \item À l'aide du développement précédent, calculer \(f(0)\) et \(f(3)\). Vérifier ces deux résultats en utilisant l'écriture factorisée de \(f\).
+    \item Dresser le tableau de signes de \(f\) puis résoudre \(f(x) < 0\).
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][appro]
+Résoudre les inéquations suivantes à l'aide d'un tableau de signes.
+
+\begin{tasks}(2)
+    \task \((x+5)(3-x) \geq 0\)
+    \task \((2x-4)(x-4) \leq 0\)
+    \task \((-x+1)(x+1) > 0\)
+    \task \(x(4x-8) < 0\)
+\end{tasks}
+\end{exo}
+\prof{
+    Pour \(i(x)=x(4x-8)\), faire remarquer que la fonction \(u(x)=x\) est déjà une fonction affine (de coefficient directeur 1 et d'ordonnée à l'origine 0), ce qui permet de retrouver la méthode sans étape de reconnaissance supplémentaire.
+}
+
+\begin{exo}[][avance]
+Une entreprise fabrique et vend des objets. Pour \(x\) centaines d'objets produits (\(x \in [0;10]\)), le bénéfice réalisé, en milliers d'euros, est modélisé par
+\[B(x) = (x-1)(8-x).\]
+
+\begin{enumerate}[leftmargin=*]
+    \item Justifier que \(B(x)\) est le produit de deux fonctions affines que l'on précisera.
+    \item Dresser le tableau de signes de \(B\) sur \([0;10]\).
+    \item En déduire, avec une phrase, pour quelles quantités produites l'entreprise réalise un bénéfice strictement positif.
+    \item L'entreprise peut-elle réaliser un bénéfice de 20 milliers d'euros ? Justifier à l'aide d'un tableau de variations ou d'un graphique.
+\end{enumerate}
+\end{exo}
+\prof{
+    Question 4 : sans outil pour trouver le maximum du produit à ce stade de l'année, on attend une lecture graphique ou une conjecture à l'aide de la calculatrice. L'objectif est surtout de mettre en évidence les limites de la méthode par tableau de signes seule.
+}
+
+\begin{exo}[Vrai ou faux][avance]
+On considère deux fonctions affines \(u\) et \(v\), et \(f=u\times v\). Les affirmations suivantes sont-elles vraies ou fausses ? Justifier chaque réponse.
+
+\begin{enumerate}[leftmargin=*]
+    \item Si \(u\) et \(v\) sont toutes les deux strictement croissantes, alors \(f\) est strictement croissante.
+    \item Le signe de \(f\) ne peut changer qu'aux valeurs qui annulent \(u\) ou \(v\).
+    \item Si \(u\) ne s'annule jamais, alors \(f\) ne s'annule jamais.
+\end{enumerate}
+\end{exo}
+\prof{
+    Question 1 : fausse en général, contre-exemple utile pour rappeler qu'un produit de fonctions croissantes n'est pas toujours croissant (ex : \(u(x)=x\), \(v(x)=x-1\), le produit décroît puis croît). Bonne occasion de préparer le terrain pour l'étude du second degré.
+}
+
+\end{multicols}
+
 \end{document}
