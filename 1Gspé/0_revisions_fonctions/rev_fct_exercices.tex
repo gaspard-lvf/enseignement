@@ -153,6 +153,7 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
     \textit{Remarque : cela revient à résoudre l'inéquation \(f(x)\geq 0\).}
 \end{enumerate}
 \end{exo}
+
 \prof{\begin{itemize}
     \item Laisser le choix de la méthode pour la question 4. 
     \item Pendant la phase de correction, détailler très clairement les deux méthodes. C'est un exemple du cours. Ils doivent savoir utiliser les deux pour les exercices suivants.
@@ -160,6 +161,38 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
     \item Pour les variables didactiques : On commence qu'avec des nombres positifs. $f(x) = 2x+1$ donne $x=-\frac{1}{2}$. Cela permet de revoir la valeur décimale de $\frac{1}{2}$.
 \end{itemize}
 }
+
+\begin{exo}[][]
+    Parmi les quatre droite représentées ci-dessous, une seule peut être la représentation graphique de \(g(x) = 2x-3\). Dire laquelle en justifiant. \begin{multicols}{4}
+        \hspace{0.5cm} \(d_1\)\\
+        \begin{tikzpicture}[scale=0.8]
+            \draw(-1,0)--(1,0);
+            \draw(0,-1)--(0,1);
+            \draw (-1,-0.7)--(0.7,1);
+        \end{tikzpicture}
+
+        \hspace{0.5cm} \(d_2\)\\
+        \begin{tikzpicture}[scale=0.8]
+            \draw(-1,0)--(1,0);
+            \draw(0,-1)--(0,1);
+            \draw (-1,0.7)--(0.7,-1);
+        \end{tikzpicture}
+
+        \hspace{0.5cm} \(d_3\)\\
+        \begin{tikzpicture}[scale=0.8]
+            \draw(-1,0)--(1,0);
+            \draw(0,-1)--(0,1);
+            \draw (-0.7,-1)--(1,0.7);
+        \end{tikzpicture}
+
+        \hspace{0.5cm} \(d_4\)\\
+        \begin{tikzpicture}[scale=0.8]
+            \draw(-1,0)--(1,0);
+            \draw(0,-1)--(0,1);
+            \draw (-0.7,1)--(1,-0.7);
+        \end{tikzpicture}
+    \end{multicols}
+\end{exo}
 
 \begin{exo}[][]
 
@@ -182,6 +215,8 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
 \end{itemize}
 }
 
+
+
 \begin{exo}[][appro]
     Soit \(m\) et \(p\) deux nombres réels strictement positifs. On considère la fonction affine \(f\) définie sur \(\mathbb{R}\) par \(f(x)=mx+p\).
 
@@ -190,15 +225,59 @@ On considère la fonction affine \(f\) définie sur \(\left[-4;9\right]\) par \(
     Déterminer son tableau de variations.
     
 \end{exo}
-\end{multicols}
 
+\begin{exo}[][appro]
+    Un plombier facture ses interventions comme indiqué sur le graphique ci-dessous.
+    
+        \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = middle,
+            grid=both,
+            ytick distance = 20,
+            ymajorgrids=true,
+            minor y tick num=1,
+            xlabel = \textbf{Durée de l'intervention (en h)},
+            ylabel = \textbf{Prix payé (\euro)},
+            xmin = 0,
+            xmax = 5,
+            ymin = 0,
+            ymax = 160
+        ]
+        \addplot [
+            domain= 0:3, 
+            samples=100, 
+            color=blue,
+            ]
+            {50*x+40};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{enumerate}
+        \item Combien le plombier facturera-t-il pour 5h de travail ?
+        \item Combien le plombier facture-t-il à l'heure ?
+        \item Quel est le prix de son déplacement ?
+    \end{enumerate}
+\end{exo}
+
+
+\begin{exo}[][avance]
+    
+    La fonction de demande d'un produit est donnée par \(D(p)=100-2p\), où \(p\) est le prix du produit en euros et \(D(p)\) est la quantité demandée, en milliers d'unités. La fonction d'offre de ce même produit est donnée par \(S(p)=20+3p\).
+
+    \begin{enumerate}[leftmargin=*]
+        \item Déterminer la quantité demandée lorsque le prix est de 10 euros.
+        \item Déterminer le prix et la quantité d'équilibre.
+        \item Tracer les représentations graphiques des fonctions d'offre et de demande.
+        \item Donner une interprétation géométrique de l'équilibre.
+
+    \end{enumerate}
+\end{exo}
 
 \section{Produit de fonctions affines}
 
-\begin{multicols}{2}
+
 
 \begin{exo}[Rappels][]
-On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(2x-3)(x+1)\), c'est-à-dire le produit des deux fonctions affines \(u(x)=2x-3\) et \(v(x)=x+1\).
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(2x-3)(x+1)\). On remarque que cette fonction est le produit des deux fonctions affines \(u(x)=2x-3\) et \(v(x)=x+1\).
 
 \begin{enumerate}[leftmargin=*]
     \item Dresser le tableau de signes de \(u\), puis celui de \(v\).
