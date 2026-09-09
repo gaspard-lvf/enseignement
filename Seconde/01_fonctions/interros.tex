@@ -1,0 +1,272 @@
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{tasks}
+
+\geometry{
+    top=1.5cm,
+    bottom=1.5cm,
+    left=1.7cm,
+    right=1.7cm
+}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\version}[1]{
+    \begin{center}
+        \textbf{\large INTERROGATION -- Fonctions et proportions}\\
+        \textbf{Version #1}
+    \end{center}
+
+    \vspace{-0.1cm}
+
+    \textbf{Nom :} \rule{5cm}{0.4pt}
+    \hfill
+    \textbf{Prénom :} \rule{4cm}{0.4pt}
+
+    \vspace{0.2cm}
+}
+
+\begin{document}
+
+% =========================================================
+% VERSION A
+% =========================================================
+
+\version{A}
+
+\textbf{Exercice 1 -- DC \hfill /2}
+
+Calculer $3-(-4)$
+
+\vspace{0.1cm}
+
+\textbf{Exercice 2 -- Tableau de valeurs \hfill /4}
+
+On considère la fonction \(f\) définie sur l'intervalle \([0\ ;\ 4]\) par \(f(x)=x^2-3x+3\). 
+
+
+\begin{multicols}{2}
+    \begin{minipage}{0.45\textwidth}
+    \begin{enumerate}
+    \item Complétez le tableau de valeurs suivant.
+    
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5} %donne la distance entre les lignes%
+        \setlength{\tabcolsep}{0.3cm} %donne la distance entre les colonnes%
+        \begin{tabular}{|*{6}{c|}}
+        \hline
+        \(x\) & 0 & 1 & 2 & 3 & 4  \\
+        \hline
+        \(f(x)\) &  &  &  &  &  \\
+        \hline
+        \end{tabular}
+    \end{center}
+
+    \vfill\null
+    
+    \item À l'aide du tableau, tracer la courbe représentative de la fonction.
+    \end{enumerate}
+    \end{minipage}
+
+        \hspace{-1cm}\begin{tikzpicture}[yscale=0.5, xscale=1.3]
+        \draw[step=1.0,black!30!white,thin] (0,0) grid (4.5,9.5);
+        \draw[->] (-0.1,0) -- (4.5,0) node[right] {\(x\)};
+        \draw[->] (0,-0.5) -- (0,10) node[left] {\(f(x)\)};
+        \foreach \x in {0,1,2,3,4} \draw (\x,0.5) -- (\x,-0.5) node[below] {\(\x\)};
+        \foreach \y in {0,3,...,9} \draw (0.1,\y) -- (-0.1,\y) node[left] {\(\y\)};
+    \end{tikzpicture}
+
+\end{multicols}
+
+\textbf{Exercice 3 -- Proportions \hfill /4}
+
+Calculer :\begin{tasks}(2)
+\task $50\%$ de $80$
+\task $25\%$ de $75$
+\end{tasks}
+
+\vfill
+
+% =========================================================
+% VERSION B
+% =========================================================
+
+\version{B}
+\textbf{Exercice 1 -- DC \hfill /2}
+
+Calculer $-3-4$
+
+\vspace{0.1cm}
+
+\textbf{Exercice 2 -- Tableau de valeurs \hfill /4}
+
+On considère la fonction \(f\) définie sur l'intervalle \([0\ ;\ 4]\) par \(f(x)=x^2-5x+7\). 
+
+
+\begin{multicols}{2}
+    \begin{minipage}{0.45\textwidth}
+    \begin{enumerate}
+    \item Complétez le tableau de valeurs suivant.
+    
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5} %donne la distance entre les lignes%
+        \setlength{\tabcolsep}{0.3cm} %donne la distance entre les colonnes%
+        \begin{tabular}{|*{6}{c|}}
+        \hline
+        \(x\) & 0 & 1 & 2 & 3 & 4  \\
+        \hline
+        \(f(x)\) &  &  &  &  &  \\
+        \hline
+        \end{tabular}
+    \end{center}
+
+    \vfill\null
+    
+    \item À l'aide du tableau, tracer la courbe représentative de la fonction.
+    \end{enumerate}
+    \end{minipage}
+
+        \hspace{-1cm}\begin{tikzpicture}[yscale=0.5, xscale=1.3]
+        \draw[step=1.0,black!30!white,thin] (0,0) grid (4.5,9.5);
+        \draw[->] (-0.1,0) -- (4.5,0) node[right] {\(x\)};
+        \draw[->] (0,-0.5) -- (0,10) node[left] {\(f(x)\)};
+        \foreach \x in {0,1,2,3,4} \draw (\x,0.5) -- (\x,-0.5) node[below] {\(\x\)};
+        \foreach \y in {0,3,...,9} \draw (0.1,\y) -- (-0.1,\y) node[left] {\(\y\)};
+    \end{tikzpicture}
+
+\end{multicols}
+
+\textbf{Exercice 3 -- Proportions \hfill /4}
+
+Calculer :\begin{tasks}(2)
+\task $50\%$ de $120$
+\task $20\%$ de $80$
+\end{tasks}
+
+\newpage
+
+% =========================================================
+% VERSION C
+% =========================================================
+
+\version{C}
+\textbf{Exercice 1 -- DC \hfill /2}
+
+Calculer $5-7$
+
+\vspace{0.1cm}
+
+\textbf{Exercice 2 -- Tableau de valeurs \hfill /4}
+
+On considère la fonction \(f\) définie sur l'intervalle \([0\ ;\ 4]\) par \(f(x)=x^2-3x+4\). 
+
+
+\begin{multicols}{2}
+    \begin{minipage}{0.45\textwidth}
+    \begin{enumerate}
+    \item Complétez le tableau de valeurs suivant.
+    
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5} %donne la distance entre les lignes%
+        \setlength{\tabcolsep}{0.3cm} %donne la distance entre les colonnes%
+        \begin{tabular}{|*{6}{c|}}
+        \hline
+        \(x\) & 0 & 1 & 2 & 3 & 4  \\
+        \hline
+        \(f(x)\) &  &  &  &  &  \\
+        \hline
+        \end{tabular}
+    \end{center}
+
+    \vfill\null
+    
+    \item À l'aide du tableau, tracer la courbe représentative de la fonction.
+    \end{enumerate}
+    \end{minipage}
+
+        \hspace{-1cm}\begin{tikzpicture}[yscale=0.5, xscale=1.3]
+        \draw[step=1.0,black!30!white,thin] (0,0) grid (4.5,9.5);
+        \draw[->] (-0.1,0) -- (4.5,0) node[right] {\(x\)};
+        \draw[->] (0,-0.5) -- (0,10) node[left] {\(f(x)\)};
+        \foreach \x in {0,1,2,3,4} \draw (\x,0.5) -- (\x,-0.5) node[below] {\(\x\)};
+        \foreach \y in {0,3,...,9} \draw (0.1,\y) -- (-0.1,\y) node[left] {\(\y\)};
+    \end{tikzpicture}
+
+\end{multicols}
+
+\textbf{Exercice 3 -- Proportions \hfill /4}
+
+Calculer :\begin{tasks}(2)
+\task $50\%$ de $400$
+\task $25\%$ de $60$
+\end{tasks}
+\vfill
+
+% =========================================================
+% VERSION D
+% =========================================================
+
+\version{D}
+
+\textbf{Exercice 1 -- DC \hfill /2}
+
+Calculer $-5-3$
+
+\vspace{0.1cm}
+
+\textbf{Exercice 2 -- Tableau de valeurs \hfill /4}
+
+On considère la fonction \(f\) définie sur l'intervalle \([0\ ;\ 4]\) par \(f(x)=x^2-5x+8\). 
+
+
+\begin{multicols}{2}
+    \begin{minipage}{0.45\textwidth}
+    \begin{enumerate}
+    \item Complétez le tableau de valeurs suivant.
+    
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5} %donne la distance entre les lignes%
+        \setlength{\tabcolsep}{0.3cm} %donne la distance entre les colonnes%
+        \begin{tabular}{|*{6}{c|}}
+        \hline
+        \(x\) & 0 & 1 & 2 & 3 & 4  \\
+        \hline
+        \(f(x)\) &  &  &  &  &  \\
+        \hline
+        \end{tabular}
+    \end{center}
+
+    \vfill\null
+    
+    \item À l'aide du tableau, tracer la courbe représentative de la fonction.
+    \end{enumerate}
+    \end{minipage}
+
+        \hspace{-1cm}\begin{tikzpicture}[yscale=0.5, xscale=1.3]
+        \draw[step=1.0,black!30!white,thin] (0,0) grid (4.5,9.5);
+        \draw[->] (-0.1,0) -- (4.5,0) node[right] {\(x\)};
+        \draw[->] (0,-0.5) -- (0,10) node[left] {\(f(x)\)};
+        \foreach \x in {0,1,2,3,4} \draw (\x,0.5) -- (\x,-0.5) node[below] {\(\x\)};
+        \foreach \y in {0,3,...,9} \draw (0.1,\y) -- (-0.1,\y) node[left] {\(\y\)};
+    \end{tikzpicture}
+
+\end{multicols}
+
+\textbf{Exercice 3 -- Proportions \hfill /4}
+
+Calculer :\begin{tasks}(2)
+\task $50\%$ de $600$
+\task $20\%$ de $35$
+\end{tasks}
+
+\end{document}
+
