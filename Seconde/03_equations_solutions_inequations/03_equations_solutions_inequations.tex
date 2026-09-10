@@ -212,4 +212,91 @@ On peut représenter les solutions d'une inéquation dans des intervalles. Pour 
 \prof{
     Ecrire dans le cours ensuite. Préparer des exos en plus ?
 }
+\newpage
+
+\prof{
+    Facultatif
+}
+
+\section{Distance entre deux nombres. Valeur absolue}
+
+\prof{
+    Dans cet exercice, faire un axe. Montrer que cela revient à déterminer une distance entre deux points et à faire une soustration.
+}
+
+\begin{exo}
+    \begin{enumerate}
+        \item Déterminer le nombre d'années pendant lesquelles chacunes des personnes a vécu : Aristote (384 av. J.-C. - 322 av. J.-C.), Marie Curie (1867 - 1934).
+        \item Le désert de Qumran, près de la mer morte, a été occupé par les esséniens entre 150 av J.-C. et 68 ap J.-C. Combien d'années ont-ils occupé ce désert ?
+        \item Pythagore a vécu 80 ans et il est mort en 480 avant J.-C. En quelle année est-il né ?
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+
+    On a tracé la droite numérique :
+    
+    \vspace{1cm}
+    \begin{tikzpicture}[scale=1.5]
+    \draw[->] (-5.5,0)--(5.5,0);
+    \foreach \x in {-5,..., 4}{
+        \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+    }
+        \draw (5,0.1)--(5,-0.1) node[below] {\(5\)};
+    \end{tikzpicture}
+
+    \begin{enumerate}
+        \item Placer les points A d'abscisse \(-3\) ; B d'abscisse \(1,6\) ; C d'abscisse \(3,4\) et D d'abscisse \(\dfrac{14}{3}\).
+        \item Calculer les distances AB, BC, et DA.
+    \end{enumerate}
+
+    \prof{
+        Propriete (au tableau ou dans le cours) : la distance entre deux nombres \(a\) et \(b\) est \(b-a\) si \(b\geq a\) ou \(a-b\) si \(a\geq b\). On peut aussi dire que la distance est \(|b-a|\).
+
+
+        Donc \(|b-a|\ = |a-b|\).
+    }
+\end{exo}
+
+\begin{exo}[][appro]
+    Ecrire sous la forme d'un intervalle l'ensemble des nombres \(x\) tels que \begin{tasks}(2)
+        \task \(|x-3|<5\)
+        \task  \(|x-11|\geq 2\)
+        \task  \(|x+12|<2\)
+        \task  \(|x|\geq 4\)
+        
+    \end{tasks}
+\end{exo}
+
+\prof{
+    Pour l'exercice ci-dessus : \begin{itemize}
+        \item faire verbaliser : La distance entre 3 et \(x\) doit être inférieure à 5.
+        \item Faire un schéma
+        \item Donner les solutions sous la forme d'un intervalle.
+    \end{itemize}
+}
+
+\begin{exo}[][]
+    Essayez d'enlever les valeurs absolues pour finir les calculs suivants : \begin{tasks}(3)
+        \task \(|3-5| =\)
+        \task  \(|5-3| = \)
+        \task  \(|-6| = \)
+        \task  \(|34| = \)
+        \task  \(-|5| = \)
+        \task  \(|3|-|5| = \)
+        
+    \end{tasks}
+\end{exo}
+
+
+\begin{exo}[Vrai ou Faux ][appro]
+
+    Les propriétés suivantes sont-elles vraies ou fausses ? Justifier votre réponse.
+    \begin{enumerate}
+        \item Pour tout nombres \(a\) et \(b\), \(|a+b| = |a|+|b|\).
+        \item Il existe des nombres \(a\) et \(b\) tels que \(|a+b| = |a|+|b|\).
+        \item Pour tout nombre réel \(a\), \(|-a|=|a|\).
+    \end{enumerate}
+\end{exo}
+
 \end{document}
