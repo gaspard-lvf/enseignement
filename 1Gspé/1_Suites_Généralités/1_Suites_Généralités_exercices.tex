@@ -100,7 +100,32 @@ Les affirmations suivantes portent sur les modes de définition explicite et par
     \item 2. Faux : \(u_n = 7n-3\) donne directement \(u_n\) en fonction de \(n\), c'est une définition explicite.
     \item 3. Faux : sans terme initial, la relation de récurrence ne détermine pas une suite unique.
     \item 4. Vrai (en général, sans information supplémentaire) : la relation de récurrence ne donne \(u_{n+1}\) qu'à partir de \(u_n\), il faut donc dérouler le calcul de proche en proche.
-    \item 5. Faux : \(v_{n+1}\) est donné en fonction de \(v_n\), c'est une définition par récurrence.
+    \item 5. Faux : on a \(v_4 = v_3+4 = 0+4 = 4 \neq 16\).
+\end{itemize}
+}
+
+\begin{exo}[Trouver une suite à partir de ses premiers termes][avance]
+On donne les nombres suivants, qui sont les quatre premiers termes d'une suite \((u_n)\) :
+\[
+u_0 = 1, \quad u_1 = 3, \quad u_2 = 5, \quad u_3 = 7.
+\]
+
+\begin{enumerate}[leftmargin=*]
+    \item Proposer une expression explicite \(u_n = f(n)\), la plus simple possible, cohérente avec ces quatre valeurs.
+    \item Proposer une définition par récurrence (terme initial et relation entre \(u_{n+1}\) et \(u_n\)) cohérente avec ces mêmes valeurs.
+    \item Vérifier que l'expression \(u_n = 2n+1+n(n-1)(n-2)(n-3)\) est elle aussi cohérente avec les quatre valeurs données.
+    \item Cette expression est-elle égale à celle trouvée à la question 1 ? Calculer \(u_4\) avec chacune des deux expressions et comparer.
+    \item Que peut-on en conclure sur le fait de \og deviner \fg{} une suite à partir de quelques-uns de ses termes seulement ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Question 1 : réponse attendue \(u_n = 2n+1\) (ou toute expression équivalente).
+    \item Question 2 : réponse attendue \(u_0=1\) et \(u_{n+1}=u_n+2\).
+    \item Question 3 : le facteur \(n(n-1)(n-2)(n-3)\) s'annule pour \(n=0,1,2,3\), donc l'expression proposée coïncide bien avec \(2n+1\) sur ces quatre valeurs.
+    \item Question 4 : les deux expressions sont différentes : dès \(n=4\), on obtient \(2\times4+1=9\) contre \(9 + 4\times3\times2\times1 = 33\). Deux formules distinctes peuvent donc donner exactement les mêmes premiers termes.
+    \item Question 5 : conclusion essentielle : quelques termes ne suffisent jamais à prouver qu'une formule explicite est \og la bonne \fg{}. Une formule doit être donnée dans l'énoncé (ou démontrée), pas seulement devinée à partir d'exemples. Cela prépare l'idée de démonstration par récurrence, vue plus tard dans l'année.
 \end{itemize}
 }
 
