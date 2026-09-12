@@ -36,7 +36,7 @@
 
 \begin{multicols}{2}
 
-\section{Notations et premiers termes}
+\section{Modes de définitions}
 
 \begin{exo}[Une suite définie explicitement][]
 
@@ -83,14 +83,14 @@ u_{n+1} & = & 4u_n
 \end{exo}
 
 \begin{exo}[Vrai ou faux][]
-Les affirmations suivantes portent sur les modes de définition explicite et par récurrence d'une suite. Dire si chacune est vraie ou fausse, en justifiant.
+On considère une suite \(u_n\) définie pour tout entier naturel \(n\). Dire si chacune des affirmation suivante est vraie ou fausse, en justifiant.
 
 \begin{enumerate}[leftmargin=*]
-    \item Si une suite \((u_n)\) est définie explicitement, on peut calculer \(u_{50}\) sans connaître \(u_{49}\).
-    \item La suite définie par \(u_n = 7n-3\) est définie par récurrence.
-    \item Pour définir une suite par récurrence, il suffit de donner la relation entre \(u_{n+1}\) et \(u_n\), sans préciser \(u_0\).
-    \item Si une suite est définie par récurrence, il est nécessaire de calculer \(u_0, u_1, \ldots, u_9\) pour connaître \(u_{10}\).
-    \item On considère la suite définie par \(v_3 = 0\) et \(v_{n+1} = v_n +4\). On a \(v_4=16\)
+    \item Si la suite \((u_n)\) est définie explicitement, alors on peut calculer \(u_{50}\) sans connaître \(u_{49}\).
+    \item Si la suite \(u_n\) est définie par \(u_n = 7n-3\) alors elle est définie par récurrence.
+    \item Si on a définie une relation entre \(u_{n+1}\) et \(u_n\) on a défini la suite \(u_n\).
+    \item Si une suite est définie par récurrence, alors il est nécessaire de calculer \(u_0, u_1, \ldots, u_9\) pour connaître \(u_{10}\).
+    \item Si on connait les deux relations suivantes \(u_1 = 0\) et \(u_{n+1} = u_n +4\). On a \(u_4=16\)
 \end{enumerate}
 \end{exo}
 
@@ -121,11 +121,9 @@ u_0 = 1, \quad u_1 = 3, \quad u_2 = 5, \quad u_3 = 7.
 
 \prof{
 \begin{itemize}
-    \item Question 1 : réponse attendue \(u_n = 2n+1\) (ou toute expression équivalente).
-    \item Question 2 : réponse attendue \(u_0=1\) et \(u_{n+1}=u_n+2\).
-    \item Question 3 : le facteur \(n(n-1)(n-2)(n-3)\) s'annule pour \(n=0,1,2,3\), donc l'expression proposée coïncide bien avec \(2n+1\) sur ces quatre valeurs.
-    \item Question 4 : les deux expressions sont différentes : dès \(n=4\), on obtient \(2\times4+1=9\) contre \(9 + 4\times3\times2\times1 = 33\). Deux formules distinctes peuvent donc donner exactement les mêmes premiers termes.
     \item Question 5 : conclusion essentielle : quelques termes ne suffisent jamais à prouver qu'une formule explicite est \og la bonne \fg{}. Une formule doit être donnée dans l'énoncé (ou démontrée), pas seulement devinée à partir d'exemples. Cela prépare l'idée de démonstration par récurrence, vue plus tard dans l'année.
+     \item Question Bonus : Trouver une suite qui coincide avec \(2n+1\) sur les 8 premiers termes mais pas le 9ème.
+     \item 
 \end{itemize}
 }
 
@@ -153,40 +151,8 @@ On considère la suite \((w_n)\) définie pour tout entier naturel \(n\) par \(w
     Objectif : montrer que l'expression de \(u_{n+1}\) en fonction de \(n\) s'obtient en substituant \(n+1\) à \(n\) partout, y compris dans une expression plus complexe (fraction). Anticipe les confusions du type \(w_{n+1} = w_n + 1\).
 }
 
-\section{Modes de génération d'une suite}
+\section{Autres modes de génération d'une suite ???}
 
-\begin{exo}[Rappels][]
-Pour chacune des suites suivantes, préciser si elle est définie de façon explicite (en fonction de \(n\)) ou par récurrence (en fonction du terme précédent).
-
-\begin{tasks}(2)
-    \task \(a_n = 5n+2\)
-    \task \(b_{n+1} = b_n + 3\), \(b_0 = 1\)
-    \task \(c_{n+1} = 2c_n - 1\), \(c_0 = 4\)
-    \task \(d_n = \dfrac{n}{n+1}\)
-\end{tasks}
-\end{exo}
-
-\prof{
-    Vocabulaire à fixer : \og explicite \fg{} (formule directe donnant \(u_n\) en fonction de \(n\)) vs. \og par récurrence \fg{} (formule donnant \(u_{n+1}\) en fonction de \(u_n\), avec un terme initial). Faire justifier à l'oral pour chaque suite.
-}
-
-\begin{exo}[][]
-On considère la suite \((u_n)\) définie par récurrence par \(u_0 = 2\) et, pour tout entier naturel \(n\), \(u_{n+1} = 2u_n - 3\).
-
-\begin{enumerate}[leftmargin=*]
-    \item Calculer \(u_1\), \(u_2\) et \(u_3\).
-    \item Peut-on calculer directement \(u_{10}\) sans calculer les termes précédents ? Justifier.
-\end{enumerate}
-\end{exo}
-
-\begin{exo}[][]
-On considère la suite \((v_n)\) définie par récurrence par \(v_0 = 100\) et, pour tout entier naturel \(n\), \(v_{n+1} = 0.9v_n + 5\).
-
-\begin{enumerate}[leftmargin=*]
-    \item Cette suite pourrait modéliser une situation concrète. Proposer un contexte réaliste.
-    \item Calculer les termes \(v_1\), \(v_2\) et \(v_3\) (arrondir au dixième si nécessaire).
-\end{enumerate}
-\end{exo}
 
 \begin{exo}[Motif][appro]
 On construit une suite de figures avec des allumettes. La figure de rang \(1\) est un triangle (\(3\) allumettes). Pour passer d'une figure à la suivante, on accole un nouveau triangle sur le côté droit de la dernière figure obtenue.
@@ -226,7 +192,7 @@ On note \(a_n\) le nombre d'allumettes utilisées pour construire la figure de r
 \end{itemize}
 }
 
-\begin{exo}[Algorithme][avance]
+\begin{exo}[Algorithme][appro]
 On considère l'algorithme suivant, où \texttt{N} est un entier naturel donné par l'utilisateur.
 
 \begin{center}
@@ -258,7 +224,7 @@ On considère l'algorithme suivant, où \texttt{N} est un entier naturel donné 
 On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n = -2n+5\).
 
 \begin{enumerate}[leftmargin=*]
-    \item Calculer \(u_0\), \(u_1\), \(u_2\) et \(u_3\).
+    \item Calculer \(u_0\), \(u_1\), \(u_2\) et \(u_3\). Conjecturer le sens de variation de la suite.
     \item Calculer \(u_{n+1}-u_n\) en fonction de \(n\).
     \item En déduire le sens de variation de la suite \((u_n)\).
 \end{enumerate}
@@ -297,17 +263,23 @@ On considère la suite \((u_n)\) définie par récurrence par \(u_0=1\) et, pour
 }
 
 \begin{exo}[Vrai ou faux][avance]
-Une suite \((u_n)\) est telle que \(u_0 < u_1\). Les affirmations suivantes sont-elles vraies ou fausses ? Justifier chaque réponse, à l'aide d'un contre-exemple si besoin.
+Soit \((u_n)\) une suite définie pour tout entier naturel \(n\). Les affirmations suivantes sont-elles vraies ou fausses ? Justifier chaque réponse, à l'aide d'un contre-exemple si besoin.
 
 \begin{enumerate}[leftmargin=*]
-    \item La suite \((u_n)\) est nécessairement croissante.
-    \item Si \(u_{n+1}-u_n\) est constant, alors la suite \((u_n)\) est croissante.
-    \item Une suite peut être croissante puis décroissante.
+    \item Si \(u_0\leq u_1 \leq u_2 \leq u_3\) alors \((u_n)\) est croissante.
+    \item Si pour tout entier naturel \(n\), \(u_{n+1}-u_n\) est constant, alors la suite \((u_n)\) est croissante.
+    \item Si pour tout entier naturel \(n\), \(u_{n+1}-u_n = 0\) alors la suite \((u_n)\) est constante.
 \end{enumerate}
 \end{exo}
 
 \prof{
-    Point de vigilance essentiel : \(u_0 < u_1\) ne suffit pas à garantir la croissance de la suite entière (contre-exemple à construire, par exemple une suite qui augmente puis diminue). Cela prépare la définition rigoureuse du sens de variation \og pour tout \(n\) \fg{}.
+
+\begin{enumerate}
+    \item Nous avons fait attention a bien écrire les phrases sous la forme d'une implication et plus précisément sous la forme "si ... alors".
+    \item On a introduit avec les suites le quantificateur universel "pour tout". 
+\end{enumerate}
+    
+
 }
 
 \section{Représentation graphique : nuage de points}
