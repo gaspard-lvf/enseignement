@@ -20,3 +20,16 @@
 }{%
     \end{cbox}
 }
+
+%%%ENCADRÉ indication (aide ponctuelle pour un travail en autonomie)
+%%% Usage : \begin{indication} ... \end{indication}
+%%%         \begin{indication}[Coup de pouce] ... \end{indication}  (titre personnalisé)
+\newtcolorbox{indication}[1][Indication]{
+  colback=black!3, colframe=black!50,
+  boxrule=0.4pt, arc=0pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  fontupper=\small,
+  fonttitle=\bfseries\scshape\small, coltitle=black!50,
+  colbacktitle=black!3,
+  title=#1
+}
