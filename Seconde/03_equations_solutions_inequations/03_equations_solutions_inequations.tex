@@ -22,6 +22,7 @@
     \begin{itemize}
         \item En début de cours, on a fait les fractions décimales remarquables et on les a fait placer sur une droite.
         \item  On peut parler d'abscisse d'un point sur une droite.
+        \item En intro, bien revenir sur le concept d'équation et de solution d'équtaion.
     \end{itemize}
    
 }
@@ -44,7 +45,7 @@
 \section{Equations}
 \begin{exo}[][]
 
-Placez les nombres suivant sur l'axe gradué ci-dessous : -2, 0 , \(\dfrac{1}{2}\), \(\dfrac{3}{2}\), \(-\dfrac{7}{3}\), \(\dfrac{21}{5}\).
+Placer les nombres suivant sur l'axe gradué ci-dessous : -2 ; \(\dfrac{1}{10}\) ; \(\dfrac{1}{2}\) ; \(-\dfrac{7}{10}\) ; \(\dfrac{22}{10}\) ; \(-\dfrac{8}{2}\) ; \(\dfrac{21}{5}\) ; \(-\dfrac{16}{5}\).
 
 \vspace{1cm}
 \begin{tikzpicture}[scale=1.5]
@@ -58,19 +59,47 @@ Placez les nombres suivant sur l'axe gradué ci-dessous : -2, 0 , \(\dfrac{1}{2}
 }
     \draw (5,0.1)--(5,-0.1) node[below] {\(5\)};
 \end{tikzpicture}
+
+\end{exo}
+
+\begin{exo}
+    
+Placer les nombres suivants sur l'axe gradué ci-dessous : \(-\dfrac{1}{4}\) ; \(\dfrac{1}{2}\) ; \(-\dfrac{17}{4}\) ; \(4,75\) ; \(-2,25\).
+
+\vspace{1cm}
+\begin{tikzpicture}[scale=1.5]
+\draw[->] (-5.5,0)--(5.5,0);
+\foreach \x in {-5,..., 4}{
+    \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+    \draw (\x+0.5,0.07)--(\x+0.5,-0.07) ;
+    \foreach \minx in {0.25, 0.5, 0.75}{
+        \draw (\x+\minx, 0.05)--(\x+\minx, -0.05);
+    }
+}
+    \draw (5,0.1)--(5,-0.1) node[below] {\(5\)};
+\end{tikzpicture}
+
+\medskip
+Peut-on placer de manière précise tous ces nombres sur l'axe gradué de l'exercice 1 ?
+
 \end{exo}
 
 \begin{exo}[][]
-
-    Dans chacun des cas ci-dessous, vérifier si le nombre proposé est solution. Sinon, proposer une solution.
-    \begin{tasks}(3)
-    \task \( x+4 = 10\) \hspace{0.5cm} \(x=5\)
-    \task \( 2x-4 = x+1\) \hspace{0.5cm} \(x=5\)
-    \task \( 4x = -12\) \hspace{0.5cm} \(x=-3\)
-    \task \( 4(x+2) = 12\) \hspace{0.5cm} \(x=3\)
-    \task \( 4x = 2\) \hspace{0.5cm} \(x=\dfrac{1}{2}\)
-    \task \( 2x  = \dfrac{2}{3}\) \hspace{0.5cm} \(x=\dfrac{1}{4}\)
-    \end{tasks}
+    Pour chacunes des équations suivantes :
+    \begin{enumerate}
+        \item Dire si le nombre \(5\) est une solution de l'équation.
+        \begin{tasks}(3)
+            \task \(x+4 = 10\)
+            \task  \( 2x-4 = x+1\) 
+            \task \(4 =  \dfrac{20}{x}\)
+        \end{tasks}
+        \item Dire si le nombre \(\dfrac{1}{2}\) est une solution de l'équation.
+        \begin{tasks}(3)
+        \task \(4x = 2\)
+        \task \(2x  = \dfrac{2}{3}\)
+        \task \(-7x= -4,5\)
+        \end{tasks}
+    \end{enumerate}
 \end{exo}
 
 
@@ -137,35 +166,64 @@ Résoudre chacune des équations suivantes, puis placer les solutions sur l'axe 
 Résoudre les équations suivantes \begin{tasks}(3)
     \task \(3(x-12)=21\)
     \task \(\dfrac{-x+5}{4}=20\)
-    \task \(x^2=9\)
+    \task \(\dfrac{27}{x}=-9\)
 \end{tasks}
+\end{exo}
+
+\begin{exo}[][avance]
+
+Existe-t-il trois nombres entiers consécutifs dont la somme est égale à 2026 ?
 \end{exo}
 
 \newpage
 \section{Inéquations}
 
 \prof{
-    Est-ce qu'on dit "inéquation" pour un encadrement ?
-
-    Pas convaincu par ma question 1
+    Ecrire dans le cours exactement la même chose qu'avant, où on a juste remplacé égalité par inégalité.
 }
 \begin{exo}[][]
 
-    On considère \textbf{l'inéquation} \(-2< x\leq 3\) où \(x\) est l'inconnue.
+    On considère \textbf{l'inéquation} \( x< \dfrac{3}{2} \) où \(x\) est l'inconnue.
     \begin{enumerate}
-        \item Pourquoi dit-on "inéquation" et pas "équation" ?
+        \item Lesquels de ces nombres peuvent être une solution de cette inéquation ? \begin{tasks}(3)
+            \task \(0\)
+            \task \(-1\)
+            \task \(3\)
+            \task \(\dfrac{3}{4}\)
+            \task \(1,49\)
+            \task \(-\dfrac{4}{2}\)
+            \task \(-7\)
+            \task \(\pi\)
+            \task \(1,501\)
+            
+        \end{tasks}
+        \item Colorer sur la droite graduée l'ensemble des nombres appartenant à l'ensemble précédent.\\
+        
+        \begin{tikzpicture}[scale=1.5]
+        \draw[->] (-5.7,0)--(5.5,0);
+        \foreach \x in {-5,..., 5}{
+            \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+            \draw (\x-0.5,0.05)--(\x-0.5,-0.05);
+        }
+        \end{tikzpicture}
+    \end{enumerate}
+\end{exo}
+
+
+\begin{exo}[][]
+
+    On considère l'inéquation \(-2< x\leq 3\) où \(x\) est l'inconnue.
+    \begin{enumerate}
         \item Lesquels de ces nombres peuvent être une solution de cette inéquation ? \begin{tasks}(3)
             \task \(0\)
             \task \(2,54\)
-            \task \(13\%\)
-            \task \(4\)
-            \task \(\pi\)
+            \task \(-2,1\)
+            \task \(2,5\%\)
+            \task \(277\%\)
+            \task \(6\)
             \task \(\dfrac{3}{2}\)
             \task \(3\)
             \task \(-2\)
-            \task \(-\dfrac{1}{4}\)
-            \task \(\dfrac{11}{2}\)
-            \task \(\dfrac{125}{100}\)
         \end{tasks}
         \item Colorer sur la droite graduée l'ensemble des nombres appartenant à l'ensemble précédent.\\
         
@@ -178,17 +236,22 @@ Résoudre les équations suivantes \begin{tasks}(3)
     \end{enumerate}
 \end{exo}
 
+
+\prof{
+    Question à se poser : Est-ce qu'on veut que les élèves fassent les graduations ou non, placent zéro ou non ?
+}
 \begin{exo}[][]
 
-    Représenter sur une droite \underline{graduée} les solutions des inéquations suivantes :
-    \begin{enumerate}
-        \item \(0\geq x \geq \dfrac{7}{4}\) 
-        \vspace{1cm}
-        \item \(x \leq -\dfrac{1}{3}\) 
-        \vspace{1cm}
-        \item \(x > -\dfrac{5}{2}\) 
-        \vspace{1cm}
-    \end{enumerate}
+    Représenter sur une droite  les solutions des inéquations suivantes :
+    \begin{tasks}[after-item-skip =1cm](2)
+        \task \(0\leq x \leq \dfrac{7}{4}\) 
+        \task \(2\geq x \geq -1\)
+        \task \(x \leq -\dfrac{1}{3}\) 
+        \task \(x > -\dfrac{5}{2}\) 
+        \task \(-4<x\leq 0\) 
+        \task \(-3>x\geq -12\) 
+    \end{tasks}
+    \vspace{0.6cm}
 \end{exo}
 
 \begin{exo}[][]
@@ -261,7 +324,7 @@ On peut représenter les solutions d'une inéquation dans des intervalles. Pour 
 \begin{exo}[][appro]
     Ecrire sous la forme d'un intervalle l'ensemble des nombres \(x\) tels que \begin{tasks}(2)
         \task \(|x-3|<5\)
-        \task  \(|x-11|\geq 2\)
+        \task  \(|x-11|\leq 2\)
         \task  \(|x+12|<2\)
         \task  \(|x|\geq 4\)
         
