@@ -29,31 +29,103 @@
 \begin{itemize}
     \item Calculer l'image d'un nombre par une fonction, notation \(f(x)\).
     \item Résoudre une équation ou une inéquation du premier degré.
-    \item Reconnaître et prolonger un motif géométrique ou numérique simple.
     \item Placer des points dans un repère à partir d'un tableau de valeurs.
 \end{itemize}
+
 \end{prerequis}
 
 \begin{multicols}{2}
 
 \section{Notations et premiers termes}
 
-\begin{exo}[Rappels][]
+\begin{exo}[Une suite définie explicitement][]
+
 On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n = 3n-2\).
 
 \begin{enumerate}[leftmargin=*]
     \item Calculer \(u_0\), \(u_1\) et \(u_5\).
     \item Calculer \(u_{10}\).
     \item Résoudre l'équation \(u_n = 100\). Que peut-on en déduire ?
-    \item Un élève affirme que \(u_{n+1} = 3n+1\). A-t-il raison ? Justifier.
+    \item Montrer que  \(u_{n+1} = 3n+1\).
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Une suite définie par récurrence][]
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(\left\{\begin{array}{rcl}
+u_0 &= & 5  \\
+u_{n+1} & = & 4u_n
+\end{array}
+\right.\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(u_0\), \(u_1\) et \(u_5\).
+    \item Calculer \(u_{10}\).
+    \item Résoudre l'équation \(u_n = 100\). Que peut-on en déduire ?
+    \item Montrer que  \(u_{n+1} = 3n+1\).
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+    Pour chacune des suites suivantes calculer $u_1$, $u_2$ et $u_3$ et préciser leur mode de définition. Justifier vos réponses par une phrase.
+
+    \begin{enumerate}
+        \item $u_n=\frac{n}{2}+\frac{3}{4}$
+    
+        \item $u_0 = 2$ et $u_{n+1}  =  \frac{u_n}{2}+\frac{3}{4}$
+
+        \item $u_n=\frac{n-2}{n^2+2}$
+
+        \item $u_0 = -3$ et $u_{n+1}  =  -3(u_n)^2+2$
+
+    \end{enumerate}
+    
+\end{exo}
+
+\begin{exo}[Vrai ou faux][]
+Les affirmations suivantes portent sur les modes de définition explicite et par récurrence d'une suite. Dire si chacune est vraie ou fausse, en justifiant.
+
+\begin{enumerate}[leftmargin=*]
+    \item Si une suite \((u_n)\) est définie explicitement, on peut calculer \(u_{50}\) sans connaître \(u_{49}\).
+    \item La suite définie par \(u_n = 7n-3\) est définie par récurrence.
+    \item Pour définir une suite par récurrence, il suffit de donner la relation entre \(u_{n+1}\) et \(u_n\), sans préciser \(u_0\).
+    \item Si une suite est définie par récurrence, il est nécessaire de calculer \(u_0, u_1, \ldots, u_9\) pour connaître \(u_{10}\).
+    \item On considère la suite définie par \(v_3 = 0\) et \(v_{n+1} = v_n +4\). On a \(v_4=16\)
 \end{enumerate}
 \end{exo}
 
 \prof{
 \begin{itemize}
-    \item Bien insister sur la différence entre \(u_n\) (fonction de \(n\)) et l'écriture fonctionnelle \(f(x)\) vue au chapitre précédent : même logique, notation en indice.
-    \item Question 3 : réinvestissement direct de la résolution d'équation. Faire remarquer que la solution doit être un entier naturel pour être un rang valide.
-    \item Question 4 : erreur classique (confondre \(u_{n+1}\) et \(u_n+1\)). À faire verbaliser explicitement par les élèves.
+    \item 1. Vrai : c'est justement l'intérêt d'une formule explicite \(u_n = f(n)\).
+    \item 2. Faux : \(u_n = 7n-3\) donne directement \(u_n\) en fonction de \(n\), c'est une définition explicite.
+    \item 3. Faux : sans terme initial, la relation de récurrence ne détermine pas une suite unique.
+    \item 4. Vrai (en général, sans information supplémentaire) : la relation de récurrence ne donne \(u_{n+1}\) qu'à partir de \(u_n\), il faut donc dérouler le calcul de proche en proche.
+    \item 5. Faux : on a \(v_4 = v_3+4 = 0+4 = 4 \neq 16\).
+\end{itemize}
+}
+
+\begin{exo}[Trouver une suite à partir de ses premiers termes][avance]
+On donne les nombres suivants, qui sont les quatre premiers termes d'une suite \((u_n)\) :
+\[
+u_0 = 1, \quad u_1 = 3, \quad u_2 = 5, \quad u_3 = 7.
+\]
+
+\begin{enumerate}[leftmargin=*]
+    \item Proposer une expression explicite \(u_n = f(n)\), la plus simple possible, cohérente avec ces quatre valeurs.
+    \item Proposer une définition par récurrence (terme initial et relation entre \(u_{n+1}\) et \(u_n\)) cohérente avec ces mêmes valeurs.
+    \item Vérifier que l'expression \(u_n = 2n+1+n(n-1)(n-2)(n-3)\) est elle aussi cohérente avec les quatre valeurs données.
+    \item Cette expression est-elle égale à celle trouvée à la question 1 ? Calculer \(u_4\) avec chacune des deux expressions et comparer.
+    \item Que peut-on en conclure sur le fait de \og deviner \fg{} une suite à partir de quelques-uns de ses termes seulement ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Question 1 : réponse attendue \(u_n = 2n+1\) (ou toute expression équivalente).
+    \item Question 2 : réponse attendue \(u_0=1\) et \(u_{n+1}=u_n+2\).
+    \item Question 3 : le facteur \(n(n-1)(n-2)(n-3)\) s'annule pour \(n=0,1,2,3\), donc l'expression proposée coïncide bien avec \(2n+1\) sur ces quatre valeurs.
+    \item Question 4 : les deux expressions sont différentes : dès \(n=4\), on obtient \(2\times4+1=9\) contre \(9 + 4\times3\times2\times1 = 33\). Deux formules distinctes peuvent donc donner exactement les mêmes premiers termes.
+    \item Question 5 : conclusion essentielle : quelques termes ne suffisent jamais à prouver qu'une formule explicite est \og la bonne \fg{}. Une formule doit être donnée dans l'énoncé (ou démontrée), pas seulement devinée à partir d'exemples. Cela prépare l'idée de démonstration par récurrence, vue plus tard dans l'année.
 \end{itemize}
 }
 
@@ -322,3 +394,4 @@ On considère la suite \((u_n)\) définie par récurrence par \(u_0=1\) et, pour
 \end{multicols}
 
 \end{document}
+}
