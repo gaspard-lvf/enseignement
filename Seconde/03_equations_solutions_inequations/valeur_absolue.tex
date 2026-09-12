@@ -21,8 +21,8 @@
 \prof{
     \begin{itemize}
         \item Fiche conçue pour être faite en autonomie complète (partie 3 du chapitre, non traitée en classe faute de temps).
-        \item Toutes les propriétés utiles sont données directement dans les encadrés (définition, propriété, méthode) : l'élève n'a pas besoin du cours fait en classe pour avancer.
-        \item Les encadrés \og Indication \fg{} sont visibles dans les deux versions : ce sont des coups de pouce, pas des corrigés.
+        \item Les parties I et III donnent directement les propriétés utiles (définition, propriété, méthode). La partie II est construite différemment : elle amène l'élève, par des questions guidées, à retrouver \textbf{seul} la définition de la valeur absolue et ses propriétés, à partir de la propriété de distance vue en partie I.
+        \item Les encadrés \og Indication \fg{} sont visibles dans les deux versions : ce sont des coups de pouce, pas des corrigés. Ils sont placés à la fin de chaque exercice et renvoient à la question concernée.
         \item Le corrigé (résultats finaux uniquement) est en dernière page, à ne consulter qu'après avoir cherché.
     \end{itemize}
 }
@@ -40,7 +40,7 @@
 
 \begin{cbox}
 \textbf{Comment travailler cette fiche seul(e) ?}\\
-Avance dans l'ordre : chaque partie s'appuie sur la précédente. Cherche vraiment chaque question avant de lire l'indication qui suit (elle est là pour te débloquer, pas pour remplacer ta réflexion). Les encadrés gris \textit{Définition}, \textit{Propriété} et \textit{Méthode} contiennent tout ce dont tu as besoin : apprends-les au fur et à mesure, tu en auras besoin pour la suite du chapitre. Le corrigé en dernière page ne donne que les résultats : il sert à vérifier, pas à chercher.
+Avancez dans l'ordre : chaque partie s'appuie sur la précédente. Cherchez vraiment chaque question avant de lire l'indication qui suit (elle est là pour vous débloquer, pas pour remplacer votre réflexion). Les encadrés gris \textit{Définition}, \textit{Propriété} et \textit{Méthode} contiennent tout ce dont vous avez besoin : apprenez-les au fur et à mesure, vous en aurez besoin pour la suite du chapitre. Le corrigé en dernière page ne donne que les résultats : il sert à vérifier, pas à chercher.
 \end{cbox}
 
 \section{Distance entre deux nombres}
@@ -49,29 +49,13 @@ Avance dans l'ordre : chaque partie s'appuie sur la précédente. Cherche vraime
     On souhaite calculer combien d'années ont vécu ou duré certains événements historiques.
     \begin{enumerate}
         \item Marie Curie a vécu de 1867 à 1934. Combien d'années a-t-elle vécu ?
-    \end{enumerate}
-
-    \begin{indication}
-        On associe à chaque date un nombre relatif : une année après J.-C. correspond à un nombre \textbf{positif}, une année avant J.-C. correspond à un nombre \textbf{négatif}. Par exemple, l'an 384 av. J.-C. correspond au nombre \(-384\), et l'an 1934 (apr. J.-C.) correspond au nombre \(1934\).
-    \end{indication}
-
-    \begin{enumerate}
-        \setcounter{enumi}{1}
         \item Aristote a vécu de 384 av. J.-C. à 322 av. J.-C. À quels nombres relatifs correspondent ces deux dates ? En déduire combien d'années il a vécu.
         \item Le désert de Qumran, près de la mer Morte, a été occupé par les esséniens entre 150 av. J.-C. et 68 apr. J.-C. Combien d'années ont-ils occupé ce désert ?
-    \end{enumerate}
-
-    \begin{indication}
-        Dans les trois questions précédentes, pour calculer une durée, tu as toujours fait la même opération sur les deux nombres relatifs associés aux dates : le plus grand nombre moins le plus petit. C'est exactement ce qu'on appelle la \textbf{distance} entre deux nombres.
-    \end{indication}
-
-    \begin{enumerate}
-        \setcounter{enumi}{3}
         \item Pythagore est mort en 480 av. J.-C., après avoir vécu 80 ans. En quelle année est-il né ?
     \end{enumerate}
 
     \begin{indication}
-        Ici, ce n'est plus une durée que l'on cherche, mais une des deux dates. Place les deux nombres connus (l'année de la mort, et la durée de vie) sur une droite orientée du passé vers le présent : naître, puis vivre 80 ans, puis mourir en \(-480\), ça revient à \textbf{avancer} de 80 sur cette droite en partant de l'année de naissance.
+        Associez à chaque date un nombre relatif (positif après J.-C., négatif avant J.-C.), puis placez ces nombres sur une droite graduée.
     \end{indication}
 \end{exo}
 
@@ -91,25 +75,44 @@ Avance dans l'ordre : chaque partie s'appuie sur la précédente. Cherche vraime
     \begin{enumerate}
         \item Placer les points A d'abscisse \(-3\) ; B d'abscisse \(1,6\) ; C d'abscisse \(3,4\) et D d'abscisse \(\dfrac{14}{3}\).
         \item Calculer les distances AB, BC, et DA.
+        \item Que se passe-t-il si vous calculez (le plus petit) \(-\) (le plus grand) au lieu de (le plus grand) \(-\) (le plus petit) ? Comparez les deux résultats obtenus pour une même distance.
     \end{enumerate}
 
     \begin{indication}
-        Pour chaque distance, commence par repérer lequel des deux nombres est le plus grand, puis calcule (le plus grand) \(-\) (le plus petit). Par exemple, pour AB : \(1,6 > -3\), donc \(\text{AB} = 1,6-(-3)\).
-    \end{indication}
+        \textbf{Question 2.} Pour chaque distance, commencez par repérer lequel des deux nombres est le plus grand, puis calculez (le plus grand) \(-\) (le plus petit). Par exemple, pour AB : \(1,6 > -3\), donc \(\text{AB} = 1,6-(-3)\).
 
-    \begin{enumerate}
-        \setcounter{enumi}{2}
-        \item Que se passe-t-il si tu calcules (le plus petit) \(-\) (le plus grand) au lieu de (le plus grand) \(-\) (le plus petit) ? Compare les deux résultats obtenus pour une même distance.
-    \end{enumerate}
+        \textbf{Question 3.} Comparez par exemple \(1,6-(-3)\) et \(-3-1,6\).
+    \end{indication}
 \end{exo}
 
 \begin{prop}
     La distance entre deux nombres \(a\) et \(b\) est égale à \(b-a\) si \(b\geq a\), ou à \(a-b\) si \(a\geq b\). Autrement dit, on prend toujours (le plus grand nombre) moins (le plus petit).
-
-    Cette distance se note aussi \(|b-a|\) (on lit \og valeur absolue de \(b-a\) \fg{}). On a donc \(|b-a| = |a-b|\) : calculer dans un sens ou dans l'autre donne le même résultat.
 \end{prop}
 
 \section{Valeur absolue d'un nombre}
+
+Pour deux nombres \(a\) et \(b\), on note \(|b-a|\) la distance entre \(b\) et \(a\) (on lit \og valeur absolue de \(b-a\) \fg{}). Comme cette distance est la même que l'on calcule \(b-a\) ou \(a-b\) (partie précédente), on a \(|b-a| = |a-b|\) : calculer dans un sens ou dans l'autre donne le même résultat.
+
+\begin{exo}[][]
+    On souhaite maintenant comprendre ce que représente la valeur absolue d'un seul nombre \(x\) (et non plus d'une paire de nombres).
+    \begin{enumerate}
+        \item En reprenant la notation ci-dessus avec \(b=x\) et \(a=0\), comment note-t-on la distance entre \(x\) et \(0\) ?
+        \item Simplifier l'écriture \(x-0\). En déduire une autre façon, plus simple, d'écrire cette distance : on la note \(|x|\).
+        \item Pour \(x=5\), lequel de \(5\) et \(0\) est le plus grand ? En déduire la valeur de \(|5|\).
+        \item Pour \(x=-5\), lequel de \(-5\) et \(0\) est le plus grand ? En déduire la valeur de \(|-5|\).
+        \item Que remarquez-vous en comparant \(|5|\) et \(|-5|\) ?
+        \item Plus généralement, si \(x\geq 0\), lequel de \(x\) et \(0\) est le plus grand ? En déduire une écriture de \(|x|\) sans valeur absolue.
+        \item Si \(x<0\), lequel de \(x\) et \(0\) est le plus grand ? En déduire une écriture de \(|x|\) sans valeur absolue (elle doit faire intervenir un signe \(-\)).
+    \end{enumerate}
+
+    \begin{indication}
+        \textbf{Question 2.} \(x-0=x\), donc la distance entre \(x\) et \(0\) s'écrit \(|x-0|\), c'est-à-dire \(|x|\).
+
+        \textbf{Questions 3 et 4.} Utilisez la propriété de la partie précédente : la distance est (le plus grand) \(-\) (le plus petit).
+
+        \textbf{Question 7.} Si \(x<0\), c'est \(0\) qui est le plus grand des deux nombres, donc la distance s'écrit \(0-x\).
+    \end{indication}
+\end{exo}
 
 \begin{defi}
     La \textbf{valeur absolue} d'un nombre \(x\), notée \(|x|\), est la distance entre \(x\) et \(0\) sur une droite graduée.
@@ -118,22 +121,30 @@ Avance dans l'ordre : chaque partie s'appuie sur la précédente. Cherche vraime
 \end{defi}
 
 \begin{exple}
-    \(|5| = 5\) car \(5\geq 0\). \(\quad |-5| = -(-5) = 5\) car \(-5<0\).
-
-    On remarque que \(|5| = |-5|\) : les nombres \(5\) et \(-5\) sont bien à la même distance de \(0\).
+    \(|12| = 12\) car \(12\geq 0\). \(\quad |-8| = -(-8) = 8\) car \(-8<0\).
 \end{exple}
 
 \begin{exo}[][]
-    Essayez d'enlever les valeurs absolues pour finir les calculs suivants :
+    En vous appuyant sur des exemples de nombres positifs et négatifs de votre choix (vous pouvez reprendre \(5\) et \(-5\), ou en choisir d'autres), répondez aux questions suivantes.
     \begin{enumerate}
-        \item \(|3-5| = \)
+        \item Une valeur absolue peut-elle être négative ?
+        \item Comparez \(|x|\) et \(|-x|\) pour plusieurs valeurs de \(x\), positives et négatives. Que remarquez-vous ?
+        \item Existe-t-il un nombre \(x\) tel que \(|x|=0\) ? Si oui, lequel ? Y en a-t-il un autre ?
     \end{enumerate}
 
     \begin{indication}
-        Traite d'abord ce qu'il y a \textbf{à l'intérieur} de la valeur absolue, comme s'il n'y avait pas de barres : \(3-5=-2\). Applique ensuite la définition à ce résultat : \(|-2| = 2\) car \(-2<0\).
-    \end{indication}
+        \textbf{Question 1.} Une valeur absolue est une distance : une distance peut-elle être négative ?
 
+        \textbf{Question 2.} Distinguez le cas où \(x\) est positif et celui où \(x\) est négatif, comme dans l'exercice précédent.
+
+        \textbf{Question 3.} Un nombre est-il à distance nulle de lui-même ? Peut-il y avoir un autre nombre à distance nulle de \(0\) ?
+    \end{indication}
+\end{exo}
+
+\begin{exo}[][]
+    Essayez d'enlever les valeurs absolues pour finir les calculs suivants :
     \begin{tasks}(3)
+        \task[1.] \(|3-5| = \)
         \task[2.] \(|5-3| = \)
         \task[3.] \(|-6| = \)
         \task[4.] \(|34| = \)
@@ -142,7 +153,9 @@ Avance dans l'ordre : chaque partie s'appuie sur la précédente. Cherche vraime
     \end{tasks}
 
     \begin{indication}
-        Attention aux questions 5 et 6 : dans \(-|5|\), le signe \og \(-\) \fg{} est \textbf{devant} la valeur absolue, il ne fait pas partie de ce qu'il y a dans les barres. Calcule d'abord \(|5|\), puis applique le signe \(-\) au résultat. De même dans \(|3|-|5|\), calcule séparément \(|3|\) et \(|5|\) avant de soustraire.
+        \textbf{Question 1.} Traitez d'abord ce qu'il y a \textbf{à l'intérieur} de la valeur absolue, comme s'il n'y avait pas de barres : \(3-5=-2\). Appliquez ensuite la définition à ce résultat : \(|-2| = 2\) car \(-2<0\).
+
+        \textbf{Questions 5 et 6.} Dans \(-|5|\), le signe \og \(-\) \fg{} est \textbf{devant} la valeur absolue : il ne fait pas partie de ce qu'il y a dans les barres. Calculez d'abord \(|5|\), puis appliquez le signe \(-\) au résultat. De même dans \(|3|-|5|\), calculez séparément \(|3|\) et \(|5|\) avant de soustraire.
     \end{indication}
 \end{exo}
 
@@ -181,89 +194,80 @@ Avance dans l'ordre : chaque partie s'appuie sur la précédente. Cherche vraime
 \begin{exo}[][]
     Écrire sous la forme d'un intervalle l'ensemble des nombres \(x\) tels que :
     \begin{tasks}(2)
-        \task \(|x-11|\leq 2\)
-        \task \(|x+12|<2\)
+        \task[1.] \(|x-11|\leq 2\)
+        \task[2.] \(|x+12|<2\)
     \end{tasks}
 
     \begin{indication}
-        Pour \(|x-11|\leq 2\), attention à l'inégalité \textbf{large} : les deux bornes font cette fois partie des solutions (crochets fermés).
+        \textbf{Question 1.} Attention à l'inégalité \textbf{large} : les deux bornes font cette fois partie des solutions (crochets fermés).
 
-        Pour \(|x+12|<2\), remarque que \(|x+12| = |x-(-12)|\) : il s'agit donc de la distance entre \(x\) et \(-12\), et on peut appliquer la même méthode qu'avec \(|x-3|<5\), en remplaçant \(3\) par \(-12\).
+        \textbf{Question 2.} Remarquez que \(|x+12| = |x-(-12)|\) : il s'agit donc de la distance entre \(x\) et \(-12\), et vous pouvez appliquer la même méthode qu'avec \(|x-3|<5\), en remplaçant \(3\) par \(-12\).
     \end{indication}
 \end{exo}
-
-\begin{rem}
-    Le symbole \(\cup\) se lit \og union \fg{} : \(A\cup B\) désigne l'ensemble des nombres qui appartiennent à \(A\) \textbf{ou} à \(B\) (éventuellement aux deux). On l'utilise quand l'ensemble des solutions est formé de plusieurs morceaux séparés.
-\end{rem}
 
 \begin{exo}[][appro]
     On souhaite résoudre \(|x|\geq 4\).
     \begin{enumerate}
         \item Traduire cette inéquation en langage de distance (par rapport à quel nombre ?).
-        \item Sur une droite graduée, colorier tous les nombres qui conviennent. Obtiens-tu un seul morceau, ou plusieurs ?
-        \item En déduire l'ensemble des solutions de \(|x|\geq 4\), écrit à l'aide d'un \(\cup\).
+        \item Sur une droite graduée, colorier tous les nombres qui conviennent. Obtenez-vous un seul morceau, ou plusieurs ?
+        \item En déduire l'ensemble des solutions de \(|x|\geq 4\), en décrivant avec des mots les nombres qui conviennent.
     \end{enumerate}
 
     \begin{indication}
-        Contrairement à l'exemple \(|x-3|<5\), ici on cherche les nombres \textbf{loin} de \(0\) (à une distance d'\textbf{au moins} 4), et non les nombres proches de \(0\). Il y a donc les grands nombres positifs \textbf{et} les grands nombres négatifs (en valeur absolue) : deux morceaux, de part et d'autre de \(0\).
+        \textbf{Question 1.} Il s'agit de la distance entre \(x\) et \(0\).
+
+        \textbf{Questions 2 et 3.} Contrairement à l'exemple \(|x-3|<5\), on cherche ici les nombres \textbf{loin} de \(0\) (à une distance d'au moins \(4\)), et non les nombres proches de \(0\) : il y a donc les grands nombres positifs \textbf{et} les grands nombres négatifs, ce qui donne deux morceaux, de part et d'autre de \(0\).
     \end{indication}
 \end{exo}
 
 \section{Vrai ou faux : propriétés de la valeur absolue}
-
-\begin{indication}
-    Pour montrer qu'une propriété est \textbf{fausse}, un seul \textbf{contre-exemple} (un exemple de nombres pour lesquels ça ne marche pas) suffit. Pour montrer qu'une propriété est \textbf{vraie pour tous les nombres}, un seul exemple ne suffit jamais : il faut utiliser la définition de la valeur absolue (vue en partie 2), et ce quels que soient les signes des nombres choisis.
-\end{indication}
 
 \begin{exo}[Vrai ou Faux][appro]
 
     Les propriétés suivantes sont-elles vraies ou fausses ? Justifier votre réponse.
     \begin{enumerate}
         \item Pour tous nombres \(a\) et \(b\), \(|a+b| = |a|+|b|\).
-    \end{enumerate}
-
-    \begin{indication}
-        Essaie avec \(a=3\) et \(b=-3\) : calcule séparément \(|a+b|\) et \(|a|+|b|\), et compare.
-    \end{indication}
-
-    \begin{enumerate}
-        \setcounter{enumi}{1}
         \item Il existe des nombres \(a\) et \(b\) tels que \(|a+b| = |a|+|b|\).
         \item Pour tout nombre réel \(a\), \(|-a|=|a|\).
     \end{enumerate}
 
     \begin{indication}
-        Pour la question 2, il suffit de trouver \textbf{un} exemple qui fonctionne (par exemple avec deux nombres de même signe, ou l'un des deux nul).
+        \textbf{Question 1.} Pour montrer qu'une propriété est \textbf{fausse}, un seul \textbf{contre-exemple} suffit. Essayez avec \(a=3\) et \(b=-3\) : calculez séparément \(|a+b|\) et \(|a|+|b|\), et comparez.
 
-        Pour la question 3, reviens à la définition de la partie 2 en distinguant les cas \(a\geq 0\) et \(a<0\), ou pense en termes de distance à \(0\).
+        \textbf{Question 2.} Il suffit de trouver \textbf{un} exemple qui fonctionne (par exemple avec deux nombres de même signe, ou l'un des deux nul).
+
+        \textbf{Question 3.} Une propriété vraie pour tous les nombres ne peut pas se justifier par un seul exemple : revenez à la définition de la partie II, en distinguant les cas \(a\geq 0\) et \(a<0\).
     \end{indication}
 \end{exo}
 
 \begin{cbox}
-\textbf{Bilan : as-tu compris cette partie ?} Coche ce que tu es capable de faire sans regarder la fiche.
+\textbf{Bilan : avez-vous compris cette partie ?} Cochez ce que vous êtes capable de faire sans regarder la fiche.
 \begin{itemize}
     \item[$\square$] Je sais expliquer avec mes mots ce qu'est la distance entre deux nombres.
-    \item[$\square$] Je connais la définition de \(|x|\) et je sais l'appliquer à un nombre positif ou négatif.
+    \item[$\square$] Je sais retrouver la définition de \(|x|\) à partir de la distance entre \(x\) et \(0\).
     \item[$\square$] Je sais calculer une valeur absolue, y compris quand le signe \(-\) est \textbf{devant} les barres.
+    \item[$\square$] Je sais qu'une valeur absolue n'est jamais négative, et que \(|-x|=|x|\) pour tout nombre \(x\).
     \item[$\square$] Je sais résoudre \(|x-a|<r\) ou \(|x-a|\leq r\) en faisant un schéma.
-    \item[$\square$] Je sais que \(|x|\geq r\) donne \textbf{deux} morceaux de solutions, reliés par \(\cup\).
+    \item[$\square$] Je sais que \(|x|\geq r\) donne deux groupes de solutions : les nombres inférieurs ou égaux à \(-r\), et ceux supérieurs ou égaux à \(r\).
 \end{itemize}
-Si tu as un \(\square\) que tu n'arrives pas à cocher, relis l'encadré correspondant avant de passer à la suite du chapitre.
+Si vous avez un \(\square\) que vous n'arrivez pas à cocher, relisez l'encadré correspondant avant de passer à la suite du chapitre.
 \end{cbox}
 
 \newpage
 \section*{Corrigé}
 \begin{indication}[À ne consulter qu'après avoir cherché !]
-    Seuls les résultats finaux sont donnés ici : ils servent à vérifier ton travail, pas à le remplacer.
+    Seuls les résultats finaux sont donnés ici : ils servent à vérifier votre travail, pas à le remplacer.
 \end{indication}
 
 \begin{enumerate}
     \item \textbf{Exercice 1.} Marie Curie : \(67\) ans. Aristote : \(-384\) et \(-322\), donc \(62\) ans. Qumran : \(218\) ans. Pythagore : né en \(560\) av. J.-C.
     \item \textbf{Exercice 2.} \(\text{AB}=4,6\) ; \(\text{BC}=1,8\) ; \(\text{DA}=\dfrac{23}{3}\) (soit environ \(7,67\)). Les deux ordres de soustraction donnent des résultats opposés (l'un est l'opposé de l'autre) ; la distance est la valeur \textbf{positive} des deux.
-    \item \textbf{Exercice 3.} \(|3-5|=2\) ; \(|5-3|=2\) ; \(|-6|=6\) ; \(|34|=34\) ; \(-|5|=-5\) ; \(|3|-|5|=-2\).
-    \item \textbf{Exercice 4.} \(|x-11|\leq 2 \iff x\in[9\ ;\ 13]\). \quad \(|x+12|<2 \iff x\in\ ]-14\ ;\ -10[\).
-    \item \textbf{Exercice 5.} \(|x|\geq 4 \iff x\in\ ]-\infty\ ;\ -4]\cup[4\ ;\ +\infty[\).
-    \item \textbf{Exercice 6.} 1. Faux (par exemple \(a=3\), \(b=-3\) : \(|a+b|=0\) mais \(|a|+|b|=6\)). 2. Vrai (par exemple \(a=3\), \(b=5\), ou dès que \(a\) et \(b\) sont de même signe, ou que l'un des deux est nul). 3. Vrai, pour tout réel \(a\).
+    \item \textbf{Exercice 3.} La distance entre \(x\) et \(0\) s'écrit \(|x-0|\), c'est-à-dire \(|x|\). \(|5|=5\) ; \(|-5|=5\) ; on remarque \(|5|=|-5|\). Pour \(x\geq 0\), \(|x|=x\). Pour \(x<0\), \(|x|=-x\).
+    \item \textbf{Exercice 4.} Une valeur absolue n'est jamais négative, car c'est une distance. On a \(|-x|=|x|\) pour tout nombre \(x\). Le seul nombre \(x\) tel que \(|x|=0\) est \(x=0\) (c'est le seul nombre à distance nulle de \(0\)).
+    \item \textbf{Exercice 5.} \(|3-5|=2\) ; \(|5-3|=2\) ; \(|-6|=6\) ; \(|34|=34\) ; \(-|5|=-5\) ; \(|3|-|5|=-2\).
+    \item \textbf{Exercice 6.} \(|x-11|\leq 2\) donne \(x\in[9\ ;\ 13]\). \(|x+12|<2\) donne \(x\in\ ]-14\ ;\ -10[\).
+    \item \textbf{Exercice 7.} \(|x|\geq 4\) : l'ensemble des solutions est formé des nombres inférieurs ou égaux à \(-4\), et des nombres supérieurs ou égaux à \(4\).
+    \item \textbf{Exercice 8.} 1. Faux (par exemple \(a=3\), \(b=-3\) : \(|a+b|=0\) mais \(|a|+|b|=6\)). 2. Vrai (par exemple \(a=3\), \(b=5\), ou dès que \(a\) et \(b\) sont de même signe, ou que l'un des deux est nul). 3. Vrai, pour tout réel \(a\).
 \end{enumerate}
 
 \end{document}
