@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% feuillecours.sty
+%%% Package pour la mise en forme des fiches de cours de mathématiques.
+%%% S'appuie sur feuille.sty, qui fournit déjà les environnements de
+%%% théorème utiles à un cours : defi/defis, prop/props, thm, defiprop,
+%%% demo, exple/exples, rem/rems, note, met, app, ill.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{feuillecours}[2026/09/12 v1.0 Feuille de cours de maths]
+
+\RequirePackage{feuille}
+\fancyhead[L]{Cours}
+
+%%%ENCADRÉ OBJECTIFS
+%%% Usage : \begin{objectifs} ... \end{objectifs}
+%%%         \begin{objectifs}[Rappels] ... \end{objectifs}  (titre personnalisé)
+\newtcolorbox{objectifs}[1][Objectifs]{
+  colback=white, colframe=black,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white,
+  title=#1,
+  before upper={\begin{multicols}{2}},
+  after upper={\end{multicols}}
+}
+
+%%%ENCADRÉ PRÉ-REQUIS
+%%% Usage : \begin{prerequis} ... \end{prerequis}
+%%%         \begin{prerequis}[Rappels] ... \end{prerequis}  (titre personnalisé)
+\newtcolorbox{prerequis}[1][Pré-requis]{
+  colback=white, colframe=black,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white,
+  title=#1,
+  before upper={\begin{multicols}{2}},
+  after upper={\end{multicols}}
+}
+
+\endinput
