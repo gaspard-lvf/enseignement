@@ -89,15 +89,129 @@ Avancez dans l'ordre : chaque partie s'appuie sur la précédente. Cherchez vrai
     La distance entre deux nombres \(a\) et \(b\) est égale à \(b-a\) si \(b\geq a\), ou à \(a-b\) si \(a\geq b\). Autrement dit, on prend toujours (le plus grand nombre) moins (le plus petit).
 \end{prop}
 
-\section{Valeur absolue d'un nombre}
+\newpage
 
-Pour deux nombres \(a\) et \(b\), on note \(|b-a|\) la distance entre \(b\) et \(a\) (on lit \og valeur absolue de \(b-a\) \fg{}). Comme cette distance est la même que l'on calcule \(b-a\) ou \(a-b\) (partie précédente), on a \(|b-a| = |a-b|\) : calculer dans un sens ou dans l'autre donne le même résultat.
+\section{Valeur absolue entre deux nombres}
+
+Pour deux nombres \(a\) et \(b\), on note \(|b-a|\) la \textbf{distance} entre \(b\) et \(a\) (on lit \og valeur absolue de \(b-a\) \fg{}). Comme cette distance est la même que l'on calcule \(b-a\) ou \(a-b\) (partie précédente), on a \(|b-a| = |a-b|\) : calculer dans un sens ou dans l'autre donne le même résultat.
+
+\begin{exo}
+    \begin{enumerate}
+        \item Soit \(x\) un nombre. Complétez à l'aide de la définition ci-dessus : \(|x-2|\) est égal à la distance entre \(\dots\) et \(\dots\)
+        \item On considère l'inéquation \(|x-2|\leq 1\).\begin{enumerate}
+            \item Compléter : \(|x-2|\leq 1\) signifie que la distance entre \(\dots\) et \(\dots\) est inférieure ou égale à \(\dots\).
+            \item L'inéquation \(|x-2|\leq 1\) est-elle vrai ...\begin{tasks}[label=(\roman*)]  (3)
+                \task Si \(x=5\) ?
+                \task Si \(x=1\) ?
+                \task Si \(x=2.5\) ?
+            \end{tasks}
+            \item Colorier sur la droite numérique toutes les solutions possibles pour \(x\) :
+            
+                \vspace{0.3cm}
+    \begin{tikzpicture}[scale=1.1]
+        \draw[->] (-3.5,0)--(9.5,0);
+        \foreach \x in {-3,...,9}{
+            \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+        }
+    \end{tikzpicture}
+    \item En déduire les solutions de l'inéquation \(|x-2|\leq 1\) sous la forme d'un intervalle.
+        \end{enumerate}
+    \end{enumerate}
+\end{exo}
+
+\vspace{0.5cm}
+
+\begin{met}
+    Pour résoudre une inéquation du type \(|x-a| < r\) (avec \(r>0\)) :
+    \begin{enumerate}
+        \item traduire l'inéquation en langage de distance : \og la distance entre \(x\) et \(a\) est strictement inférieure à \(r\) \fg{} ;
+        \item faire un schéma sur une droite graduée : placer \(a\), puis reculer de \(r\) et avancer de \(r\) ;
+        \item lire les deux bornes de l'intervalle obtenu ;
+        \item écrire l'ensemble des solutions sous forme d'intervalle.
+    \end{enumerate}
+\end{met}
+
+\begin{exple}
+    Résolvons \(|x-3|<5\). Cela signifie que la distance entre \(x\) et \(3\) est strictement inférieure à \(5\) : \(x\) doit donc se trouver entre \(3-5=-2\) et \(3+5=8\).
+
+    \vspace{0.3cm}
+    \begin{tikzpicture}[scale=1.1]
+        \draw[->] (-3.5,0)--(9.5,0);
+        \foreach \x in {-3,...,9}{
+            \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+        }
+        \draw[very thick, blue] (-2,0)--(8,0);
+        \draw[dashed] (3,0.6)--(3,-0.4) node[below] {};
+        \draw[<->, red] (3,0.4)--(8,0.4) node[midway, above] {\(3+5\)};
+        \draw[<->, red] (-2,0.4)--(3,0.4) node[midway, above] {\(3-5\)};
+        \node[circle, draw, fill=white, inner sep=1.5pt] at (-2,0) {};
+        \node[circle, draw, fill=white, inner sep=1.5pt] at (8,0) {};
+        \draw[very thick, blue] (-2.2,-0.5) -- (-2,-0.5) -- (-2,0.5) -- (-2.2,0.5);
+        \draw[very thick, blue] (8.2,-0.5) -- (8,-0.5) -- (8,0.5) -- (8.2,0.5);
+    \end{tikzpicture}
+
+    Les bornes \(-2\) et \(8\) ne sont pas solutions (l'inégalité est stricte), donc l'ensemble des solutions est l'intervalle \(]-2\ ;\ 8[\).
+\end{exple}
+
+\begin{exo}[][]
+    Écrire sous la forme d'un intervalle l'ensemble des nombres \(x\) tels que :
+    \begin{tasks}(2)
+        \task[1.] \(|x-11|\leq 2\)
+        \task[2.] \(|x+12|<2\)
+    \end{tasks}
+
+    \begin{indication}
+        \textbf{Question 1.} Attention à l'inégalité \textbf{large} : les deux bornes font cette fois partie des solutions (crochets fermés).
+
+        \textbf{Question 2.} Remarquez que \(|x+12| = |x-(-12)|\) : il s'agit donc de la distance entre \(x\) et \(-12\), et vous pouvez appliquer la même méthode qu'avec \(|x-3|<5\), en remplaçant \(3\) par \(-12\).
+    \end{indication}
+\end{exo}
+
+\begin{exo}[Plus difficile. Passer la question si besoin][appro]
+
+
+    On souhaite résoudre \(|x|\geq 4\).
+    \begin{enumerate}
+        \item Traduire cette inéquation en langage de distance (par rapport à quel nombre ?).
+        \item Sur une droite graduée, colorier tous les nombres qui conviennent. Obtenez-vous un seul morceau, ou plusieurs ?
+        \item En déduire l'ensemble des solutions de \(|x|\geq 4\), en décrivant avec des mots les nombres qui conviennent.
+    \end{enumerate}
+
+    \begin{indication}
+        \textbf{Question 1.} Il s'agit de la distance entre \(x\) et \(0\).
+
+        \textbf{Questions 2 et 3.} Contrairement à l'exemple \(|x-3|<5\), on cherche ici les nombres \textbf{loin} de \(0\) (à une distance d'au moins \(4\)), et non les nombres proches de \(0\) : il y a donc les grands nombres positifs \textbf{et} les grands nombres négatifs, ce qui donne deux morceaux, de part et d'autre de \(0\).
+    \end{indication}
+\end{exo}
+
+\section{Calculer avec des valeurs absolues}
+
+\begin{exo}[][]
+    Essayez d'enlever les valeurs absolues pour finir les calculs suivants :
+    \begin{tasks}(3)
+        \task[1.] \(|3-5| = \)
+        \task[2.] \(|5-3| = \)
+        \task[3.] \(|5| = \)
+        \task[4.] \(|-34| = \)
+        \task[5.] \(-|5| = \)
+        \task[6.] \(|3|-|5| = \)
+    \end{tasks}
+
+    \begin{indication}
+        \textbf{Question 1.} Le nombre \(|3-5|\) correspond à la distance entre \(3\) et \(5\). Le plus grand des deux est \(5\), le plus petit est \(3\), donc \(|3-5| = 5-3=\dots\).
+
+        \textbf{Question 3 et 4.} On peut remarquer que \(|5| = |5-0|\) \(\dots\)
+
+        \textbf{Questions 5 et 6.} Dans \(-|5|\), le signe \og \(-\) \fg{} est \textbf{devant} la valeur absolue : il ne fait pas partie de ce qu'il y a dans les barres. Calculez d'abord \(|5|\), puis appliquez le signe \(-\) au résultat. De même dans \(|3|-|5|\), calculez séparément \(|3|\) et \(|5|\) avant de soustraire.
+    \end{indication}
+\end{exo}
+
+
 
 \begin{exo}[][]
     On souhaite maintenant comprendre ce que représente la valeur absolue d'un seul nombre \(x\) (et non plus d'une paire de nombres).
     \begin{enumerate}
-        \item En reprenant la notation ci-dessus avec \(b=x\) et \(a=0\), comment note-t-on la distance entre \(x\) et \(0\) ?
-        \item Simplifier l'écriture \(x-0\). En déduire une autre façon, plus simple, d'écrire cette distance : on la note \(|x|\).
+        \item Comment note-t-on la distance entre \(x\) et \(0\) avec une valeur absolue ?
         \item Pour \(x=5\), lequel de \(5\) et \(0\) est le plus grand ? En déduire la valeur de \(|5|\).
         \item Pour \(x=-5\), lequel de \(-5\) et \(0\) est le plus grand ? En déduire la valeur de \(|-5|\).
         \item Que remarquez-vous en comparant \(|5|\) et \(|-5|\) ?
@@ -106,11 +220,11 @@ Pour deux nombres \(a\) et \(b\), on note \(|b-a|\) la distance entre \(b\) et \
     \end{enumerate}
 
     \begin{indication}
-        \textbf{Question 2.} \(x-0=x\), donc la distance entre \(x\) et \(0\) s'écrit \(|x-0|\), c'est-à-dire \(|x|\).
+        \textbf{Question 1.} \(x-0=x\), donc la distance entre \(x\) et \(0\) s'écrit \(|x-0|\), c'est-à-dire \(|x|\).
 
-        \textbf{Questions 3 et 4.} Utilisez la propriété de la partie précédente : la distance est (le plus grand) \(-\) (le plus petit).
+        \textbf{Questions 2 et 3.} Utilisez la propriété de la partie précédente : la distance est (le plus grand) \(-\) (le plus petit).
 
-        \textbf{Question 7.} Si \(x<0\), c'est \(0\) qui est le plus grand des deux nombres, donc la distance s'écrit \(0-x\).
+        \textbf{Question 6.} Si \(x<0\), c'est \(0\) qui est le plus grand des deux nombres, donc la distance s'écrit \(0-x\).
     \end{indication}
 \end{exo}
 
@@ -141,84 +255,7 @@ Pour deux nombres \(a\) et \(b\), on note \(|b-a|\) la distance entre \(b\) et \
     \end{indication}
 \end{exo}
 
-\begin{exo}[][]
-    Essayez d'enlever les valeurs absolues pour finir les calculs suivants :
-    \begin{tasks}(3)
-        \task[1.] \(|3-5| = \)
-        \task[2.] \(|5-3| = \)
-        \task[3.] \(|-6| = \)
-        \task[4.] \(|34| = \)
-        \task[5.] \(-|5| = \)
-        \task[6.] \(|3|-|5| = \)
-    \end{tasks}
 
-    \begin{indication}
-        \textbf{Question 1.} Traitez d'abord ce qu'il y a \textbf{à l'intérieur} de la valeur absolue, comme s'il n'y avait pas de barres : \(3-5=-2\). Appliquez ensuite la définition à ce résultat : \(|-2| = 2\) car \(-2<0\).
-
-        \textbf{Questions 5 et 6.} Dans \(-|5|\), le signe \og \(-\) \fg{} est \textbf{devant} la valeur absolue : il ne fait pas partie de ce qu'il y a dans les barres. Calculez d'abord \(|5|\), puis appliquez le signe \(-\) au résultat. De même dans \(|3|-|5|\), calculez séparément \(|3|\) et \(|5|\) avant de soustraire.
-    \end{indication}
-\end{exo}
-
-\section{Résoudre une inéquation avec une valeur absolue}
-
-\begin{met}
-    Pour résoudre une inéquation du type \(|x-a| < r\) (avec \(r>0\)) :
-    \begin{enumerate}
-        \item traduire l'inéquation en langage de distance : \og la distance entre \(x\) et \(a\) est strictement inférieure à \(r\) \fg{} ;
-        \item faire un schéma sur une droite graduée : placer \(a\), puis reculer de \(r\) et avancer de \(r\) ;
-        \item lire les deux bornes de l'intervalle obtenu ;
-        \item écrire l'ensemble des solutions sous forme d'intervalle.
-    \end{enumerate}
-\end{met}
-
-\begin{exple}
-    Résolvons \(|x-3|<5\). Cela signifie que la distance entre \(x\) et \(3\) est strictement inférieure à \(5\) : \(x\) doit donc se trouver entre \(3-5=-2\) et \(3+5=8\).
-
-    \vspace{0.3cm}
-    \begin{tikzpicture}[scale=1.1]
-        \draw[->] (-3.5,0)--(9.5,0);
-        \foreach \x in {-3,...,9}{
-            \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
-        }
-        \draw[very thick, blue] (-2,0)--(8,0);
-        \draw[dashed] (3,0.6)--(3,-0.4) node[below] {};
-        \draw[<->, red] (3,0.4)--(8,0.4) node[midway, above] {\(r=5\)};
-        \draw[<->, red] (-2,0.4)--(3,0.4) node[midway, above] {\(r=5\)};
-        \node[circle, draw, fill=white, inner sep=1.5pt] at (-2,0) {};
-        \node[circle, draw, fill=white, inner sep=1.5pt] at (8,0) {};
-    \end{tikzpicture}
-
-    Les bornes \(-2\) et \(8\) ne sont pas solutions (l'inégalité est stricte), donc l'ensemble des solutions est l'intervalle \(]-2\ ;\ 8[\).
-\end{exple}
-
-\begin{exo}[][]
-    Écrire sous la forme d'un intervalle l'ensemble des nombres \(x\) tels que :
-    \begin{tasks}(2)
-        \task[1.] \(|x-11|\leq 2\)
-        \task[2.] \(|x+12|<2\)
-    \end{tasks}
-
-    \begin{indication}
-        \textbf{Question 1.} Attention à l'inégalité \textbf{large} : les deux bornes font cette fois partie des solutions (crochets fermés).
-
-        \textbf{Question 2.} Remarquez que \(|x+12| = |x-(-12)|\) : il s'agit donc de la distance entre \(x\) et \(-12\), et vous pouvez appliquer la même méthode qu'avec \(|x-3|<5\), en remplaçant \(3\) par \(-12\).
-    \end{indication}
-\end{exo}
-
-\begin{exo}[][appro]
-    On souhaite résoudre \(|x|\geq 4\).
-    \begin{enumerate}
-        \item Traduire cette inéquation en langage de distance (par rapport à quel nombre ?).
-        \item Sur une droite graduée, colorier tous les nombres qui conviennent. Obtenez-vous un seul morceau, ou plusieurs ?
-        \item En déduire l'ensemble des solutions de \(|x|\geq 4\), en décrivant avec des mots les nombres qui conviennent.
-    \end{enumerate}
-
-    \begin{indication}
-        \textbf{Question 1.} Il s'agit de la distance entre \(x\) et \(0\).
-
-        \textbf{Questions 2 et 3.} Contrairement à l'exemple \(|x-3|<5\), on cherche ici les nombres \textbf{loin} de \(0\) (à une distance d'au moins \(4\)), et non les nombres proches de \(0\) : il y a donc les grands nombres positifs \textbf{et} les grands nombres négatifs, ce qui donne deux morceaux, de part et d'autre de \(0\).
-    \end{indication}
-\end{exo}
 
 \section{Vrai ou faux : propriétés de la valeur absolue}
 
@@ -228,7 +265,7 @@ Pour deux nombres \(a\) et \(b\), on note \(|b-a|\) la distance entre \(b\) et \
     \begin{enumerate}
         \item Pour tous nombres \(a\) et \(b\), \(|a+b| = |a|+|b|\).
         \item Il existe des nombres \(a\) et \(b\) tels que \(|a+b| = |a|+|b|\).
-        \item Pour tout nombre réel \(a\), \(|-a|=|a|\).
+        \item Pour tout nombre \(a\), \(|-a|=|a|\).
     \end{enumerate}
 
     \begin{indication}
@@ -267,7 +304,7 @@ Si vous avez un \(\square\) que vous n'arrivez pas à cocher, relisez l'encadré
     \item \textbf{Exercice 5.} \(|3-5|=2\) ; \(|5-3|=2\) ; \(|-6|=6\) ; \(|34|=34\) ; \(-|5|=-5\) ; \(|3|-|5|=-2\).
     \item \textbf{Exercice 6.} \(|x-11|\leq 2\) donne \(x\in[9\ ;\ 13]\). \(|x+12|<2\) donne \(x\in\ ]-14\ ;\ -10[\).
     \item \textbf{Exercice 7.} \(|x|\geq 4\) : l'ensemble des solutions est formé des nombres inférieurs ou égaux à \(-4\), et des nombres supérieurs ou égaux à \(4\).
-    \item \textbf{Exercice 8.} 1. Faux (par exemple \(a=3\), \(b=-3\) : \(|a+b|=0\) mais \(|a|+|b|=6\)). 2. Vrai (par exemple \(a=3\), \(b=5\), ou dès que \(a\) et \(b\) sont de même signe, ou que l'un des deux est nul). 3. Vrai, pour tout réel \(a\).
+    \item \textbf{Exercice 8.} 1. Faux (par exemple \(a=3\), \(b=-3\) : \(|a+b|=0\) mais \(|a|+|b|=6\)). 2. Vrai (par exemple \(a=3\), \(b=5\), ou dès que \(a\) et \(b\) sont de même signe, ou que l'un des deux est nul). 3. Vrai, pour tout nombre \(a\).
 \end{enumerate}
 
 \end{document}
