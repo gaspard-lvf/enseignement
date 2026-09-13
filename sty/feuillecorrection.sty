@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% feuillecorrection.sty
+%%% Package pour la mise en forme des corrections de feuilles d'exercices.
+%%% S'appuie sur feuille.sty (marges, en-tête/pied de page, macros
+%%% d'ensembles, environnements defi/prop/rem, etc.) et fournit :
+%%%   - \begin{corr}[titre]{n} ... \end{corr} : correction de l'exercice n
+%%%     (numéro identique à celui de la feuille d'exercices corrigée).
+%%%   - \begin{rappel} ... \end{rappel} : encadré de rappel de méthode/cours
+%%%     utile pour justifier une étape de la correction.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{feuillecorrection}[2026/09/13 v1.0 Correction de feuille d'exercices]
+
+\RequirePackage{feuille}
+\fancyhead[L]{Correction}
+
+%%%ENVIRONNEMENT CORRECTION D'EXERCICE (numéro obligatoire, titre facultatif)
+%%% Usage :
+%%%   \begin{corr}{8} ... \end{corr}          -> "Exercice 8."
+%%%   \begin{corr}[Rappels]{6} ... \end{corr} -> "Exercice 6 (Rappels)."
+%%%
+%%% Même principe que \begin{exo} de feuilleexo.sty : le symbole (ici une
+%%% coche) reste au fer gauche de la colonne courante (\llap), donc visible
+%%% aussi bien en 1 colonne qu'en multicols. Le numéro n'est pas généré par
+%%% un compteur : il doit reprendre celui de l'exercice corrigé, la
+%%% correction étant un document séparé de la feuille d'exercices.
+\NewDocumentEnvironment{corr}{ O{} m }{%
+  \par\addvspace{10pt}\noindent
+  \llap{\scalebox{1.1}{\ding{51}}\hspace{8pt}}%
+  \textbf{\scshape Exercice~#2}\ifblank{#1}{}{ \textnormal{(#1)}}\textbf{.}~\ignorespaces
+}{%
+  \par\addvspace{4pt}%
+}
+
+%%%ENCADRÉ RAPPEL (méthode ou résultat de cours mobilisé dans la correction)
+%%% Usage : \begin{rappel} ... \end{rappel}
+%%%         \begin{rappel}[Rappel] ... \end{rappel} (titre personnalisé, par défaut "Rappel de cours")
+\newtcolorbox{rappel}[1][Rappel de cours]{
+  colback=black!3, colframe=black!50,
+  boxrule=0.4pt, arc=0pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  fontupper=\small,
+  fonttitle=\bfseries\scshape\small, coltitle=black!50,
+  colbacktitle=black!3,
+  title=#1
+}
+
+\endinput
