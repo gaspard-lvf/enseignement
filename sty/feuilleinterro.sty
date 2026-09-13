@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% feuilleinterro.sty
+%%% Package pour la mise en forme des interrogations de mathématiques.
+%%% S'appuie sur feuille.sty (macros d'ensembles, environnements
+%%% defi/prop/rem, etc.) mais repasse la page en PAYSAGE, SUPPRIME
+%%% L'EN-TÊTE ET LE PIED DE PAGE et fournit une mise en page à 2 sujets par
+%%% page, séparés par un trait vertical allant d'une marge de 1cm en haut à
+%%% une marge de 1cm en bas de la page :
+%%%   - \begin{sujets} ... \end{sujets} : encadre les deux sujets de la
+%%%     page (environnement multicols à 2 colonnes ; le filet vertical est
+%%%     tracé indépendamment, en surimpression, sur toute la hauteur utile
+%%%     de la page (marges incluses), pour ne pas s'arrêter à la hauteur du
+%%%     contenu comme le ferait \columnseprule).
+%%%   - \columnbreak : à placer entre les deux sujets pour forcer le
+%%%     passage du premier sujet (colonne gauche) au second (colonne
+%%%     droite), quelle que soit la longueur du contenu.
+%%%   - \interroversion{X} : bloc d'en-tête d'un sujet (classe en haut à
+%%%     gauche, titre, champs Nom/Prénom), à placer en tête de chaque
+%%%     sujet. L'argument #1 (lettre de version) est conservé pour ne pas
+%%%     casser les documents existants mais n'est plus affiché.
+%%%
+%%% Nommée \interroversion (et non \version) pour ne pas entrer en conflit
+%%% avec \version, déjà utilisé par feuille.sty pour distinguer les
+%%% compilations "prof" / "élève".
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{feuilleinterro}[2026/09/13 v4.2 Interrogation de mathématiques (paysage, sans en-tête ni pied de page, marges 1cm, 2 sujets/page, classe en haut à gauche)]
+
+\RequirePackage{feuille}
+\usetikzlibrary{calc}
+
+%%%SUPPRESSION DE L'EN-TÊTE ET DU PIED DE PAGE
+\pagestyle{empty}
+
+%%%MISE EN PAGE PAYSAGE (une feuille d'interro se plie/se distribue en 2
+%%% sujets côte à côte, plutôt qu'en un long document portrait).
+\geometry{
+    landscape,
+    left=1.3cm, right=1.3cm,
+    top=1cm, bottom=1cm
+}
+
+%%%DEUX SUJETS PAR PAGE
+\setlength{\columnsep}{1.2cm}
+\setlength{\columnseprule}{0pt} % le filet est tracé à part (voir \sujets), sur toute la hauteur de la page
+
+\NewDocumentEnvironment{sujets}{}
+{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw ($(current page.north)+(0,-1cm)$) -- ($(current page.south)+(0,1cm)$);
+    \end{tikzpicture}%
+    \begin{multicols}{2}
+}{%
+    \end{multicols}
+}
+
+%%%BLOC D'EN-TÊTE D'UN SUJET (titre + numéro de version + Nom/Prénom)
+%%% Usage : \interroversion{A}  (à placer en tête de chaque sujet, à
+%%% l'intérieur de l'environnement sujets)
+%%% Le titre reprend \chapitre (renseigné dans le document principal), afin
+%%% de fonctionner pour n'importe quel chapitre sans dupliquer le préambule.
+\newcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large INTERROGATION -- \chapitre}
+    \end{center}
+
+    \vspace{-0.1cm}
+
+    \textbf{Nom :} \rule{2.7cm}{0.4pt}
+    \hfill
+    \textbf{Prénom :} \rule{2.3cm}{0.4pt}
+
+    \vspace{0.2cm}
+}
+
+\endinput

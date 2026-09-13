@@ -1,48 +1,30 @@
-
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{amsmath,amssymb}
-\usepackage{geometry}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{tikz}
-\usepackage{tasks}
-\usepackage{pgfplots}
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
 
-\geometry{
-    top=1.5cm,
-    bottom=1.5cm,
-    left=1.7cm,
-    right=1.7cm
-}
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
 
-\setlength{\parindent}{0pt}
+\usepackage{feuilleinterro}
 
-\newcommand{\version}[1]{
-    \begin{center}
-        \textbf{\large INTERROGATION -- Fonctions et proportions}\\
-        \textbf{Version #1}
-    \end{center}
+%%%à modifier à chaque fois
 
-    \vspace{-0.1cm}
-
-    \textbf{Nom :} \rule{5cm}{0.4pt}
-    \hfill
-    \textbf{Prénom :} \rule{4cm}{0.4pt}
-
-    \vspace{0.2cm}
-}
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Fonctions, généralités}
+\renewcommand{\numchap}{0}
+\renewcommand{\theme}{Fonctions}
 
 \begin{document}
 
 % =========================================================
-% VERSION A
+% PAGE 1 : VERSIONS A ET B
 % =========================================================
 
-\version{A}
+\begin{sujets}
+
+\interroversion{A}
 
 \textbf{Exercice 1 -- DC \hfill /2}
 
@@ -53,60 +35,55 @@ Soit \(g\) la fonction définie sur \(\mathbb{R}\) par \(g(x)=x^2-3x+2\). Calcul
 \textbf{Exercice 2 -- Lecture graphique \hfill /4}
 
 On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous.
-\begin{multicols}{2}
-    \begin{enumerate}
-    \item Quel est l'ensemble de définition de \(f\) ?
-    \item Donner l'image de -2 par \(f\).
-    \item Donner les éventuels antécédents de -1
-    \item Résoudre \(f(x)=0\).
-    \end{enumerate}
+\begin{enumerate}
+\item Quel est l'ensemble de définition de \(f\) ?
+\item Donner l'image de -2 par \(f\).
+\item Donner les éventuels antécédents de -1
+\item Résoudre \(f(x)=0\).
+\end{enumerate}
 
-    \begin{tikzpicture}[scale=0.8]
-    \begin{axis}[
-        axis lines=middle,
-        xmin=-2.5, xmax=2.9,
-        ymin=-6, ymax=2,
-        domain=-2:2,
-        samples=300,
-        grid=major,
-        xtick={-2,-1,0,1,2,3},
-        ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
-        xlabel={\(x\)},
-        ylabel={\(y\)},
-        xlabel style={
-            at={(axis cs:2.9,0)},
-            anchor=west
-        },
-        ylabel style={
-            at={(axis cs:0,2)},
-            anchor=south
-        },
-        width=9cm,
-        height=8cm
-    ]
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-2.5, xmax=2.9,
+    ymin=-6, ymax=2,
+    domain=-2:2,
+    samples=300,
+    grid=major,
+    xtick={-2,-1,0,1,2,3},
+    ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    xlabel style={
+        at={(axis cs:2.9,0)},
+        anchor=west
+    },
+    ylabel style={
+        at={(axis cs:0,2)},
+        anchor=south
+    },
+    width=8cm,
+    height=6.5cm
+]
 
-    \addplot[
-        blue,
-        very thick
-    ] {-2/3*(x-1)*(x+2.5)*(x-0)+1}
-    node[pos=0.92, above right] {\(\mathcal{C}_f\)};
+\addplot[
+    blue,
+    very thick
+] {-2/3*(x-1)*(x+2.5)*(x-0)+1}
+node[pos=0.92, above right] {\(\mathcal{C}_f\)};
 
-    \end{axis}
-    \end{tikzpicture}
-
-\end{multicols}
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Exercice 3 -- fonction affine \hfill /4}
 
 Soit \(h\) la fonction affine définie par \(h(x)=2x-3\). Déterminer son tableau de signe.
 
-\vfill
+\columnbreak
 
-% =========================================================
-% VERSION B
-% =========================================================
-
-\version{B}
+\interroversion{B}
 
 \textbf{Exercice 1 -- DC \hfill /2}
 
@@ -117,60 +94,63 @@ Soit \(g\) la fonction définie sur \(\mathbb{R}\) par \(g(x)=2(4-x)(x+1)\). Cal
 \textbf{Exercice 2 -- Lecture graphique \hfill /4}
 
 On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous.
-\begin{multicols}{2}
-    \begin{enumerate}
-    \item Quel est l'ensemble de définition de \(f\) ?
-    \item Donner l'image de 2 par \(f\).
-    \item Donner les éventuels antécédents de 1
-    \item Résoudre \(f(x)=0\).
-    \end{enumerate}
+\begin{enumerate}
+\item Quel est l'ensemble de définition de \(f\) ?
+\item Donner l'image de 2 par \(f\).
+\item Donner les éventuels antécédents de 1
+\item Résoudre \(f(x)=0\).
+\end{enumerate}
 
-    \begin{tikzpicture}[scale=0.8]
-    \begin{axis}[
-        axis lines=middle,
-        xmin=-2.5, xmax=2.9,
-        ymin=-4, ymax=2,
-        domain=-2:2,
-        samples=300,
-        grid=major,
-        xtick={-2,-1,0,1,2,3},
-        ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
-        xlabel={\(x\)},
-        ylabel={\(y\)},
-        width=9cm,
-        height=8cm,
-        xlabel style={
-            at={(axis cs:2.9,0)},
-            anchor=west
-        },
-        ylabel style={
-            at={(axis cs:0,2)},
-            anchor=south
-        },
-    ]
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-2.5, xmax=2.9,
+    ymin=-4, ymax=2,
+    domain=-2:2,
+    samples=300,
+    grid=major,
+    xtick={-2,-1,0,1,2,3},
+    ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    width=8cm,
+    height=6.5cm,
+    xlabel style={
+        at={(axis cs:2.9,0)},
+        anchor=west
+    },
+    ylabel style={
+        at={(axis cs:0,2)},
+        anchor=south
+    },
+]
 
-    \addplot[
-        blue,
-        very thick
-    ] {-2/3*(x/1.2-1)*(x/1.2+2.5)*(x/1.2-0)+0.5}
-    node[pos=0.92, above right] {\(\mathcal{C}_f\)};
+\addplot[
+    blue,
+    very thick
+] {-2/3*(x/1.2-1)*(x/1.2+2.5)*(x/1.2-0)+0.5}
+node[pos=0.92, above right] {\(\mathcal{C}_f\)};
 
-    \end{axis}
-    \end{tikzpicture}
-
-\end{multicols}
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Exercice 3 -- fonction affine \hfill /4}
 
 Soit \(h\) la fonction affine définie par \(h(x)=-4x-3\). Déterminer son tableau de signe.
 
+\end{sujets}
+
 \newpage
 
 % =========================================================
-% VERSION C
+% PAGE 2 : VERSIONS C ET D
 % =========================================================
 
-\version{C}
+\begin{sujets}
+
+\interroversion{C}
 
 \textbf{Exercice 1 -- DC \hfill /2}
 
@@ -181,60 +161,56 @@ Soit \(g\) la fonction définie sur \(\mathbb{R}\) par \(g(x)=x^2+3x+2\). Calcul
 \textbf{Exercice 2 -- Lecture graphique \hfill /4}
 
 On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous.
-\begin{multicols}{2}
-    \begin{enumerate}
-    \item Quel est l'ensemble de définition de \(f\) ?
-    \item Donner l'image de 1 par \(f\).
-    \item Donner les éventuels antécédents de -1
-    \item Résoudre \(f(x)=0\).
-    \end{enumerate}
+\begin{enumerate}
+\item Quel est l'ensemble de définition de \(f\) ?
+\item Donner l'image de 1 par \(f\).
+\item Donner les éventuels antécédents de -1
+\item Résoudre \(f(x)=0\).
+\end{enumerate}
 
-    \begin{tikzpicture}[scale=0.8]
-    \begin{axis}[
-        axis lines=middle,
-        xmin=-3.5, xmax=1.9,
-        ymin=-2, ymax=5.5,
-        domain=-3:1,
-        samples=300,
-        grid=major,
-        xtick={-3,-2,-1,0,1,2},
-        ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
-        xlabel={\(x\)},
-        ylabel={\(y\)},
-        xlabel style={
-            at={(axis cs:1.9,0)},
-            anchor=west
-        },
-        ylabel style={
-            at={(axis cs:0,5.5)},
-            anchor=south
-        },
-        width=9cm,
-        height=8cm
-    ]
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-3.5, xmax=1.9,
+    ymin=-2, ymax=5.5,
+    domain=-3:1,
+    samples=300,
+    grid=major,
+    xtick={-3,-2,-1,0,1,2},
+    ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    xlabel style={
+        at={(axis cs:1.9,0)},
+        anchor=west
+    },
+    ylabel style={
+        at={(axis cs:0,5.5)},
+        anchor=south
+    },
+    width=8cm,
+    height=6.5cm
+]
 
-    \addplot[
-        blue,
-        very thick
-    ] {-2/3*(x-1)*(x+2.5)*(x-0)+1}
-    node[pos=0.92, above right] {\(\mathcal{C}_f\)};
+\addplot[
+    blue,
+    very thick
+] {-2/3*(x-1)*(x+2.5)*(x-0)+1}
+node[pos=0.92, above right] {\(\mathcal{C}_f\)};
 
-    \end{axis}
-    \end{tikzpicture}
-
-\end{multicols}
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Exercice 3 -- fonction affine \hfill /4}
 
 Soit \(h\) la fonction affine définie par \(h(x)=2x+3\). Déterminer son tableau de signe.
 
-\vfill
+\columnbreak
 
-% =========================================================
-% VERSION D
-% =========================================================
+\interroversion{D}
 
-\version{D}
 \textbf{Exercice 1 -- DC \hfill /2}
 
 Soit \(g\) la fonction définie sur \(\mathbb{R}\) par \(g(x)=2(x-2)(x+2)\). Calculer \(g(-3)\).
@@ -244,52 +220,52 @@ Soit \(g\) la fonction définie sur \(\mathbb{R}\) par \(g(x)=2(x-2)(x+2)\). Cal
 \textbf{Exercice 2 -- Lecture graphique \hfill /4}
 
 On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous.
-\begin{multicols}{2}
-    \begin{enumerate}
-    \item Quel est l'ensemble de définition de \(f\) ?
-    \item Donner l'image de 3 par \(f\).
-    \item Donner les éventuels antécédents de -1
-    \item Résoudre \(f(x)=0\).
-    \end{enumerate}
+\begin{enumerate}
+\item Quel est l'ensemble de définition de \(f\) ?
+\item Donner l'image de 3 par \(f\).
+\item Donner les éventuels antécédents de -1
+\item Résoudre \(f(x)=0\).
+\end{enumerate}
 
-    \begin{tikzpicture}[scale=0.8]
-    \begin{axis}[
-        axis lines=middle,
-        xmin=-0.5, xmax=4.9,
-        ymin=-2, ymax=4,
-        domain=0:4,
-        samples=300,
-        grid=major,
-        xtick={-2,-1,0,1,2,3,4},
-        ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
-        xlabel={\(x\)},
-        ylabel={\(y\)},
-        xlabel style={
-            at={(axis cs:4.9,0)},
-            anchor=west
-        },
-        ylabel style={
-            at={(axis cs:0,4)},
-            anchor=south
-        },
-        width=9cm,
-        height=8cm
-    ]
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-0.5, xmax=4.9,
+    ymin=-2, ymax=4,
+    domain=0:4,
+    samples=300,
+    grid=major,
+    xtick={-2,-1,0,1,2,3,4},
+    ytick={-5,-4,-3,-2,-1,0,1,2,3,4},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    xlabel style={
+        at={(axis cs:4.9,0)},
+        anchor=west
+    },
+    ylabel style={
+        at={(axis cs:0,4)},
+        anchor=south
+    },
+    width=8cm,
+    height=6.5cm
+]
 
-    \addplot[
-        blue,
-        very thick
-    ] {1/30*(14*x^3-63*x^2+43*x)+1}
-    node[pos=0.92, above right] {\(\mathcal{C}_f\)};
+\addplot[
+    blue,
+    very thick
+] {1/30*(14*x^3-63*x^2+43*x)+1}
+node[pos=0.92, above right] {\(\mathcal{C}_f\)};
 
-    \end{axis}
-    \end{tikzpicture}
-
-\end{multicols}
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Exercice 3 -- fonction affine \hfill /4}
 
 Soit \(h\) la fonction affine définie par \(h(x)=-4x+3\). Déterminer son tableau de signe.
 
-\end{document}
+\end{sujets}
 
+\end{document}
