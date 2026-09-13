@@ -43,10 +43,8 @@
 On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n = 3n-2\).
 
 \begin{enumerate}[leftmargin=*]
-    \item Calculer \(u_0\), \(u_1\) et \(u_5\).
-    \item Calculer \(u_{10}\).
-    \item Résoudre l'équation \(u_n = 100\). Que peut-on en déduire ?
-    \item Montrer que  \(u_{n+1} = 3n+1\).
+    \item Calculer \(u_0\), \(u_1\),\(u_2\), \(u_3\) et  \(u_5\).
+    \item Calculer \(u_{100}\).
 \end{enumerate}
 \end{exo}
 
@@ -59,10 +57,8 @@ u_{n+1} & = & 4u_n
 \right.\).
 
 \begin{enumerate}[leftmargin=*]
-    \item Calculer \(u_0\), \(u_1\) et \(u_5\).
-    \item Calculer \(u_{10}\).
-    \item Résoudre l'équation \(u_n = 100\). Que peut-on en déduire ?
-    \item Montrer que  \(u_{n+1} = 3n+1\).
+    \item Calculer \(u_0\), \(u_1\),\(u_2\), \(u_3\) et  \(u_5\).
+    \item Calculer \(u_{100}\).
 \end{enumerate}
 \end{exo}
 
@@ -83,7 +79,7 @@ u_{n+1} & = & 4u_n
 \end{exo}
 
 \begin{exo}[Vrai ou faux][]
-On considère une suite \(u_n\) définie pour tout entier naturel \(n\). Dire si chacune des affirmation suivante est vraie ou fausse, en justifiant.
+On considère une suite \((u_n)\) définie pour tout entier naturel \(n\). Dire si chacune des affirmation suivante est vraie ou fausse, en justifiant.
 
 \begin{enumerate}[leftmargin=*]
     \item Si la suite \((u_n)\) est définie explicitement, alors on peut calculer \(u_{50}\) sans connaître \(u_{49}\).
@@ -104,6 +100,57 @@ On considère une suite \(u_n\) définie pour tout entier naturel \(n\). Dire si
 \end{itemize}
 }
 
+\begin{exo}[Retrouver une expression explicite][]
+On donne ci-dessous les sept premiers termes d'une suite \((u_n)\).
+
+\smallskip
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    \(n\) & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+    \hline
+    \(u_n\) & 0 & 3 & 6 & 9 & 12 & 15 & 18 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=*]
+    \item Comment passe-t-on d'un terme au suivant ?
+    \item Proposer une expression explicite \(u_n = f(n)\) cohérente avec ces valeurs.
+    \item Vérifier votre formule en calculant \(u_6\) et en la comparant à la valeur du tableau.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Retrouver une définition par récurrence][]
+On donne ci-dessous les sept premiers termes d'une suite \((v_n)\).
+
+\smallskip
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    \(n\) & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+    \hline
+    \(v_n\) & 1 & 3 & 9 & 27 & 81 & 243 & 729 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=*]
+    \item Comment passe-t-on d'un terme au suivant ?
+    \item Proposer une définition par récurrence (terme initial et relation entre \(v_{n+1}\) et \(v_n\)) cohérente avec ces valeurs.
+    \item Vérifier votre relation en calculant \(v_6\) à partir de \(v_5\).
+\end{enumerate}
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item Ces deux exercices préparent le suivant : ici chaque tableau \og oriente \fg{} naturellement vers un seul mode de définition (arithmétique pour le premier, géométrique pour le second), contrairement au suivant où les deux modes sont demandés sur les mêmes valeurs.
+    \item Utile de faire remarquer que dans le premier cas on ajoute toujours \(3\) (indice de définition par récurrence possible aussi : \(u_{n+1}=u_n+3\), avec \(u_0=0\)), et que dans le second on multiplie toujours par \(3\) (\(v_{n+1}=3v_n\), mais une expression explicite \(v_n=3^n\) existe également).
+\end{itemize}
+}
+
 \begin{exo}[Trouver une suite à partir de ses premiers termes][avance]
 On donne les nombres suivants, qui sont les quatre premiers termes d'une suite \((u_n)\) :
 \[
@@ -111,7 +158,7 @@ u_0 = 1, \quad u_1 = 3, \quad u_2 = 5, \quad u_3 = 7.
 \]
 
 \begin{enumerate}[leftmargin=*]
-    \item Proposer une expression explicite \(u_n = f(n)\), la plus simple possible, cohérente avec ces quatre valeurs.
+    \item Proposer une expression explicite \(u_n = f(n)\) cohérente avec ces quatre valeurs.
     \item Proposer une définition par récurrence (terme initial et relation entre \(u_{n+1}\) et \(u_n\)) cohérente avec ces mêmes valeurs.
     \item Vérifier que l'expression \(u_n = 2n+1+n(n-1)(n-2)(n-3)\) est elle aussi cohérente avec les quatre valeurs données.
     \item Cette expression est-elle égale à celle trouvée à la question 1 ? Calculer \(u_4\) avec chacune des deux expressions et comparer.
