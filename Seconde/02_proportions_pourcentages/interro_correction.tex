@@ -1,0 +1,277 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{2nde}
+\renewcommand{\chapitre}{Proportions, pourcentages}
+\renewcommand{\numchap}{0.2}
+\renewcommand{\theme}{Statistiques}
+
+%%%titre "CORRECTION" au lieu de "INTERROGATION", sans les champs Nom/Prénom
+\renewcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large CORRECTION -- \chapitre}
+    \end{center}
+
+    \vspace{0.1cm}
+}
+
+\begin{document}
+
+\footnotesize
+
+% =========================================================
+% PAGE 1 : VERSIONS A ET B
+% =========================================================
+
+\begin{sujets}
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Tableau de valeurs \hfill /2}
+
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^2-2x-3\).
+
+\[
+\begin{aligned}
+f(-1) &= (-1)^2-2\times(-1)-3 = 1+2-3 = 0\\
+f(2)  &= 2^2-2\times 2-3 = 4-4-3 = -3
+\end{aligned}
+\]
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{0.25cm}
+    \begin{tabular}{|*{7}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\
+    \hline
+    \(f(x)\) & \(5\) & \textcolor{blue}{\(0\)} & \(-3\) & \(-4\) & \textcolor{blue}{\(-3\)} & \(0\) \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\textbf{Exercice 2 -- Pourcentages \hfill /3}
+
+\begin{tasks}(2)
+    \task Calculer \(10\%\) de \(90\).
+
+    \(10\%\) de \(90\), c'est \(\dfrac{10}{100}\times 90\). \textcolor{blue}{
+    \[
+    \frac{10}{100}\times 90 = \frac{10\times 90}{100} = \frac{900}{100} = 9.
+    \]}
+    \task Poser et effectuer le calcul de \(35\%\) de \(80\).
+
+    \textcolor{blue}{
+    \[
+    35\%\text{ de }80 = \frac{35}{100}\times 80 = \frac{35\times 80}{100} = \frac{2\,800}{100} = 28.
+    \]
+    (On pose \(35\times80\) : \(35\times80=35\times8\times10=280\times10=2\,800\), puis on divise par \(100\).)}
+    \task Calculer \(20\%\) de \(15\%\) de \(300\).
+
+    \textcolor{blue}{
+    \[
+    \begin{aligned}
+    15\%\text{ de }300 &=\frac{15}{100}\times300=\frac{4\,500}{100}=45,\\
+    20\%\text{ de }45 &=\frac{20}{100}\times45=\frac{900}{100}=9.
+    \end{aligned}
+    \]}
+    \task Calculer le tiers de \(21\).
+
+    \textcolor{blue}{Le tiers de \(21\), c'est \(21\div3=7\) (on vérifie : \(7\times3=21\)).}
+\end{tasks}
+
+\columnbreak
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Tableau de valeurs \hfill /2}
+
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^2+x-2\).
+
+\[
+\begin{aligned}
+f(-1) &= (-1)^2+(-1)-2 = 1-1-2 = -2\\
+f(3)  &= 3^2+3-2 = 9+3-2 = 10
+\end{aligned}
+\]
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{0.25cm}
+    \begin{tabular}{|*{7}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\
+    \hline
+    \(f(x)\) & \(0\) & \textcolor{blue}{\(-2\)} & \(-2\) & \(0\) & \(4\) & \textcolor{blue}{\(10\)} \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\textbf{Exercice 2 -- Pourcentages \hfill /3}
+
+\begin{tasks}(2)
+    \task Calculer \(20\%\) de \(50\).
+
+    \textcolor{blue}{
+    \[
+    \frac{20}{100}\times 50 = \frac{20\times 50}{100} = \frac{1\,000}{100} = 10.
+    \]}
+    \task Poser et effectuer le calcul de \(24\%\) de \(75\).
+
+    \textcolor{blue}{
+    \[
+    24\%\text{ de }75 = \frac{24}{100}\times 75 = \frac{24\times 75}{100} = \frac{1\,800}{100} = 18.
+    \]
+    (On pose \(24\times75\) : \(24\times75=24\times70+24\times5=1\,680+120=1\,800\), puis on divise par \(100\).)}
+    \task Calculer \(10\%\) de \(40\%\) de \(500\).
+
+    \textcolor{blue}{
+    \[
+    \begin{aligned}
+    40\%\text{ de }500 &=\frac{40}{100}\times500=\frac{20\,000}{100}=200,\\
+    10\%\text{ de }200 &=\frac{10}{100}\times200=\frac{2\,000}{100}=20.
+    \end{aligned}
+    \]}
+    \task Calculer le quart de \(28\).
+
+    \textcolor{blue}{Le quart de \(28\), c'est \(28\div4=7\) (on vérifie : \(7\times4=28\)).}
+\end{tasks}
+
+\end{sujets}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSIONS C ET D
+% =========================================================
+
+\begin{sujets}
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Tableau de valeurs \hfill /2}
+
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^2-3x+2\).
+
+\[
+\begin{aligned}
+f(-2) &= (-2)^2-3\times(-2)+2 = 4+6+2 = 12\\
+f(3)  &= 3^2-3\times 3+2 = 9-9+2 = 2
+\end{aligned}
+\]
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{0.25cm}
+    \begin{tabular}{|*{7}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\
+    \hline
+    \(f(x)\) & \textcolor{blue}{\(12\)} & \(6\) & \(2\) & \(0\) & \(0\) & \textcolor{blue}{\(2\)} \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\textbf{Exercice 2 -- Pourcentages \hfill /3}
+
+\begin{tasks}(2)
+    \task Calculer \(25\%\) de \(40\).
+
+    \textcolor{blue}{
+    \[
+    \frac{25}{100}\times 40 = \frac{25\times 40}{100} = \frac{1\,000}{100} = 10.
+    \]}
+    \task Poser et effectuer le calcul de \(18\%\) de \(50\).
+
+    \textcolor{blue}{
+    \[
+    18\%\text{ de }50 = \frac{18}{100}\times 50 = \frac{18\times 50}{100} = \frac{900}{100} = 9.
+    \]
+    (On pose \(18\times50\) : \(18\times50=18\times5\times10=90\times10=900\), puis on divise par \(100\).)}
+    \task Calculer \(50\%\) de \(20\%\) de \(200\).
+
+    \textcolor{blue}{
+    \[
+    \begin{aligned}
+    20\%\text{ de }200 &=\frac{20}{100}\times200=\frac{4\,000}{100}=40,\\
+    50\%\text{ de }40 &=\frac{50}{100}\times40=\frac{2\,000}{100}=20.
+    \end{aligned}
+    \]}
+    \task Calculer le tiers de \(18\).
+
+    \textcolor{blue}{Le tiers de \(18\), c'est \(18\div3=6\) (on vérifie : \(6\times3=18\)).}
+\end{tasks}
+
+\columnbreak
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Tableau de valeurs \hfill /2}
+
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^2+2x-1\).
+
+\[
+\begin{aligned}
+f(-1) &= (-1)^2+2\times(-1)-1 = 1-2-1 = -2\\
+f(2)  &= 2^2+2\times 2-1 = 4+4-1 = 7
+\end{aligned}
+\]
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{0.25cm}
+    \begin{tabular}{|*{7}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\
+    \hline
+    \(f(x)\) & \(-1\) & \textcolor{blue}{\(-2\)} & \(-1\) & \(2\) & \textcolor{blue}{\(7\)} & \(14\) \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\textbf{Exercice 2 -- Pourcentages \hfill /3}
+
+\begin{tasks}(2)
+    \task Calculer \(10\%\) de \(70\).
+
+    \textcolor{blue}{
+    \[
+    \frac{10}{100}\times 70 = \frac{10\times 70}{100} = \frac{700}{100} = 7.
+    \]}
+    \task Poser et effectuer le calcul de \(32\%\) de \(75\).
+
+    \textcolor{blue}{
+    \[
+    32\%\text{ de }75 = \frac{32}{100}\times 75 = \frac{32\times 75}{100} = \frac{2\,400}{100} = 24.
+    \]
+    (On pose \(32\times75\) : \(32\times75=32\times70+32\times5=2\,240+160=2\,400\), puis on divise par \(100\).)}
+    \task Calculer \(25\%\) de \(40\%\) de \(240\).
+
+    \textcolor{blue}{
+    \[
+    \begin{aligned}
+    40\%\text{ de }240 &=\frac{40}{100}\times240=\frac{9\,600}{100}=96,\\
+    25\%\text{ de }96 &=\frac{25}{100}\times96=\frac{2\,400}{100}=24.
+    \end{aligned}
+    \]}
+    \task Calculer le quart de \(36\).
+
+    \textcolor{blue}{Le quart de \(36\), c'est \(36\div4=9\) (on vérifie : \(9\times4=36\)).}
+\end{tasks}
+
+\end{sujets}
+
+\end{document}
