@@ -1,0 +1,39 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleactivite}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{2nde}
+\renewcommand{\chapitre}{Equations produit nul}
+\renewcommand{\numchap}{0.4} 
+\renewcommand{\theme}{Fonctions}
+
+\begin{document}
+
+\prof{
+    Motivation : Introduire la fonction carré comme une grandeur non proportionnelle. Si je multiplie le côté d'un carré par 2, est-ce que son aire est multipliée par 2 ?\\
+    On peut faire des exemples au tableau puis la démonstration. Ensuite, faire tracer la fonction carré. On peut préparer une activité pour ça.
+}
+\begin{objectifs}
+\begin{itemize}
+    \item Connaitre la représentation graphique de la fonction carré
+    \item Savoir résoudre des équations et des inéquations avec la fonction carré
+\end{itemize}
+\end{objectifs}
+
+\begin{multicols}{2}
+
+    \begin{exo}
+        On a représenté la fonction carré
+    \end{exo}
+
+\end{multicols}
+\end{document}
