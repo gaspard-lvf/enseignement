@@ -89,8 +89,63 @@
     \end{exo}
 
     \prof{
-        Enchaîner sur le cours sur la fonction carré.
+        Enchaîner sur le cours sur la fonction carré. Pour motiver, il faut ensuite montrer des exemples concrets où on utilise la fonction carré. \\
+        On peut aussi parler de l'influence des limitations de vitesse sur la consommation des véhicules.
     }
+
+        \begin{exo}[][appro]
+        La distance de freinage d'un véhicule est donnée en fonction de sa vitesse par la fonction \(d(v) = 0.14v^2\) où \(v\) représente la vitesse du véhicule. 
+        \begin{enumerate}
+            \item Quelle est la distance parcourue après freinage si le véhicule roule à 90km/h ?
+            \item Dans une ruelle, la vitesse est limitée à 30km/h. Un automobiliste imprudent roule à 10km/h au dessus de la limite de vitesse. Comment évoluera la distance de freinage par rapport à s'il roulait en règle
+            \prof{
+                Faut reformuler la question, je me tire une balle rien qu'à la lire
+            }
+        \end{enumerate}
+    \end{exo}
+
+    \begin{exo}[][appro]
+        Dans un lycée, une tournoi d'échecs est organisé entre deux classes qui ont le même nombre d'élèves. \medbreak
+        On décide que chaque élève d'une classe doit affronter tous les élèves de l'autre classe.
+        \begin{enumerate}
+            \item S'il y a 25 élèves par classe, combien de parties seront jouées ? Et s'il y en a 30 ?
+            \prof{
+                Pour cette question, il faut commener avec un nombre plus petit pour que ce soit plus facile et voir ce qu'il se passe quand \(n\) grandit. Commencer avec \(n=3\) et \(n=4\) pour pouvoir faire un schéma. \\
+                Une fois qu'on a répondu, on peut expliquer que c'est pour ça qu'on fait jamais jouer tout le monde les uns contre les autres
+            }
+            \item On note \(n\) le nombre d'élèves dans la classe.  \begin{enumerate}
+                \item Combien de parties seront jouées ?
+                \item Que se passe-t-il si on ajoute un élève par classe ? Comment évoluera le nombre de parties jouées.
+            \end{enumerate} 
+        \end{enumerate}
+    \end{exo}
+
+    \prof{
+        En fonction de ce qu'on a fait avant, on peut remplacer cet exo par du langage naturel ou du python.
+    }
+    \begin{exo}[][avance]
+        Après une lessive, M. Levifve se retrouve avec \(n\) chaussettes toutes mélangées. \medbreak
+        Pour ranger les chaussettes, il décide de procéder de la manière suivante : 
+
+        \begin{quote}
+        Il prend chaque chaussette à tour de rôle et la compare avec chacune des chaussettes du tas afin de trouver celle qui lui correspond.
+        \end{quote}
+
+        \begin{enumerate}
+            \item Il y a \(5\) chaussettes dans le tas. Combien de comparaison sont nécéssaires pour comparer chaque chaussettes avec les 4 autres du tas ?
+            \prof{
+                On va pas comparer une chaussette à elle même. On va dire que M. Levifve est pas malin et qu'il effectue chaque comparaison en double donc \(f(n) = n(n-1)\)
+            }
+            \item Il y a \(10\) chaussettes dans le tas. Combien de comparaison sont nécéssaires pour comparer chaque chaussettes avec les autres du tas ?
+            \item On note \(n\) le nombre de chaussettes dans le tas.  Combien de comparaison sont nécéssaires pour comparer chaque chaussettes avec les autres du tas ? 
+            \medbreak
+            On pourra noter \(f(n)\) le nombre de chaussette correspondant
+            \item (**) Si on ajoute une chaussette dans le tas, comment évoluera le nombre de comparaison effectué par M. Levifve ?
+            
+            \textit{Indications : Que représente \(f(n+1)\) ? Que représente \(f(n+1)-f(n)\) ?}
+        \end{enumerate}
+
+    \end{exo}
 
     \section{Utiliser la fonction carré}
     \begin{exo}
@@ -167,15 +222,6 @@
 
     \end{exo}
 
-    \begin{exo}[][appro]
-        La distance de freinage d'un véhicule est donnée en fonction de sa vitesse par la fonction \(d(v) = 0.14v^2\) où \(v\) représente la vitesse du véhicule. 
-        \begin{enumerate}
-            \item Quelle est la distance parcourue après freinage si le véhicule roule à 90km/h ?
-            \item Dans une ruelle, la vitesse est limitée à 30km/h. Un automobiliste imprudent roule à 10km/h au dessus de la limite de vitesse. Comment évoluera la distance de freinage par rapport à s'il roulait en règle
-            \prof{
-                Faut reformuler la question, je me tire une balle rien qu'à la lire
-            }
-        \end{enumerate}
-    \end{exo}
+    \section{Des identités}
 \end{multicols}
 \end{document}
