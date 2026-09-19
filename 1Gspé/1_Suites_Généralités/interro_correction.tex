@@ -1,0 +1,303 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Suites, généralités}
+\renewcommand{\numchap}{1}
+\renewcommand{\theme}{Suites}
+
+%%%titre "CORRECTION" au lieu de "INTERROGATION", sans les champs Nom/Prénom
+\renewcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large CORRECTION -- \chapitre}
+    \end{center}
+
+    \vspace{0.1cm}
+}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /2}
+
+Calculer, en détaillant les étapes, et donner le résultat sous la forme d'une fraction irréductible :
+\[
+A = \frac{2}{3}\times\frac{3}{4}-\frac{1}{6}.
+\]
+
+On effectue d'abord le produit, puis la soustraction :
+\[
+\begin{aligned}
+A &= \frac{2\times3}{3\times4}-\frac{1}{6}\\
+  &= \frac{6}{12}-\frac{1}{6}\\
+  &= \frac{1}{2}-\frac{1}{6}\\
+  &= \frac{3}{6}-\frac{1}{6}\\
+  &= \frac{2}{6}=\frac{1}{3}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Suite définie par récurrence \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par
+\[
+\left\{\begin{array}{rcl}
+u_0 &=& 1 \\
+u_{n+1} &=& 2u_n+1
+\end{array}\right.
+\]
+
+\begin{enumerate}
+\item Quel est le mode de définition de cette suite ? Justifier.
+
+Cette suite est définie par récurrence : le terme \(u_{n+1}\) est donné à partir du terme précédent \(u_n\) (et non directement en fonction de \(n\)), ainsi que la valeur du premier terme \(u_0\).
+
+\item Calculer \(u_1\), \(u_2\) et \(u_4\).
+
+\[
+\begin{aligned}
+u_1 &= 2u_0+1 = 2\times1+1 = 3\\
+u_2 &= 2u_1+1 = 2\times3+1 = 7\\
+u_3 &= 2u_2+1 = 2\times7+1 = 15\\
+u_4 &= 2u_3+1 = 2\times15+1 = 31.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 3 -- Sens de variation d'une suite \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n=3n-5\).
+
+Déterminer le sens de variation de la suite \((u_n)\) (on pourra calculer \(u_{n+1}-u_n\) en fonction de \(n\)).
+
+\[
+\begin{aligned}
+u_{n+1}-u_n &= \bigl(3(n+1)-5\bigr)-\bigl(3n-5\bigr)\\
+            &= 3n+3-5-3n+5\\
+            &= 3.
+\end{aligned}
+\]
+Pour tout entier naturel \(n\), \(u_{n+1}-u_n=3>0\), donc la suite \((u_n)\) est croissante.
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /2}
+
+Calculer, en détaillant les étapes, et donner le résultat sous la forme d'une fraction irréductible :
+\[
+B = \frac{5}{6}\times\frac{2}{3}-\frac{1}{2}.
+\]
+
+On effectue d'abord le produit, puis la soustraction :
+\[
+\begin{aligned}
+B &= \frac{5\times2}{6\times3}-\frac{1}{2}\\
+  &= \frac{10}{18}-\frac{1}{2}\\
+  &= \frac{5}{9}-\frac{1}{2}\\
+  &= \frac{10}{18}-\frac{9}{18}\\
+  &= \frac{1}{18}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Suite définie par récurrence \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par
+\[
+\left\{\begin{array}{rcl}
+u_0 &=& 2 \\
+u_{n+1} &=& 2u_n-1
+\end{array}\right.
+\]
+
+\begin{enumerate}
+\item Quel est le mode de définition de cette suite ? Justifier.
+
+Cette suite est définie par récurrence : le terme \(u_{n+1}\) est donné à partir du terme précédent \(u_n\) (et non directement en fonction de \(n\)), ainsi que la valeur du premier terme \(u_0\).
+
+\item Calculer \(u_1\), \(u_2\) et \(u_4\).
+
+\[
+\begin{aligned}
+u_1 &= 2u_0-1 = 2\times2-1 = 3\\
+u_2 &= 2u_1-1 = 2\times3-1 = 5\\
+u_3 &= 2u_2-1 = 2\times5-1 = 9\\
+u_4 &= 2u_3-1 = 2\times9-1 = 17.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 3 -- Sens de variation d'une suite \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n=2n-7\).
+
+Déterminer le sens de variation de la suite \((u_n)\) (on pourra calculer \(u_{n+1}-u_n\) en fonction de \(n\)).
+
+\[
+\begin{aligned}
+u_{n+1}-u_n &= \bigl(2(n+1)-7\bigr)-\bigl(2n-7\bigr)\\
+            &= 2n+2-7-2n+7\\
+            &= 2.
+\end{aligned}
+\]
+Pour tout entier naturel \(n\), \(u_{n+1}-u_n=2>0\), donc la suite \((u_n)\) est croissante.
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /2}
+
+Calculer, en détaillant les étapes, et donner le résultat sous la forme d'une fraction irréductible :
+\[
+C = \frac{3}{5}\times\frac{5}{6}-\frac{1}{3}.
+\]
+
+On effectue d'abord le produit, puis la soustraction :
+\[
+\begin{aligned}
+C &= \frac{3\times5}{5\times6}-\frac{1}{3}\\
+  &= \frac{15}{30}-\frac{1}{3}\\
+  &= \frac{1}{2}-\frac{1}{3}\\
+  &= \frac{3}{6}-\frac{2}{6}\\
+  &= \frac{1}{6}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Suite définie par récurrence \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par
+\[
+\left\{\begin{array}{rcl}
+u_0 &=& 0 \\
+u_{n+1} &=& 3u_n+2
+\end{array}\right.
+\]
+
+\begin{enumerate}
+\item Quel est le mode de définition de cette suite ? Justifier.
+
+Cette suite est définie par récurrence : le terme \(u_{n+1}\) est donné à partir du terme précédent \(u_n\) (et non directement en fonction de \(n\)), ainsi que la valeur du premier terme \(u_0\).
+
+\item Calculer \(u_1\), \(u_2\) et \(u_4\).
+
+\[
+\begin{aligned}
+u_1 &= 3u_0+2 = 3\times0+2 = 2\\
+u_2 &= 3u_1+2 = 3\times2+2 = 8\\
+u_3 &= 3u_2+2 = 3\times8+2 = 26\\
+u_4 &= 3u_3+2 = 3\times26+2 = 80.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 3 -- Sens de variation d'une suite \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n=4n-3\).
+
+Déterminer le sens de variation de la suite \((u_n)\) (on pourra calculer \(u_{n+1}-u_n\) en fonction de \(n\)).
+
+\[
+\begin{aligned}
+u_{n+1}-u_n &= \bigl(4(n+1)-3\bigr)-\bigl(4n-3\bigr)\\
+            &= 4n+4-3-4n+3\\
+            &= 4.
+\end{aligned}
+\]
+Pour tout entier naturel \(n\), \(u_{n+1}-u_n=4>0\), donc la suite \((u_n)\) est croissante.
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /2}
+
+Calculer, en détaillant les étapes, et donner le résultat sous la forme d'une fraction irréductible :
+\[
+D = \frac{7}{10}\times\frac{5}{6}-\frac{1}{4}.
+\]
+
+On effectue d'abord le produit, puis la soustraction :
+\[
+\begin{aligned}
+D &= \frac{7\times5}{10\times6}-\frac{1}{4}\\
+  &= \frac{35}{60}-\frac{1}{4}\\
+  &= \frac{7}{12}-\frac{1}{4}\\
+  &= \frac{7}{12}-\frac{3}{12}\\
+  &= \frac{4}{12}=\frac{1}{3}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Suite définie par récurrence \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par
+\[
+\left\{\begin{array}{rcl}
+u_0 &=& 1 \\
+u_{n+1} &=& 4u_n-2
+\end{array}\right.
+\]
+
+\begin{enumerate}
+\item Quel est le mode de définition de cette suite ? Justifier.
+
+Cette suite est définie par récurrence : le terme \(u_{n+1}\) est donné à partir du terme précédent \(u_n\) (et non directement en fonction de \(n\)), ainsi que la valeur du premier terme \(u_0\).
+
+\item Calculer \(u_1\), \(u_2\) et \(u_4\).
+
+\[
+\begin{aligned}
+u_1 &= 4u_0-2 = 4\times1-2 = 2\\
+u_2 &= 4u_1-2 = 4\times2-2 = 6\\
+u_3 &= 4u_2-2 = 4\times6-2 = 22\\
+u_4 &= 4u_3-2 = 4\times22-2 = 86.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 3 -- Sens de variation d'une suite \hfill /4}
+
+On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n=5n-6\).
+
+Déterminer le sens de variation de la suite \((u_n)\) (on pourra calculer \(u_{n+1}-u_n\) en fonction de \(n\)).
+
+\[
+\begin{aligned}
+u_{n+1}-u_n &= \bigl(5(n+1)-6\bigr)-\bigl(5n-6\bigr)\\
+            &= 5n+5-6-5n+6\\
+            &= 5.
+\end{aligned}
+\]
+Pour tout entier naturel \(n\), \(u_{n+1}-u_n=5>0\), donc la suite \((u_n)\) est croissante.
+
+\end{document}
