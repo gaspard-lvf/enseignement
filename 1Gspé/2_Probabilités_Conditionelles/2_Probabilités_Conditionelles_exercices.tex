@@ -127,48 +127,63 @@ Dans un lycée, tous les élèves de seconde suivent une LV2 : espagnol ou allem
 \end{tabular}
 \end{center}
 
+On choisit un élève de seconde au hasard, et on note, pour \(i\in\{1;2;3;4\}\), \(S_i\) : \og l'élève choisi est en 2nde\(i\) \fg{}, ainsi que \(E\) : \og l'élève choisi fait espagnol \fg{} et \(A\) : \og l'élève choisi fait allemand \fg{}.
+
 \begin{enumerate}[leftmargin=*]
     \item Recopier et compléter entièrement le tableau.
-    \item On choisit un élève de seconde au hasard. Calculer la probabilité qu'il fasse espagnol.
-    \item Sachant que l'élève choisi est en 2nde3, quelle est la probabilité qu'il fasse allemand ? On notera ce nombre \(P_{\text{2nde3}}(\text{Allemand})\).
-    \item Sachant que l'élève choisi fait allemand, quelle est la probabilité qu'il soit en 2nde1 ? On notera ce nombre \(P_{\text{Allemand}}(\text{2nde1})\).
-    \item Calculer également \(P_{\text{2nde1}}(\text{Allemand})\). Comparer ce résultat avec celui de la question précédente : que remarque-t-on ?
+    \item Calculer \(P(E)\).
+    \item Sachant que l'élève choisi est en 2nde3, quelle est la probabilité qu'il fasse allemand ? On notera ce nombre \(P_{S_3}(A)\).
+    \item Sachant que l'élève choisi fait allemand, quelle est la probabilité qu'il soit en 2nde1 ? On notera ce nombre \(P_A(S_1)\).
+    \item Calculer également \(P_{S_1}(A)\). Comparer ce résultat avec celui de la question précédente : que remarque-t-on ?
+    \item Décrire par une phrase l'évènement \(S_3\cap E\), puis calculer \(P(S_3\cap E)\) directement à l'aide du tableau.
+    \item Décrire par une phrase l'évènement \(S_1\cup A\), puis calculer \(P(S_1\cup A)\) à l'aide de la formule \(P(S_1\cup A)=P(S_1)+P(A)-P(S_1\cap A)\).
 \end{enumerate}
 \end{exo}
 
 \prof{
 \begin{itemize}
     \item Tableau complété : Espagnol \(20-18-22-20\), total \(80\) ; Allemand \(10-12-10-8\), total \(40\) ; total général \(120\).
-    \item \(P(\text{Espagnol})=\frac{80}{120}=\frac{2}{3}\).
-    \item \(P_{\text{2nde3}}(\text{Allemand})=\frac{10}{32}=\frac{5}{16}\).
-    \item \(P_{\text{Allemand}}(\text{2nde1})=\frac{10}{40}=\frac{1}{4}\).
-    \item \(P_{\text{2nde1}}(\text{Allemand})=\frac{10}{30}=\frac{1}{3}\neq \frac{1}{4}\). Point clé de découverte : \(P_A(B)\) et \(P_B(A)\) sont en général différentes, ce sont deux probabilités conditionnelles distinctes (on ne conditionne pas par le même évènement).
+    \item \(P(E)=\frac{80}{120}=\frac{2}{3}\).
+    \item \(P_{S_3}(A)=\frac{10}{32}=\frac{5}{16}\).
+    \item \(P_A(S_1)=\frac{10}{40}=\frac{1}{4}\).
+    \item \(P_{S_1}(A)=\frac{10}{30}=\frac{1}{3}\neq \frac{1}{4}\). Point clé de découverte : \(P_A(B)\) et \(P_B(A)\) sont en général différentes, ce sont deux probabilités conditionnelles distinctes (on ne conditionne pas par le même évènement).
+    \item \(S_3\cap E\) : \og l'élève choisi est en 2nde3 et fait espagnol \fg{}. \(P(S_3\cap E)=\frac{22}{120}=\frac{11}{60}\).
+    \item \(S_1\cup A\) : \og l'élève choisi est en 2nde1 ou fait allemand (ou les deux) \fg{}. \(P(S_1)=\frac{30}{120}=\frac{1}{4}\), \(P(A)=\frac{40}{120}=\frac{1}{3}\), \(P(S_1\cap A)=\frac{10}{120}=\frac{1}{12}\), donc \(P(S_1\cup A)=\frac{1}{4}+\frac{1}{3}-\frac{1}{12}=\frac{1}{2}\).
 \end{itemize}
 }
 
-\begin{exo}[Adhérents d'un club sportif (tableau à compléter)][]
-Un club de sport propose deux activités : natation et escalade. Le tableau ci-dessous donne la répartition des adhérents selon leur catégorie d'âge et leur activité, mais certaines cases ont été effacées.
-
-\smallskip
-
-\begin{center}
-\begin{tabular}{|l|c|c|c|}
-    \hline
-     & Natation & Escalade & Total \\
-    \hline
-    Enfants &  & 20 & 50 \\
-    \hline
-    Ados & 45 &  & 80 \\
-    \hline
-    Adultes & 30 & 25 & 55 \\
-    \hline
-    Total &  &  &  \\
-    \hline
-\end{tabular}
-\end{center}
+\begin{exo}[Adhérents d'un club sportif (informations à rassembler)][]
+Un club de sport propose deux activités : natation et escalade. Pour reconstituer la répartition de ses adhérents, on a rassemblé les informations suivantes, données sous des formes variées :
+\begin{itemize}
+    \item Le club compte au total \(185\) adhérents.
+    \item Parmi eux, \(50\) sont des enfants et \(80\) sont des ados ; tous les autres sont des adultes.
+    \item Chez les enfants, \(20\) pratiquent l'escalade, tous les autres pratiquant la natation.
+    \item Chez les ados, les neuf seizièmes (\(\frac{9}{16}\)) pratiquent la natation.
+    \item Chez les adultes, il y a \(5\) nageurs de plus que de grimpeurs (pratiquants de l'escalade).
+    \item Au total, \(80\) adhérents du club pratiquent l'escalade (ce chiffre pourra vous servir à vérifier vos calculs).
+\end{itemize}
 
 \begin{enumerate}[leftmargin=*]
-    \item Recopier et compléter entièrement le tableau.
+    \item En exploitant ces informations, recopier et compléter entièrement le tableau à double entrée ci-dessous, donnant la répartition des adhérents selon leur catégorie d'âge et leur activité.
+
+    \smallskip
+
+    \begin{center}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+         & Natation & Escalade & Total \\
+        \hline
+        Enfants & & & \\
+        \hline
+        Ados & & & \\
+        \hline
+        Adultes & & & \\
+        \hline
+        Total & & & \\
+        \hline
+    \end{tabular}
+    \end{center}
+
     \item Un adhérent est choisi au hasard parmi tous les adhérents du club. Calculer la probabilité qu'il pratique l'escalade.
     \item Sachant que l'adhérent choisi est un adulte, calculer la probabilité qu'il pratique la natation.
     \item Sachant que l'adhérent choisi pratique l'escalade, calculer la probabilité qu'il soit un enfant.
@@ -178,7 +193,10 @@ Un club de sport propose deux activités : natation et escalade. Le tableau ci-d
 
 \prof{
 \begin{itemize}
-    \item Tableau complété : Natation \(30-45-30\), total \(105\) ; Escalade \(20-35-25\), total \(80\) ; total général \(185\).
+    \item Enfants : total \(50\), escalade \(20\) donc natation \(50-20=30\).
+    \item Ados : total \(80\), natation \(\frac{9}{16}\times80=45\) donc escalade \(80-45=35\).
+    \item Adultes : total \(185-50-80=55\). En notant \(n\) le nombre de nageurs et \(e\) le nombre de grimpeurs adultes, \(n+e=55\) et \(n-e=5\), d'où \(n=30\) et \(e=25\).
+    \item Tableau complété : Natation \(30-45-30\), total \(105\) ; Escalade \(20-35-25\), total \(80\) (on retrouve bien le total de \(80\) annoncé) ; total général \(185\).
     \item \(P(\text{Escalade})=\frac{80}{185}=\frac{16}{37}\approx 0,43\).
     \item \(P_{\text{Adulte}}(\text{Natation})=\frac{30}{55}=\frac{6}{11}\approx 0,55\).
     \item \(P_{\text{Escalade}}(\text{Enfant})=\frac{20}{80}=\frac{1}{4}\).
@@ -205,14 +223,14 @@ On choisit une ampoule au hasard dans la production totale et on note :
 ]
 \node {}
   child { node {\(U_1\)}
-    child { node {\(D\)} edge from parent node[above] {\(\underline{\hspace{1.1cm}}\)} }
-    child { node {\(\overline{D}\)} edge from parent node[below] {\(\underline{\hspace{1.1cm}}\)} }
-    edge from parent node[above] {\(\underline{\hspace{1.1cm}}\)}
+    child { node {\(D\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
+    child { node {\(\overline{D}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
+    edge from parent node[above] {\rule{1.1cm}{0.4pt}}
   }
   child { node {\(U_2\)}
-    child { node {\(D\)} edge from parent node[above] {\(\underline{\hspace{1.1cm}}\)} }
-    child { node {\(\overline{D}\)} edge from parent node[below] {\(\underline{\hspace{1.1cm}}\)} }
-    edge from parent node[below] {\(\underline{\hspace{1.1cm}}\)}
+    child { node {\(D\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
+    child { node {\(\overline{D}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
+    edge from parent node[below] {\rule{1.1cm}{0.4pt}}
   };
 \end{tikzpicture}
 \end{center}
@@ -224,19 +242,62 @@ On choisit une ampoule au hasard dans la production totale et on note :
 \end{enumerate}
 \end{exo}
 
-\begin{prop}[Règle du produit]
-Si \(A\) et \(B\) sont deux évènements d'un univers \(\Omega\), avec \(P(A)\neq 0\), alors :
-\[
-P(A\cap B) = P(A)\times P_A(B).
-\]
-Sur un arbre pondéré, la probabilité d'un chemin s'obtient en multipliant les probabilités inscrites sur les branches qui le composent.
-\end{prop}
+\begin{exo}[Lecture d'un arbre][appro]
 
-\begin{exo}[][]
-On reprend le contexte de l'exercice précédent.
+\smallskip
+
+\begin{center}
+\begin{tikzpicture}[
+  grow=right,
+  level distance=3.2cm,
+  level 1/.style={sibling distance=2.4cm},
+  level 2/.style={sibling distance=1.9cm},
+  edge from parent/.style={draw,-latex},
+  every node/.style={font=\small}
+]
+\node {}
+  child { node {\(G_1\)}
+    child { node {\(G_2\)} edge from parent node[above] {\(0,8\)} }
+    child { node {\(\overline{G_2}\)} edge from parent node[below] {\(0,2\)} }
+    edge from parent node[above] {\(0,7\)}
+  }
+  child { node {\(\overline{G_1}\)}
+    child { node {\(G_2\)} edge from parent node[above] {\(0,4\)} }
+    child { node {\(\overline{G_2}\)} edge from parent node[below] {\(0,6\)} }
+    edge from parent node[below] {\(0,3\)}
+  };
+\end{tikzpicture}
+\end{center}
+
+Parmi les probabilités suivantes, indiquer lesquelles peuvent être lues directement sur l'arbre ci-dessus ; le cas échéant, donner leur valeur.
+\begin{itemize}
+    \item \(P(G_1)\)
+    \item \(P_{G_1}(G_2)\)
+    \item \(P(G_1\cap G_2)\)
+    \item \(P_{\overline{G_1}}(\overline{G_2})\)
+    \item \(P(G_2)\)
+    \item \(P_{G_2}(G_1)\)
+\end{itemize}
+
+\end{exo}
+
+\prof{
+\begin{itemize}
+    \item \(P(G_1)=0,7\) : oui, lecture directe (probabilité portée par la première branche).
+    \item \(P_{G_1}(G_2)=0,8\) : oui, lecture directe (probabilité portée par une branche du second niveau).
+    \item \(P(G_1\cap G_2)\) : non, cette probabilité n'est portée par aucune branche ; il faudrait utiliser la règle du produit, \(P(G_1)\times P_{G_1}(G_2)=0,7\times0,8=0,56\).
+    \item \(P_{\overline{G_1}}(\overline{G_2})=0,6\) : oui, lecture directe (probabilité portée par une branche du second niveau).
+    \item \(P(G_2)\) : non, cette probabilité n'apparaît sur aucune branche ; il faudrait sommer les probabilités des deux chemins menant à \(G_2\) (formule des probabilités totales, hors programme ici).
+    \item \(P_{G_2}(G_1)\) : non, ce n'est pas la même quantité que \(P_{G_1}(G_2)\) ; elle ne peut pas être lue sur l'arbre (il faudrait la formule de Bayes).
+\end{itemize}
+}
+
+\begin{exo}[Calculer des probas à l'aide d'un arbre][]
+
+On reprend le contexte de l'exercice 5.
 
 \begin{enumerate}[leftmargin=*]
-    \item À l'aide de la règle du produit, calculer la probabilité \(P(U_1\cap D)\) qu'une ampoule provienne de l'usine \(U_1\) \textbf{et} soit défectueuse.
+    \item Calculer la probabilité \(P(U_1\cap D)\) qu'une ampoule provienne de l'usine \(U_1\) \textbf{et} soit défectueuse.
     \item Calculer de même \(P(U_2\cap D)\).
 \end{enumerate}
 \end{exo}
@@ -293,13 +354,10 @@ Une entreprise de \(200\) salariés a relevé leur moyen de transport habituel s
 \end{tabular}
 \end{center}
 
-On choisit un salarié au hasard parmi les \(200\) (TC désigne \og transports en commun \fg{}).
+On choisit un salarié au hasard parmi les \(200\), et on note \(V\) : \og le salarié habite en ville \fg{}, \(C\) : \og le salarié habite à la campagne \fg{} et \(T\) : \og le salarié utilise la voiture \fg{} (TC désigne \og transports en commun \fg{}, donc \(\overline{T}\) : \og le salarié utilise les TC \fg{}).
 
 \begin{enumerate}[leftmargin=*]
-    \item Calculer \(P(\text{Ville})\) et \(P(\text{Campagne})\).
-    \item Calculer \(P_{\text{Ville}}(\text{Voiture})\) et \(P_{\text{Campagne}}(\text{Voiture})\) (arrondir si nécessaire).
-    \item En déduire \(P_{\text{Ville}}(\text{TC})\) et \(P_{\text{Campagne}}(\text{TC})\).
-    \item Recopier et compléter l'arbre pondéré ci-dessous à l'aide des probabilités calculées précédemment.
+    \item À l'aide du tableau, calculer toutes les probabilités nécessaires, puis recopier et compléter l'arbre pondéré ci-dessous.
 
     \smallskip
 
@@ -313,81 +371,34 @@ On choisit un salarié au hasard parmi les \(200\) (TC désigne \og transports e
       every node/.style={font=\small}
     ]
     \node {}
-      child { node {Ville}
-        child { node {Voiture} edge from parent node[above] {\(\underline{\hspace{1.1cm}}\)} }
-        child { node {TC} edge from parent node[below] {\(\underline{\hspace{1.1cm}}\)} }
-        edge from parent node[above] {\(\underline{\hspace{1.1cm}}\)}
+      child { node {\(V\)}
+        child { node {\(T\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
+        child { node {\(\overline{T}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
+        edge from parent node[above] {\rule{1.1cm}{0.4pt}}
       }
-      child { node {Campagne}
-        child { node {Voiture} edge from parent node[above] {\(\underline{\hspace{1.1cm}}\)} }
-        child { node {TC} edge from parent node[below] {\(\underline{\hspace{1.1cm}}\)} }
-        edge from parent node[below] {\(\underline{\hspace{1.1cm}}\)}
+      child { node {\(C\)}
+        child { node {\(T\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
+        child { node {\(\overline{T}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
+        edge from parent node[below] {\rule{1.1cm}{0.4pt}}
       };
     \end{tikzpicture}
     \end{center}
-
-    \item À l'aide de la règle du produit et de l'arbre, retrouver le nombre de salariés qui habitent en ville \textbf{et} utilisent la voiture. Vérifier que l'on retombe sur la valeur du tableau.
 \end{enumerate}
 \end{exo}
 
 \prof{
 \begin{itemize}
-    \item \(P(\text{Ville})=\frac{150}{200}=0,75\) ; \(P(\text{Campagne})=0,25\).
-    \item \(P_{\text{Ville}}(\text{Voiture})=\frac{40}{150}=\frac{4}{15}\approx0,27\) ; \(P_{\text{Campagne}}(\text{Voiture})=\frac{35}{50}=0,7\).
-    \item \(P_{\text{Ville}}(\text{TC})=1-\frac{4}{15}=\frac{11}{15}\approx0,73\) ; \(P_{\text{Campagne}}(\text{TC})=0,3\).
-    \item Arbre : \(P(\text{Ville})=0,75\) puis branches \(\frac{4}{15}\) (Voiture) et \(\frac{11}{15}\) (TC) ; \(P(\text{Campagne})=0,25\) puis branches \(0,7\) (Voiture) et \(0,3\) (TC).
-    \item \(P(\text{Ville})\times P_{\text{Ville}}(\text{Voiture}) = 0,75\times\frac{4}{15}=0,2\), soit \(0,2\times200=40\) salariés : on retrouve bien la case du tableau.
+    \item \(P(V)=\frac{150}{200}=0,75\) ; \(P(C)=0,25\).
+    \item \(P_V(T)=\frac{40}{150}=\frac{4}{15}\approx0,27\) ; \(P_C(T)=\frac{35}{50}=0,7\).
+    \item \(P_V(\overline T)=1-\frac{4}{15}=\frac{11}{15}\approx0,73\) ; \(P_C(\overline T)=0,3\).
+    \item Arbre : \(P(V)=0,75\) puis branches \(\frac{4}{15}\) (\(T\)) et \(\frac{11}{15}\) (\(\overline T\)) ; \(P(C)=0,25\) puis branches \(0,7\) (\(T\)) et \(0,3\) (\(\overline T\)).
 \end{itemize}
 }
 
-\begin{exo}[Lecture d'un arbre : un tournoi de handball][appro]
-Une équipe de handball dispute un match aller puis un match retour. Elle gagne le match aller avec une probabilité de \(0,7\). Si elle gagne le match aller, elle gagne le match retour avec une probabilité de \(0,8\) (élan de la victoire). Si elle perd le match aller, elle gagne le match retour avec une probabilité de \(0,4\) (esprit de revanche).
 
-On note \(G_1\) : \og l'équipe gagne le match aller \fg{} et \(G_2\) : \og l'équipe gagne le match retour \fg{}.
 
-\smallskip
 
-\begin{center}
-\begin{tikzpicture}[
-  grow=right,
-  level distance=3.2cm,
-  level 1/.style={sibling distance=2.4cm},
-  level 2/.style={sibling distance=1.9cm},
-  edge from parent/.style={draw,-latex},
-  every node/.style={font=\small}
-]
-\node {}
-  child { node {\(G_1\)}
-    child { node {\(G_2\)} edge from parent node[above] {\(0,8\)} }
-    child { node {\(\overline{G_2}\)} edge from parent node[below] {\(0,2\)} }
-    edge from parent node[above] {\(0,7\)}
-  }
-  child { node {\(\overline{G_1}\)}
-    child { node {\(G_2\)} edge from parent node[above] {\(0,4\)} }
-    child { node {\(\overline{G_2}\)} edge from parent node[below] {\(0,6\)} }
-    edge from parent node[below] {\(0,3\)}
-  };
-\end{tikzpicture}
-\end{center}
-
-\begin{enumerate}[leftmargin=*]
-    \item Que représente l'évènement \(G_1\cap G_2\) ? Calculer sa probabilité.
-    \item Calculer \(P(\overline{G_1}\cap G_2)\).
-    \item Sachant que l'équipe a perdu le match aller, quelle est la probabilité qu'elle perde aussi le match retour ? Exprimer ce nombre avec la notation \(P_{\ldots}(\ldots)\) et donner sa valeur.
-    \item L'équipe a-t-elle plus de chances de gagner ses deux matchs, ou de perdre le match aller puis gagner le match retour ? Justifier par un calcul.
-\end{enumerate}
-\end{exo}
-
-\prof{
-\begin{itemize}
-    \item \(G_1\cap G_2\) : \og l'équipe gagne le match aller et le match retour \fg{}. \(P(G_1\cap G_2)=0,7\times0,8=0,56\).
-    \item \(P(\overline{G_1}\cap G_2)=0,3\times0,4=0,12\).
-    \item \(P_{\overline{G_1}}(\overline{G_2})=0,6\) (lecture directe sur l'arbre).
-    \item Gagner les deux matchs : \(0,56\). Perdre puis gagner : \(0,12\). L'équipe a donc bien plus de chances de gagner ses deux matchs.
-\end{itemize}
-}
-
-\begin{exo}[Tirages successifs sans remise][avance]
+\begin{exo}[Tirages successifs sans remise][appro]
 Une urne contient \(5\) boules rouges et \(3\) boules vertes, indiscernables au toucher. On tire au hasard une boule, on note sa couleur, on ne la remet \textbf{pas} dans l'urne, puis on tire une seconde boule.
 
 On note \(R_1\) : \og la première boule tirée est rouge \fg{} et \(R_2\) : \og la seconde boule tirée est rouge \fg{}.
