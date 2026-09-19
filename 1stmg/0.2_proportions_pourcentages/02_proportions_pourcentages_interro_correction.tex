@@ -1,0 +1,327 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1M}
+\renewcommand{\chapitre}{Proportions, pourcentages}
+\renewcommand{\numchap}{0.2}
+\renewcommand{\theme}{Statistiques}
+
+%%%titre "CORRECTION" au lieu de "INTERROGATION", sans les champs Nom/Prénom
+\renewcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large CORRECTION -- \chapitre}
+    \end{center}
+
+    \vspace{0.1cm}
+}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /3}
+
+\begin{enumerate}
+\item \(A = \dfrac{6}{7}\times\dfrac{8}{9}\)
+
+\[
+\begin{aligned}
+A &= \frac{6\times8}{7\times9}\\
+  &= \frac{48}{63}\\
+  &= \frac{16}{21}.
+\end{aligned}
+\]
+
+\item \(B = \dfrac{5}{6}-\dfrac{1}{3}\)
+
+\[
+\begin{aligned}
+B &= \frac{5}{6}-\frac{2}{6}\\
+  &= \frac{3}{6}=\frac{1}{2}.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 2 -- Proportion, pourcentage et écriture décimale \hfill /3}
+
+Dans un lycée de 200 élèves, 50 sont internes.
+
+La proportion d'élèves internes est \(\dfrac{50}{200}=\dfrac{1}{4}\).
+
+Sous forme de pourcentage : \(\dfrac{1}{4}=\dfrac{25}{100}=\textcolor{blue}{25\%}\).
+
+Sous forme de nombre décimal : \(\textcolor{blue}{0{,}25}\).
+
+\textbf{Exercice 3 -- Tableau croisé \hfill /4}
+
+\begin{enumerate}
+\item Compléter les deux cases manquantes du tableau. \hfill /2
+
+Total des filles (somme sur la ligne) : \(50+30=\textcolor{blue}{80}\).
+
+Effectif des garçons externes (soustraction sur la ligne) : \(120-70=\textcolor{blue}{50}\).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+ & \textbf{Interne} & \textbf{Externe} & \textbf{Total} \\
+\hline
+\textbf{Filles} & 50 & 30 & \textcolor{blue}{80} \\
+\hline
+\textbf{Garçons} & 70 & \textcolor{blue}{50} & 120 \\
+\hline
+\textbf{Total} & 120 & 80 & 200 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Quelle est la proportion de filles parmi l'ensemble des élèves du lycée ? \hfill /1
+
+\(\dfrac{80}{200}=\dfrac{2}{5}=\textcolor{blue}{0{,}4=40\%}\).
+
+\item Parmi les filles, quelle est la proportion d'élèves internes ? \hfill /1
+
+\(\dfrac{50}{80}=\dfrac{5}{8}=\textcolor{blue}{0{,}625=62{,}5\%}\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /3}
+
+\begin{enumerate}
+\item \(A = \dfrac{5}{9}\times\dfrac{7}{10}\)
+
+\[
+\begin{aligned}
+A &= \frac{5\times7}{9\times10}\\
+  &= \frac{35}{90}\\
+  &= \frac{7}{18}.
+\end{aligned}
+\]
+
+\item \(B = \dfrac{7}{8}-\dfrac{1}{4}\)
+
+\[
+\begin{aligned}
+B &= \frac{7}{8}-\frac{2}{8}\\
+  &= \frac{5}{8}.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 2 -- Proportion, pourcentage et écriture décimale \hfill /3}
+
+Un club de sport compte 200 adhérents, dont 50 pratiquent la natation.
+
+La proportion d'adhérents pratiquant la natation est \(\dfrac{50}{200}=\dfrac{1}{4}\).
+
+Sous forme de pourcentage : \(\dfrac{1}{4}=\dfrac{25}{100}=\textcolor{blue}{25\%}\).
+
+Sous forme de nombre décimal : \(\textcolor{blue}{0{,}25}\).
+
+\textbf{Exercice 3 -- Tableau croisé \hfill /4}
+
+\begin{enumerate}
+\item Compléter les deux cases manquantes du tableau. \hfill /2
+
+Total des femmes (somme sur la ligne) : \(60+40=\textcolor{blue}{100}\).
+
+Effectif des hommes en abonnement mensuel (soustraction sur la ligne) : \(150-90=\textcolor{blue}{60}\).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+ & \textbf{Annuel} & \textbf{Mensuel} & \textbf{Total} \\
+\hline
+\textbf{Femmes} & 60 & 40 & \textcolor{blue}{100} \\
+\hline
+\textbf{Hommes} & 90 & \textcolor{blue}{60} & 150 \\
+\hline
+\textbf{Total} & 150 & 100 & 250 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Quelle est la proportion de femmes parmi l'ensemble des adhérents ? \hfill /1
+
+\(\dfrac{100}{250}=\dfrac{2}{5}=\textcolor{blue}{0{,}4=40\%}\).
+
+\item Parmi les femmes, quelle est la proportion d'abonnements annuels ? \hfill /1
+
+\(\dfrac{60}{100}=\dfrac{3}{5}=\textcolor{blue}{0{,}6=60\%}\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /3}
+
+\begin{enumerate}
+\item \(A = \dfrac{8}{11}\times\dfrac{5}{6}\)
+
+\[
+\begin{aligned}
+A &= \frac{8\times5}{11\times6}\\
+  &= \frac{40}{66}\\
+  &= \frac{20}{33}.
+\end{aligned}
+\]
+
+\item \(B = \dfrac{7}{9}-\dfrac{1}{3}\)
+
+\[
+\begin{aligned}
+B &= \frac{7}{9}-\frac{3}{9}\\
+  &= \frac{4}{9}.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 2 -- Proportion, pourcentage et écriture décimale \hfill /3}
+
+Une entreprise emploie 200 salariés, dont 50 travaillent à temps partiel.
+
+La proportion de salariés à temps partiel est \(\dfrac{50}{200}=\dfrac{1}{4}\).
+
+Sous forme de pourcentage : \(\dfrac{1}{4}=\dfrac{25}{100}=\textcolor{blue}{25\%}\).
+
+Sous forme de nombre décimal : \(\textcolor{blue}{0{,}25}\).
+
+\textbf{Exercice 3 -- Tableau croisé \hfill /4}
+
+\begin{enumerate}
+\item Compléter les deux cases manquantes du tableau. \hfill /2
+
+Total des femmes (somme sur la ligne) : \(50+50=\textcolor{blue}{100}\).
+
+Effectif des hommes non-cadres (soustraction sur la ligne) : \(150-70=\textcolor{blue}{80}\).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+ & \textbf{Cadre} & \textbf{Non-cadre} & \textbf{Total} \\
+\hline
+\textbf{Femmes} & 50 & 50 & \textcolor{blue}{100} \\
+\hline
+\textbf{Hommes} & 70 & \textcolor{blue}{80} & 150 \\
+\hline
+\textbf{Total} & 120 & 130 & 250 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Quelle est la proportion de femmes parmi l'ensemble des salariés ? \hfill /1
+
+\(\dfrac{100}{250}=\dfrac{2}{5}=\textcolor{blue}{0{,}4=40\%}\).
+
+\item Parmi les femmes, quelle est la proportion de cadres ? \hfill /1
+
+\(\dfrac{50}{100}=\dfrac{1}{2}=\textcolor{blue}{0{,}5=50\%}\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Calcul avec des fractions \hfill /3}
+
+\begin{enumerate}
+\item \(A = \dfrac{9}{10}\times\dfrac{6}{7}\)
+
+\[
+\begin{aligned}
+A &= \frac{9\times6}{10\times7}\\
+  &= \frac{54}{70}\\
+  &= \frac{27}{35}.
+\end{aligned}
+\]
+
+\item \(B = \dfrac{5}{8}-\dfrac{1}{4}\)
+
+\[
+\begin{aligned}
+B &= \frac{5}{8}-\frac{2}{8}\\
+  &= \frac{3}{8}.
+\end{aligned}
+\]
+\end{enumerate}
+
+\textbf{Exercice 2 -- Proportion, pourcentage et écriture décimale \hfill /3}
+
+Un festival a accueilli 200 festivaliers, dont 50 avaient moins de 18 ans.
+
+La proportion de festivaliers de moins de 18 ans est \(\dfrac{50}{200}=\dfrac{1}{4}\).
+
+Sous forme de pourcentage : \(\dfrac{1}{4}=\dfrac{25}{100}=\textcolor{blue}{25\%}\).
+
+Sous forme de nombre décimal : \(\textcolor{blue}{0{,}25}\).
+
+\textbf{Exercice 3 -- Tableau croisé \hfill /4}
+
+\begin{enumerate}
+\item Compléter les deux cases manquantes du tableau. \hfill /2
+
+Total des Pass 3 jours (somme sur la ligne) : \(30+70=\textcolor{blue}{100}\).
+
+Effectif des Pass 1 jour âgés de 18 ans et plus (soustraction sur la ligne) : \(150-50=\textcolor{blue}{100}\).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+ & \textbf{Moins de 18 ans} & \textbf{18 ans et plus} & \textbf{Total} \\
+\hline
+\textbf{Pass 3 jours} & 30 & 70 & \textcolor{blue}{100} \\
+\hline
+\textbf{Pass 1 jour} & 50 & \textcolor{blue}{100} & 150 \\
+\hline
+\textbf{Total} & 80 & 170 & 250 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Quelle est la proportion de festivaliers ayant un pass 3 jours parmi l'ensemble des festivaliers ? \hfill /1
+
+\(\dfrac{100}{250}=\dfrac{2}{5}=\textcolor{blue}{0{,}4=40\%}\).
+
+\item Parmi les festivaliers ayant un pass 3 jours, quelle est la proportion de moins de 18 ans ? \hfill /1
+
+\(\dfrac{30}{100}=\dfrac{3}{10}=\textcolor{blue}{0{,}3=30\%}\).
+\end{enumerate}
+
+\end{document}
