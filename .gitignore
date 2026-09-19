@@ -6,6 +6,7 @@ rentree/
 *.aux
 *.fls
 *.gz
+*.pdf
 *.fdb_latexmk
 *.tmp
 version.tex
