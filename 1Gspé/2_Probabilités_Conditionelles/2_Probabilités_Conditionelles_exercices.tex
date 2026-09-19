@@ -133,27 +133,38 @@ Dans un lycée, tous les élèves de seconde suivent une LV2 : espagnol ou allem
 \end{tabular}
 \end{center}
 
+On choisit un élève de seconde au hasard et on note \(S\) : \og l'élève choisi fait espagnol \fg{}, \(A\) : \og l'élève choisi fait allemand \fg{}, et pour \(k\in\{1;2;3;4\}\), \(C_k\) : \og l'élève choisi est en 2nde\(k\) \fg{}.
+
 \begin{enumerate}[leftmargin=*]
     \item Recopier et compléter entièrement le tableau.
-    \item On choisit un élève de seconde au hasard. Calculer la probabilité qu'il fasse espagnol.
-    \item Sachant que l'élève choisi est en 2nde3, quelle est la probabilité qu'il fasse allemand ? On notera ce nombre \(P_{\text{2nde3}}(\text{Allemand})\).
-    \item Sachant que l'élève choisi fait allemand, quelle est la probabilité qu'il soit en 2nde1 ? On notera ce nombre \(P_{\text{Allemand}}(\text{2nde1})\).
-    \item Calculer également \(P_{\text{2nde1}}(\text{Allemand})\). Comparer ce résultat avec celui de la question précédente : que remarque-t-on ?
+    \item Calculer \(P(S)\) et \(P(A)\).
+    \item À l'aide du tableau, donner directement \(P(C_3\cap A)\), puis \(P(C_3\cup A)\).
+    \item Sachant que l'élève choisi est en 2nde3, quelle est la probabilité qu'il fasse allemand ? On notera ce nombre \(P_{C_3}(A)\), et on vérifiera que \(P_{C_3}(A)=\dfrac{P(C_3\cap A)}{P(C_3)}\).
+    \item Sachant que l'élève choisi fait allemand, quelle est la probabilité qu'il soit en 2nde1 ? On notera ce nombre \(P_A(C_1)\).
+    \item Calculer également \(P_{C_1}(A)\). Comparer ce résultat avec celui de la question précédente : que remarque-t-on ?
 \end{enumerate}
 \end{exo}
 
 \prof{
 \begin{itemize}
     \item Tableau complété : Espagnol \(20-18-22-20\), total \(80\) ; Allemand \(10-12-10-8\), total \(40\) ; total général \(120\).
-    \item \(P(\text{Espagnol})=\frac{80}{120}=\frac{2}{3}\).
-    \item \(P_{\text{2nde3}}(\text{Allemand})=\frac{10}{32}=\frac{5}{16}\).
-    \item \(P_{\text{Allemand}}(\text{2nde1})=\frac{10}{40}=\frac{1}{4}\).
-    \item \(P_{\text{2nde1}}(\text{Allemand})=\frac{10}{30}=\frac{1}{3}\neq \frac{1}{4}\). Point clé de découverte : \(P_A(B)\) et \(P_B(A)\) sont en général différentes, ce sont deux probabilités conditionnelles distinctes (on ne conditionne pas par le même évènement).
+    \item \(P(S)=\frac{80}{120}=\frac{2}{3}\) ; \(P(A)=\frac{40}{120}=\frac{1}{3}\).
+    \item \(C_3\cap A\) : \og l'élève est en 2nde3 et fait allemand \fg{}, ce qui correspond directement à la case du tableau : \(P(C_3\cap A)=\frac{10}{120}=\frac{1}{12}\). \(C_3\cup A\) : \og l'élève est en 2nde3 ou fait allemand \fg{}, soit \(32+40-10=62\) élèves : \(P(C_3\cup A)=\frac{62}{120}=\frac{31}{60}\).
+    \item \(P_{C_3}(A)=\frac{10}{32}=\frac{5}{16}\). Vérification : \(\dfrac{P(C_3\cap A)}{P(C_3)}=\dfrac{1/12}{32/120}=\dfrac{10}{32}=\frac{5}{16}\).
+    \item \(P_A(C_1)=\frac{10}{40}=\frac{1}{4}\).
+    \item \(P_{C_1}(A)=\frac{10}{30}=\frac{1}{3}\neq \frac{1}{4}\). Point clé de découverte : \(P_X(Y)\) et \(P_Y(X)\) sont en général différentes, ce sont deux probabilités conditionnelles distinctes (on ne conditionne pas par le même évènement).
 \end{itemize}
 }
 
-\begin{exo}[Adhérents d'un club sportif (tableau à compléter)][]
-Un club de sport propose deux activités : natation et escalade. Le tableau ci-dessous donne la répartition des adhérents selon leur catégorie d'âge et leur activité, mais certaines cases ont été effacées.
+\begin{exo}[Adhérents d'un club sportif (tableau à compléter)][appro]
+Un club de sport propose deux activités : natation et escalade. Le club compte au total \(200\) adhérents, répartis en trois catégories d'âge : enfants, ados et adultes. On sait que :
+\begin{itemize}
+    \item les enfants représentent \(25\,\%\) des adhérents, et \(20\) d'entre eux pratiquent l'escalade (les autres pratiquent la natation) ;
+    \item les ados représentent \(45\,\%\) des adhérents, et parmi eux, \(60\,\%\) pratiquent la natation ;
+    \item les adultes forment le reste des adhérents, et parmi eux, \(40\,\%\) pratiquent l'escalade.
+\end{itemize}
+
+Le tableau ci-dessous, à compléter, doit résumer la répartition des adhérents selon leur catégorie d'âge et leur activité.
 
 \smallskip
 
@@ -162,11 +173,11 @@ Un club de sport propose deux activités : natation et escalade. Le tableau ci-d
     \hline
      & Natation & Escalade & Total \\
     \hline
-    Enfants &  & 20 & 50 \\
+    Enfants &  &  &  \\
     \hline
-    Ados & 45 &  & 80 \\
+    Ados &  &  &  \\
     \hline
-    Adultes & 30 & 25 & 55 \\
+    Adultes &  &  &  \\
     \hline
     Total &  &  &  \\
     \hline
@@ -174,7 +185,8 @@ Un club de sport propose deux activités : natation et escalade. Le tableau ci-d
 \end{center}
 
 \begin{enumerate}[leftmargin=*]
-    \item Recopier et compléter entièrement le tableau.
+    \item À l'aide des pourcentages donnés dans l'énoncé, calculer les effectifs des enfants, des ados et des adultes adhérents au club.
+    \item En utilisant les autres informations de l'énoncé, calculer le nombre d'adhérents de chaque catégorie pratiquant chaque activité, puis recopier et compléter entièrement le tableau (y compris les totaux).
     \item Un adhérent est choisi au hasard parmi tous les adhérents du club. Calculer la probabilité qu'il pratique l'escalade.
     \item Sachant que l'adhérent choisi est un adulte, calculer la probabilité qu'il pratique la natation.
     \item Sachant que l'adhérent choisi pratique l'escalade, calculer la probabilité qu'il soit un enfant.
@@ -184,11 +196,12 @@ Un club de sport propose deux activités : natation et escalade. Le tableau ci-d
 
 \prof{
 \begin{itemize}
-    \item Tableau complété : Natation \(30-45-30\), total \(105\) ; Escalade \(20-35-25\), total \(80\) ; total général \(185\).
-    \item \(P(\text{Escalade})=\frac{80}{185}=\frac{16}{37}\approx 0,43\).
-    \item \(P_{\text{Adulte}}(\text{Natation})=\frac{30}{55}=\frac{6}{11}\approx 0,55\).
-    \item \(P_{\text{Escalade}}(\text{Enfant})=\frac{20}{80}=\frac{1}{4}\).
-    \item \(P_{\text{Natation}}(\text{Ado})=\frac{45}{105}\approx 0,43\) contre \(P_{\text{Natation}}(\text{Adulte})=\frac{30}{105}\approx 0,29\) : un nageur a plus de chances d'être un ado.
+    \item Effectifs par catégorie : \(25\,\%\times200=50\) enfants ; \(45\,\%\times200=90\) ados ; adultes : \(200-50-90=60\) (soit \(30\,\%\) des adhérents).
+    \item Enfants : \(20\) en escalade donc \(50-20=30\) en natation. Ados : \(60\,\%\times90=54\) en natation donc \(90-54=36\) en escalade. Adultes : \(40\,\%\times60=24\) en escalade donc \(60-24=36\) en natation. Tableau complété : Natation \(30-54-36\), total \(120\) ; Escalade \(20-36-24\), total \(80\) ; total général \(200\).
+    \item \(P(\text{Escalade})=\frac{80}{200}=0,4\).
+    \item \(P_{\text{Adulte}}(\text{Natation})=\frac{36}{60}=0,6\).
+    \item \(P_{\text{Escalade}}(\text{Enfant})=\frac{20}{80}=0,25\).
+    \item \(P_{\text{Natation}}(\text{Ado})=\frac{54}{120}=0,45\) contre \(P_{\text{Natation}}(\text{Adulte})=\frac{36}{120}=0,3\) : un nageur a plus de chances d'être un ado.
 \end{itemize}
 }
 
