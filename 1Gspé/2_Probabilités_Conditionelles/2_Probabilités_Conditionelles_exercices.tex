@@ -223,14 +223,14 @@ On choisit une ampoule au hasard dans la production totale et on note :
 ]
 \node {}
   child { node {\(U_1\)}
-    child { node {\(D\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
-    child { node {\(\overline{D}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
-    edge from parent node[above] {\rule{1.1cm}{0.4pt}}
+    child { node {\(D\)} edge from parent }
+    child { node {\(\overline{D}\)} edge from parent }
+    edge from parent
   }
   child { node {\(U_2\)}
-    child { node {\(D\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
-    child { node {\(\overline{D}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
-    edge from parent node[below] {\rule{1.1cm}{0.4pt}}
+    child { node {\(D\)} edge from parent }
+    child { node {\(\overline{D}\)} edge from parent }
+    edge from parent
   };
 \end{tikzpicture}
 \end{center}
@@ -372,14 +372,14 @@ On choisit un salarié au hasard parmi les \(200\), et on note \(V\) : \og le sa
     ]
     \node {}
       child { node {\(V\)}
-        child { node {\(T\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
-        child { node {\(\overline{T}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
-        edge from parent node[above] {\rule{1.1cm}{0.4pt}}
+        child { node {\(T\)} edge from parent }
+        child { node {\(\overline{T}\)} edge from parent }
+        edge from parent
       }
       child { node {\(C\)}
-        child { node {\(T\)} edge from parent node[above] {\rule{1.1cm}{0.4pt}} }
-        child { node {\(\overline{T}\)} edge from parent node[below] {\rule{1.1cm}{0.4pt}} }
-        edge from parent node[below] {\rule{1.1cm}{0.4pt}}
+        child { node {\(T\)} edge from parent }
+        child { node {\(\overline{T}\)} edge from parent }
+        edge from parent
       };
     \end{tikzpicture}
     \end{center}
@@ -433,45 +433,7 @@ Soit \(A\) et \(B\) deux évènements avec \(P(A)=0,4\). On pose \(P_A(B)=x\) et
 \end{enumerate}
 \end{exo}
 
-\begin{exo}[Effectifs exprimés en fonction de \(x\)][appro]
-Une association sportive propose deux activités, tennis et badminton, pratiquées par des adhérents juniors ou seniors. Le tableau ci-dessous donne les effectifs, dont certains sont exprimés en fonction d'un nombre réel \(x>0\).
 
-\smallskip
-
-\begin{center}
-\begin{tabular}{|l|c|c|c|}
-    \hline
-     & Tennis & Badminton & Total \\
-    \hline
-    Junior & \(x\) & \(2x\) & \(3x\) \\
-    \hline
-    Senior & \(15\) & \(x+5\) & \(x+20\) \\
-    \hline
-    Total & \(x+15\) & \(3x+5\) & \(4x+20\) \\
-    \hline
-\end{tabular}
-\end{center}
-
-On sait que l'association compte au total \(100\) adhérents.
-
-\begin{enumerate}[leftmargin=*]
-    \item Justifier que le total général du tableau vaut \(4x+20\), puis déterminer \(x\).
-    \item En déduire le tableau des effectifs, entièrement rempli avec des nombres.
-    \item Calculer \(P(\text{Tennis})\) et \(P(\text{Junior}\cap\text{Badminton})\), où l'on choisit un adhérent au hasard.
-    \item Calculer \(P_{\text{Junior}}(\text{Tennis})\) et \(P_{\text{Senior}}(\text{Badminton})\).
-    \item Comparer \(P_{\text{Junior}}(\text{Tennis})\) et \(P_{\text{Senior}}(\text{Tennis})\). Un senior a-t-il plus tendance à jouer au tennis qu'un junior ?
-\end{enumerate}
-\end{exo}
-
-\prof{
-\begin{itemize}
-    \item \(4x+20=100 \Rightarrow x=20\).
-    \item Junior : \(20\), \(40\), total \(60\) ; Senior : \(15\), \(25\), total \(40\) ; Total : \(35\), \(65\), \(100\).
-    \item \(P(\text{Tennis})=\frac{35}{100}=0,35\) ; \(P(\text{Junior}\cap\text{Badminton})=\frac{40}{100}=0,4\).
-    \item \(P_{\text{Junior}}(\text{Tennis})=\frac{20}{60}=\frac{1}{3}\) ; \(P_{\text{Senior}}(\text{Badminton})=\frac{25}{40}=0,625\).
-    \item \(P_{\text{Senior}}(\text{Tennis})=\frac{15}{40}=0,375 > \frac{1}{3}\approx0,333\) : un senior a (légèrement) plus tendance à jouer au tennis qu'un junior.
-\end{itemize}
-}
 
 \begin{exo}[Une égalité générale][appro]
 Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\), tels que \(P(A)\neq0\) et \(P(B)\neq0\).
@@ -493,6 +455,50 @@ Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\), tels que \(P(A)\n
 \end{itemize}
 }
 
+\begin{exo}[Effectifs exprimés en fonction de \(x\)][appro]
+Une association sportive propose deux activités, le tennis et le badminton, pratiquées par des adhérents juniors ou seniors. Le tableau ci-dessous donne les effectifs des pratiquants ; certains sont exprimés en fonction d'un nombre réel \(x \geq 5\), où \(x\) désigne le nombre de juniors qui jouent au tennis.
+
+On sait de plus que :
+
+\begin{itemize}
+    \item parmi les juniors, il y a deux fois plus de pratiquants de badminton que de pratiquants de tennis ;
+    \item il y a 5 joueurs de tennis juniors de moins que de joueurs de tennis seniors ;
+    \item parmi les seniors, il y a 15 joueurs de badminton de plus que de joueurs de tennis.
+\end{itemize}
+
+\smallskip
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+    \hline
+     & Tennis & Badminton & Total \\
+    \hline
+    Junior & \(x\) & \(2x\) & \(3x\) \\
+    \hline
+    Senior & \(x+5\) &  &  \\
+    \hline
+    Total & \(2x-5\) &  &  \\
+    \hline
+\end{tabular}
+\end{center}
+
+
+
+\begin{enumerate}[leftmargin=*]
+    \item Compléter le tableau.
+    \item On choisit un adhérent au hasard. On note :
+    \begin{itemize}
+        \item \(J\) l'événement « le joueur est junior » et \(S\) l'événement « le joueur est senior » ;
+        \item \(T\) l'événement « le joueur pratique le tennis » et \(B\) l'événement « le joueur pratique le badminton ».
+    \end{itemize}
+    \begin{enumerate}
+        \item Exprimer \(P_J(T)\) en fonction de \(x\). Que remarque-t-on ?
+        \item Exprimer \(P(T \cap S)\) et \(P(T)\) en fonction de \(x\).
+        \item Ces deux probabilités dépendent-elles de \(x\) ?
+    \end{enumerate}
+    \item Sachant que l'association compte \(100\) adhérents au total, retrouver le nombre de juniors qui jouent au tennis.
+\end{enumerate}
+\end{exo}
 
 
 \begin{exo}[Cas littéral général][avance]
