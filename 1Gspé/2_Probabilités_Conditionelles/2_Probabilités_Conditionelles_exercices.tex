@@ -423,6 +423,16 @@ On note \(R_1\) : \og la première boule tirée est rouge \fg{} et \(R_2\) : \og
 
 \section{Exercices d'approfondissement : calcul littéral et probabilités}
 
+\begin{exo}[][appro]
+Soit \(A\) et \(B\) deux évènements avec \(P(A)=0,4\). On pose \(P_A(B)=x\) et on sait que \(P_A(\overline B)=3x-0,2\), où \(x\) est un réel de \(]0;1[\).
+
+\begin{enumerate}[leftmargin=*]
+    \item Justifier que \(x+(3x-0,2)=1\), puis résoudre cette équation.
+    \item En déduire les valeurs de \(P_A(B)\) et \(P_A(\overline B)\).
+    \item Calculer \(P(A\cap B)\).
+\end{enumerate}
+\end{exo}
+
 \begin{exo}[Effectifs exprimés en fonction de \(x\)][appro]
 Une association sportive propose deux activités, tennis et badminton, pratiquées par des adhérents juniors ou seniors. Le tableau ci-dessous donne les effectifs, dont certains sont exprimés en fonction d'un nombre réel \(x>0\).
 
@@ -463,7 +473,7 @@ On sait que l'association compte au total \(100\) adhérents.
 \end{itemize}
 }
 
-\begin{exo}[Une égalité générale][avance]
+\begin{exo}[Une égalité générale][appro]
 Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\), tels que \(P(A)\neq0\) et \(P(B)\neq0\).
 
 \begin{enumerate}[leftmargin=*]
@@ -483,43 +493,7 @@ Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\), tels que \(P(A)\n
 \end{itemize}
 }
 
-\begin{exo}[Résoudre une équation avec une probabilité conditionnelle][appro]
-Soit \(A\) et \(B\) deux évènements avec \(P(A)=0,4\). On pose \(P_A(B)=x\) et on sait que \(P_A(\overline B)=3x-0,2\), où \(x\) est un réel de \(]0;1[\).
 
-\begin{enumerate}[leftmargin=*]
-    \item Justifier que \(x+(3x-0,2)=1\), puis résoudre cette équation.
-    \item En déduire les valeurs de \(P_A(B)\) et \(P_A(\overline B)\).
-    \item Calculer \(P(A\cap B)\).
-\end{enumerate}
-\end{exo}
-
-\prof{
-\begin{itemize}
-    \item \(P_A(B)+P_A(\overline B)=1\) donc \(4x-0,2=1\), soit \(x=0,3\).
-    \item \(P_A(B)=0,3\) et \(P_A(\overline B)=0,7\).
-    \item \(P(A\cap B)=0,4\times0,3=0,12\).
-\end{itemize}
-}
-
-\begin{exo}[Union, intersection et conditionnement][avance]
-Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\). On sait que \(P(A)=x\), \(P(B)=x+0,2\), \(P(A\cup B)=0,9-x\) et \(P_A(B)=0,5\), où \(x\) est un réel de \(]0;1[\).
-
-\begin{enumerate}[leftmargin=*]
-    \item Exprimer \(P(A\cap B)\) en fonction de \(x\).
-    \item En utilisant la formule \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\), montrer que \(0,9-x=1,5x+0,2\).
-    \item Résoudre cette équation, puis calculer les valeurs de \(P(A)\), \(P(B)\), \(P(A\cap B)\) et \(P(A\cup B)\).
-    \item Vérifier que toutes ces valeurs sont bien comprises entre \(0\) et \(1\).
-\end{enumerate}
-\end{exo}
-
-\prof{
-\begin{itemize}
-    \item \(P(A\cap B)=P(A)\times P_A(B)=0,5x\).
-    \item \(P(A\cup B)=P(A)+P(B)-P(A\cap B) \Rightarrow 0,9-x = x+(x+0,2)-0,5x = 1,5x+0,2\).
-    \item \(0,9-x=1,5x+0,2 \Rightarrow 0,7=2,5x \Rightarrow x=0,28\). D'où \(P(A)=0,28\), \(P(B)=0,48\), \(P(A\cap B)=0,14\), \(P(A\cup B)=0,62\).
-    \item Toutes ces valeurs sont bien dans \([0;1]\), la solution est donc cohérente.
-\end{itemize}
-}
 
 \begin{exo}[Cas littéral général][avance]
 Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\), avec \(P(A)=p\), \(P(B)=q\) et \(P(A\cap B)=r\), où \(p\), \(q\), \(r\) sont des réels avec \(p\neq0\) et \(q\neq0\).
@@ -541,30 +515,7 @@ Soit \(A\) et \(B\) deux évènements d'un univers \(\Omega\), avec \(P(A)=p\), 
 \end{itemize}
 }
 
-\begin{exo}[Deux chaînes de production][appro]
-Une usine fabrique des smartphones sur deux chaînes de production, A et B, pour une production totale de \(1200\) appareils. On note \(x\) le nombre d'appareils fabriqués par la chaîne A (les autres proviennent de la chaîne B).
 
-Sur la chaîne A, \(2\,\%\) des appareils sont défectueux, ce qui représente exactement \(6\) appareils défectueux.
-
-\begin{enumerate}[leftmargin=*]
-    \item En traduisant l'énoncé par une équation portant sur \(x\), déterminer le nombre d'appareils fabriqués par la chaîne A, puis par la chaîne B.
-    \item On choisit un appareil au hasard parmi les \(1200\). Calculer \(P(A)\), la probabilité qu'il provienne de la chaîne A.
-    \item On note \(D\) : \og l'appareil est défectueux \fg{}. Calculer \(P(A\cap D)\), puis vérifier que \(P(A)\times P_A(D)=P(A\cap D)\).
-    \item Sur les \(900\) appareils de la chaîne B, on dénombre \(27\) appareils défectueux. Calculer \(P_B(D)\).
-    \item Quelle chaîne de production est la plus fiable ? Justifier.
-\end{enumerate}
-\end{exo}
-
-\prof{
-\begin{itemize}
-    \item \(2\,\%\) de \(x\) vaut \(6\) : \(0,02x=6 \Rightarrow x=300\). Chaîne A : \(300\) appareils, chaîne B : \(1200-300=900\) appareils.
-    \item \(P(A)=\frac{300}{1200}=0,25\).
-    \item \(P(A\cap D)=\frac{6}{1200}=0,005\). Vérification : \(P(A)\times P_A(D)=0,25\times0,02=0,005\).
-    \item \(P_B(D)=\frac{27}{900}=0,03\).
-    \item La chaîne A a un taux de défaut de \(2\,\%\), contre \(3\,\%\) pour la chaîne B : la chaîne A est la plus fiable.
-    \item Remarque : on ne cherche pas ici le taux de défaut global de l'usine (qui nécessiterait la formule des probabilités totales).
-\end{itemize}
-}
 
 \end{multicols}
 
