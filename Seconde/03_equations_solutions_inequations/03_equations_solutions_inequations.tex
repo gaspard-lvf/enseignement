@@ -63,26 +63,6 @@
 \end{exo}
 
 
-
-\begin{exo}[][]
-
-Placer les nombres suivant sur l'axe gradué ci-dessous : 5 ; \(\dfrac{1}{2}\)  ; \(\dfrac{1}{10}\) ; \(-\dfrac{7}{10}\) ; \(\dfrac{22}{10}\) ; \(-\dfrac{8}{2}\) ; \(\dfrac{21}{5}\) ; \(-\dfrac{16}{5}\).
-
-\vspace{1cm}
-\begin{tikzpicture}[scale=1.5]
-\draw[->] (-5.5,0)--(5.5,0);
-\foreach \x in {-5,..., 4}{
-    \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
-    \draw (\x+0.5,0.07)--(\x+0.5,-0.07) ;
-    \foreach \minx in {0.1, 0.2, ..., 0.9}{
-        \draw (\x+\minx, 0.05)--(\x+\minx, -0.05);
-    }
-}
-    \draw (5,0.1)--(5,-0.1) node[below] {\(5\)};
-\end{tikzpicture}
-
-\end{exo}
-
 \begin{exo}
     
 Placer les nombres suivants sur l'axe gradué ci-dessous : \(-\dfrac{1}{4}\) ; \(\dfrac{1}{2}\) ; \(-\dfrac{17}{4}\) ; \(4,75\) ; \(-2,25\).
@@ -104,6 +84,27 @@ Placer les nombres suivants sur l'axe gradué ci-dessous : \(-\dfrac{1}{4}\) ; \
 Peut-on placer de manière précise tous ces nombres sur l'axe gradué de l'exercice 1 ?
 
 \end{exo}
+
+\begin{exo}[][]
+
+Placer les nombres suivant sur l'axe gradué ci-dessous : 5 ; \(\dfrac{1}{2}\)  ; \(\dfrac{1}{10}\) ; \(-\dfrac{7}{10}\) ; \(\dfrac{22}{10}\) ; \(-\dfrac{8}{2}\) ; \(\dfrac{21}{5}\) ; \(-\dfrac{16}{5}\).
+
+\vspace{1cm}
+\begin{tikzpicture}[scale=1.5]
+\draw[->] (-5.5,0)--(5.5,0);
+\foreach \x in {-5,..., 4}{
+    \draw (\x,0.1)--(\x,-0.1) node[below] {\(\x\)};
+    \draw (\x+0.5,0.07)--(\x+0.5,-0.07) ;
+    \foreach \minx in {0.1, 0.2, ..., 0.9}{
+        \draw (\x+\minx, 0.05)--(\x+\minx, -0.05);
+    }
+}
+    \draw (5,0.1)--(5,-0.1) node[below] {\(5\)};
+\end{tikzpicture}
+
+\end{exo}
+
+
 
 
 
