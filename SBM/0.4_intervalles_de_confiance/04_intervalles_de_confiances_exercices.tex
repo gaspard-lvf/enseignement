@@ -1,0 +1,277 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleexo}
+\usepackage{schemaevolution}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{SBM 2A}
+\renewcommand{\chapitre}{Intervalles de confiance}
+\renewcommand{\numchap}{0.4} 
+\renewcommand{\theme}{Statistiques inférentielles}
+
+\begin{document}
+
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\prof{
+    \begin{itemize}
+        \item Introduire le cours par une question. Parler des estimateurs ponctuels et de leur limite. Parler ensuite des intervalles de confiance. Parler de l'influence de la taille de l'échantillon et de l'ecart-type.
+        \item Distribuer le cours. Compléter quelques parties.
+        \item Passer aux exercices.
+    \end{itemize}
+}
+
+\begin{prerequis}
+\begin{itemize}        
+        \item Savoir calculer une fréquence et une moyenne
+        \item Savoir utiliser la calculatrice pour déterminer une moyenne et un écart-type.
+\end{itemize}
+
+\end{prerequis}
+
+
+\begin{multicols}{2}
+
+\section{Estimateurs, intervalles de confiance}
+
+\begin{exo}[][ccf]
+    Un laboratoire souhaite estimer la concentration moyenne d'un analyte dans une population de patients. Pour cela, il réalise le dosage sur 20 prélèvements.
+
+    Les concentrations \(c\) sont mesurées dans le tableau suivant (en mmol/L) pour chaque patient.
+
+    \begin{center}
+\setlength{\tabcolsep}{0.3em}
+\begin{tabular}{|c|*{10}{c|}}
+    \hline
+    \textbf{patient} 
+    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \hline
+    \textbf{c}
+    & 5,1 & 4,8 & 5,3 & 5,0 & 4,9 & 5,2 & 5,4 & 4,7 & 5,0 & 5,1 \\
+    \hline
+\end{tabular}
+
+\vspace{0.4cm}
+
+\begin{tabular}{|c|*{10}{c|}}
+    \hline
+    \textbf{patient} 
+    & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+    \hline
+    \textbf{c}
+    & 4,8 & 5,2 & 5,0 & 5,5 & 4,9 & 5,1 & 5,3 & 4,6 & 5,0 & 5,2 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Dans le contexte de l'exercice, identifier :\begin{enumerate}
+        \item La population ;
+        \item Le caractère étudié et son type (quantitatif ou qualitatif) ;
+        \item L'échantillon observé.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Déterminer la moyenne \(m_e\) et l'écart-type \(\sigma_e\) de la série statistique correspondant à l'échantillon .
+        \item En déduire les \textbf{estimateurs ponctuels} de la moyenne \(\hat{m}\) et de l'écart-type \(\hat{\sigma}\) de la concentration de l'analyte sur l'ensemble de la population.
+    \end{enumerate}
+    \item Donner un intervalle de confiance à 95\% de la moyenne, puis à 99\%.
+    \item Pour être en bonne santé, la concentration de cet analyte dans le sang ne doit pas dépasser 0.245mmol/L. Que pouvez-vous en conclure ?
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[][ccf]
+    Un laboratoire cherche à estimer la proportion de patients présentant une résistance à un antibiotique. \medbreak
+    Sur 1 200 prélèvements, 138 présentent une résistance.
+    \begin{enumerate}
+        \item Calculer la fréquence observée sur l'échantillon.
+        \item En déduire un estimateur ponctuel de la fréquence \(\hat{f}\) de persoones résistantes sur l'ensemble des patients.
+        \item Déterminer l'intervalle de confiance de \(f\) à 0,95 puis à 0,99.
+        \item Idéalement, le nombre de patients présentant une résistance à cet antibiotique ne devrait pas dépasser 13\%. Que  peut-on en conclure ?
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}[QCM][]
+
+Un laboratoire mesure la concentration d'un analyte sur un échantillon de patients de taille \(n\). 
+On obtient :
+\[
+n=100,\qquad \bar{m}=5,2\text{ mg/L},\qquad \sigma=0,8\text{ mg/L}.
+\]
+
+On suppose que la concentration dans la population suit approximativement une loi normale.
+
+\textbf{Pour chaque question, une seule réponse est correcte.}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+
+    \item La valeur \(5,2\) mg/L permet :
+
+    \begin{tasks}(1)
+        \task de connaître exactement la concentration moyenne de la population.
+        \task d'estimer la concentration moyenne de la population.
+        \task de connaître l'écart type de la population.
+        \task de déterminer la concentration de chaque patient.
+    \end{tasks}
+
+    \item La valeur \(0,8\) mg/L représente :
+
+    \begin{tasks}(1)
+        \task la moyenne de la population.
+        \task l'écart entre la plus grande et la plus petite concentration.
+        \task une estimation de la dispersion des concentrations dans la population.
+        \task l'erreur commise en mesurant la concentration.
+    \end{tasks}
+
+    \item Deux laboratoires obtiennent les résultats suivants :
+
+    \[
+    \begin{array}{c|cc}
+        & \bar{x} & s\\
+        \hline
+        \text{Laboratoire } A & 5,2 & 0,8\\
+        \text{Laboratoire } B & 5,2 & 1,6
+    \end{array}
+    \]
+
+    Les deux échantillons ont la même taille. Lequel permet d'obtenir l'estimation de la moyenne la plus précise ?
+
+    \begin{tasks}(1)
+        \task Le laboratoire A.
+        \task Le laboratoire B.
+        \task Les deux donnent nécessairement la même précision.
+        \task Impossible à déterminer.
+    \end{tasks}
+
+    \item Le laboratoire A réalise maintenant la même étude sur \textbf{400 patients}
+    au lieu de 100, avec une moyenne et un écart type similaires.
+    Que peut-on attendre de l'intervalle de confiance de la moyenne ?
+
+    \begin{tasks}(1)
+        \task Il sera plus large.
+        \task Il sera plus étroit.
+        \task Il aura exactement la même largeur.
+        \task Il sera centré sur une autre valeur par définition.
+    \end{tasks}
+
+    \item Un intervalle de confiance à 95\,\% obtenu pour la concentration moyenne est :
+
+    \[
+    [5,04\,;\,5,36]\text{ mg/L}.
+    \]
+
+    Quelle interprétation est correcte ?
+
+    \begin{tasks}(1)
+        \task 95\,\% des patients ont une concentration comprise entre 5,04 et 5,36 mg/L.
+        
+        \task La probabilité que la moyenne de la population soit dans cet intervalle est de 95\,\%.
+        
+        \task L'intervalle fournit une estimation de la moyenne de la population avec un niveau de confiance de 95\,\%.
+        
+        \task 95\,\% des concentrations mesurées dans l'échantillon sont dans cet intervalle.
+    \end{tasks}
+
+    \item Un autre laboratoire obtient, avec le même nombre de patients :
+
+    \[
+    [5,00\,;\,5,40]\text{ mg/L}.
+    \]
+
+    Que peut-on en déduire ?
+
+    \begin{tasks}(1)
+        \task Le second laboratoire a nécessairement une moyenne plus élevée.
+        \task Le second laboratoire a obtenu une estimation moins précise.
+        \task Le second laboratoire a obtenu une estimation plus précise.
+        \task On ne peut pas comparer la précision de ces deux estimations.
+    \end{tasks}
+
+    \item Un étudiant affirme :
+
+    \begin{quote}
+        « Pour améliorer la précision d'un intervalle de confiance, il suffit d'arrondir moins les résultats. »
+    \end{quote}
+
+    Que lui répondre ?
+
+    \begin{tasks}(1)
+        \task Vrai, car davantage de décimales rendent l'intervalle plus précis.
+        
+        \task Faux, car la précision statistique ne dépend pas de l'arrondi dans les calculs.
+        
+        \task Vrai, mais seulement lorsque \(n<30\).
+        
+        \task Faux, car un intervalle de confiance ne peut jamais être amélioré.
+    \end{tasks}
+
+    \item Deux études donnent :
+
+    \[
+    I_1=[4,9\,;\,5,5]
+    \qquad\text{et}\qquad
+    I_2=[5,1\,;\,5,3].
+    \]
+
+    Laquelle fournit l'estimation la plus précise de la moyenne ?
+
+    \begin{tasks}(2)
+        \task \(I_1\).
+        \task \(I_2\).
+        \task Les deux sont aussi précises.
+        \task On ne peut pas comparer les deux intervalles.
+    \end{tasks}
+
+\end{enumerate}
+```
+
+\end{exo}
+
+\begin{exo}[][]
+Un laboratoire de biologie médicale étudie l'efficacité d'un antibiotique sur une souche bactérienne. La concentration minimale inhibitrice (CMI), exprimée en mg/L, est mesurée sur un échantillon de 25 prélèvements.
+
+Les résultats obtenus sont :
+
+\[
+\begin{array}{cccccccc}
+0,42&0,51&0,47&0,55&0,39&0,48&0,52&0,45\\
+0,50&0,44&0,46&0,53&0,49&0,41&0,57&0,43\\
+0,48&0,51&0,46&0,54&0,50&0,45&0,52&0,47 \\
+0,49
+\end{array}
+\]
+
+On suppose que les CMI dans la population étudiée suivent approximativement une loi normale.
+
+À partir de cet échantillon, proposer une estimation à 95\% de la CMI moyenne dans la population étudiée.
+\end{exo}
+
+
+\section{Influence de la taille de l'échantillon}
+
+\begin{exo}[][]
+    Une usine produit des flacons
+    \begin{enumerate}
+        \item Sur 100 individus observés, 12 ont la grippe. \begin{enumerate}
+            \item Déterminer un intervalle de confiance à 0,95.
+            \item Quelle est l'amplitude (la taille) de l'intervalle de confiance ?
+        \end{enumerate}
+        \item Sur 500 individus observés, 70 ont eu la grippe. \begin{enumerate}
+            \item \item Déterminer un intervalle de confiance à 0,95.
+            \item Quelle est l'amplitude (la taille) de l'intervalle de confiance ? 
+        \end{enumerate}
+        \item Quelle doit être la taille de l'échantillon pour que l'intervalle de confiance à 0.95 soit inférieur à 0,04 ? \textit{On pourra se servir de l'estimateur de la fréquence calculé question 2b}
+    \end{enumerate}
+\end{exo}
+\end{multicols}
+\end{document}

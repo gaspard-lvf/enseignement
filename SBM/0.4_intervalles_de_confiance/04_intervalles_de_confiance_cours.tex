@@ -1,0 +1,228 @@
+
+
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Encodage / langue ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,provide=*]{babel}
+\usepackage[margin=2.5cm]{geometry}
+
+% ---------- Feuille de style fournie ----------
+\usepackage{ancien_style_de_cours_gaspard}
+
+% ---------- Petits ajouts pour numéroter les exemples ----------
+% (n'appartient pas à style.sty, ajouté ici pour ne pas modifier le fichier fourni)
+\newcounter{exemplenum}
+\newcommand{\exnum}{\stepcounter{exemplenum}\textbf{Exemple~\theexemplenum.} }
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+% ================= TITRE DE CHAPITRE =================
+\begin{center}
+{\large\textsc{Chapitre}}\\[2pt]
+{\color{blue}\Huge\fbox{\textbf{4}}}\quad{\Huge\bfseries\blueuline{Statistique inférentielle}}
+\end{center}
+\bigskip
+
+{\color{blue} En parallèle, montrer l'exemple au tableau et relier au cours
+
+    Exemple d'introduction : Un laboratoire pharmaceutique produit un médicament en 10 000 exemplaires. Peut-on estimer la masse moyenne du principe actif du médicament à partir d'un échantillon.
+    }
+% ================= PARTIE 1 =================
+\section{Estimations ponctuelles}
+
+\begin{definition}
+\begin{itemize}
+\item \textbf{Population} : ensemble des \textbf{individus} ayant quelque chose en commun et pour lesquels on étudie un ou plusieurs \textbf{caractères} (par exemple le poids exact de tous les pots d'une certaine crème vendus par un fabricant).
+\item L'\textbf{échantillon} est un sous-ensemble de la population étudiée pour lequel on effectue une série de mesures sur la ou les variables étudiées.
+\item Les \textbf{statistiques inférentielles} s'intéressent à la population dont est issu l'échantillon avec comme objectif d'estimer, à partir des seules caractéristiques de l'échantillon, des propriétés plus générales concernant la population.
+\end{itemize}
+\end{definition}
+
+Le problème de l'\textbf{estimation} est celui qui se pose dans la pratique des sondages ou des contrôles de qualité~: à partir d'observation d'un paramètre sur un échantillon, estimer ce paramètre pour l'ensemble de la population.
+
+\begin{remarque}
+Il est souvent difficile ou impossible d'étudier exhaustivement tous les individus d'une population quand sa taille est grande.
+\end{remarque}
+
+\subsection{Moyenne}
+
+\begin{propriete}
+La valeur moyenne $m_e$ d'un paramètre observé sur un échantillon de population de taille $n \geqslant 30$, fournit une estimation $\hat{m}$ de la moyenne réelle $m$ de ce paramètre sur la population considérée.
+\end{propriete}
+
+\begin{exemple}
+\exnum Une usine produit des flacons, tous identiques, d'huiles essentielles. On souhaite estimer la moyenne des contenus en ml des flacons dans la production de la journée qui s'élève à 10~000 pièces.
+
+On choisit un échantillon de 50 flacons et on obtient une moyenne de $m_e = 29{,}97$~ml.
+
+{\color{blue} A compléter  : On en déduit donc que la contenance moyenne d'un flacon de la production journalière est $\hat{m} = 29{,}97$~ml.}
+\end{exemple}
+
+\begin{cadre}[colback=blue!5!white]{Notation}
+Un estimateur sera noté avec $\widehat{\phantom{x}}$ pour repérer qu'il s'agit d'une estimation sur la population et non de la valeur réelle (notée sans le $\widehat{\phantom{x}}$) ou de la valeur sur l'échantillon (notée avec un indice $e$).
+\end{cadre}
+
+\subsection{Écart type}
+
+{\color{blue} A quel point les valeurs d'une série sont dispersées autour de la moyenne.}
+
+\begin{propriete}
+Une estimation ponctuelle de l'écart type $\sigma$ d'une population est donnée par
+$$\hat{\sigma} = \sigma_e \sqrt{\dfrac{n}{n-1}}$$
+où $\sigma_e$ est l'écart type mesuré sur un échantillon de taille $n \geqslant 30$.
+\end{propriete}
+
+\begin{remarque}
+La correction devient rapidement minime lorsque la taille de l'échantillon augmente car $\sqrt{\dfrac{n}{n-1}}$ tend vers $1$ lorsque $n$ tend vers $+\infty$.
+\end{remarque}
+
+\begin{exemple}
+\exnum En reprenant l'exemple précédent de 50 flacons, on a mesuré un écart type $\sigma_e = 0{,}78$ sur l'échantillon.
+
+
+{\color{blue}On peut donc estimer que l'écart type sur la population est
+$$\hat{\sigma} = 0{,}78 \sqrt{\dfrac{50}{50-1}} \approx 0{,}79 \text{ au centième près.}$$}
+\end{exemple}
+
+\subsection{Fréquence}
+
+\begin{propriete}
+La fréquence d'apparition $f_e$ d'un paramètre observé sur un échantillon de population de taille $n \geqslant 30$ fournit une estimation $\hat{f}$ de la fréquence d'apparition de ce paramètre sur la population considérée.
+\end{propriete}
+
+\begin{exemple}
+\exnum Suite à une défaillance de machine, l'entreprise qui fabrique des huiles essentielles s'aperçoit que certains flacons ne sont pas conformes à la vente. Sur l'échantillon de 50 flacons, 2 ne sont pas conformes, donc
+$$f_e = \dfrac{2}{50} = 0{,}04.$$
+L'entreprise peut donc estimer ponctuellement que $\hat{f} = 0{,}04$ donc $4\,\%$ de sa production journalière de 10~000 flacons n'est pas conforme.
+\end{exemple}
+
+\begin{exo}
+\textit{Estimer ponctuellement une moyenne et un écart type}
+\medskip
+
+{\color{blue} A faire chez eux}
+\textbf{Énoncé.} Un client réceptionne un lot de 5~000 billes en acier pour fabriquer des roulements. Il sélectionne un échantillon de taille 50 et effectue des mesures, reportées dans le tableau suivant~:
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Diamètre en mm & 234 & 235 & 236 & 237 & 238 & 239 \\
+\hline
+Nombre de billes & 4 & 10 & 13 & 12 & 8 & 3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=6mm]
+\item Donner une estimation du diamètre moyen pour les 5000 billes.
+\item Donner une estimation de l'écart type pour la population totale.
+\end{enumerate}
+
+\textbf{Solution.}
+
+\textbf{1.} La moyenne sur l'échantillon est $m_e = 236{,}38$.
+On peut donc estimer que la moyenne sur la population totale des 5000 billes est $\hat{m} = 236{,}38$.
+
+\textbf{2.} L'écart type sur l'échantillon de taille 50 est $\sigma_e = 1{,}34$.
+On peut donc estimer que l'écart type sur la population est
+$$\hat{\sigma} = 1{,}34 \sqrt{\dfrac{50}{50-1}} \approx 1{,}35 \text{ à } 10^{-2}.$$
+\end{exo}
+
+\begin{cadre}[colback=orange!10!white]{Les bons réflexes~!}
+On perçoit rapidement que les estimations précédentes dépendent notamment de la taille de l'échantillon et ne donnent qu'une estimation approximative de la réalité sur la population.
+\end{cadre}
+
+\begin{cadre}[colback=green!8!white]{À vous de jouer}
+Une boulangerie industrielle fabrique 1~000 baguettes par jour. L'ingénieur qualité prélève 100 baguettes et relève leur poids~:
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+Poids (en g) & 247 & 248 & 249 & 250 & 251 & 252 & 253 \\
+\hline
+Nombre de baguettes & 2 & 5 & 11 & 15 & 8 & 6 & 3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=6mm]
+\item Donner une estimation du poids moyen pour les 1~000 baguettes.
+\item Donner une estimation de l'écart type pour la population totale.
+\end{enumerate}
+\end{cadre}
+
+\newpage
+% ================= PARTIE 2 =================
+\section{Estimations par intervalle de confiance}
+
+Pour avoir une meilleure estimation que les estimateurs ponctuels, on peut déterminer un intervalle qui contiendra la valeur du paramètre avec un niveau de confiance choisi.
+
+\subsection{Moyenne}
+
+\begin{definition}
+L'intervalle de confiance de la moyenne $m$ au seuil de confiance $1-\alpha$ (ou risque $\alpha$) est~:
+$$I_\alpha = \left[\, m_e - C_\alpha \dfrac{\sigma}{\sqrt{n}} \;;\; m_e + C_\alpha \dfrac{\sigma}{\sqrt{n}} \,\right]$$
+\end{definition}
+
+\begin{propriete}
+La taille de l'intervalle de confiance, au seuil de $\alpha$, de la moyenne est $2 C_\alpha \dfrac{\sigma}{\sqrt{n}}$.
+\end{propriete}
+
+\begin{remarque}
+\begin{enumerate}[leftmargin=5mm,itemsep=2pt]
+\item On utilisera principalement $C_{0{,}05} \approx 1{,}96$ et $C_{0{,}01} \approx 2{,}58$, mais $C_\alpha$ peut être déterminé par la probabilité $P(-C_\alpha < X < C_\alpha) = 1-\alpha$ où $X$ est une variable aléatoire suivant une loi normale centrée réduite.
+\item Lorsque le coefficient de confiance augmente, l'amplitude de l'intervalle de confiance augmente.
+\item $\sigma$ est l'écart type \textbf{de la population} et non de l'échantillon~! S'il n'est pas connu, il peut être estimé ponctuellement comme dans la partie 1.
+\item Les bornes des intervalles de confiance sont arrondies par défaut pour la borne inférieure et par excès pour la borne supérieure, pour que le seuil de confiance soit au moins $1-\alpha$.
+\end{enumerate}
+\end{remarque}
+
+\subsection{Fréquence}
+
+\begin{definition}
+L'intervalle de confiance de la fréquence $f$ au seuil de confiance $1-\alpha$ (ou risque $\alpha$) est~:
+$$I_\alpha = \left[\, f_e - C_\alpha \sqrt{\dfrac{f_e(1-f_e)}{n}} \;;\; f_e + C_\alpha \sqrt{\dfrac{f_e(1-f_e)}{n}} \,\right]$$
+\end{definition}
+
+\begin{cadre}[colback=red!5!white,colframe=red]{Attention}
+La borne inférieure ne peut pas être négative et la borne supérieure ne peut pas être supérieure à 1, on pense donc à les adapter aux résultats~!
+\end{cadre}
+
+\begin{exo}
+\textit{Estimer une moyenne par intervalle de confiance et la taille d'un échantillon}
+\medskip
+
+\textbf{Énoncé.} Dans l'exemple 1 de la partie 1, la moyenne des contenus en ml des flacons de la production quotidienne de 10~000 pièces était $m_e = 29{,}97$~ml à partir d'un échantillon de 50 flacons. Supposons connu l'écart type sur la population $\sigma = 0{,}8$.
+
+\begin{enumerate}[leftmargin=6mm]
+\item Donner un intervalle de confiance, à 95~\%, de la moyenne.
+\item En gardant une confiance de 95~\%, combien doit-on tester de flacons pour avoir une estimation de cette moyenne à moins de $0{,}25$~?
+\end{enumerate}
+
+\textbf{Solution.}
+
+\textbf{1.} On a
+\begin{align*}
+I_{0{,}05} &= \left[ m_e - 1{,}96\dfrac{\sigma}{\sqrt{n}} \;;\; m_e + 1{,}96\dfrac{\sigma}{\sqrt{n}} \right] \\
+&= \left[ 29{,}97 - 1{,}96\dfrac{0{,}8}{\sqrt{50}} \;;\; 29{,}97 + 1{,}96\dfrac{0{,}8}{\sqrt{50}} \right] \\
+&= [\,29{,}74 \;;\; 30{,}20\,] \text{ à } 10^{-2}.
+\end{align*}
+La moyenne réelle sur la population entière sera dans cet intervalle avec une probabilité d'au moins $95\,\%$.
+
+\textbf{2.} On veut que la taille de l'intervalle de confiance soit inférieure à $0{,}25$ donc
+$$2 \times 1{,}96 \times \dfrac{0{,}8}{\sqrt{n}} < 0{,}25 \quad \text{soit} \quad \sqrt{n} > \dfrac{2 \times 1{,}96 \times 0{,}8}{0{,}25}.$$
+Donc
+$$n > \left( \dfrac{1}{0{,}25} \times 2 \times 1{,}96 \times 0{,}8 \right)^{2}$$
+c'est-à-dire $n > 157{,}4$. Il faut tester au moins \textbf{158 flacons}.
+\end{exo}
+
+\end{document}
+
+\end{document}
+

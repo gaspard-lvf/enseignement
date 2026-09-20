@@ -1,0 +1,165 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleexo}
+\usepackage{schemaevolution}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{SBM 2A}
+\renewcommand{\chapitre}{Dérivation}
+\renewcommand{\numchap}{0.3} 
+\renewcommand{\theme}{Fonctions}
+
+\begin{document}
+
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\begin{prerequis}
+\begin{itemize}        
+        \item Savoir développer et réduire des expressions.
+        \item Maîtriser le vocabulaire et les notions relatives aux fonctions.
+        \item Savoir déterminer le coefficient directeur d'une fonction affine.
+        \item Savoir faire un tableau de variations à partir d'un graphique
+        \item Savoir déterminer le tableau de signes d'une fonction à partir d'un graphique
+        \item Savoir déterminer le tableau de signes d'une fonction affine à partir de sa formule.
+
+\end{itemize}
+
+\end{prerequis}
+
+\prof{
+    L'objectif n'est pas de savoir dériver toutes les fonctions. Les élèves doivent comprendre que l'objectif est de comprendre la dérivation comme une quantification des variations d'une fonction (un rappel sur les variations doi être préalablement fait). Ils doivent comprendre intuitivement le lien entre nombre dérivé et fonction dérivée, et enfin savoir dériver et étudier des fonctions simples.
+}
+\begin{multicols}{2}
+
+    \section{Point de vue local}
+    \begin{exo}
+        Soit \(f\) une fonction dont on donne la représentation graphique \(\mathcal{C}_f\) ci-dessous. On a représenté la tangente \(T_A\) à cette courbe au point $A$ d'abscisse 2.
+
+        \includegraphics[width=0.45\textwidth]{tangentes/img1.png}
+
+        \begin{enumerate}
+            \item Déterminer les coordonnées du point \(A\)
+            \item Déterminer graphiquement \(f(2)\)
+            \item Compléter la phrase suivante : "\(f'(2)\) est le ........................................... de la droite \(T_A\).
+            \item Déterminer graphiquement \(f'(2)\).
+        \end{enumerate}
+    \end{exo}
+
+    \begin{exo}
+        Soit \(g\) une fonction dont on donne la représentation graphique \(\mathcal{C}_g\) ci-dessous. On a représenté les  tangentes aux points d'abscisse 0, 2 et 4. 
+
+        \includegraphics[width=0.35\textwidth]{tangentes/img2.png}
+
+        \begin{enumerate}
+            \item Déterminer graphiquement \(g'(0)\), \(g'(2)\) et \(g'(4)\).
+            \item Déterminer le tableau de variations de \(g\)
+            \item Quel sera le tableau de signes de la fonction \(g'\) ?
+        \end{enumerate}
+    \end{exo}
+
+    \prof{
+        Mise au point ici. Intérêt des formules globales \\
+    }
+
+    \section{Point de vue global}
+
+    \prof{
+        Ne pas faire dériver $\dfrac{x}{2}$ avant d'avoir vu les dérivées de quotient. Risque de se tromper sinon. \\
+        Idée du tableau pas ouf. Refaire juste une liste.
+    }
+    \begin{exo}[][]
+         Compléter le tableau suivant à l'aide des formules 
+         
+         \begin{tabular}{|*{2}{p{0.25\textwidth}|}}
+            \hline
+            Fonction & Dérivée \\ \hline
+            \(f(x) = 13\) & \(f'(x) = \) \\ \hline
+            \(f(x) = x\) & \(f'(x) = \) \\ \hline
+            \(f(x) = x^2\) & \(f'(x) = \) \\ \hline
+            \(f(x) = x^3\) & \(f'(x) = \) \\ \hline
+            \(f(x) = 3x^2\) & \(f'(x) = \) \\ \hline
+            \(f(x) = x^3+6\) & \(f'(x) = \) \\ \hline
+            \(f(x) = -4x-5\) & \(f'(x) = \) \\ \hline
+            \(f(x) = 0,5x^2+0,01x-12\) & \(f'(x) = \) \\ \hline
+         \end{tabular}
+    \end{exo}
+
+        \begin{exo}[][]
+         On considère la fonction \(g\) définie par \(g(t) = t^2-2t+1\). On donne sa représentation graphique ci-dessous.
+
+         \begin{tikzpicture}
+            \begin{axis}[
+                axis lines = left,
+                xlabel = \(x\),
+                ylabel = {\(g(x)\)},
+                ymajorgrids=true,
+                xmajorgrids=true,
+                grid style=dashed,
+            ]
+            %Below the red parabola is defined
+            \addplot [
+                domain=-2:3, 
+                samples=100, 
+                color=red,
+            ]
+            {x^2 - 2*x + 1};
+
+            \end{axis}
+            \end{tikzpicture}
+    \begin{enumerate}
+        \item Déterminer \(g'(t)\) en fonction de \(t\).
+        \item En déduire \(g'(-1)\) et \(g'(2)\).
+        \item Tracer les tangentes à la courbe de \(g\) aux points d'abscisse \(-1\) et \(2\).
+        \item Faire le tableau de signe de la fonction \(g'\)
+        \item Ce tableau de signe est-il cohérent avec le tableau de variations de \(g\) ?
+    \end{enumerate}
+    \end{exo}
+
+\begin{exo}[][ccf]
+    Pour chacune des fonctions ci-dessous :\begin{enumerate}
+    \item Déterminer l'expression de la dérivée (\(f'(x)\)) ;
+    \item Étudier le signe de \(f'(x)\) (faire le tableau) ;
+    \item En déduire les variations de \(f\) (faire le tableau aussi).
+    \end{enumerate}
+    \begin{tasks}(2)
+    \task \(f(x) = -x^2+6x-3\)
+    \task \(f(x) = 2x^2+2x+6\)
+    \end{tasks}
+\end{exo}
+
+
+\prof{
+    Prendre le temps qu'il faut ici. On peut rajouter des exercices pour que tout le monde comprenne.
+}
+
+\begin{exo}[][ccf]
+
+Soit $f$ la fonction définie sur l'intervalle $[0;20]$ par $$f(x) =  -2x^3+54x^2-192x-400$$.
+\begin{enumerate}
+\item Déterminer $f'(t)$
+\item Montrer que $f'(t) = -6(x-2)(x-16)$
+\item Construire le tableau de signe de $f'(x)$, puis le tableau de variations de $f$.
+\item Un laboratoire vendant des produits pharmaceutiques réalise une étude de marché.\\
+Il modélise son bénéfice en euros par la fonction $B$ où pour $x$  produits pharmaceutiques vendus, $$
+B(x) = -2x^3+54x^2-192x-400.
+$$
+Quel est est le nombre de produits pharmaceutiques que l'entreprise doit produire pour que le bénéfice soit maximal ?
+\end{enumerate}
+
+\end{exo} 
+\prof{
+    Rajouter des exercices au tableau s'il reste du temps (hum)
+}
+\end{multicols}
+\end{document}
