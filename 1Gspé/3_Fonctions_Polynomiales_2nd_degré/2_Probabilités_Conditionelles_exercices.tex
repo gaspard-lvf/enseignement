@@ -1,0 +1,360 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{double}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleexo}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Fonction polynomiales}
+\renewcommand{\numchap}{3}
+\renewcommand{\theme}{Fonctions}
+
+\begin{document}
+
+
+
+
+%\legendeicones
+
+\vspace{-0.3cm}
+
+\begin{prerequis}
+\begin{itemize}[leftmargin=*]
+        \item Développer un produit : \((a+b)(c+d)=ac+ad+bc+bd\).
+        \item Tableau de signes d'une fonction affine \(mx+p\).
+    \end{itemize}
+\end{prerequis}
+
+\begin{multicols}{2}
+
+\prof{C'est la première séance du module du semestre. Les fonctions polynômes du second degré sont nouvelles pour la plupart des élèves issus du système français (ils n'ont jamais résolu d'équation du second degré), alors que certains élèves de l'IB (AA HL ou AA SL) les ont déjà rencontrées : rester attentif à cette hétérogénéité. Toute la feuille est construite autour d'une seule idée, la \textbf{racine} : ce que c'est (partie~I), comment la voir sur une expression et sur un graphique (partie~II), comment les racines donnent la forme factorisée (partie~III) et comment elles permettent de situer le sommet (partie~IV). Les racines sont toujours \emph{données} ou \emph{faciles à vérifier} ici : la résolution de \(ax^2+bx+c=0\) dans le cas général (discriminant) est laissée à la séance~2.}
+
+\section*{Pour commencer}
+
+\begin{exo}[Deux écritures d'une même fonction]
+\label{exo:twoforms}
+On considère les fonctions \(f\) et \(g\) définies sur \(\mathbb{R}\) par
+\[
+f(x)=x^2-2x-3
+\qquad\text{et}\qquad
+g(x)=(x+1)(x-3).
+\]
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(f(0)\), \(g(0)\), \(f(3)\), \(g(3)\), \(f(-1)\) et \(g(-1)\). Que remarque-t-on ?
+    \item Suffit-il de vérifier quelques valeurs pour être sûr que \(f(x)=g(x)\) pour \emph{tout} réel \(x\) ?
+    \item Développer \(g(x)\), puis en déduire que \(f(x)=g(x)\) pour tout réel \(x\).
+    \item En déduire une écriture de \(f(x)\) sous la forme d'un produit.
+    \item De même, démontrer que pour tout réel \(x\),
+    \[
+    2(x-2)(x+3)=2x^2+2x-12,
+    \]
+    puis en déduire une écriture de \(k(x)=2x^2+2x-12\) sous la forme d'un produit.
+    \item Laquelle des deux écritures de \(f\) est la plus pratique pour calculer \(f(0)\) ? Pour calculer \(f(3)\) ? Pour trouver tous les réels \(x\) tels que \(f(x)=0\) ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item Q1 : \(f(0)=g(0)=-3\), \(f(3)=g(3)=0\), \(f(-1)=g(-1)=0\). Les valeurs coïncident.
+        \item La Q2 est la discussion clé de l'exercice : quelques valeurs égales ne sont qu'un \emph{indice}, pas une preuve (deux fonctions différentes peuvent coïncider en certains points). Seul un calcul algébrique valable pour tout \(x\) permet de conclure.
+        \item Q3 : \((x+1)(x-3)=x^2-3x+x-3=x^2-2x-3\). Q5 : \(2(x-2)(x+3)=2(x^2+3x-2x-6)=2x^2+2x-12\).
+        \item Rédaction attendue pour la Q4 : \og On a démontré que \((x+1)(x-3)=x^2-2x-3\). Or \(f(x)=x^2-2x-3\), donc \textbf{par transitivité de l'égalité}, pour tout réel \(x\), \(f(x)=(x+1)(x-3)\). \fg{}
+        \item Q6 : la forme développée donne immédiatement \(f(0)=-3\) (c'est le terme constant) ; le produit donne immédiatement \(f(3)=0\) et \(f(-1)=0\). Cela prépare la partie~I : les valeurs qui annulent \(f\) se \emph{lisent} sur le produit, pas sur la forme développée.
+    \end{itemize}
+}
+
+\section{Racines d'une fonction}
+\label{sec:roots}
+
+\begin{exo}[Est-ce une racine ?]
+Pour chaque fonction, dire si chacun des réels proposés est une racine.
+\begin{enumerate}[leftmargin=*]
+    \item \(f(x)=x^2-4\) \quad réels : \(0\) ; \(2\) ; \(-2\) ; \(4\).
+    \item \(g(x)=x^2-5x+6\) \quad réels : \(1\) ; \(2\) ; \(3\).
+    \item \(h(x)=(x-3)^2\) \quad réels : \(3\) ; \(-3\).
+    \item \(k(x)=x^2+1\) \quad réels : \(0\) ; \(1\) ; \(-1\).\\
+    La fonction \(k\) peut-elle avoir une racine ? Justifier.
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item (1) \(2\) et \(-2\) sont des racines ; \(0\) et \(4\) n'en sont pas (\(f(0)=-4\), \(f(4)=12\)).
+        \item (2) \(g(1)=2\), \(g(2)=0\), \(g(3)=0\) : \(2\) et \(3\) sont des racines.
+        \item (3) \(h(3)=0\), \(h(-3)=36\) : seulement \(3\). Faire remarquer que \(h\) semble n'avoir qu'une seule racine \(-\) premier signe qu'\og une seule racine \fg{} est possible.
+        \item (4) \(k(0)=1\), \(k(\pm1)=2\). Un carré est toujours positif ou nul, donc \(x^2+1\geq 1>0\) : \(k\) ne s'annule jamais, elle n'a \textbf{aucune racine}. Les trois cas (deux racines, une racine, aucune racine) sont maintenant sur la table ; on les retrouve graphiquement dans l'exercice~\ref{exo:graphs}.
+    \end{itemize}
+}
+
+\section{Interprétation algébrique et graphique}
+\label{sec:interpretation}
+
+\begin{exo}[Lire des racines sur un graphique]
+\label{exo:graphs}
+Les paraboles ci-dessous sont les courbes représentatives des fonctions
+\[
+f(x)=x^2-2x-3,\quad g(x)=-x^2+4x-4,\quad h(x)=x^2+2.
+\]
+\begin{center}
+\begin{tikzpicture}[scale=0.4, every node/.style={font=\scriptsize}]
+    % C_f
+    \begin{scope}
+        \draw[very thin,gray!40] (-2,-4) grid (4,3);
+        \draw[-{Latex}] (-2,0) -- (4.4,0) node[right]{\(x\)};
+        \draw[-{Latex}] (0,-4) -- (0,3.4) node[above]{\(y\)};
+        \foreach \x in {-1,1,2,3} \node[below] at (\x,0) {\(\x\)};
+        \node[left] at (0,1) {\(1\)};
+        \draw[thick,blue,domain=-1.6:3.6,samples=60] plot (\x,{\x*\x-2*\x-3});
+        \node[blue,font=\small] at (1,-5) {\(\mathcal{C}_f\)};
+    \end{scope}
+    % C_g
+    \begin{scope}[shift={(7.4,0)}]
+        \draw[very thin,gray!40] (-1,-3) grid (4,1);
+        \draw[-{Latex}] (-1,0) -- (4.4,0) node[right]{\(x\)};
+        \draw[-{Latex}] (0,-3) -- (0,1.4) node[above]{\(y\)};
+        \foreach \x in {1,2,3} \node[above] at (\x,0) {\(\x\)};
+        \node[left] at (0,-1) {\(-1\)};
+        \draw[thick,blue,domain=0.3:3.7,samples=60] plot (\x,{-\x*\x+4*\x-4});
+        \node[blue,font=\small] at (1.5,-5) {\(\mathcal{C}_g\)};
+    \end{scope}
+    % C_h
+    \begin{scope}[shift={(14,0)}]
+        \draw[very thin,gray!40] (-2,-1) grid (2,4);
+        \draw[-{Latex}] (-2,0) -- (2.4,0) node[right]{\(x\)};
+        \draw[-{Latex}] (0,-1) -- (0,4.4) node[above]{\(y\)};
+        \foreach \x in {-1,1} \node[below] at (\x,0) {\(\x\)};
+        \node[left] at (0,1) {\(1\)};
+        \draw[thick,blue,domain=-1.4:1.4,samples=60] plot (\x,{\x*\x+2});
+        \node[blue,font=\small] at (0,-5) {\(\mathcal{C}_h\)};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[leftmargin=*]
+    \item Par lecture graphique, donner les racines de \(f\), de \(g\) et de \(h\) (s'il y en a).
+    \item Vérifier ces résultats par le calcul.
+    \item Compléter : une fonction polynôme du second degré peut avoir \dots{} , \dots{} ou \dots{} racine(s).
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item \(f\) : deux racines, \(-1\) et \(3\) (\(f(-1)=1+2-3=0\), \(f(3)=9-6-3=0\)). C'est la fonction de l'exercice~\ref{exo:twoforms} : laisser les élèves le remarquer.
+        \item \(g\) : une racine, \(2\) (\(g(2)=-4+8-4=0\)) ; la parabole ne fait que \emph{toucher} l'axe. \(h\) : aucune racine, car \(x^2+2\geq 2\), et la parabole reste au-dessus de l'axe.
+        \item Insister sur le fait qu'une lecture graphique donne une \emph{conjecture}, qu'un calcul vient ensuite confirmer (même esprit que la Q2 de l'exercice~\ref{exo:twoforms}).
+    \end{itemize}
+}
+
+\begin{exo}[Où sont les racines dans la forme factorisée ?]
+\label{exo:bridge}
+On considère les fonctions
+\[
+\begin{aligned}
+f(x)&=(x-1)(x+4),\\
+g(x)&=2(x-3)(x-5),\\
+h(x)&=-(x+2)\left(x-\tfrac12\right).
+\end{aligned}
+\]
+\begin{enumerate}[leftmargin=*]
+    \item Calculer \(f(1)\) et \(f(-4)\). Que peut-on dire des réels \(1\) et \(-4\) ?
+    \item Résoudre l'équation \(f(x)=0\). La fonction \(f\) a-t-elle d'autres racines que celles de la question~1 ?
+    \item De la même façon, déterminer les racines de \(g\) et de \(h\).
+    \item Que remarque-t-on ? Comment lire directement les racines sur la forme factorisée ? Le nombre placé devant (\(2\) pour \(g\), \(-1\) pour \(h\)) change-t-il les racines ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item Q1 : \(f(1)=0\times5=0\), \(f(-4)=(-5)\times0=0\) : ce sont deux racines.
+        \item Q2 : \(f(x)=0\iff x-1=0\) ou \(x+4=0\iff x=1\) ou \(x=-4\). C'est la propriété du produit nul qui garantit qu'il n'y a \emph{pas d'autre} racine : c'est le vrai gain par rapport à la Q1.
+        \item Q3 : \(g\) : \(2\neq0\), donc \(g(x)=0\iff x=3\) ou \(x=5\). \(h\) : racines \(-2\) et \(\frac12\).
+        \item Q4 : les racines sont les nombres soustraits à \(x\) dans chaque facteur \(-\) attention au signe : \((x+4)=(x-(-4))\) donne la racine \(-4\), et non \(4\). Le coefficient \(a\) ne s'annule jamais, il ne change donc pas les racines. C'est exactement cette observation que la partie~III retourne : à partir des racines, reconstruire la forme factorisée.
+    \end{itemize}
+}
+
+\section{Forme factorisée à partir des racines}
+\label{sec:factored}
+
+\prof{La partie~II allait de la forme factorisée vers les racines. La partie~III fait le chemin inverse. La propriété du cours utilisée ici est admise (elle découlera du discriminant à la séance~2) ; l'important est que les élèves sachent l'\emph{utiliser} : vérifier que les racines sont bien des racines, puis écrire \(a(x-x_1)(x-x_2)\) avec le \emph{même} \(a\) que dans la forme développée, et toujours vérifier en développant. Chaque exercice se prolonge par une inéquation : c'est l'usage principal de la forme factorisée, qui permet de dresser un tableau de signes avec la règle des signes. Faire figurer une ligne pour le coefficient \(a\) dans le tableau dès qu'il est négatif.}
+
+\begin{exo}[Deux racines connues]
+Pour chaque fonction :
+\begin{enumerate}[label=\alph*)]
+    \item vérifier que les deux réels proposés sont des racines ;
+    \item donner la forme factorisée de la fonction, et vérifier le résultat en développant ;
+    \item à l'aide d'un tableau de signes, résoudre l'inéquation proposée.
+\end{enumerate}
+\begin{enumerate}[leftmargin=*]
+    \item \(f(x)=x^2+x-6\) \quad réels : \(2\) et \(-3\) \quad inéquation : \(f(x)\leq 0\).
+    \item \(g(x)=3x^2-3x-18\) \quad réels : \(-2\) et \(3\) \quad inéquation : \(g(x)>0\).
+    \item \(h(x)=-2x^2+10x-8\) \quad réels : \(1\) et \(4\) \quad inéquation : \(h(x)\geq 0\).
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item (1) \(f(2)=4+2-6=0\), \(f(-3)=9-3-6=0\) ; \(a=1\) : \(f(x)=(x-2)(x+3)\). \(f(x)\leq0\iff x\in[-3\,;2]\).
+        \item (2) \(g(-2)=12+6-18=0\), \(g(3)=27-9-18=0\) ; \(a=3\) : \(g(x)=3(x+2)(x-3)\). \(g(x)>0\iff x\in\,]-\infty\,;-2[\,\cup\,]3\,;+\infty[\).
+        \item (3) \(h(1)=-2+10-8=0\), \(h(4)=-32+40-8=0\) ; \(a=-2\) : \(h(x)=-2(x-1)(x-4)\). Ici la ligne du facteur \(-2\) (toujours négatif) inverse les signes : \(h(x)\geq0\iff x\in[1\,;4]\).
+        \item Bornes : crochets fermés pour \(\leq\) et \(\geq\) (les racines sont solutions), ouverts pour \(<\) et \(>\).
+        \item Erreur la plus fréquente : oublier \(a\) (écrire \((x+2)(x-3)\) pour \(g\)). La vérification en développant la détecte immédiatement : c'est pour cela qu'elle est exigée.
+    \end{itemize}
+}
+
+\begin{exo}[Une seule racine connue][appro]
+\label{exo:oneroot}
+\begin{enumerate}[leftmargin=*]
+    \item Soit \(f(x)=x^2-7x+10\).
+    \begin{enumerate}
+        \item Vérifier que \(2\) est une racine de \(f\).
+        \item Expliquer pourquoi il existe un réel \(x_2\) tel que, pour tout réel \(x\), \(f(x)=(x-2)(x-x_2)\).
+        \item Calculer \(f(0)\) à l'aide de chacune des deux écritures, et en déduire \(x_2\).
+        \item Résoudre l'inéquation \(f(x)>0\).
+    \end{enumerate}
+    \item Par la même méthode, déterminer la forme factorisée de \(g(x)=2x^2+x-3\), sachant que \(1\) est une racine de \(g\). Résoudre ensuite l'inéquation \(g(x)\leq 0\).
+    \item La hauteur (en mètres) d'une balle lancée vers le haut est donnée par \(h(t)=-5t^2+10t+15\), où \(t\) est le temps en secondes.
+    \begin{enumerate}
+        \item Vérifier que \(3\) est une racine de \(h\), et déterminer l'autre racine.
+        \item En déduire la forme factorisée de \(h\), puis l'instant où la balle touche le sol.
+        \item Sur quel intervalle de temps ce modèle a-t-il un sens ?
+        \item Vérifier que pour tout \(t\), \(h(t)-15=-5t(t-2)\). En déduire pendant combien de temps la balle se trouve à une hauteur supérieure ou égale à \(15\)~m.
+    \end{enumerate}
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item (1) \(f(2)=4-14+10=0\). Comme \(f\) admet une racine, d'après la propriété elle a une forme factorisée \((x-2)(x-x_2)\) (ici \(a=1\) ; si \(2\) était la seule racine, on aurait \(x_2=2\)). \(f(0)=10\) et \(f(0)=(-2)(-x_2)=2x_2\), donc \(x_2=5\) : \(f(x)=(x-2)(x-5)\). (d) \(f(x)>0\iff x\in\,]-\infty\,;2[\,\cup\,]5\,;+\infty[\).
+        \item (2) \(g(1)=0\) ; \(g(x)=2(x-1)(x-x_2)\), \(g(0)=-3=2(-1)(-x_2)=2x_2\), donc \(x_2=-\frac32\) : \(g(x)=2(x-1)\left(x+\frac32\right)=(x-1)(2x+3)\). \(g(x)\leq0\iff x\in\left[-\frac32\,;1\right]\).
+        \item (3) \(h(3)=-45+30+15=0\) ; \(h(t)=-5(t-3)(t-t_2)\), \(h(0)=15=-5(-3)(-t_2)=-15t_2\), donc \(t_2=-1\) : \(h(t)=-5(t-3)(t+1)\). La balle touche le sol à \(t=3\)~s ; \(t=-1\) est rejeté (temps négatif). Le modèle a un sens sur \([0\,;3]\) : discuter l'ensemble de définition mathématique (\(\mathbb{R}\)) et le domaine de validité du modèle. (d) \(h(t)-15=-5t^2+10t=-5t(t-2)\). \(h(t)\geq15\iff -5t(t-2)\geq0\iff t\in[0\,;2]\) (tableau de signes avec la ligne du facteur \(-5\)) : la balle est au-dessus de \(15\)~m pendant \(2\)~s. C'est la question la plus difficile de l'exercice : il faut d'abord se ramener à une comparaison avec \(0\).
+        \item Pourquoi \(f(0)\) ? C'est la valeur la plus simple à calculer avec les deux écritures : le terme constant d'un côté, le produit des nombres de l'autre.
+    \end{itemize}
+}
+
+\begin{exo}[Construire une fonction bénéfice à partir de ses racines][appro]
+\label{exo:buildprofit}
+Une entreprise qui produit \(q\) unités d'un bien a une fonction bénéfice \(B\) (en euros) polynôme du second degré. On sait que :
+\begin{itemize}[leftmargin=*]
+    \item ses seuils de rentabilité (les quantités pour lesquelles le bénéfice est nul) sont \(q=10\) et \(q=50\) ;
+    \item lorsqu'elle ne produit rien, elle perd ses coûts fixes de \(500\)~euros, c'est-à-dire \(B(0)=-500\).
+\end{itemize}
+\begin{enumerate}[leftmargin=*]
+    \item Expliquer pourquoi il existe un réel \(a\) tel que, pour tout \(q\), \(B(q)=a(q-10)(q-50)\).
+    \item Utiliser \(B(0)=-500\) pour déterminer \(a\).
+    \item Donner la forme développée de \(B\).
+    \item Résoudre l'inéquation \(B(q)>0\) pour \(q\geq0\), et interpréter le résultat.
+    \item L'entreprise souhaite réaliser un bénéfice d'au moins \(300\)~euros. Vérifier que pour tout \(q\), \(B(q)-300=-(q-20)(q-40)\), puis déterminer les quantités qui lui permettent d'atteindre cet objectif.
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item Q1 : les seuils de rentabilité sont des racines, donc la propriété s'applique avec les deux racines \(10\) et \(50\). Q2 : \(B(0)=a(-10)(-50)=500a=-500\), donc \(a=-1\).
+        \item Q3 : \(B(q)=-(q-10)(q-50)=-(q^2-60q+500)=-q^2+60q-500\).
+        \item Q4 : \(B(q)>0\iff q\in\,]10\,;50[\) : l'entreprise est rentable strictement entre les deux seuils de rentabilité.
+        \item Q5 : \(-(q-20)(q-40)=-(q^2-60q+800)=-q^2+60q-800=B(q)-300\). \(B(q)\geq300\iff-(q-20)(q-40)\geq0\iff q\in[20\,;40]\). Même démarche que la Q3(d) de l'exercice~\ref{exo:oneroot} : se ramener à une comparaison avec \(0\).
+        \item Le signe de \(a\) a un sens économique : \(a<0\), la parabole est tournée vers le bas et le bénéfice atteint un maximum. Ce maximum est calculé dans l'exercice~\ref{exo:maxprofit}.
+    \end{itemize}
+}
+
+\section{Où est le sommet ?}
+\label{sec:vertex}
+
+\begin{exo}[À la découverte de la symétrie]
+\label{exo:symmetry}
+On considère la fonction \(f(x)=(x-1)(x-5)\).
+\begin{enumerate}[leftmargin=*]
+    \item Donner les racines de \(f\).
+    \item Compléter le tableau de valeurs ci-dessous.
+    \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    \(x\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) & \(5\) & \(6\)\\
+    \hline
+    \(f(x)\) & & & & & & & \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \item Que remarque-t-on sur les valeurs du tableau ?
+    \item Placer les points du tableau dans un repère et tracer la parabole. Tracer son axe de symétrie et donner les coordonnées de son sommet.
+    \item Comment obtenir l'abscisse du sommet à partir des deux racines ?
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item Q2 : \(5\) ; \(0\) ; \(-3\) ; \(-4\) ; \(-3\) ; \(0\) ; \(5\). Q3 : les valeurs sont symétriques autour de \(x=3\) : \(f(2)=f(4)\), \(f(1)=f(5)\), \(f(0)=f(6)\).
+        \item Q4 : axe de symétrie \(x=3\), sommet \((3\,;-4)\) (point le plus bas, car \(a=1>0\)).
+        \item Q5 : \(3\) est exactement à mi-chemin entre \(1\) et \(5\) : \(3=\frac{1+5}{2}\). Laisser les élèves le formuler eux-mêmes avant d'énoncer la propriété du cours ; la raison graphique (les deux racines sont symétriques l'une de l'autre par rapport à l'axe) est le cœur de la partie~IV.
+    \end{itemize}
+}
+
+\begin{exo}[Trouver le sommet]
+Pour chaque fonction, donner ses racines, une équation de son axe de symétrie et les coordonnées de son sommet.
+\begin{enumerate}[leftmargin=*]
+    \item \(f(x)=(x+2)(x-4)\)
+    \item \(g(x)=-2(x-1)(x-7)\)
+    \item \(h(x)=x^2-4x\)\quad (commencer par factoriser \(h(x)\))
+    \item \(k(x)=2(x-3)^2\)
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item (1) Racines \(-2\) et \(4\) ; axe \(x=\frac{-2+4}{2}=1\) ; sommet \((1\,;f(1))=(1\,;3\times(-3))=(1\,;-9)\).
+        \item (2) Racines \(1\) et \(7\) ; axe \(x=4\) ; \(g(4)=-2\times3\times(-3)=18\) ; sommet \((4\,;18)\), point le plus haut car \(a=-2<0\).
+        \item (3) \(h(x)=x(x-4)\) : racines \(0\) et \(4\) ; axe \(x=2\) ; sommet \((2\,;-4)\). La factorisation par \(x\) est nouvelle pour certains élèves : \(x^2-4x=x\times x-4\times x=x(x-4)\).
+        \item (4) Racine double \(3\) : sommet \((3\,;0)\), la parabole touche l'axe en ce point.
+        \item Erreur fréquente : ne donner que l'abscisse du sommet. Insister sur le fait que l'ordonnée s'obtient en calculant l'image du milieu par \(f\).
+    \end{itemize}
+}
+
+\begin{exo}[Bénéfice maximal][appro]
+\label{exo:maxprofit}
+On reprend la fonction bénéfice de l'exercice~\ref{exo:buildprofit} : \(B(q)=-(q-10)(q-50)\).
+\begin{enumerate}[leftmargin=*]
+    \item La parabole de \(B\) est-elle tournée vers le haut ou vers le bas ? Le sommet est-il le point le plus bas ou le plus haut ?
+    \item Déterminer la quantité \(q\) qui donne à l'entreprise son bénéfice maximal, ainsi que la valeur de ce bénéfice maximal.
+    \item Tracer l'allure de la courbe de \(B\) pour \(q\) compris entre \(0\) et \(60\), en faisant apparaître les seuils de rentabilité et le sommet.
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item Q1 : \(a=-1<0\) : parabole tournée vers le bas, le sommet est le point le plus haut. Q2 : \(q=\frac{10+50}{2}=30\) unités, \(B(30)=-(20)(-20)=400\)~euros.
+        \item Première optimisation de l'année, sans dérivée : le bénéfice maximal est atteint à mi-chemin entre les deux seuils de rentabilité. À dire explicitement : cette symétrie est une particularité des modèles du second degré, pas une loi économique générale.
+    \end{itemize}
+}
+
+\begin{exo}[Et s'il n'y a pas de racine ?][avance]
+On considère la fonction \(f(x)=x^2-6x+10\).
+\begin{enumerate}[leftmargin=*]
+    \item Vérifier que pour tout réel \(x\), \(f(x)=(x-3)^2+1\). En déduire que \(f\) n'admet aucune racine.
+    \item Soit \(g(x)=f(x)-10=x^2-6x\). Écrire \(g(x)\) sous la forme d'un produit et donner les racines de \(g\).
+    \item Pour tout \(x\), \(f(x)=g(x)+10\). Comment obtient-on la courbe de \(f\) à partir de celle de \(g\) ? En déduire l'axe de symétrie et le sommet de la parabole de \(f\).
+    \item \textbf{Généralisation.} Soit \(f(x)=ax^2+bx+c\) avec \(a\neq0\) et \(b\neq0\), et soit \(g(x)=f(x)-c\).
+    \begin{enumerate}
+        \item Montrer que \(g(x)=x(ax+b)\), et donner les deux racines de \(g\).
+        \item En déduire que l'axe de symétrie de la parabole de \(f\) est la droite d'équation \(x=-\dfrac{b}{2a}\).
+    \end{enumerate}
+\end{enumerate}
+\end{exo}
+
+\prof{
+    \begin{itemize}
+        \item Q1 : \((x-3)^2+1=x^2-6x+9+1=x^2-6x+10\). Un carré est positif ou nul, donc \(f(x)\geq1>0\) : aucune racine, et la propriété du milieu ne peut pas s'appliquer directement.
+        \item Q2 : \(g(x)=x(x-6)\) : racines \(0\) et \(6\). Q3 : la courbe de \(f\) est la courbe de \(g\) translatée de \(10\) unités vers le haut ; un déplacement vertical ne change pas l'axe de symétrie, donc l'axe est \(x=\frac{0+6}{2}=3\), et le sommet est \((3\,;f(3))=(3\,;1)\), ce qui est cohérent avec la Q1.
+        \item Q4 : \(g(x)=ax^2+bx=x(ax+b)\) ; racines \(0\) et \(-\frac ba\) ; axe \(x=\frac{0-\frac ba}{2}=-\frac{b}{2a}\), valable \emph{que \(f\) ait des racines ou non}. Cette formule reviendra à la séance~2 (\(x_0=-\frac{b}{2a}\) est la racine double lorsque \(\Delta=0\)). Le cas \(b=0\) n'est exclu que pour que \(g\) ait deux racines distinctes ; le résultat reste vrai (axe \(x=0\)).
+    \end{itemize}
+}
+
+\end{multicols}
+
+\end{document}
