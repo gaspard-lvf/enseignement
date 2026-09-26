@@ -27,10 +27,7 @@
 \begin{prerequis}
 \begin{itemize}
     \item Savoir calculer l'image d'une fonction avec la formule.
-    \item Savoir à l'aide d'un graphique, retrouver l'image d'un nombre
-    \item Savoir retrouver graphiquement les éventuels antécédents d'un nombre par une fonction
     \item Savoir résoudre une équation
-    \item Savoir développer une expression
 \end{itemize}
 
 \end{prerequis}
@@ -45,6 +42,111 @@
 
 \begin{multicols}{2}
 \section{Coefficient directeur et ordonnée à l'origine}
+\begin{exo}[][]
+    Un plombier facture ses interventions comme indiqué sur le graphique ci-dessous.
+    
+        \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = middle,
+            grid=both,
+            ytick distance = 20,
+            ymajorgrids=true,
+            minor y tick num=1,
+            xlabel = \textbf{Durée de l'intervention (en h)},
+            ylabel = \textbf{Prix payé (\euro)},
+            xmin = 0,
+            xmax = 5,
+            ymin = 0,
+            ymax = 160
+        ]
+        \addplot [
+            domain= 0:3, 
+            samples=100, 
+            color=blue,
+            ]
+            {50*x+40};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{enumerate}
+        \item Combien le plombier facturera-t-il pour 5h de travail ?
+        \item Combien le plombier facture-t-il à l'heure ?
+        \item Quel est le prix de son déplacement ?
+        \item Écrire une formule qui donne le prix de facturation du plombier en fonction de la durée d'intervention.
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}[][]
+    Pour chacuns des cas ci-dessous, on cherche à modéliser les situations suivantes par des fonctions affines.
+    \begin{enumerate}
+        \item Un artisan vend du tissus. Il facture ses clients comme indiqué ci-dessous.
+        
+                \begin{tikzpicture}[scale=0.8]
+                \begin{axis}[
+                    height=6cm,
+                    width=0.5\textwidth,
+                    axis lines = middle,
+                    grid=both,
+                    ymajorgrids=true,
+                    xtick={1,...,3},
+                    minor y tick num=1,
+                    xlabel = \textbf{Longueur de tissus vendue (en mètres)},
+                    ylabel = \textbf{Prix payé (\euro)},
+                    xmin = 0,
+                    xmax = 3,
+                    ymin = 0,
+                    ymax = 40
+                ]
+                \addplot [
+                    domain= 0:3, 
+                    samples=100, 
+                    color=blue,
+                    ]
+                    {15*x+5};
+                \end{axis}
+            \end{tikzpicture}
+            \begin{enumerate}
+                \item Quels sont les frais fixes de la vente ?
+                \item Quel est le prix du tissu au mètre ?
+                \item Modéliser le prix du tissu en fonction du nombre de mètres vendus par une fonction affine \(P\).
+            \end{enumerate}
+        \item Un réservoir contient de l'eau. Une pompe retire de l'eau à débit constant. La quantité d'eau restante est représentée sur le graphique ci-dessous.
+        \begin{tikzpicture}[scale=0.8]
+                \begin{axis}[
+                    height=6cm,
+                    width=0.5\textwidth,
+                    axis lines = middle,
+                    grid=both,
+                    ymajorgrids=true,
+                    minor y tick num=1,
+                    xlabel = \textbf{Durée de fonctionnement (en heures)},
+                    ylabel = \textbf{Quantité d'eau restante (litres)},
+                    xmin = 0,
+                    xmax = 5,
+                    ymin = 0,
+                    ymax = 550
+                ]
+                \addplot [
+                    domain= 0:35, 
+                    samples=100, 
+                    color=blue,
+                    ]
+                    {-50*x+500};
+                \end{axis}
+            \end{tikzpicture}
+            \begin{enumerate}
+                \item Quelle était la quantité d'eau initiale dans le réservoir ?
+                \item Quel est le débit de la pompe (c'est-à-dire le nombre de litres retirés par heure) ?
+                \item Modéliser la quantité d'eau restante en fonction du nombre d'heures par une fonction affine \(Q\).
+                \item Quand le réservoir sera-t-il vide ?
+            \end{enumerate}
+        \item En 2006, la population d'éléphants d'Afrique était de 526 milliers. Chaque année, elle baisse de \(1,1\) milliers.\begin{enumerate}
+            \item Écrire une fonction affine \(P\) qui donne le nombre d'éléphants en fonction de l'année depuis 2006.
+            \item Quelle sera la population en 2016 ?
+            \item D'après ce modèle, quand la population d'éléphants sera-t-elle éteinte ?
+        \end{enumerate}
+    \end{enumerate}
+\end{exo}
+
 \begin{exo}[][]
 Pour chacunes des fonctions suivantes, dire celles qui sont affines. Pour celles qui le sont, déterminer leur coefficient directeur et leur ordonnée à l'origine.
 \begin{tasks}(2)
@@ -190,39 +292,118 @@ Retrouver les formules pour chacunes des droites suivantes
 \end{tikzpicture}
 \end{exo}
 
-\begin{exo}[][appro]
-    Un plombier facture ses interventions comme indiqué sur le graphique ci-dessous.
-    
-        \begin{tikzpicture}
-        \begin{axis}[
-            axis lines = middle,
-            grid=both,
-            ytick distance = 20,
-            ymajorgrids=true,
-            minor y tick num=1,
-            xlabel = \textbf{Durée de l'intervention (en h)},
-            ylabel = \textbf{Prix payé (\euro)},
-            xmin = 0,
-            xmax = 5,
-            ymin = 0,
-            ymax = 160
-        ]
-        \addplot [
-            domain= 0:3, 
-            samples=100, 
-            color=blue,
-            ]
-            {50*x+40};
-        \end{axis}
-    \end{tikzpicture}
-    \begin{enumerate}
-        \item Combien le plombier facturera-t-il pour 5h de travail ?
-        \item Combien le plombier facture-t-il à l'heure ?
-        \item Quel est le prix de son déplacement ?
-    \end{enumerate}
-\end{exo}
-
 \section{Tableaux de signes}
+
+\begin{exo}
+    On a représenté ci-dessous quatre fonctions affines : 
+    \begin{tasks}(2)
+
+\task
+\(
+f(x)=2x-4
+\)
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-2, xmax=5,
+        ymin=-5, ymax=5,
+        xtick={-2,-1,0,1,2,3,4,5},
+        ytick={-4,-2,2,4},
+        grid=major,
+        samples=100,
+        domain=-2:5,
+        xlabel={$x$},
+        ylabel={$y$},
+        width=7cm,
+        height=5.5cm
+    ]
+        \addplot[thick] {2*x-4};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\task
+\(
+g(x)=-x+3
+\)
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-2, xmax=5,
+        ymin=-5, ymax=5,
+        xtick={-2,-1,0,1,2,3,4,5},
+        ytick={-4,-2,2,4},
+        grid=major,
+        samples=100,
+        domain=-2:5,
+        xlabel={$x$},
+        ylabel={$y$},
+        width=7cm,
+        height=5.5cm
+    ]
+        \addplot[thick] {-x+3};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\task
+\(
+h(x)=3x+6
+\)
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-5, xmax=3,
+        ymin=-5, ymax=5,
+        xtick={-5,-4,-3,-2,-1,0,1,2,3},
+        ytick={-4,-2,2,4},
+        grid=major,
+        samples=100,
+        domain=-5:3,
+        xlabel={$x$},
+        ylabel={$y$},
+        width=7cm,
+        height=5.5cm
+    ]
+        \addplot[thick] {3*x+6};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\task
+\(
+k(x)=-2x-2
+\)
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-4, xmax=3,
+        ymin=-5, ymax=5,
+        xtick={-4,-3,-2,-1,0,1,2,3},
+        ytick={-4,-2,2,4},
+        grid=major,
+        samples=100,
+        domain=-4:3,
+        xlabel={$x$},
+        ylabel={$y$},
+        width=7cm,
+        height=5.5cm
+    ]
+        \addplot[thick] {-2*x-2};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{tasks}
+
+\begin{enumerate}
+    \item Dresser le tableau de signe de ces quatre fonctions
+    \item À partir du tableau de signe d'une fonction affine, peut-on déduire son sens de variation ?
+\end{enumerate}
+\end{exo}
 
 \begin{exo}[][]
     Dresser les tableaux de signe des fonctions affines suivantes :
@@ -234,9 +415,20 @@ Retrouver les formules pour chacunes des droites suivantes
     \end{tasks}
 \end{exo}
 
+\begin{exo}[][]
+    Proposer une fonction affine \(g\) dont le tableau de signe est le suivant :
+        \begin{tikzpicture}
+        \tkzTabInit[espcl=1]{$x$ / 1 ,  \(g(x) \) / 1}{$-\infty $, \(2\), \(+\infty \)}
+        \tkzTabLine{,-, z, +}
+    \end{tikzpicture}
+\end{exo}
+
 \prof{
     Obligation de justifier le tableau de signe par  un schéma. Ce sera le cas pour l'interro
 }
+
+\end{multicols}
+\end{document}
 
 \begin{exo}[Méthode][]
 
