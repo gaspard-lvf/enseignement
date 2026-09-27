@@ -76,10 +76,10 @@
 \end{exo}
 
 \begin{exo}[][]
-    Pour chacuns des cas ci-dessous, on cherche à modéliser les situations suivantes par des fonctions affines.
-    \begin{enumerate}
-        \item Un artisan vend du tissus. Il facture ses clients comme indiqué ci-dessous.
-        
+    On cherche à modéliser la situation suivante par une fonction affine.
+
+    Un artisan vend du tissus. Il facture ses clients comme indiqué ci-dessous.
+
                 \begin{tikzpicture}[scale=0.8]
                 \begin{axis}[
                     height=6cm,
@@ -109,42 +109,6 @@
                 \item Quel est le prix du tissu au mètre ?
                 \item Modéliser le prix du tissu en fonction du nombre de mètres vendus par une fonction affine \(P\).
             \end{enumerate}
-        \item Un réservoir contient de l'eau. Une pompe retire de l'eau à débit constant. La quantité d'eau restante est représentée sur le graphique ci-dessous.
-        \begin{tikzpicture}[scale=0.8]
-                \begin{axis}[
-                    height=6cm,
-                    width=0.5\textwidth,
-                    axis lines = middle,
-                    grid=both,
-                    ymajorgrids=true,
-                    minor y tick num=1,
-                    xlabel = \textbf{Durée de fonctionnement (en heures)},
-                    ylabel = \textbf{Quantité d'eau restante (litres)},
-                    xmin = 0,
-                    xmax = 5,
-                    ymin = 0,
-                    ymax = 550
-                ]
-                \addplot [
-                    domain= 0:35, 
-                    samples=100, 
-                    color=blue,
-                    ]
-                    {-50*x+500};
-                \end{axis}
-            \end{tikzpicture}
-            \begin{enumerate}
-                \item Quelle était la quantité d'eau initiale dans le réservoir ?
-                \item Quel est le débit de la pompe (c'est-à-dire le nombre de litres retirés par heure) ?
-                \item Modéliser la quantité d'eau restante en fonction du nombre d'heures par une fonction affine \(Q\).
-                \item Quand le réservoir sera-t-il vide ?
-            \end{enumerate}
-        \item En 2006, la population d'éléphants d'Afrique était de 526 milliers. Chaque année, elle baisse de \(1,1\) milliers.\begin{enumerate}
-            \item Écrire une fonction affine \(P\) qui donne le nombre d'éléphants en fonction de l'année depuis 2006.
-            \item Quelle sera la population en 2016 ?
-            \item D'après ce modèle, quand la population d'éléphants sera-t-elle éteinte ?
-        \end{enumerate}
-    \end{enumerate}
 \end{exo}
 
 \begin{exo}[][]
@@ -204,7 +168,8 @@ On considère la fonction affine \(k\) définie sur \(R\) par \(k(x) = -2x + 1\)
 }
 
 \begin{exo}[][]
-    Parmi les quatre droite représentées ci-dessous, une seule peut être la représentation graphique de \(g(x) = 2x-3\). Dire laquelle en justifiant. \begin{multicols}{4}
+    Parmi les quatre droite représentées ci-dessous, une seule peut être la représentation graphique de \(g(x) = 2x-3\). Dire laquelle en justifiant. Et pour \(h(x)=-x-4\) ?
+    \begin{multicols}{4}
         \hspace{0.5cm} \(d_1\)\\
         \begin{tikzpicture}[scale=0.8]
             \draw(-1,0)--(1,0);
@@ -234,6 +199,8 @@ On considère la fonction affine \(k\) définie sur \(R\) par \(k(x) = -2x + 1\)
         \end{tikzpicture}
     \end{multicols}
 \end{exo}
+
+\newpage 
 
 \begin{exo}[][]
     Tracer dans le repère ci-dessous les fonctions affines suivantes :\begin{tasks}(2)
@@ -426,6 +393,42 @@ k(x)=-2x-2
 \prof{
     Obligation de justifier le tableau de signe par  un schéma. Ce sera le cas pour l'interro
 }
+
+
+\begin{exo}[][]
+    Modéliser chacune des situations suivantes par une fonction affine, puis répondre à la question posée.
+    \begin{enumerate}
+        \item Un réservoir contient de l'eau. Une pompe retire de l'eau à débit constant. La quantité d'eau restante est représentée sur le graphique ci-dessous.
+        \begin{tikzpicture}[scale=0.8]
+                \begin{axis}[
+                    height=6cm,
+                    width=0.5\textwidth,
+                    axis lines = middle,
+                    grid=both,
+                    ymajorgrids=true,
+                    minor y tick num=1,
+                    xlabel = \textbf{Durée de fonctionnement (en heures)},
+                    ylabel = \textbf{Quantité d'eau restante (litres)},
+                    xmin = 0,
+                    xmax = 5,
+                    ymin = 0,
+                    ymax = 550
+                ]
+                \addplot [
+                    domain= 0:35, 
+                    samples=100, 
+                    color=blue,
+                    ]
+                    {-50*x+500};
+                \end{axis}
+            \end{tikzpicture}
+
+            Quand le réservoir sera-t-il vide ?
+        \item En 2006, la population d'éléphants d'Afrique était de 526 milliers. Chaque année, elle baisse de \(1,1\) milliers.
+
+        D'après ce modèle, en quelle année la population d'éléphants aura-t-elle disparu ?
+    \end{enumerate}
+\end{exo}
 
 \end{multicols}
 \end{document}
