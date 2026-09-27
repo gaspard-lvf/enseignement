@@ -1,0 +1,156 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+\usepackage{schemaevolution}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1M}
+\renewcommand{\chapitre}{Évolutions}
+\renewcommand{\numchap}{0.3}
+\renewcommand{\theme}{Statistiques}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(3\) est-il solution de l'équation \(2x+3=5x-6\) ? Justifier.
+
+\vspace{4cm}
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+Résoudre l'équation \(6x+5=9\). Donner la solution sous la forme d'une fraction irréductible.
+
+\vspace{4cm}
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{60}{\dots}{-20\%}{}
+
+\vspace{3.5cm}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{80}{100}{\dots}{}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(4\) est-il solution de l'équation \(3x-2=x+5\) ? Justifier.
+
+\vspace{4cm}
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+Résoudre l'équation \(4x-3=7\). Donner la solution sous la forme d'une fraction irréductible.
+
+\vspace{4cm}
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{40}{\dots}{+25\%}{}
+
+\vspace{3.5cm}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{50}{40}{\dots}{}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(5\) est-il solution de l'équation \(4x-7=2x+3\) ? Justifier.
+
+\vspace{4cm}
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+Résoudre l'équation \(10x+1=5\). Donner la solution sous la forme d'une fraction irréductible.
+
+\vspace{4cm}
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{80}{\dots}{-25\%}{}
+
+\vspace{3.5cm}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{200}{250}{\dots}{}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(2\) est-il solution de l'équation \(5x+1=3x+4\) ? Justifier.
+
+\vspace{4cm}
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+Résoudre l'équation \(8x-5=1\). Donner la solution sous la forme d'une fraction irréductible.
+
+\vspace{4cm}
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{50}{\dots}{+20\%}{}
+
+\vspace{3.5cm}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+Compléter le schéma suivant, en justifiant par un calcul.
+
+\schemaevolution{20}{15}{\dots}{}
+
+\end{document}

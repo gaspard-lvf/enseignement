@@ -1,0 +1,236 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+\usepackage{schemaevolution}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1M}
+\renewcommand{\chapitre}{Évolutions}
+\renewcommand{\numchap}{0.3}
+\renewcommand{\theme}{Statistiques}
+
+%%%titre "CORRECTION" au lieu de "INTERROGATION", sans les champs Nom/Prénom
+\renewcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large CORRECTION -- \chapitre}
+    \end{center}
+
+    \vspace{0.1cm}
+}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(3\) est-il solution de l'équation \(2x+3=5x-6\) ?
+
+On remplace \(x\) par \(3\) dans chaque membre de l'équation :
+\begin{itemize}
+\item membre de gauche : \(2\times3+3=9\) ;
+\item membre de droite : \(5\times3-6=9\).
+\end{itemize}
+Les deux membres sont égaux, donc \textcolor{blue}{\(3\) est solution} de l'équation.
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+\[
+\begin{aligned}
+6x+5&=9\\
+6x&=9-5\\
+6x&=4\\
+x&=\frac{4}{6}\\
+x&=\frac{2}{3}.
+\end{aligned}
+\]
+
+La solution de l'équation est \(\textcolor{blue}{\dfrac{2}{3}}\).
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Le coefficient multiplicateur associé à une évolution de \(-20\%\) est \(1-\dfrac{20}{100}=0{,}8\).
+
+Valeur finale : \(60\times0{,}8=\textcolor{blue}{48}\).
+
+\schemaevolution{60}{\textcolor{blue}{48}}{-20\%}{\textcolor{blue}{\times 0{,}8}}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+\[
+t=\frac{V_F-V_I}{V_I}=\frac{100-80}{80}=\frac{20}{80}=\frac{1}{4}=0{,}25=\textcolor{blue}{+25\%}.
+\]
+
+Il s'agit d'une augmentation de 25\%.
+
+\schemaevolution{80}{100}{\textcolor{blue}{+25\%}}{}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(4\) est-il solution de l'équation \(3x-2=x+5\) ?
+
+On remplace \(x\) par \(4\) dans chaque membre de l'équation :
+\begin{itemize}
+\item membre de gauche : \(3\times4-2=10\) ;
+\item membre de droite : \(4+5=9\).
+\end{itemize}
+Les deux membres ne sont pas égaux (\(10\neq9\)), donc \textcolor{blue}{\(4\) n'est pas solution} de l'équation.
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+\[
+\begin{aligned}
+4x-3&=7\\
+4x&=7+3\\
+4x&=10\\
+x&=\frac{10}{4}\\
+x&=\frac{5}{2}.
+\end{aligned}
+\]
+
+La solution de l'équation est \(\textcolor{blue}{\dfrac{5}{2}}\).
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Le coefficient multiplicateur associé à une évolution de \(+25\%\) est \(1+\dfrac{25}{100}=1{,}25\).
+
+Valeur finale : \(40\times1{,}25=\textcolor{blue}{50}\).
+
+\schemaevolution{40}{\textcolor{blue}{50}}{+25\%}{\textcolor{blue}{\times 1{,}25}}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+\[
+t=\frac{V_F-V_I}{V_I}=\frac{40-50}{50}=-\frac{10}{50}=-\frac{1}{5}=-0{,}2=\textcolor{blue}{-20\%}.
+\]
+
+Il s'agit d'une diminution de 20\%.
+
+\schemaevolution{50}{40}{\textcolor{blue}{-20\%}}{}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(5\) est-il solution de l'équation \(4x-7=2x+3\) ?
+
+On remplace \(x\) par \(5\) dans chaque membre de l'équation :
+\begin{itemize}
+\item membre de gauche : \(4\times5-7=13\) ;
+\item membre de droite : \(2\times5+3=13\).
+\end{itemize}
+Les deux membres sont égaux, donc \textcolor{blue}{\(5\) est solution} de l'équation.
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+\[
+\begin{aligned}
+10x+1&=5\\
+10x&=5-1\\
+10x&=4\\
+x&=\frac{4}{10}\\
+x&=\frac{2}{5}.
+\end{aligned}
+\]
+
+La solution de l'équation est \(\textcolor{blue}{\dfrac{2}{5}}\).
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Le coefficient multiplicateur associé à une évolution de \(-25\%\) est \(1-\dfrac{25}{100}=0{,}75\).
+
+Valeur finale : \(80\times0{,}75=\textcolor{blue}{60}\).
+
+\schemaevolution{80}{\textcolor{blue}{60}}{-25\%}{\textcolor{blue}{\times 0{,}75}}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+\[
+t=\frac{V_F-V_I}{V_I}=\frac{250-200}{200}=\frac{50}{200}=\frac{1}{4}=0{,}25=\textcolor{blue}{+25\%}.
+\]
+
+Il s'agit d'une augmentation de 25\%.
+
+\schemaevolution{200}{250}{\textcolor{blue}{+25\%}}{}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Solution d'une équation \hfill /2}
+
+Le nombre \(2\) est-il solution de l'équation \(5x+1=3x+4\) ?
+
+On remplace \(x\) par \(2\) dans chaque membre de l'équation :
+\begin{itemize}
+\item membre de gauche : \(5\times2+1=11\) ;
+\item membre de droite : \(3\times2+4=10\).
+\end{itemize}
+Les deux membres ne sont pas égaux (\(11\neq10\)), donc \textcolor{blue}{\(2\) n'est pas solution} de l'équation.
+
+\textbf{Exercice 2 -- Résolution d'une équation \hfill /3}
+
+\[
+\begin{aligned}
+8x-5&=1\\
+8x&=1+5\\
+8x&=6\\
+x&=\frac{6}{8}\\
+x&=\frac{3}{4}.
+\end{aligned}
+\]
+
+La solution de l'équation est \(\textcolor{blue}{\dfrac{3}{4}}\).
+
+\textbf{Exercice 3 -- Valeur finale \hfill /2}
+
+Le coefficient multiplicateur associé à une évolution de \(+20\%\) est \(1+\dfrac{20}{100}=1{,}2\).
+
+Valeur finale : \(50\times1{,}2=\textcolor{blue}{60}\).
+
+\schemaevolution{50}{\textcolor{blue}{60}}{+20\%}{\textcolor{blue}{\times 1{,}2}}
+
+\textbf{Exercice 4 -- Taux d'évolution \hfill /3}
+
+\[
+t=\frac{V_F-V_I}{V_I}=\frac{15-20}{20}=-\frac{5}{20}=-\frac{1}{4}=-0{,}25=\textcolor{blue}{-25\%}.
+\]
+
+Il s'agit d'une diminution de 25\%.
+
+\schemaevolution{20}{15}{\textcolor{blue}{-25\%}}{}
+
+\end{document}
