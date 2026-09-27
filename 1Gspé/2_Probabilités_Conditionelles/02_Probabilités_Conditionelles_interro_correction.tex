@@ -1,0 +1,264 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Probabilités conditionnelles}
+\renewcommand{\numchap}{2}
+\renewcommand{\theme}{Probabilités}
+
+%%%titre "CORRECTION" au lieu de "INTERROGATION", sans les champs Nom/Prénom
+\renewcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large CORRECTION -- \chapitre}
+    \end{center}
+
+    \vspace{0.1cm}
+}
+
+%%%arbre pondéré à deux niveaux
+%%% \arbreproba{A}{B}{P(A)}{P(Abar)}{P_A(B)}{P_A(Bbar)}{P_Abar(B)}{P_Abar(Bbar)}
+\newcommand{\arbreproba}[8]{%
+\begin{tikzpicture}[
+  grow'=right,
+  level distance=3.6cm,
+  level 1/.style={sibling distance=2.4cm},
+  level 2/.style={sibling distance=1.2cm},
+  edge from parent/.style={draw,-latex},
+  every node/.style={font=\small}
+]
+\node {}
+  child { node {\(#1\)}
+    child { node {\(#2\)} edge from parent node[above] {#5} }
+    child { node {\(\overline{#2}\)} edge from parent node[below] {#6} }
+    edge from parent node[above] {#3}
+  }
+  child { node {\(\overline{#1}\)}
+    child { node {\(#2\)} edge from parent node[above] {#7} }
+    child { node {\(\overline{#2}\)} edge from parent node[below] {#8} }
+    edge from parent node[below] {#4}
+  };
+\end{tikzpicture}%
+}
+\newcommand{\bl}[1]{\textcolor{blue}{\(#1\)}}
+
+\renewcommand{\arraystretch}{1.4}
+\newcolumntype{C}{>{\centering\arraybackslash}p{2.4cm}}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice -- Demi-pension et sport \hfill /10}
+
+\begin{enumerate}
+\item Calculs utilisant les pourcentages :
+\begin{itemize}
+\item demi-pensionnaires : \(\dfrac{60}{100}\times200=120\), donc externes : \(200-120=80\) ;
+\item sport en club : \(\dfrac{31}{100}\times200=62\), donc pas de sport : \(200-62=138\).
+\end{itemize}
+On complète ensuite par différences : \(120-90=30\) et \(80-32=48\) (vérification : \(90+48=138\)).
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Sport en club & Pas de sport & Total \\
+    \hline
+    Demi-pensionnaires & \bl{30} & 90 & \bl{120} \\
+    \hline
+    Externes & 32 & \bl{48} & \bl{80} \\
+    \hline
+    Total & \bl{62} & \bl{138} & 200 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\item \(P(D)=\dfrac{120}{200}=\textcolor{blue}{0{,}6}\).
+
+\item \(D\cap S\) : \og l'élève est demi-pensionnaire \textbf{et} pratique un sport en club \fg{}. \(P(D\cap S)=\dfrac{30}{200}=\textcolor{blue}{0{,}15}\).
+
+\item Parmi les \(120\) demi-pensionnaires, \(30\) pratiquent un sport en club : \(P_D(S)=\dfrac{30}{120}=\textcolor{blue}{0{,}25}\).
+
+\item \(P(\overline D)=\dfrac{80}{200}=0{,}4\) ; \(P_D(\overline S)=\dfrac{90}{120}=0{,}75\) ; \(P_{\overline D}(S)=\dfrac{32}{80}=0{,}4\) ; \(P_{\overline D}(\overline S)=\dfrac{48}{80}=0{,}6\).
+
+\begin{center}
+\arbreproba{D}{S}{\bl{0{,}6}}{\bl{0{,}4}}{\bl{0{,}25}}{\bl{0{,}75}}{\bl{0{,}4}}{\bl{0{,}6}}
+\end{center}
+
+\item On multiplie les probabilités le long du chemin \(D\to S\) :
+\[
+P(D\cap S)=P(D)\times P_D(S)=0{,}6\times0{,}25=\textcolor{blue}{0{,}15}.
+\]
+On retrouve bien le résultat de la question 3.
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice -- Au cinéma \hfill /10}
+
+\begin{enumerate}
+\item Calculs utilisant les pourcentages :
+\begin{itemize}
+\item tarif réduit : \(\dfrac{40}{100}\times400=160\), donc plein tarif : \(400-160=240\) ;
+\item film en 3D : \(\dfrac{27}{100}\times400=108\), donc film en 2D : \(400-108=292\).
+\end{itemize}
+On complète ensuite par différences : \(160-112=48\) et \(240-60=180\) (vérification : \(112+180=292\)).
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Film en 3D & Film en 2D & Total \\
+    \hline
+    Tarif réduit & \bl{48} & 112 & \bl{160} \\
+    \hline
+    Plein tarif & 60 & \bl{180} & \bl{240} \\
+    \hline
+    Total & \bl{108} & \bl{292} & 400 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\item \(P(R)=\dfrac{160}{400}=\textcolor{blue}{0{,}4}\).
+
+\item \(R\cap T\) : \og le spectateur a payé un tarif réduit \textbf{et} a vu un film en 3D \fg{}. \(P(R\cap T)=\dfrac{48}{400}=\textcolor{blue}{0{,}12}\).
+
+\item Parmi les \(160\) spectateurs au tarif réduit, \(48\) ont vu un film en 3D : \(P_R(T)=\dfrac{48}{160}=\textcolor{blue}{0{,}3}\).
+
+\item \(P(\overline R)=\dfrac{240}{400}=0{,}6\) ; \(P_R(\overline T)=\dfrac{112}{160}=0{,}7\) ; \(P_{\overline R}(T)=\dfrac{60}{240}=0{,}25\) ; \(P_{\overline R}(\overline T)=\dfrac{180}{240}=0{,}75\).
+
+\begin{center}
+\arbreproba{R}{T}{\bl{0{,}4}}{\bl{0{,}6}}{\bl{0{,}3}}{\bl{0{,}7}}{\bl{0{,}25}}{\bl{0{,}75}}
+\end{center}
+
+\item On multiplie les probabilités le long du chemin \(R\to T\) :
+\[
+P(R\cap T)=P(R)\times P_R(T)=0{,}4\times0{,}3=\textcolor{blue}{0{,}12}.
+\]
+On retrouve bien le résultat de la question 3.
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice -- Clients d'un magasin \hfill /10}
+
+\begin{enumerate}
+\item Calculs utilisant les pourcentages :
+\begin{itemize}
+\item avec carte : \(\dfrac{60}{100}\times500=300\), donc sans carte : \(500-300=200\) ;
+\item plus de \(50\) \euro{} : \(\dfrac{30}{100}\times500=150\), donc \(50\) \euro{} ou moins : \(500-150=350\).
+\end{itemize}
+On complète ensuite par différences : \(300-180=120\) et \(200-30=170\) (vérification : \(180+170=350\)).
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Plus de 50 \euro & 50 \euro{} ou moins & Total \\
+    \hline
+    Avec carte & \bl{120} & 180 & \bl{300} \\
+    \hline
+    Sans carte & 30 & \bl{170} & \bl{200} \\
+    \hline
+    Total & \bl{150} & \bl{350} & 500 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\item \(P(F)=\dfrac{300}{500}=\textcolor{blue}{0{,}6}\).
+
+\item \(F\cap M\) : \og le client possède la carte \textbf{et} a fait un achat de plus de \(50\) \euro{} \fg{}. \(P(F\cap M)=\dfrac{120}{500}=\textcolor{blue}{0{,}24}\).
+
+\item Parmi les \(300\) clients ayant la carte, \(120\) ont fait un achat de plus de \(50\) \euro{} : \(P_F(M)=\dfrac{120}{300}=\textcolor{blue}{0{,}4}\).
+
+\item \(P(\overline F)=\dfrac{200}{500}=0{,}4\) ; \(P_F(\overline M)=\dfrac{180}{300}=0{,}6\) ; \(P_{\overline F}(M)=\dfrac{30}{200}=0{,}15\) ; \(P_{\overline F}(\overline M)=\dfrac{170}{200}=0{,}85\).
+
+\begin{center}
+\arbreproba{F}{M}{\bl{0{,}6}}{\bl{0{,}4}}{\bl{0{,}4}}{\bl{0{,}6}}{\bl{0{,}15}}{\bl{0{,}85}}
+\end{center}
+
+\item On multiplie les probabilités le long du chemin \(F\to M\) :
+\[
+P(F\cap M)=P(F)\times P_F(M)=0{,}6\times0{,}4=\textcolor{blue}{0{,}24}.
+\]
+On retrouve bien le résultat de la question 3.
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice -- Une course à pied \hfill /10}
+
+\begin{enumerate}
+\item Calculs utilisant les pourcentages :
+\begin{itemize}
+\item licenciés : \(\dfrac{40}{100}\times250=100\), donc non licenciés : \(250-100=150\) ;
+\item moins d'une heure : \(\dfrac{36}{100}\times250=90\), donc une heure ou plus : \(250-90=160\).
+\end{itemize}
+On complète ensuite par différences : \(100-40=60\) et \(150-30=120\) (vérification : \(40+120=160\)).
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Moins d'1 h & 1 h ou plus & Total \\
+    \hline
+    Licenciés & \bl{60} & 40 & \bl{100} \\
+    \hline
+    Non licenciés & 30 & \bl{120} & \bl{150} \\
+    \hline
+    Total & \bl{90} & \bl{160} & 250 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\item \(P(L)=\dfrac{100}{250}=\textcolor{blue}{0{,}4}\).
+
+\item \(L\cap H\) : \og le coureur est licencié \textbf{et} a terminé en moins d'une heure \fg{}. \(P(L\cap H)=\dfrac{60}{250}=\textcolor{blue}{0{,}24}\).
+
+\item Parmi les \(100\) licenciés, \(60\) ont terminé en moins d'une heure : \(P_L(H)=\dfrac{60}{100}=\textcolor{blue}{0{,}6}\).
+
+\item \(P(\overline L)=\dfrac{150}{250}=0{,}6\) ; \(P_L(\overline H)=\dfrac{40}{100}=0{,}4\) ; \(P_{\overline L}(H)=\dfrac{30}{150}=0{,}2\) ; \(P_{\overline L}(\overline H)=\dfrac{120}{150}=0{,}8\).
+
+\begin{center}
+\arbreproba{L}{H}{\bl{0{,}4}}{\bl{0{,}6}}{\bl{0{,}6}}{\bl{0{,}4}}{\bl{0{,}2}}{\bl{0{,}8}}
+\end{center}
+
+\item On multiplie les probabilités le long du chemin \(L\to H\) :
+\[
+P(L\cap H)=P(L)\times P_L(H)=0{,}4\times0{,}6=\textcolor{blue}{0{,}24}.
+\]
+On retrouve bien le résultat de la question 3.
+\end{enumerate}
+
+\end{document}

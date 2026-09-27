@@ -1,0 +1,281 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{1G}
+\renewcommand{\chapitre}{Probabilités conditionnelles}
+\renewcommand{\numchap}{2}
+\renewcommand{\theme}{Probabilités}
+
+%%%arbre pondéré à deux niveaux
+%%% \arbreproba{A}{B}{P(A)}{P(Abar)}{P_A(B)}{P_A(Bbar)}{P_Abar(B)}{P_Abar(Bbar)}
+\newcommand{\arbreproba}[8]{%
+\begin{tikzpicture}[
+  grow'=right,
+  level distance=3.6cm,
+  level 1/.style={sibling distance=3cm},
+  level 2/.style={sibling distance=1.6cm},
+  edge from parent/.style={draw,-latex},
+  every node/.style={font=\small}
+]
+\node {}
+  child { node {\(#1\)}
+    child { node {\(#2\)} edge from parent node[above] {#5} }
+    child { node {\(\overline{#2}\)} edge from parent node[below] {#6} }
+    edge from parent node[above] {#3}
+  }
+  child { node {\(\overline{#1}\)}
+    child { node {\(#2\)} edge from parent node[above] {#7} }
+    child { node {\(\overline{#2}\)} edge from parent node[below] {#8} }
+    edge from parent node[below] {#4}
+  };
+\end{tikzpicture}%
+}
+\newcommand{\vide}{\makebox[1.3cm]{\dotfill}}
+
+%%%cases du tableau plus hautes pour que les élèves puissent écrire dedans
+\renewcommand{\arraystretch}{1.8}
+\newcolumntype{C}{>{\centering\arraybackslash}p{2.4cm}}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice -- Demi-pension et sport \hfill /10}
+
+Un lycée compte \(200\) élèves de première. On sait que :
+\begin{itemize}
+\item \(60\,\%\) des élèves sont demi-pensionnaires, les autres sont externes ;
+\item \(31\,\%\) des élèves pratiquent un sport en club.
+\end{itemize}
+
+\begin{enumerate}
+\item Compléter le tableau ci-dessous, en justifiant les calculs utilisant les pourcentages. \hfill /3
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Sport en club & Pas de sport & Total \\
+    \hline
+    Demi-pensionnaires & & 90 & \\
+    \hline
+    Externes & 32 & & \\
+    \hline
+    Total & & & 200 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+
+On choisit un élève de première au hasard. On note \(D\) : \og l'élève est demi-pensionnaire \fg{} et \(S\) : \og l'élève pratique un sport en club \fg{}.
+
+\item Calculer \(P(D)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P(D\cap S)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P_D(S)\). \hfill /1,5
+
+\vspace{1.4cm}
+
+\item À l'aide du tableau, compléter l'arbre pondéré ci-dessous. \hfill /2
+
+\begin{center}
+\arbreproba{D}{S}{\vide}{\vide}{\vide}{\vide}{\vide}{\vide}
+\end{center}
+
+\item À l'aide de l'arbre, retrouver \(P(D\cap S)\) en rappelant la formule utilisée. \hfill /1,5
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice -- Au cinéma \hfill /10}
+
+Un soir, un cinéma a accueilli \(400\) spectateurs. On sait que :
+\begin{itemize}
+\item \(40\,\%\) des spectateurs ont payé un tarif réduit, les autres ont payé plein tarif ;
+\item \(27\,\%\) des spectateurs ont vu un film en 3D, les autres un film en 2D.
+\end{itemize}
+
+\begin{enumerate}
+\item Compléter le tableau ci-dessous, en justifiant les calculs utilisant les pourcentages. \hfill /3
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Film en 3D & Film en 2D & Total \\
+    \hline
+    Tarif réduit & & 112 & \\
+    \hline
+    Plein tarif & 60 & & \\
+    \hline
+    Total & & & 400 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+
+On choisit un spectateur au hasard. On note \(R\) : \og le spectateur a payé un tarif réduit \fg{} et \(T\) : \og le spectateur a vu un film en 3D \fg{}.
+
+\item Calculer \(P(R)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P(R\cap T)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P_R(T)\). \hfill /1,5
+
+\vspace{1.4cm}
+
+\item À l'aide du tableau, compléter l'arbre pondéré ci-dessous. \hfill /2
+
+\begin{center}
+\arbreproba{R}{T}{\vide}{\vide}{\vide}{\vide}{\vide}{\vide}
+\end{center}
+
+\item À l'aide de l'arbre, retrouver \(P(R\cap T)\) en rappelant la formule utilisée. \hfill /1,5
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice -- Clients d'un magasin \hfill /10}
+
+Une journée, un magasin a reçu \(500\) clients. On sait que :
+\begin{itemize}
+\item \(60\,\%\) des clients possèdent la carte de fidélité du magasin ;
+\item \(30\,\%\) des clients ont fait un achat de plus de \(50\) \euro.
+\end{itemize}
+
+\begin{enumerate}
+\item Compléter le tableau ci-dessous, en justifiant les calculs utilisant les pourcentages. \hfill /3
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Plus de 50 \euro & 50 \euro{} ou moins & Total \\
+    \hline
+    Avec carte & & 180 & \\
+    \hline
+    Sans carte & 30 & & \\
+    \hline
+    Total & & & 500 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+
+On choisit un client au hasard. On note \(F\) : \og le client possède la carte de fidélité \fg{} et \(M\) : \og le client a fait un achat de plus de \(50\) \euro{} \fg{}.
+
+\item Calculer \(P(F)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P(F\cap M)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P_F(M)\). \hfill /1,5
+
+\vspace{1.4cm}
+
+\item À l'aide du tableau, compléter l'arbre pondéré ci-dessous. \hfill /2
+
+\begin{center}
+\arbreproba{F}{M}{\vide}{\vide}{\vide}{\vide}{\vide}{\vide}
+\end{center}
+
+\item À l'aide de l'arbre, retrouver \(P(F\cap M)\) en rappelant la formule utilisée. \hfill /1,5
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice -- Une course à pied \hfill /10}
+
+\(250\) coureurs ont participé à une course à pied. On sait que :
+\begin{itemize}
+\item \(40\,\%\) des coureurs sont licenciés dans un club d'athlétisme ;
+\item \(36\,\%\) des coureurs ont terminé la course en moins d'une heure.
+\end{itemize}
+
+\begin{enumerate}
+\item Compléter le tableau ci-dessous, en justifiant les calculs utilisant les pourcentages. \hfill /3
+
+\begin{center}
+\begin{tabular}{|l|C|C|C|}
+    \hline
+     & Moins d'1 h & 1 h ou plus & Total \\
+    \hline
+    Licenciés & & 40 & \\
+    \hline
+    Non licenciés & 30 & & \\
+    \hline
+    Total & & & 250 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+
+On choisit un coureur au hasard. On note \(L\) : \og le coureur est licencié \fg{} et \(H\) : \og le coureur a terminé en moins d'une heure \fg{}.
+
+\item Calculer \(P(L)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P(L\cap H)\). \hfill /1
+
+\vspace{1.4cm}
+
+\item Calculer \(P_L(H)\). \hfill /1,5
+
+\vspace{1.4cm}
+
+\item À l'aide du tableau, compléter l'arbre pondéré ci-dessous. \hfill /2
+
+\begin{center}
+\arbreproba{L}{H}{\vide}{\vide}{\vide}{\vide}{\vide}{\vide}
+\end{center}
+
+\item À l'aide de l'arbre, retrouver \(P(L\cap H)\) en rappelant la formule utilisée. \hfill /1,5
+\end{enumerate}
+
+\end{document}
