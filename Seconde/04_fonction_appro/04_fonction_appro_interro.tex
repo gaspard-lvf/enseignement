@@ -1,0 +1,289 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+\usetikzlibrary{babel}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{2nde}
+\renewcommand{\chapitre}{Fonctions : image, antécédent, ensemble de définition}
+\renewcommand{\numchap}{0.4}
+\renewcommand{\theme}{Fonctions}
+
+% Repère quadrillé + courbe (ligne brisée) de la fonction f.
+% #1 : xmin, #2 : xmax, #3 : ymin, #4 : ymax (graduations entières)
+% #5 : sommets de la ligne brisée, ex. {(-3,-2)(-1,2)(1,-2)}
+\newcommand{\courbef}[5]{
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=#1-0.5, xmax=#2+0.5,
+    ymin=#3-0.5, ymax=#4+0.5,
+    grid=major,
+    xtick={#1,...,#2},
+    ytick={#3,...,#4},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    tick label style={font=\small},
+    width=9cm,
+    height=8.8cm
+]
+\addplot[blue, very thick] coordinates {#5};
+\end{axis}
+\end{tikzpicture}
+}
+
+\renewcommand{\arraystretch}{1.8}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+Développer puis réduire l'expression suivante, en détaillant les étapes :
+\[
+A=3(2x-5)-4(x-2).
+\]
+
+\vspace{3.5cm}
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous. \textit{Laisser apparents les traits de lecture.}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-3}{4}{-3}{3}{(-3,-2)(-1,2)(1,-2)(3,2)(4,1)}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.5cm}
+\begin{enumerate}[leftmargin=*]
+    \item Quel est l'ensemble de définition de \(f\) ?
+    \vspace{1.4cm}
+    \item Donner les images de \(1\) et de \(4\) par \(f\).
+    \vspace{1.9cm}
+    \item Donner les éventuels antécédents de \(2\) et de \(-3\) par \(f\).
+    \vspace{1.9cm}
+    \item Résoudre l'équation \(f(x)=0\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.8cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+On considère une fonction \(g\) définie sur l'intervalle \([-3\ ;\ 3]\) par le tableau de valeurs suivant :
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-3\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\
+    \hline
+    \(g(x)\) & \(4\) & \(-1\) & \(2\) & \(0\) & \(-1\) & \(3\) & \(2\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Quelle est l'image de \(1\) par \(g\) ?
+    \vspace{1.2cm}
+    \item Résoudre l'équation \(g(x)=2\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+Développer puis réduire l'expression suivante, en détaillant les étapes :
+\[
+B=5(x+2)-2(3x-4).
+\]
+
+\vspace{3.5cm}
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous. \textit{Laisser apparents les traits de lecture.}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-2}{4}{-2}{3}{(-2,3)(0,-1)(2,3)(4,1)}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.5cm}
+\begin{enumerate}[leftmargin=*]
+    \item Quel est l'ensemble de définition de \(f\) ?
+    \vspace{1.4cm}
+    \item Donner les images de \(0\) et de \(3\) par \(f\).
+    \vspace{1.9cm}
+    \item Donner les éventuels antécédents de \(1\) et de \(-2\) par \(f\).
+    \vspace{1.9cm}
+    \item Résoudre l'équation \(f(x)=3\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.8cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+On considère une fonction \(g\) définie sur l'intervalle \([-2\ ;\ 4]\) par le tableau de valeurs suivant :
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) \\
+    \hline
+    \(g(x)\) & \(3\) & \(0\) & \(5\) & \(\dfrac{1}{2}\) & \(0\) & \(-2\) & \(1\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Déterminer \(g(1)\).
+    \vspace{1.2cm}
+    \item Résoudre l'équation \(g(x)=0\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+Développer puis réduire l'expression suivante, en détaillant les étapes :
+\[
+C=4(3x-1)-3(2x+5).
+\]
+
+\vspace{3.5cm}
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous. \textit{Laisser apparents les traits de lecture.}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-4}{2}{-2}{3}{(-4,-1)(-2,3)(1,0)(2,1)}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.5cm}
+\begin{enumerate}[leftmargin=*]
+    \item Quel est l'ensemble de définition de \(f\) ?
+    \vspace{1.4cm}
+    \item Donner les images de \(-4\) et de \(-1\) par \(f\).
+    \vspace{1.9cm}
+    \item Donner les éventuels antécédents de \(3\) et de \(-2\) par \(f\).
+    \vspace{1.9cm}
+    \item Résoudre l'équation \(f(x)=1\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.8cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+On considère une fonction \(g\) définie sur l'intervalle \([-1\ ;\ 5]\) par le tableau de valeurs suivant :
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) & \(5\) \\
+    \hline
+    \(g(x)\) & \(2\) & \(-3\) & \(4\) & \(1\) & \(2\) & \(0\) & \(2\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Compléter : \(g(4)=\ldots\ldots\)
+    \vspace{1.2cm}
+    \item Quels sont les nombres qui ont pour image \(2\) par \(g\) ?
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+Développer puis réduire l'expression suivante, en détaillant les étapes :
+\[
+D=2(4x+3)-5(x-3).
+\]
+
+\vspace{3.5cm}
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+On considère une fonction \(f\) dont la représentation graphique est donnée ci-dessous. \textit{Laisser apparents les traits de lecture.}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-1}{5}{-2}{3}{(-1,-2)(1,2)(4,-1)(5,0)}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.5cm}
+\begin{enumerate}[leftmargin=*]
+    \item Quel est l'ensemble de définition de \(f\) ?
+    \vspace{1.4cm}
+    \item Donner les images de \(-1\) et de \(2\) par \(f\).
+    \vspace{1.9cm}
+    \item Donner les éventuels antécédents de \(2\) et de \(3\) par \(f\).
+    \vspace{1.9cm}
+    \item Résoudre l'équation \(f(x)=0\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.8cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+On considère une fonction \(g\) définie sur l'intervalle \([-2\ ;\ 4]\) par le tableau de valeurs suivant :
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) \\
+    \hline
+    \(g(x)\) & \(-1\) & \(\dfrac{3}{2}\) & \(4\) & \(-1\) & \(2\) & \(4\) & \(0\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Quelle est l'image de \(-1\) par \(g\) ?
+    \vspace{1.2cm}
+    \item Le nombre \(4\) a-t-il des antécédents par \(g\) ? Si oui, lesquels ?
+\end{enumerate}
+
+\end{document}

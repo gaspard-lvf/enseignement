@@ -1,0 +1,344 @@
+\documentclass[10pt,a4paper]{article}
+
+%double si on veut une version prof et une version élève. simple si on veut une seule version.
+\newcommand{\buildmode}{simple}
+
+\InputIfFileExists{version.tex}{}{}
+% Version (définie par le script)
+\providecommand{\version}{eleve}
+
+\usepackage{feuilleinterro}
+\usetikzlibrary{babel}
+
+%%%à modifier à chaque fois
+
+\renewcommand{\niveau}{2nde}
+\renewcommand{\chapitre}{Fonctions : image, antécédent, ensemble de définition}
+\renewcommand{\numchap}{0.4}
+\renewcommand{\theme}{Fonctions}
+
+%%%titre "CORRECTION" au lieu de "INTERROGATION", sans les champs Nom/Prénom
+\renewcommand{\interroversion}[1]{
+    \noindent\textbf{\niveau}
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \textbf{\large CORRECTION -- \chapitre}
+    \end{center}
+
+    \vspace{0.1cm}
+}
+
+% Repère quadrillé + courbe (ligne brisée) de la fonction f.
+% #1 : xmin, #2 : xmax, #3 : ymin, #4 : ymax (graduations entières)
+% #5 : sommets de la ligne brisée, ex. {(-3,-2)(-1,2)(1,-2)}
+% #6 : traits de lecture (macros \lectimage, \lectligne, \lectante)
+\newcommand{\courbef}[6]{
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=#1-0.5, xmax=#2+0.5,
+    ymin=#3-0.5, ymax=#4+0.5,
+    grid=major,
+    xtick={#1,...,#2},
+    ytick={#3,...,#4},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    tick label style={font=\small},
+    width=9cm,
+    height=8.8cm
+]
+\addplot[blue, very thick] coordinates {#5};
+#6
+\end{axis}
+\end{tikzpicture}
+}
+
+% Lecture d'une image : \lectimage{a}{f(a)}
+\newcommand{\lectimage}[2]{
+    \draw[red, dashed, thick] (#1,0)--(#1,#2)--(0,#2);
+    \fill[red] (#1,#2) circle (2pt);
+}
+% Droite horizontale y=k : \lectligne[couleur]{k}{xmin}{xmax}
+\newcommand{\lectligne}[4][orange!85!black]{
+    \draw[#1, dashed, thick] (#3,#2)--(#4,#2);
+}
+% Antécédents de k : \lectante[couleur]{k}{x1,x2,...}
+\newcommand{\lectante}[3][orange!85!black]{
+    \pgfplotsinvokeforeach{#3}{
+        \draw[#1, dashed, thick] (##1,#2)--(##1,0);
+        \fill[#1] (##1,#2) circle (2pt);
+    }
+}
+
+\renewcommand{\arraystretch}{1.8}
+
+\begin{document}
+
+% =========================================================
+% PAGE 1 : VERSION A
+% =========================================================
+
+\interroversion{A}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+\[
+\begin{aligned}
+A&=3(2x-5)-4(x-2)\\
+&=3\times2x-3\times5-4\times x-4\times(-2)\\
+&=6x-15-4x+8\\
+&=\textcolor{blue}{2x-7}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-3}{4}{-3}{3}{(-3,-2)(-1,2)(1,-2)(3,2)(4,1)}{
+    \lectimage{1}{-2}
+    \lectimage{4}{1}
+    \lectligne{2}{-3.5}{4.5}
+    \lectante{2}{-1,3}
+    \lectligne{-3}{-3.5}{4.5}
+    \lectligne[green!50!black]{0}{-3.5}{4.5}
+    \lectante[green!50!black]{0}{-2,0,2}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.3cm}
+\begin{enumerate}[leftmargin=*]
+    \item La courbe s'étend de \(x=-3\) à \(x=4\), donc \(\textcolor{blue}{\mathcal{D}_f=[-3\ ;\ 4]}\).
+    \item \(\textcolor{blue}{f(1)=-2}\) et \(\textcolor{blue}{f(4)=1}\).
+    \item Les antécédents de \(2\) par \(f\) sont \(\textcolor{blue}{-1 \text{ et } 3}\).
+
+    La droite d'équation \(y=-3\) ne coupe pas la courbe : \(\textcolor{blue}{-3 \text{ n'a pas d'antécédent}}\) par \(f\).
+    \item On cherche les abscisses des points de la courbe d'ordonnée \(0\) :
+    \(\textcolor{blue}{S=\{-2\ ;\ 0\ ;\ 2\}}\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-3\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) \\
+    \hline
+    \(g(x)\) & \(4\) & \(-1\) & \(2\) & \(0\) & \(-1\) & \(3\) & \(2\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item L'image de \(1\) par \(g\) est \(\textcolor{blue}{g(1)=-1}\).
+    \item D'après le tableau, les nombres qui ont pour image \(2\) sont \(-1\) et \(3\), donc \(\textcolor{blue}{S=\{-1\ ;\ 3\}}\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 2 : VERSION B
+% =========================================================
+
+\interroversion{B}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+\[
+\begin{aligned}
+B&=5(x+2)-2(3x-4)\\
+&=5\times x+5\times2-2\times3x-2\times(-4)\\
+&=5x+10-6x+8\\
+&=\textcolor{blue}{-x+18}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-2}{4}{-2}{3}{(-2,3)(0,-1)(2,3)(4,1)}{
+    \lectimage{0}{-1}
+    \lectimage{3}{2}
+    \lectligne{1}{-2.5}{4.5}
+    \lectante{1}{-1,1,4}
+    \lectligne{-2}{-2.5}{4.5}
+    \lectligne[green!50!black]{3}{-2.5}{4.5}
+    \lectante[green!50!black]{3}{-2,2}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.3cm}
+\begin{enumerate}[leftmargin=*]
+    \item La courbe s'étend de \(x=-2\) à \(x=4\), donc \(\textcolor{blue}{\mathcal{D}_f=[-2\ ;\ 4]}\).
+    \item \(\textcolor{blue}{f(0)=-1}\) et \(\textcolor{blue}{f(3)=2}\).
+    \item Les antécédents de \(1\) par \(f\) sont \(\textcolor{blue}{-1,\ 1 \text{ et } 4}\).
+
+    La droite d'équation \(y=-2\) ne coupe pas la courbe : \(\textcolor{blue}{-2 \text{ n'a pas d'antécédent}}\) par \(f\).
+    \item On cherche les abscisses des points de la courbe d'ordonnée \(3\) :
+    \(\textcolor{blue}{S=\{-2\ ;\ 2\}}\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) \\
+    \hline
+    \(g(x)\) & \(3\) & \(0\) & \(5\) & \(\dfrac{1}{2}\) & \(0\) & \(-2\) & \(1\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item \(\textcolor{blue}{g(1)=\dfrac{1}{2}}\).
+    \item D'après le tableau, les nombres qui ont pour image \(0\) sont \(-1\) et \(2\), donc \(\textcolor{blue}{S=\{-1\ ;\ 2\}}\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 3 : VERSION C
+% =========================================================
+
+\interroversion{C}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+\[
+\begin{aligned}
+C&=4(3x-1)-3(2x+5)\\
+&=4\times3x-4\times1-3\times2x-3\times5\\
+&=12x-4-6x-15\\
+&=\textcolor{blue}{6x-19}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-4}{2}{-2}{3}{(-4,-1)(-2,3)(1,0)(2,1)}{
+    \lectimage{-4}{-1}
+    \lectimage{-1}{2}
+    \lectligne{3}{-4.5}{2.5}
+    \lectante{3}{-2}
+    \lectligne{-2}{-4.5}{2.5}
+    \lectligne[green!50!black]{1}{-4.5}{2.5}
+    \lectante[green!50!black]{1}{-3,0,2}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.3cm}
+\begin{enumerate}[leftmargin=*]
+    \item La courbe s'étend de \(x=-4\) à \(x=2\), donc \(\textcolor{blue}{\mathcal{D}_f=[-4\ ;\ 2]}\).
+    \item \(\textcolor{blue}{f(-4)=-1}\) et \(\textcolor{blue}{f(-1)=2}\).
+    \item Le nombre \(3\) a un seul antécédent par \(f\) : \(\textcolor{blue}{-2}\).
+
+    La droite d'équation \(y=-2\) ne coupe pas la courbe : \(\textcolor{blue}{-2 \text{ n'a pas d'antécédent}}\) par \(f\).
+    \item On cherche les abscisses des points de la courbe d'ordonnée \(1\) :
+    \(\textcolor{blue}{S=\{-3\ ;\ 0\ ;\ 2\}}\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) & \(5\) \\
+    \hline
+    \(g(x)\) & \(2\) & \(-3\) & \(4\) & \(1\) & \(2\) & \(0\) & \(2\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item \(\textcolor{blue}{g(4)=0}\).
+    \item D'après le tableau, les nombres qui ont pour image \(2\) par \(g\) sont \(\textcolor{blue}{-1,\ 3 \text{ et } 5}\).
+\end{enumerate}
+
+\newpage
+
+% =========================================================
+% PAGE 4 : VERSION D
+% =========================================================
+
+\interroversion{D}
+
+\textbf{Exercice 1 -- Calcul littéral \hfill /3}
+
+\[
+\begin{aligned}
+D&=2(4x+3)-5(x-3)\\
+&=2\times4x+2\times3-5\times x-5\times(-3)\\
+&=8x+6-5x+15\\
+&=\textcolor{blue}{3x+21}.
+\end{aligned}
+\]
+
+\textbf{Exercice 2 -- Lecture graphique \hfill /5}
+
+\noindent
+\begin{minipage}[t]{0.52\textwidth}
+\vspace{0pt}
+\courbef{-1}{5}{-2}{3}{(-1,-2)(1,2)(4,-1)(5,0)}{
+    \lectimage{-1}{-2}
+    \lectimage{2}{1}
+    \lectligne{2}{-1.5}{5.5}
+    \lectante{2}{1}
+    \lectligne{3}{-1.5}{5.5}
+    \lectligne[green!50!black]{0}{-1.5}{5.5}
+    \lectante[green!50!black]{0}{0,3,5}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0.3cm}
+\begin{enumerate}[leftmargin=*]
+    \item La courbe s'étend de \(x=-1\) à \(x=5\), donc \(\textcolor{blue}{\mathcal{D}_f=[-1\ ;\ 5]}\).
+    \item \(\textcolor{blue}{f(-1)=-2}\) et \(\textcolor{blue}{f(2)=1}\).
+    \item Le nombre \(2\) a un seul antécédent par \(f\) : \(\textcolor{blue}{1}\).
+
+    La droite d'équation \(y=3\) ne coupe pas la courbe : \(\textcolor{blue}{3 \text{ n'a pas d'antécédent}}\) par \(f\).
+    \item On cherche les abscisses des points de la courbe d'ordonnée \(0\) :
+    \(\textcolor{blue}{S=\{0\ ;\ 3\ ;\ 5\}}\).
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Exercice 3 -- Tableau de valeurs \hfill /2}
+
+\begin{center}
+\begin{tabular}{|*{8}{c|}}
+    \hline
+    \(x\) & \(-2\) & \(-1\) & \(0\) & \(1\) & \(2\) & \(3\) & \(4\) \\
+    \hline
+    \(g(x)\) & \(-1\) & \(\dfrac{3}{2}\) & \(4\) & \(-1\) & \(2\) & \(4\) & \(0\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item L'image de \(-1\) par \(g\) est \(\textcolor{blue}{g(-1)=\dfrac{3}{2}}\).
+    \item Oui : d'après le tableau, les antécédents de \(4\) par \(g\) sont \(\textcolor{blue}{0 \text{ et } 3}\).
+\end{enumerate}
+
+\end{document}
