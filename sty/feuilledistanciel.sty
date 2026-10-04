@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% feuilledistanciel.sty
+%%% Package pour les feuilles de travail en autonomie (distanciel).
+%%% S'appuie sur feuille.sty (exo, \prof, \montitre, en-tête, etc.) et fournit :
+%%%   - \begin{objectifs} ... \end{objectifs} : encadré des objectifs (1 colonne)
+%%%   - \begin{rappelcours} ... \end{rappelcours} : rappel de cours en début de section
+%%%   - \begin{indication} ... \end{indication} : coup de pouce ponctuel
+%%%   - \checkpoint{...} : élément permettant à l'élève de vérifier son résultat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{feuilledistanciel}[2026/10/04 v1.0 Feuille de travail en distanciel]
+
+\RequirePackage{feuille}
+\fancyhead[L]{Travail en autonomie}
+
+%%%ENCADRÉ OBJECTIFS (une seule colonne, contrairement à feuilleactivite.sty)
+%%% Usage : \begin{objectifs} ... \end{objectifs}
+\newtcolorbox{objectifs}[1][Objectifs]{
+  colback=white, colframe=black,
+  boxrule=0.6pt, arc=0pt,
+  left=8pt, right=8pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\scshape, coltitle=black,
+  colbacktitle=white,
+  title=#1
+}
+
+%%%ENCADRÉ RAPPEL DE COURS (même style que rappel dans feuillecorrection.sty)
+%%% Usage : \begin{rappelcours} ... \end{rappelcours}
+%%%         \begin{rappelcours}[Méthode] ... \end{rappelcours} (titre personnalisé)
+\newtcolorbox{rappelcours}[1][Rappel de cours]{
+  colback=black!3, colframe=black!50,
+  boxrule=0.4pt, arc=0pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  fonttitle=\bfseries\scshape\small, coltitle=black!50,
+  colbacktitle=black!3,
+  title=#1
+}
+
+%%%ENCADRÉ INDICATION (aide ponctuelle pour un travail en autonomie)
+%%% Usage : \begin{indication} ... \end{indication}
+%%%         \begin{indication}[Coup de pouce] ... \end{indication}  (titre personnalisé)
+\newtcolorbox{indication}[1][Indication]{
+  colback=black!3, colframe=black!50,
+  boxrule=0.4pt, arc=0pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  fontupper=\small,
+  fonttitle=\bfseries\scshape\small, coltitle=black!50,
+  colbacktitle=black!3,
+  title=#1
+}
+
+%%%VÉRIFICATION (permet à l'élève de contrôler un résultat sans la correction)
+%%% Usage : \checkpoint{on doit trouver \(x=4\).}
+\newcommand{\checkpoint}[1]{%
+  \par\smallskip\noindent
+  {\small\ding{43}~\textit{Vérification :} #1}\par\smallskip
+}
+
+\endinput
