@@ -588,71 +588,309 @@ Lire graphiquement une image, des antécédents et résoudre une équation \(f(x
 
 \section{Écrire une expression en suivant les conventions} \label{annexe-expr-mult}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_expr_mult.png}
+\begin{prop}
+Pour alléger l'écriture d'une expression littérale, on peut supprimer le signe \(\times\) placé devant une lettre ou devant une parenthèse.
+\end{prop}
+
+\begin{rem}
+On ne peut pas supprimer le signe \(\times\) entre deux nombres : \(3\times 4\) ne s'écrit pas \(34\).
+\end{rem}
+
+\begin{exple}
+Supprimer les signes \(\times\), lorsque c'est possible, dans l'expression \(A=5\times x+7\times(3\times x+2\times 4)\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.45\textwidth}@{}}
+A=5\textcolor{teal}{\times} x+7\textcolor{teal}{\times}(3\textcolor{teal}{\times} x+2\textcolor{teal}{\times} 4) & \(\longrightarrow\) & On repère tous les signes \(\times\) de l'expression. \\
+A=5x+7(3x+2\times 4) & \(\longrightarrow\) & On supprime les signes \(\times\) placés devant une lettre ou une parenthèse. Le signe \(\times\) entre \(2\) et \(4\) est conservé.
+\end{tabular}}
+\end{exple}
+
+\begin{note}
+Pour tout nombre \(a\) : \(a\times a=a^2\) (qui se lit \og \(a\) au carré \fg{}) et \(a\times a\times a=a^3\) (qui se lit \og \(a\) au cube \fg{}).
+\end{note}
 
 \section{Réduire une expression développée} \label{annexe-reduction}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_reduction.png}
+\begin{defi}
+\textbf{Réduire} une expression, c'est l'écrire avec le moins de termes possible.
+\end{defi}
+
+\begin{exple}
+Réduire l'expression \(G=5x^2+3x-4-2x^2+3+2x\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.5\textwidth}@{}}
+G=\textcolor{teal}{5x^2}+\textcolor{violet}{3x}-4\textcolor{teal}{-2x^2}+3\textcolor{violet}{+2x} & \(\longrightarrow\) & On repère les termes en \(x^2\), les termes en \(x\) et les nombres. \\
+G=\textcolor{teal}{5x^2-2x^2}\textcolor{violet}{+3x+2x}-4+3 & \(\longrightarrow\) & On regroupe les termes de même nature. \\
+G=(\textcolor{teal}{5-2})x^2+(\textcolor{violet}{3+2})x-1 & \(\longrightarrow\) & On factorise les termes en \(x^2\) et en \(x\), et on calcule les nombres. \\
+G=3x^2+5x-1 & \(\longrightarrow\) & On simplifie.
+\end{tabular}}
+\end{exple}
+
+\begin{rems}
+\begin{itemize}
+    \item Chaque terme se déplace avec le signe placé devant lui : dans \(G\), le terme \(-2x^2\) garde son signe \(-\).
+    \item On ne peut pas regrouper un terme en \(x\) avec un terme en \(x^2\) ou avec un nombre : \(3x^2+5x-1\) ne se réduit pas davantage.
+\end{itemize}
+\end{rems}
 
 \section{Calculer avec des fractions} \label{annexe-fractions}
 
 \subsection{Simplifier une écriture fractionnaire}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_simpl_frac.png}
+\begin{prop}
+On ne change pas la valeur d'une fraction en multipliant (ou en divisant) son numérateur et son dénominateur par un même nombre non nul. Pour tous nombres \(a\), \(b\) et \(k\), où \(b\) et \(k\) sont non nuls :
+\[
+\dfrac{a\times k}{b\times k}=\dfrac{a}{b}
+\qquad\text{et}\qquad
+\dfrac{a\div k}{b\div k}=\dfrac{a}{b}.
+\]
+\end{prop}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_simpl_frac_exemple.png}
+\begin{exples}
+\begin{itemize}
+    \item Simplifier \(\dfrac{12}{30}\) : \(\dfrac{12}{30}=\dfrac{2\times\textcolor{teal}{6}}{5\times\textcolor{teal}{6}}=\dfrac{2}{5}\).
+    \item Compléter l'égalité \(\dfrac{1{,}2}{6}=\dfrac{\dots}{18}\). On passe de \(6\) à \(18\) en multipliant par \(3\), donc on multiplie aussi le numérateur par \(3\) :
+    \begin{center}
+    \begin{tikzpicture}
+        \node (g) at (0,0) {\(\dfrac{1{,}2}{6}\)};
+        \node at (0.8,0) {\(=\)};
+        \node (d) at (1.6,0) {\(\dfrac{\dots}{18}\)};
+        \draw[->, teal] (g.north) to[bend left=50] node[above] {\(\times 3\)} (d.north);
+        \draw[->, teal] (g.south) to[bend right=50] node[below] {\(\times 3\)} (d.south);
+        \node[right] at (2.2,0) {donc \(\dfrac{1{,}2}{6}=\dfrac{3{,}6}{18}\).};
+    \end{tikzpicture}
+    \end{center}
+\end{itemize}
+\end{exples}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_frac_operations.png}
+\subsection{Additionner ou soustraire}
+
+\begin{prop}
+Pour additionner (ou soustraire) deux fractions qui ont le \textbf{même dénominateur}, on additionne (ou on soustrait) les numérateurs et on garde le dénominateur commun. Pour tous nombres \(a\), \(b\) et \(c\), où \(b\) est non nul :
+\[
+\dfrac{a}{b}+\dfrac{c}{b}=\dfrac{a+c}{b}
+\qquad\text{et}\qquad
+\dfrac{a}{b}-\dfrac{c}{b}=\dfrac{a-c}{b}.
+\]
+\end{prop}
+
+\begin{rem}
+Si les dénominateurs sont différents, on commence par écrire les deux fractions avec le même dénominateur, à l'aide de la propriété précédente.
+\end{rem}
+
+\begin{exples}
+\begin{itemize}
+    \item \(\dfrac{7}{3}-\dfrac{5}{3}=\dfrac{7-5}{3}=\dfrac{2}{3}\).
+    \item Calculer \(B=\dfrac{7}{3}+\dfrac{6}{12}\).
+
+    \smallskip
+    {\renewcommand{\arraystretch}{2.4}
+    \begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.5\textwidth}@{}}
+    B=\dfrac{7\times\textcolor{teal}{4}}{3\times\textcolor{teal}{4}}+\dfrac{6}{12} & \(\longrightarrow\) & On écrit \(\dfrac{7}{3}\) avec le dénominateur \(12\), car \(3\times 4=12\). \\
+    B=\dfrac{28}{12}+\dfrac{6}{12}=\dfrac{34}{12} & \(\longrightarrow\) & On additionne les numérateurs. \\
+    B=\dfrac{17}{6} & \(\longrightarrow\) & On simplifie par \(2\).
+    \end{tabular}}
+\end{itemize}
+\end{exples}
+
+\subsection{Multiplier}
+
+\begin{prop}
+Pour multiplier deux fractions, on multiplie les numérateurs entre eux et les dénominateurs entre eux. Pour tous nombres \(a\), \(b\), \(c\) et \(d\), où \(b\) et \(d\) sont non nuls :
+\[
+\dfrac{a}{b}\times\dfrac{c}{d}=\dfrac{a\times c}{b\times d}.
+\]
+\end{prop}
+
+\begin{rem}
+Il est plus simple de décomposer les numérateurs et les dénominateurs avant d'effectuer les produits : on obtient ainsi directement une fraction simplifiée.
+\end{rem}
+
+\begin{exple}
+Calculer et simplifier \(C=\dfrac{4}{15}\times\dfrac{25}{16}\).
+
+\smallskip
+{\renewcommand{\arraystretch}{2.4}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.5\textwidth}@{}}
+C=\dfrac{4\times 25}{15\times 16} & \(\longrightarrow\) & On multiplie les numérateurs et les dénominateurs, sans effectuer les produits. \\
+C=\dfrac{\textcolor{teal}{4}\times\textcolor{violet}{5}\times 5}{3\times\textcolor{violet}{5}\times\textcolor{teal}{4}\times 4} & \(\longrightarrow\) & On décompose pour faire apparaître les facteurs communs. \\
+C=\dfrac{5}{12} & \(\longrightarrow\) & On simplifie par \(4\) et par \(5\).
+\end{tabular}}
+\end{exple}
 
 \section{Calculer avec des proportions} \label{annexe-proportions}
-\textbf{À connaitre : }
-La proportion d'une valeur est le quotient : \(\dfrac{\text{effectif de la valeur}}{\text{effectif total}}\)
 
-\textbf{Exemple : } Dans une classe de 30 élèves, 12 sont des filles. La proportion de filles est donc \(\dfrac{12}{30} = \dfrac{4}{10} = \dfrac{40}{100}\). Donc 40\% des élèves de la classe sont des filles.
+\begin{defi}
+La \textbf{proportion} d'une valeur est le quotient
+\[
+\dfrac{\text{effectif de la valeur}}{\text{effectif total}}.
+\]
+\end{defi}
 
-\textbf{Remarque : }
-On peut utiliser un tableau de proportionnalité :
-\medbreak
+\begin{exple}
+Dans une classe de \(30\) élèves, \(12\) sont des filles. La proportion de filles est \(\dfrac{12}{30}=\dfrac{4}{10}=\dfrac{40}{100}\), donc \(40\,\%\) des élèves de la classe sont des filles.
+
+\smallskip
+On peut aussi utiliser un tableau de proportionnalité :
+
+\smallskip
 \begin{tabular}{|c|c|c|c|}
-    \hline 
-    Effectif de la valeur & 12 & 4 & 40 \\
     \hline
-    Effectif total & 30 & 10 & 100 \\
+    Effectif de la valeur & \(12\) & \(4\) & \(40\) \\
+    \hline
+    Effectif total & \(30\) & \(10\) & \(100\) \\
     \hline
 \end{tabular}
+\end{exple}
 
-\medbreak
-\textbf{Méthode : }
-On peut utiliser un tableau de proportionnalité pour retrouver un effectif de la valeur ou un effectif total. 
+\begin{met}
+Un tableau de proportionnalité permet aussi de retrouver un effectif de la valeur ou un effectif total.
+\end{met}
 
-Exemple : un lycée compte 1400 élèves, dont 15\% sont internes. On cherche le nombre d'internes. \\
-    
+\begin{exple}
+Un lycée compte \(1\,400\) élèves, dont \(15\,\%\) sont internes. Calculer le nombre d'internes.
+
+\vspace{0.7cm}
 \begin{tabular}{|c|c|c|}
-\hline
-Effectif de la valeur & \tikzmarknode{A}{15} & \tikzmarknode{B}{210} \\
-\hline
-Effectif total & 100 & 1400 \\
-\hline
+    \hline
+    Effectif de la valeur & \tikzmarknode{propA}{\(15\)} & \tikzmarknode{propB}{\(210\)} \\
+    \hline
+    Effectif total & \(100\) & \(1\,400\) \\
+    \hline
 \end{tabular}
-
 \begin{tikzpicture}[remember picture, overlay]
-\draw[->] ([yshift=5pt]A.north) to[bend left=20]
-    node[above] {$\times 14$} ([yshift=5pt]B.north);
+    \draw[->, teal] ([yshift=5pt]propA.north) to[bend left=20]
+        node[above] {\(\times 14\)} ([yshift=5pt]propB.north);
 \end{tikzpicture}
 
-Il y a 210 internes.
+\smallskip
+On passe de \(100\) à \(1\,400\) en multipliant par \(14\), donc on multiplie aussi \(15\) par \(14\) : \(15\times 14=210\). Il y a \(210\) internes.
+\end{exple}
 
 \section{Développer une expression} \label{annexe-distribuer}
+
 \subsection{Distributivité simple}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_distr_simple.png}
+\begin{prop}
+Pour tous nombres \(k\), \(a\) et \(b\) :
+\[
+\tikzmarknode{dsk1}{k}\times(\tikzmarknode{dsa1}{a}+\tikzmarknode{dsb1}{b})=k\times a+k\times b
+\qquad\text{et}\qquad
+\tikzmarknode{dsk2}{k}\times(\tikzmarknode{dsa2}{a}-\tikzmarknode{dsb2}{b})=k\times a-k\times b.
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[->, teal] ([yshift=2pt]dsk1.north) to[bend left=70] ([yshift=2pt]dsa1.north);
+    \draw[->, teal] ([yshift=2pt]dsk1.north) to[bend left=70] ([yshift=2pt]dsb1.north);
+    \draw[->, teal] ([yshift=2pt]dsk2.north) to[bend left=70] ([yshift=2pt]dsa2.north);
+    \draw[->, teal] ([yshift=2pt]dsk2.north) to[bend left=70] ([yshift=2pt]dsb2.north);
+\end{tikzpicture}
+\]
+\end{prop}
+
+\begin{exple}
+Développer l'expression \(C=-3{,}5(x-2)\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.45\textwidth}@{}}
+C=\textcolor{teal}{-3{,}5}\times(x-2) & \(\longrightarrow\) & On réécrit le signe \(\times\) devant la parenthèse. \\
+C=(\textcolor{teal}{-3{,}5})\times x+(\textcolor{teal}{-3{,}5})\times(-2) & \(\longrightarrow\) & On distribue le facteur \(-3{,}5\) aux termes \(x\) et \(-2\). \\
+C=-3{,}5x+7 & \(\longrightarrow\) & On calcule les produits.
+\end{tabular}}
+\end{exple}
 
 \subsection{Distributivité double}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_distr_double.png}
+\begin{prop}
+Pour tous nombres \(a\), \(b\), \(c\) et \(d\) :
+
+\begin{minipage}{0.55\textwidth}
+\[
+(\tikzmarknode{dda}{a}+\tikzmarknode{ddb}{b})(\tikzmarknode{ddc}{c}+\tikzmarknode{ddd}{d})=ac+ad+bc+bd.
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[->, teal] ([yshift=2pt]dda.north) to[bend left=45] ([yshift=2pt]ddc.north);
+    \draw[->, teal] ([yshift=2pt]dda.north) to[bend left=45] ([yshift=2pt]ddd.north);
+    \draw[->, violet] ([yshift=-2pt]ddb.south) to[bend right=45] ([yshift=-2pt]ddc.south);
+    \draw[->, violet] ([yshift=-2pt]ddb.south) to[bend right=45] ([yshift=-2pt]ddd.south);
+\end{tikzpicture}
+\]
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.9]
+    \fill[teal!15] (0,0.6) rectangle (2,1.8);
+    \fill[violet!15] (2,0.6) rectangle (3.5,1.8);
+    \fill[teal!30] (0,0) rectangle (2,0.6);
+    \fill[violet!30] (2,0) rectangle (3.5,0.6);
+    \draw (0,0) rectangle (3.5,1.8);
+    \draw (2,0)--(2,1.8);
+    \draw (0,0.6)--(3.5,0.6);
+    \node at (1,1.2) {\(ac\)};
+    \node at (2.75,1.2) {\(bc\)};
+    \node at (1,0.3) {\(ad\)};
+    \node at (2.75,0.3) {\(bd\)};
+    \draw[<->] (0,2.05)--(2,2.05) node[midway, above] {\(a\)};
+    \draw[<->] (2,2.05)--(3.5,2.05) node[midway, above] {\(b\)};
+    \draw[<->] (-0.25,0.6)--(-0.25,1.8) node[midway, left] {\(c\)};
+    \draw[<->] (-0.25,0)--(-0.25,0.6) node[midway, left] {\(d\)};
+\end{tikzpicture}
+\end{minipage}
+\end{prop}
+
+\begin{exple}
+Développer et réduire l'expression \(D=(3x+1)(x-4)\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.38\textwidth}@{}}
+D=(3x+1)(x+(-4)) & \(\longrightarrow\) & On écrit la soustraction comme l'addition de l'opposé. \\
+D=\textcolor{teal}{3x}\times x+\textcolor{teal}{3x}\times(-4)+\textcolor{violet}{1}\times x+\textcolor{violet}{1}\times(-4) & \(\longrightarrow\) & On applique la double distributivité. \\
+D=3x^2-12x+x-4 & \(\longrightarrow\) & On calcule les produits. \\
+D=3x^2-11x-4 & \(\longrightarrow\) & On réduit.
+\end{tabular}}
+\end{exple}
 
 \section{Résoudre une équation} \label{annexe-equations}
 
-\includegraphics[width=0.9\textwidth]{annexe_sesamath_equations.png}
+\begin{props}
+\begin{itemize}
+    \item Une égalité reste vraie si on \textbf{ajoute} ou si on \textbf{soustrait} un même nombre à ses deux membres : pour tous nombres \(a\), \(b\) et \(c\), si \(a=b\), alors \(a+c=b+c\) et \(a-c=b-c\).
+    \item Une égalité reste vraie si on \textbf{multiplie} ou si on \textbf{divise} ses deux membres par un même nombre \textbf{non nul} : pour tous nombres \(a\), \(b\) et \(c\), où \(c\) est non nul, si \(a=b\), alors \(a\times c=b\times c\) et \(\dfrac{a}{c}=\dfrac{b}{c}\).
+\end{itemize}
+\end{props}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{exple}
+Résoudre l'équation \(7x+2=4x+9\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}r<{$}@{${}={}$}>{$}l<{$}@{\quad}l@{\enspace}p{0.45\textwidth}@{}}
+7x+2 & 4x+9 & & \\
+7x+2\textcolor{teal}{-4x} & 4x+9\textcolor{teal}{-4x} & \(\longrightarrow\) & On soustrait \(4x\) aux deux membres, pour éliminer les termes en \(x\) du membre de droite. \\
+3x+2 & 9 & & \\
+3x+2\textcolor{teal}{-2} & 9\textcolor{teal}{-2} & \(\longrightarrow\) & On soustrait \(2\) aux deux membres, pour isoler le terme en \(x\). \\
+3x & 7 & & \\
+3x\textcolor{teal}{\div 3} & 7\textcolor{teal}{\div 3} & \(\longrightarrow\) & On divise les deux membres par \(3\). \\
+x & \dfrac{7}{3} & &
+\end{tabular}}
+
+\smallskip
+L'équation a une unique solution : \(S=\left\{\dfrac{7}{3}\right\}\).
+
+\smallskip
+\textbf{Vérification :} on remplace \(x\) par \(\dfrac{7}{3}\) dans chacun des deux membres.
+\[
+7\times\dfrac{7}{3}+2=\dfrac{49}{3}+\dfrac{6}{3}=\dfrac{55}{3}
+\qquad\text{et}\qquad
+4\times\dfrac{7}{3}+9=\dfrac{28}{3}+\dfrac{27}{3}=\dfrac{55}{3}.
+\]
+Les deux membres sont égaux, donc \(\dfrac{7}{3}\) est bien solution de l'équation.
+\end{exple}
+\end{minipage}
 
 \end{document}
