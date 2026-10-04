@@ -720,10 +720,14 @@ On ne change pas la valeur d'une fraction en multipliant (ou en divisant) son nu
 \dfrac{a\div k}{b\div k}=\dfrac{a}{b}.
 \]
 \end{prop}
+\end{bloc}
 
+\begin{bloc}
 \begin{exples}
 \begin{itemize}
-    \item Simplifier \(\dfrac{12}{30}\) : \(\dfrac{12}{30}=\dfrac{2\times\textcolor{teal}{6}}{5\times\textcolor{teal}{6}}=\dfrac{2}{5}\).
+    \item Simplifier \(\dfrac{12}{30}\) :
+
+    \(\begin{aligned}[t] \dfrac{12}{30}&=\dfrac{2\times\textcolor{teal}{6}}{5\times\textcolor{teal}{6}}\\ &=\dfrac{2}{5}\end{aligned}\)
     \item Compléter l'égalité \(\dfrac{1{,}2}{6}=\dfrac{\dots}{18}\). On passe de \(6\) à \(18\) en multipliant par \(3\), donc on multiplie aussi le numérateur par \(3\) :
     \begin{center}
     \begin{tikzpicture}
@@ -750,21 +754,24 @@ Pour additionner (ou soustraire) deux fractions qui ont le \textbf{même dénomi
 \dfrac{a}{b}-\dfrac{c}{b}=\dfrac{a-c}{b}.
 \]
 \end{prop}
+\end{bloc}
 
+\begin{bloc}
 \begin{rem}
 Si les dénominateurs sont différents, on commence par écrire les deux fractions avec le même dénominateur, à l'aide de la propriété précédente.
 \end{rem}
 
 \begin{exples}
 \begin{itemize}
-    \item \(\dfrac{7}{3}-\dfrac{5}{3}=\dfrac{7-5}{3}=\dfrac{2}{3}\).
+    \item \(\begin{aligned}[t] \dfrac{7}{3}-\dfrac{5}{3}&=\dfrac{7-5}{3}\\ &=\dfrac{2}{3}\end{aligned}\)
     \item Calculer \(B=\dfrac{7}{3}+\dfrac{6}{12}\).
 
     \smallskip
     {\renewcommand{\arraystretch}{2.4}
     \begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.5\textwidth}@{}}
     B=\dfrac{7\times\textcolor{teal}{4}}{3\times\textcolor{teal}{4}}+\dfrac{6}{12} & \(\longrightarrow\) & On écrit \(\dfrac{7}{3}\) avec le dénominateur \(12\), car \(3\times 4=12\). \\
-    B=\dfrac{28}{12}+\dfrac{6}{12}=\dfrac{34}{12} & \(\longrightarrow\) & On additionne les numérateurs. \\
+    B=\dfrac{28}{12}+\dfrac{6}{12} & \(\longrightarrow\) & On calcule les produits. \\
+    B=\dfrac{34}{12} & \(\longrightarrow\) & On additionne les numérateurs. \\
     B=\dfrac{17}{6} & \(\longrightarrow\) & On simplifie par \(2\).
     \end{tabular}}
 \end{itemize}
@@ -780,7 +787,9 @@ Pour multiplier deux fractions, on multiplie les numérateurs entre eux et les d
 \dfrac{a}{b}\times\dfrac{c}{d}=\dfrac{a\times c}{b\times d}.
 \]
 \end{prop}
+\end{bloc}
 
+\begin{bloc}
 \begin{rem}
 Il est plus simple de décomposer les numérateurs et les dénominateurs avant d'effectuer les produits : on obtient ainsi directement une fraction simplifiée.
 \end{rem}
@@ -809,7 +818,13 @@ La \textbf{proportion} d'une valeur est le quotient
 \end{defi}
 
 \begin{exple}
-Dans une classe de \(30\) élèves, \(12\) sont des filles. La proportion de filles est \(\dfrac{12}{30}=\dfrac{4}{10}=\dfrac{40}{100}\), donc \(40\,\%\) des élèves de la classe sont des filles.
+Dans une classe de \(30\) élèves, \(12\) sont des filles. La proportion de filles est
+
+\smallskip
+\(\begin{aligned}[t] \dfrac{12}{30}&=\dfrac{4}{10}\\ &=\dfrac{40}{100}\end{aligned}\)
+
+\smallskip
+donc \(40\,\%\) des élèves de la classe sont des filles.
 
 \smallskip
 On peut aussi utiliser un tableau de proportionnalité :
@@ -898,7 +913,10 @@ L'équation a une unique solution : \(S=\left\{\dfrac{7}{3}\right\}\).
 \smallskip
 \textbf{Vérification :} on remplace \(x\) par \(\dfrac{7}{3}\) dans le membre de gauche :
 \[
-3\times\dfrac{7}{3}+2=7+2=9.
+\begin{aligned}
+3\times\dfrac{7}{3}+2&=7+2\\
+&=9.
+\end{aligned}
 \]
 On retrouve le membre de droite, donc \(\dfrac{7}{3}\) est bien solution de l'équation.
 \end{exple}
@@ -1083,20 +1101,38 @@ Lors d'évolutions successives, le coefficient multiplicateur global est le \tex
 \begin{bloc}
 \textit{Exemple 1 (calculer une valeur finale).}\enspace Un article coûte \(80\) \euro. Son prix augmente de \(15\,\%\). Calculer son nouveau prix.
 \schemaevolution{80}{92}{+15\,\%}{\times 1{,}15}
-Une hausse de \(15\,\%\) correspond à \(t=0{,}15\), donc \(CM=1+0{,}15=1{,}15\). Alors \(V_F=80\times 1{,}15=92\) : le nouveau prix est \(92\) \euro.
+Une hausse de \(15\,\%\) correspond à \(t=0{,}15\), donc :
+
+\smallskip
+\(\begin{aligned}[t] CM&=1+0{,}15\\ &=1{,}15\end{aligned}\) \qquad \(\begin{aligned}[t] V_F&=80\times 1{,}15\\ &=92\end{aligned}\)
+
+\smallskip
+Le nouveau prix est \(92\) \euro.
 \end{bloc}
 
 \begin{bloc}
 \textit{Exemple 2 (calculer un taux d'évolution).}\enspace Le prix d'un abonnement passe de \(50\) \euro{} à \(42\) \euro. Calculer le taux d'évolution.
 
 \smallskip
-\(t=\dfrac{V_F-V_I}{V_I}=\dfrac{42-50}{50}=\dfrac{-8}{50}=-0{,}16\) : le prix a baissé de \(16\,\%\). On vérifie avec le coefficient multiplicateur : \(50\times(1-0{,}16)=50\times 0{,}84=42\).
+\(\begin{aligned}[t] t&=\dfrac{V_F-V_I}{V_I}\\ &=\dfrac{42-50}{50}\\ &=\dfrac{-8}{50}\\ &=-0{,}16\end{aligned}\)
+
+\smallskip
+Le prix a baissé de \(16\,\%\). On vérifie avec le coefficient multiplicateur :
+
+\smallskip
+\(\begin{aligned}[t] 50\times(1-0{,}16)&=50\times 0{,}84\\ &=42\end{aligned}\)
 \end{bloc}
 
 \begin{bloc}
 \textit{Exemple 3 (évolutions successives).}\enspace Un prix de \(80\) \euro{} augmente de \(15\,\%\), puis baisse de \(10\,\%\). Calculer le taux d'évolution global.
 \schemaDeuxevolutions{80}{92}{82{,}8}{+15\,\%}{1{,}15}{-10\,\%}{0{,}9}{\times 1{,}035}{+3{,}5\,\%}
-Le coefficient multiplicateur global est \(1{,}15\times 0{,}9=1{,}035\), donc le taux d'évolution global est \(t=1{,}035-1=0{,}035\) : le prix a augmenté de \(3{,}5\,\%\), et non de \(15-10=5\,\%\).
+Le coefficient multiplicateur global est \(1{,}15\times 0{,}9=1{,}035\), donc le taux d'évolution global est :
+
+\smallskip
+\(\begin{aligned}[t] t&=1{,}035-1\\ &=0{,}035\end{aligned}\)
+
+\smallskip
+Le prix a augmenté de \(3{,}5\,\%\), et non de \(15-10=5\,\%\).
 \end{bloc}
 
 \end{document}

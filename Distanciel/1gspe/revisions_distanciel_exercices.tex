@@ -623,7 +623,13 @@ Dresser le tableau de signes de \(f(x)=-2x+5\).
 \smallskip
 \textit{Méthode 1 : par le calcul.}
 \[
--2x+5\geq 0 \iff -2x\geq -5 \iff x\leq \dfrac{-5}{-2} \iff x\leq \dfrac{5}{2}.
+\begin{aligned}
+-2x+5 &\geq 0\\
+-2x+5\textcolor{teal}{-5} &\geq 0\textcolor{teal}{-5}\\
+-2x &\geq -5\\
+-2x\textcolor{teal}{\div(-2)} &\leq -5\textcolor{teal}{\div(-2)}\\
+x &\leq \dfrac{5}{2}
+\end{aligned}
 \]
 On divise les deux membres par \(-2\), qui est \textbf{négatif} : le sens de l'inégalité change. Donc \(f(x)\geq 0\) pour \(x\leq \dfrac{5}{2}\), et \(f(x)<0\) pour \(x>\dfrac{5}{2}\).
 
@@ -632,7 +638,7 @@ On divise les deux membres par \(-2\), qui est \textbf{négatif} : le sens de l'
 
 \begin{bloc}
 \begin{minipage}{0.58\linewidth}
-\textit{Méthode 2 : graphique.} Le coefficient directeur \(a=-2\) est négatif : la droite descend. Elle coupe l'axe des abscisses en \(x=-\dfrac{5}{-2}=\dfrac{5}{2}\). La droite est donc au-dessus de l'axe à gauche de \(\dfrac{5}{2}\), et en dessous à droite.
+\textit{Méthode 2 : graphique.} Le coefficient directeur \(a=-2\) est négatif : la droite descend. Elle coupe l'axe des abscisses en \(\dfrac{5}{2}\), la valeur qui annule \(-2x+5\). La droite est donc au-dessus de l'axe à gauche de \(\dfrac{5}{2}\), et en dessous à droite.
 \end{minipage}\hfill
 \begin{minipage}{0.38\linewidth}
 \centering
@@ -675,9 +681,13 @@ Pour dresser le tableau de signes d'un produit de fonctions affines :
 On considère \(f(x)=(x+1)(-2x+6)\). Dresser le tableau de signes de \(f\), puis résoudre l'inéquation \(f(x)>0\).
 
 \smallskip
-\(x+1=0\iff x=-1\) ; le coefficient directeur \(1\) est positif, donc \(x+1\) est négatif, puis positif.
+On cherche la valeur qui annule chaque facteur :
 
-\(-2x+6=0\iff x=3\) ; le coefficient directeur \(-2\) est négatif, donc \(-2x+6\) est positif, puis négatif.
+\smallskip
+\(\begin{aligned}[t] x+1&=0\\ x&=-1\end{aligned}\) \qquad \(\begin{aligned}[t] -2x+6&=0\\ -2x&=-6\\ x&=3\end{aligned}\)
+
+\smallskip
+Le coefficient directeur \(1\) est positif, donc \(x+1\) est négatif, puis positif. Le coefficient directeur \(-2\) est négatif, donc \(-2x+6\) est positif, puis négatif.
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1.8,espcl=2]{\(x\) /1, \(x+1\) /1, \(-2x+6\) /1, \(f(x)\) /1}{\(-\infty\),\(-1\),\(3\),\(+\infty\)}
@@ -688,7 +698,13 @@ On considère \(f(x)=(x+1)(-2x+6)\). Dresser le tableau de signes de \(f\), puis
 \end{center}
 D'après la dernière ligne, \(f(x)>0\) pour \(x\) strictement compris entre \(-1\) et \(3\) : \(S=\left]-1\ ;\ 3\right[\).
 
-\textbf{Contrôle :} \(f(0)=(0+1)(0+6)=6>0\), ce qui est cohérent avec le signe \(+\) entre \(-1\) et \(3\).
+\textbf{Contrôle :}
+
+\smallskip
+\(\begin{aligned}[t] f(0)&=(0+1)(-2\times 0+6)\\ &=1\times 6\\ &=6\end{aligned}\)
+
+\smallskip
+\(6>0\), ce qui est cohérent avec le signe \(+\) entre \(-1\) et \(3\).
 \end{exple}
 \end{bloc}
 
@@ -710,9 +726,13 @@ Une \textbf{suite} \((u_n)\) associe à chaque entier naturel \(n\) un nombre \(
 \begin{bloc}
 \textit{Exemple 1 (suite définie explicitement).}\enspace On considère la suite définie pour tout entier naturel \(n\) par \(u_n=n^2+n\).
 \begin{itemize}
-    \item \(u_0=0^2+0=0\) ; \(u_1=1^2+1=2\) ; \(u_2=2^2+2=6\).
-    \item On remplace \(n\) par \(n+1\), avec des parenthèses : \(u_{n+1}=(n+1)^2+(n+1)=n^2+2n+1+n+1=n^2+3n+2\).
-    \item \(u_{n+1}-u_n=(n^2+3n+2)-(n^2+n)=2n+2\). Pour tout entier naturel \(n\), \(2n+2\geq 2>0\) : la suite \((u_n)\) est croissante.
+    \item \(\begin{aligned}[t] u_0&=0^2+0\\ &=0\end{aligned}\) \qquad \(\begin{aligned}[t] u_1&=1^2+1\\ &=2\end{aligned}\) \qquad \(\begin{aligned}[t] u_2&=2^2+2\\ &=6\end{aligned}\)
+    \item On remplace \(n\) par \(n+1\), avec des parenthèses :
+
+    \(\begin{aligned}[t] u_{n+1}&=(n+1)^2+(n+1)\\ &=n^2+2n+1+n+1\\ &=n^2+3n+2\end{aligned}\)
+    \item \(\begin{aligned}[t] u_{n+1}-u_n&=(n^2+3n+2)-(n^2+n)\\ &=2n+2\end{aligned}\)
+
+    Pour tout entier naturel \(n\), \(2n+2\geq 2>0\) : la suite \((u_n)\) est croissante.
 \end{itemize}
 \end{bloc}
 
@@ -722,7 +742,17 @@ Une \textbf{suite} \((u_n)\) associe à chaque entier naturel \(n\) un nombre \(
 \smallskip
 On calcule les termes de proche en proche, chacun à partir du précédent :
 \[
-v_1=2v_0-1=2\times 3-1=5 \ ;\quad v_2=2v_1-1=2\times 5-1=9 \ ;\quad v_3=2v_2-1=2\times 9-1=17.
+\begin{aligned}
+v_1&=2v_0-1\\ &=2\times 3-1\\ &=5
+\end{aligned}
+\qquad
+\begin{aligned}
+v_2&=2v_1-1\\ &=2\times 5-1\\ &=9
+\end{aligned}
+\qquad
+\begin{aligned}
+v_3&=2v_2-1\\ &=2\times 9-1\\ &=17
+\end{aligned}
 \]
 Pour obtenir \(v_{10}\), il faut d'abord calculer tous les termes de \(v_1\) à \(v_9\).
 \end{bloc}
@@ -762,11 +792,25 @@ On choisit un visiteur au hasard. On note \(E\) l'évènement \og le visiteur es
 \begin{bloc}
 \textbf{Correction :}
 \begin{itemize}
-    \item \(P(E)=\dfrac{80}{200}=0{,}4\).
-    \item \(E\cap A\) : \og le visiteur est un enfant \textbf{et} utilise un audioguide \fg{}. \(P(E\cap A)=\dfrac{30}{200}=0{,}15\).
-    \item \textit{Sachant que le visiteur est un enfant : on se restreint à la ligne des \(80\) enfants.} \(P_E(A)=\dfrac{30}{80}=0{,}375\). Parmi les enfants, \(37{,}5\,\%\) utilisent un audioguide.
-    \item \textit{Sachant que le visiteur utilise un audioguide : on se restreint à la colonne des \(102\) utilisateurs.} \(P_A(E)=\dfrac{30}{102}\approx 0{,}294\). On a bien \(P_E(A)\neq P_A(E)\).
-    \item Vérification avec la formule : \(\dfrac{P(E\cap A)}{P(E)}=\dfrac{0{,}15}{0{,}4}=0{,}375=P_E(A)\).
+    \item \(\begin{aligned}[t] P(E)&=\dfrac{80}{200}\\ &=0{,}4\end{aligned}\)
+    \item \(E\cap A\) : \og le visiteur est un enfant \textbf{et} utilise un audioguide \fg{}.
+
+    \(\begin{aligned}[t] P(E\cap A)&=\dfrac{30}{200}\\ &=0{,}15\end{aligned}\)
+    \item \textit{Sachant que le visiteur est un enfant : on se restreint à la ligne des \(80\) enfants.}
+
+    \(\begin{aligned}[t] P_E(A)&=\dfrac{30}{80}\\ &=0{,}375\end{aligned}\)
+
+    Parmi les enfants, \(37{,}5\,\%\) utilisent un audioguide.
+    \item \textit{Sachant que le visiteur utilise un audioguide : on se restreint à la colonne des \(102\) utilisateurs.}
+
+    \(\begin{aligned}[t] P_A(E)&=\dfrac{30}{102}\\ &\approx 0{,}294\end{aligned}\)
+
+    On a bien \(P_E(A)\neq P_A(E)\).
+    \item Vérification avec la formule :
+
+    \(\begin{aligned}[t] \dfrac{P(E\cap A)}{P(E)}&=\dfrac{0{,}15}{0{,}4}\\ &=0{,}375\end{aligned}\)
+
+    On retrouve bien \(P_E(A)\).
 \end{itemize}
 \end{bloc}
 
@@ -812,18 +856,25 @@ Dans un lycée, \(30\,\%\) des élèves sont internes. Parmi les internes, \(80\
 \end{minipage}\hfill
 \begin{minipage}{0.46\linewidth}
 \begin{itemize}
-    \item Premier niveau : \(P(I)=0{,}3\), donc \(P(\overline{I})=1-0{,}3=0{,}7\).
+    \item Premier niveau : \(P(I)=0{,}3\), donc :
+
+    \(\begin{aligned}[t] P(\overline{I})&=1-0{,}3\\ &=0{,}7\end{aligned}\)
     \item Second niveau : \(P_I(D)=0{,}8\), donc \(P_I(\overline{D})=0{,}2\) ; \(P_{\overline{I}}(D)=0{,}4\), donc \(P_{\overline{I}}(\overline{D})=0{,}6\).
 \end{itemize}
 \end{minipage}
+\end{exple}
+\end{bloc}
 
-\smallskip
+\begin{bloc}
 \textbf{Règle du produit :}
 \begin{itemize}
-    \item \(P(I\cap D)=P(I)\times P_I(D)=0{,}3\times 0{,}8=0{,}24\) : \(24\,\%\) des élèves sont internes et déjeunent à la cantine.
-    \item \(P(\overline{I}\cap\overline{D})=P(\overline{I})\times P_{\overline{I}}(\overline{D})=0{,}7\times 0{,}6=0{,}42\) : \(42\,\%\) des élèves ne sont pas internes et ne déjeunent pas à la cantine.
+    \item \(\begin{aligned}[t] P(I\cap D)&=P(I)\times P_I(D)\\ &=0{,}3\times 0{,}8\\ &=0{,}24\end{aligned}\)
+
+    \(24\,\%\) des élèves sont internes et déjeunent à la cantine.
+    \item \(\begin{aligned}[t] P(\overline{I}\cap\overline{D})&=P(\overline{I})\times P_{\overline{I}}(\overline{D})\\ &=0{,}7\times 0{,}6\\ &=0{,}42\end{aligned}\)
+
+    \(42\,\%\) des élèves ne sont pas internes et ne déjeunent pas à la cantine.
 \end{itemize}
-\end{exple}
 \end{bloc}
 
 \end{document}
