@@ -85,14 +85,21 @@ Sans calculatrice.
     \end{tasks}
     \item Écrire plus simplement :
     \begin{tasks}(4)
-        \task \(1x\)
-        \task \(0x\)
-        \task \(-1x\)
-        \task \(3x-2x\)
+        \task \(2x+5-3x+1\)
+        \task \(4x-7-x-2\)
+        \task \(-x+3+2x-3\)
+        \task \(5-2x+x-8\)
     \end{tasks}
     \item Calculer la valeur de l'expression \(3x-7\) pour \(x=2\), puis pour \(x=-1\).
 \end{enumerate}
 \end{exo}
+
+\begin{indication}
+    \begin{enumerate}
+        \item On peut s'aider d'une droite graduée
+        \item Un exemple est disponible dans l'annexe \ref{annexe-expr-mult} à la fin de la fiche.
+    \end{enumerate}
+\end{indication}
 
 \begin{rappelcours}
 Dans une population d'effectif total \(N\), une sous-population a pour effectif \(n\) (le \textbf{sous-effectif}). La \textbf{proportion} de cette sous-population est
@@ -342,6 +349,10 @@ Sans calculatrice, développer puis réduire les expressions suivantes.
 \end{tasks}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple dans l'annexe \ref{annexe-distribuer} si besoin.
+\end{indication}
+
 \begin{rappelcours}
 Une \textbf{fonction} \(f\) associe à chaque nombre \(x\) de son \textbf{ensemble de définition} \(\mathcal{D}_f\) un \textbf{unique} nombre, noté \(f(x)\).
 
@@ -436,7 +447,6 @@ node[pos=0.95, left] {\(\mathcal{C}_f\)};
     \item Résoudre graphiquement l'équation \(f(x)=2\).
     \item Résoudre graphiquement l'équation \(f(x)=3\).
 \end{enumerate}
-\textit{Faire apparaître les lectures graphiques à l'aide de pointillés.}
 \end{exo}
 
 \begin{exo}
@@ -554,5 +564,83 @@ Lire graphiquement une image, des antécédents et résoudre une équation \(f(x
 \prof{
     Feuille blanche : rappeler qu'elle est personnelle, sans cours ni fiche. Possibilité de la faire en trois temps de 20 minutes, en relisant la fiche entre deux temps.
 }
+
+
+\newpage
+
+\begin{center}
+    \Huge ANNEXES
+\end{center}
+
+\appendix
+
+\section{Ecrire une expression en suivant les conventions} \label{annexe-expr-mult}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_expr_mult.png}
+
+\section{Réduire une expression développée} \label{annexe-reduction}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_reduction.png}
+
+\section{Calculer avec des fractions} \label{annexe-fractions}
+
+\subsection{Simplifier une écriture fractionnaire}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_simpl_frac.png}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_simpl_frac_exemple.png}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_frac_operations.png}
+
+\section{Calculer avec des proportions} \label{annexe-proportions}
+\textbf{À connaitre : }
+La proportion d'une valeur est le quotient : \(\dfrac{\text{effectif de la valeur}}{\text{effectif total}}\)
+
+\textbf{Exemple : } Dans une classe de 30 élèves, 12 sont des filles. La proportion de filles est donc \(\dfrac{12}{30} = \dfrac{4}{10} = \dfrac{40}{10}\) Donc 40\% des élèves de la classe sont des filles.
+
+\textbf{Remarque : }
+On peut utiliser un tableau de proportionnalité :
+\medbreak
+\begin{tabular}{|c|c|c|c|}
+    \hline 
+    Effectif de la valeur & 12 & 4 & 40 \\
+    \hline
+    Effectif total & 30 & 10 & 100 \\
+    \hline
+\end{tabular}
+
+\medbreak
+\textbf{Méthode : }
+On peut utiliser un tableau de proportionnalité pour retrouver un effectif de la valeur ou un effectif total. 
+
+Exemples : Un lycée compte 1400 élèves, dont 15\% sont en série STMG. On cherche le nombre d'élèves en série STMG. \\
+    
+\begin{tabular}{|c|c|c|}
+\hline
+Effectif de la valeur & \tikzmarknode{A}{15} & \tikzmarknode{B}{210} \\
+\hline
+Effectif total & 100 & 1400 \\
+\hline
+\end{tabular}
+
+\begin{tikzpicture}[remember picture, overlay]
+\draw[->] ([yshift=5pt]A.north) to[bend left=20]
+    node[above] {$\times 14$} ([yshift=5pt]B.north);
+\end{tikzpicture}
+
+Il y a 210 élèves en série STMG.
+
+\section{Distribuer une égalité} \label{annexe-distribuer}
+\subsection{Distributivité simple}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_distr_simple.png}
+
+\subsection{Distributivité double}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_distr_double.png}
+
+\section{Résoudre une équation} \label{annexe-equations}
+
+\includegraphics[width=0.9\textwidth]{annexe_sesamath_equations.png}
 
 \end{document}
