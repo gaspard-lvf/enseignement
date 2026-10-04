@@ -6,6 +6,7 @@
 %%%   - \begin{rappelcours} ... \end{rappelcours} : rappel de cours en début de section
 %%%   - \begin{indication} ... \end{indication} : coup de pouce ponctuel
 %%%   - \checkpoint{...} : élément permettant à l'élève de vérifier son résultat
+%%%   - \begin{bloc} ... \end{bloc} : passage insécable (jamais coupé par un saut de page)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -13,6 +14,9 @@
 
 \RequirePackage{feuille}
 \fancyhead[L]{Travail en autonomie}
+
+%%%MISE EN PAGE : un paragraphe n'est jamais coupé par un saut de page
+\interlinepenalty=10000
 
 %%%ENCADRÉ OBJECTIFS (une seule colonne, contrairement à feuilleactivite.sty)
 %%% Usage : \begin{objectifs} ... \end{objectifs}
@@ -55,6 +59,17 @@
 \newcommand{\checkpoint}[1]{%
   \par\smallskip\noindent
   {\small\ding{43}~\textit{Vérification :} #1}\par\smallskip
+}
+
+
+%%%BLOC INSÉCABLE (exercice + indication, propriété + exemple, etc.)
+%%% Usage : \begin{bloc} ... \end{bloc}
+%%% Le contenu est placé dans une minipage pleine largeur : s'il ne tient pas
+%%% en bas de page, il passe entier à la page suivante.
+\newenvironment{bloc}{%
+  \par\addvspace{10pt}\noindent\begin{minipage}{\linewidth}%
+}{%
+  \end{minipage}\par\addvspace{4pt}%
 }
 
 \endinput
