@@ -21,7 +21,7 @@
 
 \montitre{Révisions des premiers chapitres}
 
-\textbf{Consignes de travail.} Traiter les sections dans l'ordre. Dans chaque section, commencer par les calculs de début de cours, sans calculatrice, puis lire attentivement le rappel de cours avant de traiter les exercices. Rédiger les réponses sur une copie, en justifiant et en faisant des phrases. Chercher d'abord seul, puis lire les indications seulement en cas de blocage. Comparer enfin avec la correction et reprendre ses erreurs d'une autre couleur.
+\textbf{Consignes de travail.} Traiter les sections dans l'ordre. Dans chaque section, commencer par les calculs de début de cours, sans calculatrice, puis traiter les exercices, en s'appuyant si besoin sur les annexes de fin de fiche. Rédiger les réponses sur une copie, en justifiant et en faisant des phrases. Chercher d'abord seul, puis lire les indications seulement en cas de blocage. Comparer enfin avec la correction et reprendre ses erreurs d'une autre couleur.
 
 \medskip
 
@@ -42,6 +42,10 @@ Calculer le taux d'évolution global d'évolutions successives.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fonctions, généralités}
 
+\textbf{Rappels de cours :} voir l'annexe \ref{annexe-fonctions} à la fin de la fiche.
+\nopagebreak
+
+\begin{bloc}
 \begin{exo}[Calculs de début de cours]
 Sans calculatrice.
 \begin{enumerate}[leftmargin=*]
@@ -78,27 +82,9 @@ Sans calculatrice.
         \item Voir l'annexe \ref{annexe-reduction} à la fin de la fiche.
     \end{enumerate}
 \end{indication}
+\end{bloc}
 
-\begin{rappelcours}
-Une fonction \(f\) associe à chaque nombre \(x\) de son \textbf{ensemble de définition} un unique nombre \(f(x)\). On note \(y=f(x)\) ou \(x\mapsto f(x)\).
-
-\smallskip
-
-Si \(f(a)=b\) : \(b\) est \textbf{l'image} de \(a\), et \(a\) est \textbf{un antécédent} de \(b\). Sur la courbe, l'image se lit sur l'axe des ordonnées et les antécédents sur l'axe des abscisses. Résoudre \(f(x)=k\), c'est trouver tous les antécédents de \(k\).
-
-\smallskip
-
-Le \textbf{tableau de signes} indique sur quels intervalles \(f(x)\) est positif (courbe au-dessus de l'axe des abscisses) ou négatif (courbe en dessous). Le signe ne peut changer qu'en un nombre où \(f(x)=0\).
-
-\smallskip
-
-Le \textbf{tableau de variations} indique sur quels intervalles \(f\) est croissante (la courbe monte) ou décroissante (la courbe descend), ainsi que les valeurs extrêmes : maximum et minimum.
-
-\smallskip
-
-\textbf{Exemple de traduction en phrase :} \og \(f\) est décroissante sur \([0\ ;\ 3]\) \fg{} ; \og le maximum de \(f\) sur \([0\ ;\ 8]\) est \(5\), atteint en \(x=6\) \fg{} ; \og \(f(x)\) est négatif pour \(x\) dans \([1\ ;\ 4]\) \fg{}.
-\end{rappelcours}
-
+\begin{bloc}
 \begin{exo}[Guidé]
 Le graphique ci-dessous représente l'évolution de la température, en °C, à Saint-Denis au cours d'une journée d'hiver.
 
@@ -138,15 +124,19 @@ Pour le tableau de signes, repérer les heures où la courbe coupe l'axe des abs
 
 \checkpoint{le tableau de signes contient trois zéros et le tableau de variations comporte trois flèches.}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 2 : même démarche que l'activité sur la température du chapitre 1, d'abord dans le contexte puis avec le vocabulaire des fonctions. Insister sur la verbalisation des tableaux.
 }
 
+\begin{bloc}
 \begin{exo}
 On considère une fonction \(g\) dont la représentation graphique est donnée ci-dessous.
 
-\begin{center}
+\smallskip
+\begin{minipage}{0.55\linewidth}
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     axis lines=middle,
@@ -158,15 +148,15 @@ On considère une fonction \(g\) dont la représentation graphique est donnée c
     ytick={-2,-1,...,2},
     xlabel={\(x\)},
     ylabel={\(y\)},
-    width=10cm,
-    height=8cm
+    width=8.5cm,
+    height=7cm
 ]
 \addplot[red, very thick, smooth] coordinates {(-3,-2)(-2,0)(-1,2)(0,0)(1,-1)(2,-2)(3,-1)(3.5,0)(4,1)}
 node[pos=0.97, left] {\(\mathcal{C}_g\)};
 \end{axis}
 \end{tikzpicture}
-\end{center}
-
+\end{minipage}\hfill
+\begin{minipage}{0.42\linewidth}
 \begin{enumerate}[leftmargin=*]
     \item Donner l'ensemble de définition de \(g\).
     \item Donner les images de \(-1\), de \(1\) et de \(4\) par \(g\).
@@ -175,12 +165,20 @@ node[pos=0.97, left] {\(\mathcal{C}_g\)};
     \item Dresser le tableau de signes de \(g\) sur son ensemble de définition.
     \item Dresser le tableau de variations de \(g\) sur son ensemble de définition.
 \end{enumerate}
+\end{minipage}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple corrigé de l'annexe \ref{annexe-fonctions} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}
 On considère la fonction \(h\) définie sur l'intervalle \([0\ ;\ 5]\) par \(h(x)=x^2-4x+3\).
 \begin{enumerate}[leftmargin=*]
-    \item Compléter le tableau de valeurs suivant.
+    \item \begin{minipage}[t]{\linewidth}
+    Compléter le tableau de valeurs suivant.
 
     \begin{center}
     \renewcommand{\arraystretch}{1.5}
@@ -193,7 +191,9 @@ On considère la fonction \(h\) définie sur l'intervalle \([0\ ;\ 5]\) par \(h(
         \hline
     \end{tabular}
     \end{center}
-    \item Placer les points du tableau dans le repère ci-dessous, puis tracer la courbe représentative de \(h\).
+    \end{minipage}
+    \item \begin{minipage}[t]{\linewidth}
+    Placer les points du tableau dans le repère ci-dessous, puis tracer la courbe représentative de \(h\).
 
     \begin{center}
     \begin{tikzpicture}
@@ -212,11 +212,14 @@ On considère la fonction \(h\) définie sur l'intervalle \([0\ ;\ 5]\) par \(h(
     \end{axis}
     \end{tikzpicture}
     \end{center}
+    \end{minipage}
     \item Résoudre graphiquement l'équation \(h(x)=0\).
     \item Dresser le tableau de signes, puis le tableau de variations de \(h\) sur \([0\ ;\ 5]\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}[][appro]
 On considère une fonction \(k\) définie sur l'intervalle \([-4\ ;\ 6]\), dont on donne le tableau de variations et le tableau de signes.
 
@@ -239,7 +242,9 @@ On considère une fonction \(k\) définie sur l'intervalle \([-4\ ;\ 6]\), dont 
     \item Tracer une courbe pouvant représenter la fonction \(k\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}[][appro]
 Une fonction \(m\) est définie sur \([-2\ ;\ 4]\) par le tableau de variations ci-dessous.
 
@@ -250,20 +255,33 @@ Une fonction \(m\) est définie sur \([-2\ ;\ 4]\) par le tableau de variations 
 \end{tikzpicture}
 \end{center}
 
+Une fonction \(n\) est définie sur \([-3\ ;\ 3]\) par le tableau de signes ci-dessous.
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.1,espcl=1.6]{\(x\) /1, \(n(x)\) /1}{\(-3\),\(-1\),\(2\),\(3\)}
+\tkzTabLine{,-,z,+,z,-,}
+\end{tikzpicture}
+\end{center}
+
 \begin{enumerate}[leftmargin=*]
     \item Tracer deux courbes différentes pouvant représenter la fonction \(m\).
-    \item Expliquer pourquoi l'équation \(m(x)=0\) a exactement deux solutions.
-    \item Peut-on donner la valeur exacte de ces solutions à l'aide du seul tableau de variations ? Peut-on tout de même donner l'allure du tableau de signes de \(m\) ? Justifier.
+    \item Tracer deux courbes différentes pouvant représenter la fonction \(n\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
-    Exercice 6 : on attend un tableau de signes de la forme \(+\ 0\ -\ 0\ +\), avec des valeurs \(a\in\,]-2\ ;\ 1[\) et \(b\in\,]1\ ;\ 4[\) non connues. Bonne occasion de comparer les courbes tracées par les élèves.
+    Exercice 6 : comparer les courbes tracées par les élèves. Un tableau de variations impose des points et le sens de variation ; un tableau de signes impose seulement les points où la courbe coupe l'axe des abscisses et sa position par rapport à cet axe.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Proportions, pourcentages et tableaux croisés}
 
+\textbf{Rappels de cours :} voir les annexes \ref{annexe-proportions} (proportions), \ref{annexe-fractions} (fractions) et \ref{annexe-tableaux-croises} (tableaux croisés) à la fin de la fiche.
+\nopagebreak
+
+\begin{bloc}
 \begin{exo}[Calculs de début de cours]
 Sans calculatrice, calculer et donner le résultat sous forme de fraction simplifiée.
 \begin{tasks}(3)
@@ -279,20 +297,10 @@ Sans calculatrice, calculer et donner le résultat sous forme de fraction simpli
 \begin{indication}
     Voir l'annexe \ref{annexe-fractions} pour avoir de l'aide sur les calculs de fractions.
 \end{indication}
+\end{bloc}
 
 
-\begin{rappelcours}
-\textbf{Proportion :} \(p=\dfrac{n}{N}\), où \(n\) est l'effectif de la sous-population et \(N\) l'effectif total. \quad \textbf{Sous-effectif :} \(n=p\times N\). \quad \textbf{Effectif total :} \(N=\dfrac{n}{p}\).
-
-\smallskip
-
-Un \textbf{tableau croisé} répartit une population selon deux critères.
-\begin{itemize}
-    \item Une \textbf{fréquence marginale} se calcule à partir d'un total (dernière ligne ou dernière colonne), divisé par l'effectif total.
-    \item Une \textbf{fréquence conditionnelle} se calcule \textbf{à l'intérieur d'une sous-population} : on divise l'effectif d'une case par le total de sa ligne ou de sa colonne. Elle se repère souvent au mot \og parmi \fg{}.
-\end{itemize}
-\end{rappelcours}
-
+\begin{bloc}
 \begin{exo}[Guidé]
 Dans un lycée de \(400\) élèves, on a relevé le moyen de transport utilisé par chaque élève pour venir au lycée. Certaines cases du tableau ont été effacées.
 
@@ -329,7 +337,9 @@ Le mot \og parmi \fg{} indique la sous-population de référence : c'est par son
 
 \checkpoint{dans le tableau complété, la somme des totaux de la dernière ligne est bien égale à \(400\).}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}
 \begin{enumerate}[leftmargin=*]
     \item Un lycée compte \(1\,200\) élèves, dont \(15\,\%\) sont en série STMG. Calculer le nombre d'élèves en série STMG.
@@ -341,7 +351,9 @@ Le mot \og parmi \fg{} indique la sous-population de référence : c'est par son
 \begin{indication}
     Une aide est disponible dans l'annexe \ref{annexe-proportions} pour les calculs de proportions.
 \end{indication}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}
 Un magasin a interrogé \(500\) clients sur leur moyen de paiement.
 
@@ -373,6 +385,12 @@ Un magasin a interrogé \(500\) clients sur leur moyen de paiement.
 \end{enumerate}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple corrigé de l'annexe \ref{annexe-tableaux-croises} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}[QCM][bac]
 Pour chaque question, une seule réponse est exacte. Justifier chaque réponse.
 \begin{enumerate}[leftmargin=*]
@@ -406,6 +424,7 @@ Pour chaque question, une seule réponse est exacte. Justifier chaque réponse.
     \end{tasks}
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 11 : rappeler le format du QCM au bac et l'intérêt de justifier pour soi-même, même quand ce n'est pas demandé.
@@ -414,6 +433,10 @@ Pour chaque question, une seule réponse est exacte. Justifier chaque réponse.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Évolutions}
 
+\textbf{Rappels de cours :} voir l'annexe \ref{annexe-evolutions} à la fin de la fiche.
+\nopagebreak
+
+\begin{bloc}
 \begin{exo}[Calculs de début de cours]
 Sans calculatrice.
 \begin{enumerate}[leftmargin=*]
@@ -442,18 +465,9 @@ Sans calculatrice.
         \item Voir l'annexe \ref{annexe-equations} pour avoir de l'aide sur la résolution d'équations.
     \end{enumerate}
 \end{indication}
+\end{bloc}
 
-\begin{rappelcours}
-Une quantité passe d'une \textbf{valeur initiale} \(V_I\) à une \textbf{valeur finale} \(V_F\).
-\begin{itemize}
-    \item \textbf{Taux d'évolution :} \(t=\dfrac{V_F-V_I}{V_I}\). Il est positif pour une hausse, négatif pour une baisse. Multiplié par \(100\), il donne le pourcentage d'évolution.
-    \item \textbf{Coefficient multiplicateur :} \(CM=1+t\). Une hausse de \(20\,\%\) correspond à \(CM=1,2\) ; une baisse de \(15\,\%\) à \(CM=0,85\).
-    \item \(V_F=V_I\times CM\), \quad \(V_I=\dfrac{V_F}{CM}\), \quad \(CM=\dfrac{V_F}{V_I}\).
-    \item \textbf{Évolutions successives :} le coefficient multiplicateur global est le \textbf{produit} des coefficients multiplicateurs. Les taux ne s'additionnent pas.
-\end{itemize}
-\schemaevolution{V_I}{V_F}{t}{\times CM}
-\end{rappelcours}
-
+\begin{bloc}
 \begin{exo}[Guidé]
 Un sweat coûte \(60\) \euro. Pendant les soldes, son prix baisse de \(25\,\%\).
 \begin{enumerate}[leftmargin=*]
@@ -471,7 +485,9 @@ Pour une baisse, le taux d'évolution \(t\) est négatif (une baisse de \(15\,\%
 
 \checkpoint{le prix soldé est un nombre entier d'euros, et l'évolution de la question 4 est une hausse.}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}
 Compléter le tableau suivant.
 
@@ -491,6 +507,12 @@ Compléter le tableau suivant.
 \end{center}
 \end{exo}
 
+\begin{indication}
+    Voir les exemples 1 et 2 de l'annexe \ref{annexe-evolutions} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}
 \begin{enumerate}[leftmargin=*]
     \item Compléter les pointillés des deux schémas suivants.
@@ -503,6 +525,12 @@ Compléter le tableau suivant.
 \end{enumerate}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple 3 de l'annexe \ref{annexe-evolutions} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}[Vrai ou faux][appro]
 Dire si chacune des affirmations suivantes est vraie ou fausse, en justifiant.
 \begin{enumerate}[leftmargin=*]
@@ -512,6 +540,7 @@ Dire si chacune des affirmations suivantes est vraie ou fausse, en justifiant.
     \item Pour compenser une baisse de \(20\,\%\), il faut une hausse de \(20\,\%\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 16, question 4 : chercher le coefficient \(CM\) tel que \(0,8\times CM=1\). Lien avec les équations des calculs de début de cours.
@@ -521,7 +550,9 @@ Dire si chacune des affirmations suivantes est vraie ou fausse, en justifiant.
 \section{Problèmes}
 
 Les problèmes suivants mélangent les notions des trois sections précédentes.
+\nopagebreak
 
+\begin{bloc}
 \begin{exo}[Ventes de vélos]
 Une entreprise de Seine-Saint-Denis vend des vélos électriques et des vélos classiques, en magasin et en ligne. Le tableau suivant donne ses ventes en 2025.
 
@@ -552,7 +583,9 @@ Une entreprise de Seine-Saint-Denis vend des vélos électriques et des vélos c
 À la question 3, appliquer chaque coefficient multiplicateur au total de sa ligne.
 \end{indication}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}[Population d'une commune]
 Le graphique ci-dessous représente la population \(p(t)\) d'une commune de Seine-Saint-Denis, en milliers d'habitants, en fonction de l'année \(t\), entre 1990 et 2025.
 
@@ -586,6 +619,7 @@ Le graphique ci-dessous représente la population \(p(t)\) d'une commune de Sein
     \item La commune prévoit une hausse de \(2\,\%\) par an à partir de 2025. Calculer la population prévue en 2027.
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 18, question 5 : deux hausses successives de \(2\,\%\), donc \(CM=1,02^2\). Ouverture possible vers les suites.
@@ -620,6 +654,7 @@ Calculer le taux d'évolution global d'évolutions successives.
 
 \section{Écrire une expression en suivant les conventions} \label{annexe-expr-mult}
 
+\begin{bloc}
 \begin{prop}
 Pour alléger l'écriture d'une expression littérale, on peut supprimer le signe \(\times\) placé devant une lettre ou devant une parenthèse.
 \end{prop}
@@ -642,9 +677,11 @@ A=5x+7(3x+2\times 4) & \(\longrightarrow\) & On supprime les signes \(\times\) p
 \begin{note}
 Pour tout nombre \(a\) : \(a\times a=a^2\) (qui se lit \og \(a\) au carré \fg{}) et \(a\times a\times a=a^3\) (qui se lit \og \(a\) au cube \fg{}).
 \end{note}
+\end{bloc}
 
 \section{Réduire une expression développée} \label{annexe-reduction}
 
+\begin{bloc}
 \begin{defi}
 \textbf{Réduire} une expression, c'est l'écrire avec le moins de termes possible.
 \end{defi}
@@ -668,11 +705,13 @@ G=3x^2+5x-1 & \(\longrightarrow\) & On simplifie.
     \item On ne peut pas regrouper un terme en \(x\) avec un terme en \(x^2\) ou avec un nombre : \(3x^2+5x-1\) ne se réduit pas davantage.
 \end{itemize}
 \end{rems}
+\end{bloc}
 
 \section{Calculer avec des fractions} \label{annexe-fractions}
 
 \subsection{Simplifier une écriture fractionnaire}
 
+\begin{bloc}
 \begin{prop}
 On ne change pas la valeur d'une fraction en multipliant (ou en divisant) son numérateur et son dénominateur par un même nombre non nul. Pour tous nombres \(a\), \(b\) et \(k\), où \(b\) et \(k\) sont non nuls :
 \[
@@ -698,9 +737,11 @@ On ne change pas la valeur d'une fraction en multipliant (ou en divisant) son nu
     \end{center}
 \end{itemize}
 \end{exples}
+\end{bloc}
 
 \subsection{Additionner ou soustraire}
 
+\begin{bloc}
 \begin{prop}
 Pour additionner (ou soustraire) deux fractions qui ont le \textbf{même dénominateur}, on additionne (ou on soustrait) les numérateurs et on garde le dénominateur commun. Pour tous nombres \(a\), \(b\) et \(c\), où \(b\) est non nul :
 \[
@@ -728,9 +769,11 @@ Si les dénominateurs sont différents, on commence par écrire les deux fractio
     \end{tabular}}
 \end{itemize}
 \end{exples}
+\end{bloc}
 
 \subsection{Multiplier}
 
+\begin{bloc}
 \begin{prop}
 Pour multiplier deux fractions, on multiplie les numérateurs entre eux et les dénominateurs entre eux. Pour tous nombres \(a\), \(b\), \(c\) et \(d\), où \(b\) et \(d\) sont non nuls :
 \[
@@ -753,9 +796,11 @@ C=\dfrac{\textcolor{teal}{4}\times\textcolor{violet}{5}\times 5}{3\times\textcol
 C=\dfrac{5}{12} & \(\longrightarrow\) & On simplifie par \(4\) et par \(5\).
 \end{tabular}}
 \end{exple}
+\end{bloc}
 
 \section{Calculer avec des proportions} \label{annexe-proportions}
 
+\begin{bloc}
 \begin{defi}
 La \textbf{proportion} d'une valeur est le quotient
 \[
@@ -778,7 +823,25 @@ On peut aussi utiliser un tableau de proportionnalité :
     \hline
 \end{tabular}
 \end{exple}
+\end{bloc}
 
+\begin{bloc}
+\textbf{Proportions remarquables à connaître :}
+\begin{center}
+{\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Fraction & \(\dfrac{1}{2}\) & \(\dfrac{1}{4}\) & \(\dfrac{3}{4}\) & \(\dfrac{1}{5}\) & \(\dfrac{1}{10}\) \\
+    \hline
+    Nombre décimal & \(0{,}5\) & \(0{,}25\) & \(0{,}75\) & \(0{,}2\) & \(0{,}1\) \\
+    \hline
+    Pourcentage & \(50\,\%\) & \(25\,\%\) & \(75\,\%\) & \(20\,\%\) & \(10\,\%\) \\
+    \hline
+\end{tabular}}
+\end{center}
+\end{bloc}
+
+\begin{bloc}
 \begin{met}
 Un tableau de proportionnalité permet aussi de retrouver un effectif de la valeur ou un effectif total.
 \end{met}
@@ -802,25 +865,26 @@ Un lycée compte \(1\,400\) élèves, dont \(15\,\%\) sont en série STMG. Calcu
 \smallskip
 On passe de \(100\) à \(1\,400\) en multipliant par \(14\), donc on multiplie aussi \(15\) par \(14\) : \(15\times 14=210\). Il y a \(210\) élèves en série STMG.
 \end{exple}
+\end{bloc}
 
 \section{Résoudre une équation} \label{annexe-equations}
 
+\begin{bloc}
 \begin{props}
 \begin{itemize}
     \item Une égalité reste vraie si on \textbf{ajoute} ou si on \textbf{soustrait} un même nombre à ses deux membres : pour tous nombres \(a\), \(b\) et \(c\), si \(a=b\), alors \(a+c=b+c\) et \(a-c=b-c\).
     \item Une égalité reste vraie si on \textbf{multiplie} ou si on \textbf{divise} ses deux membres par un même nombre \textbf{non nul} : pour tous nombres \(a\), \(b\) et \(c\), où \(c\) est non nul, si \(a=b\), alors \(a\times c=b\times c\) et \(\dfrac{a}{c}=\dfrac{b}{c}\).
 \end{itemize}
 \end{props}
+\end{bloc}
 
-\noindent\begin{minipage}{\linewidth}
+\begin{bloc}
 \begin{exple}
-Résoudre l'équation \(7x+2=4x+9\).
+Résoudre l'équation \(3x+2=9\).
 
 \smallskip
 {\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{@{}>{$}r<{$}@{${}={}$}>{$}l<{$}@{\quad}l@{\enspace}p{0.45\textwidth}@{}}
-7x+2 & 4x+9 & & \\
-7x+2\textcolor{teal}{-4x} & 4x+9\textcolor{teal}{-4x} & \(\longrightarrow\) & On soustrait \(4x\) aux deux membres, pour éliminer les termes en \(x\) du membre de droite. \\
 3x+2 & 9 & & \\
 3x+2\textcolor{teal}{-2} & 9\textcolor{teal}{-2} & \(\longrightarrow\) & On soustrait \(2\) aux deux membres, pour isoler le terme en \(x\). \\
 3x & 7 & & \\
@@ -832,14 +896,207 @@ x & \dfrac{7}{3} & &
 L'équation a une unique solution : \(S=\left\{\dfrac{7}{3}\right\}\).
 
 \smallskip
-\textbf{Vérification :} on remplace \(x\) par \(\dfrac{7}{3}\) dans chacun des deux membres.
+\textbf{Vérification :} on remplace \(x\) par \(\dfrac{7}{3}\) dans le membre de gauche :
 \[
-7\times\dfrac{7}{3}+2=\dfrac{49}{3}+\dfrac{6}{3}=\dfrac{55}{3}
-\qquad\text{et}\qquad
-4\times\dfrac{7}{3}+9=\dfrac{28}{3}+\dfrac{27}{3}=\dfrac{55}{3}.
+3\times\dfrac{7}{3}+2=7+2=9.
 \]
-Les deux membres sont égaux, donc \(\dfrac{7}{3}\) est bien solution de l'équation.
+On retrouve le membre de droite, donc \(\dfrac{7}{3}\) est bien solution de l'équation.
 \end{exple}
+\end{bloc}
+
+\section{Lire un graphique, dresser un tableau de signes et un tableau de variations} \label{annexe-fonctions}
+
+\begin{bloc}
+\begin{defis}
+\begin{itemize}
+    \item Le \textbf{tableau de signes} d'une fonction \(f\) indique sur quels intervalles \(f(x)\) est positif (la courbe est au-dessus de l'axe des abscisses) ou négatif (la courbe est en dessous). Le signe ne peut changer qu'en un nombre où \(f(x)=0\).
+    \item Le \textbf{tableau de variations} indique sur quels intervalles \(f\) est croissante (la courbe monte) ou décroissante (la courbe descend), ainsi que les valeurs prises aux bornes et aux changements de sens.
+\end{itemize}
+\end{defis}
+\end{bloc}
+
+\begin{bloc}
+\begin{exple}
+On considère une fonction \(f\) dont la représentation graphique \(\mathcal{C}_f\) est donnée ci-dessous.
+
+\smallskip
+\begin{minipage}{0.55\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-2.5, xmax=4.5,
+    ymin=-2.5, ymax=2.8,
+    grid=both,
+    minor tick num=1,
+    xtick={-2,-1,...,4},
+    ytick={-2,-1,...,2},
+    xlabel={\(x\)},
+    ylabel={\(y\)},
+    width=8.5cm,
+    height=7cm
+]
+\addplot[blue, very thick, smooth] coordinates {(-2,-2)(-1,0)(0,1)(1,0)(2,-1)(3,0)(4,2)};
+\node[blue, right] at (0.3,1.5) {\(\mathcal{C}_f\)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}{0.42\linewidth}
+\begin{enumerate}[leftmargin=*]
+    \item Donner l'ensemble de définition de \(f\).
+    \item Donner les images de \(0\), de \(2\) et de \(4\) par \(f\).
+    \item Donner les éventuels antécédents de \(0\), puis de \(3\).
+    \item Résoudre graphiquement l'équation \(f(x)=2\).
+    \item Dresser le tableau de signes de \(f\).
+    \item Dresser le tableau de variations de \(f\), puis le traduire par des phrases.
+\end{enumerate}
 \end{minipage}
+\end{exple}
+\end{bloc}
+
+\begin{bloc}
+\textbf{Correction :}
+\begin{enumerate}[leftmargin=*]
+    \item \textit{On lit les abscisses du point le plus à gauche et du point le plus à droite de la courbe.}
+
+    L'ensemble de définition de \(f\) est \([-2\ ;\ 4]\).
+    \item \textit{L'image d'un nombre se lit sur l'axe des ordonnées.}
+
+    \(f(0)=1\) ; \(f(2)=-1\) ; \(f(4)=2\).
+    \item \textit{Les antécédents d'un nombre se lisent sur l'axe des abscisses : ce sont les abscisses des points de la courbe qui ont ce nombre pour ordonnée.}
+
+    Les antécédents de \(0\) sont \(-1\), \(1\) et \(3\) : ce sont les abscisses des points où la courbe coupe l'axe des abscisses. Le nombre \(3\) n'a pas d'antécédent : la courbe ne monte jamais jusqu'à l'ordonnée \(3\).
+    \item \textit{Résoudre \(f(x)=2\), c'est trouver tous les antécédents de \(2\).}
+
+    Le seul point de la courbe d'ordonnée \(2\) est le point \((4\ ;\ 2)\) : l'équation a une unique solution, \(x=4\).
+\end{enumerate}
+\end{bloc}
+
+\begin{bloc}
+\begin{enumerate}[leftmargin=*, start=5]
+    \item \textit{On repère les abscisses des points où la courbe coupe l'axe des abscisses (ici \(-1\), \(1\) et \(3\)), puis, entre ces nombres, on regarde si la courbe est au-dessus (signe \(+\)) ou en dessous (signe \(-\)) de l'axe.}
+
+    \begin{center}
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=1.1,espcl=1.6]{\(x\) /1, \(f(x)\) /1}{\(-2\),\(-1\),\(1\),\(3\),\(4\)}
+    \tkzTabLine{,-,z,+,z,-,z,+,}
+    \end{tikzpicture}
+    \end{center}
+    \(f(x)\) est négatif pour \(x\) dans \([-2\ ;\ -1]\) et dans \([1\ ;\ 3]\), positif pour \(x\) dans \([-1\ ;\ 1]\) et dans \([3\ ;\ 4]\).
+    \item \textit{On repère les abscisses où la courbe change de sens (ici \(0\) et \(2\)), puis on lit les ordonnées aux bornes et en ces points.}
+
+    \begin{center}
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=1.1,espcl=1.6]{\(x\) /1, \(f\) /2}{\(-2\),\(0\),\(2\),\(4\)}
+    \tkzTabVar{-/\(-2\),+/\(1\),-/\(-1\),+/\(2\)}
+    \end{tikzpicture}
+    \end{center}
+    \(f\) est croissante sur \([-2\ ;\ 0]\), décroissante sur \([0\ ;\ 2]\), puis croissante sur \([2\ ;\ 4]\). Le maximum de \(f\) sur \([-2\ ;\ 4]\) est \(2\), atteint en \(x=4\) ; le minimum est \(-2\), atteint en \(x=-2\).
+
+    \textit{Attention : la valeur \(1\), atteinte en \(0\), n'est pas le maximum, car la courbe monte plus haut en \(4\).}
+\end{enumerate}
+\end{bloc}
+
+\section{Lire un tableau croisé} \label{annexe-tableaux-croises}
+
+\begin{bloc}
+\begin{defis}
+Un \textbf{tableau croisé} répartit une population selon deux critères.
+\begin{itemize}
+    \item Une \textbf{fréquence marginale} se calcule à partir d'un total (dernière ligne ou dernière colonne), divisé par l'effectif total.
+    \item Une \textbf{fréquence conditionnelle} se calcule \textbf{à l'intérieur d'une sous-population} : on divise l'effectif d'une case par le total de sa ligne ou de sa colonne. Elle se repère souvent au mot \og parmi \fg{}.
+    \item La proportion d'individus qui vérifient deux critères à la fois (mot \og et \fg{}) se calcule en divisant l'effectif d'une case par l'effectif total.
+\end{itemize}
+\end{defis}
+\end{bloc}
+
+\begin{bloc}
+\begin{exple}
+Un club de sport compte \(200\) adhérents. Le tableau ci-dessous les répartit selon leur âge et leur type d'abonnement. Une case a été effacée.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+    \hline
+    & \textbf{Abonnement mensuel} & \textbf{Abonnement annuel} & \textbf{Total} \\
+    \hline
+    \textbf{Moins de 18 ans} & \(36\) & \(24\) & \(60\) \\
+    \hline
+    \textbf{18 ans et plus} & \(54\) & \(\dots\) & \(140\) \\
+    \hline
+    \textbf{Total} & \(90\) & \(110\) & \(200\) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=*]
+    \item Compléter le tableau.
+    \item Calculer la proportion d'adhérents qui ont un abonnement annuel.
+    \item Parmi les adhérents de moins de 18 ans, calculer la proportion de ceux qui ont un abonnement mensuel.
+    \item Parmi les adhérents qui ont un abonnement mensuel, calculer la proportion de ceux qui ont moins de 18 ans.
+    \item Calculer la proportion d'adhérents qui ont moins de 18 ans \textbf{et} un abonnement annuel.
+\end{enumerate}
+\end{exple}
+\end{bloc}
+
+\begin{bloc}
+\textbf{Correction :}
+\begin{enumerate}[leftmargin=*]
+    \item \textit{Sur une ligne (ou une colonne), la somme des cases est égale au total.}
+
+    La case manquante vaut \(140-54=86\) (on vérifie : \(24+86=110\)).
+    \item \textit{On utilise un total : c'est une fréquence marginale.}
+
+    \(\dfrac{110}{200}=0{,}55\) : \(55\,\%\) des adhérents ont un abonnement annuel.
+    \item \textit{\og Parmi les adhérents de moins de 18 ans \fg{} : on divise par le total de cette ligne, \(60\). C'est une fréquence conditionnelle.}
+
+    \(\dfrac{36}{60}=0{,}6\) : \(60\,\%\) des moins de 18 ans ont un abonnement mensuel.
+    \item \textit{\og Parmi les adhérents qui ont un abonnement mensuel \fg{} : on divise cette fois par le total de la colonne, \(90\).}
+
+    \(\dfrac{36}{90}=0{,}4\) : \(40\,\%\) des abonnés mensuels ont moins de 18 ans. On utilise la même case qu'à la question 3, mais le résultat est différent, car la sous-population de référence a changé.
+    \item \textit{Deux critères à la fois (\og et \fg{}) : on divise la case par l'effectif total.}
+
+    \(\dfrac{24}{200}=0{,}12\) : \(12\,\%\) des adhérents ont moins de 18 ans et un abonnement annuel.
+\end{enumerate}
+\end{bloc}
+
+\section{Calculer avec des évolutions} \label{annexe-evolutions}
+
+\begin{bloc}
+\begin{defis}
+Une quantité passe d'une \textbf{valeur initiale} \(V_I\) à une \textbf{valeur finale} \(V_F\).
+\begin{itemize}
+    \item Le \textbf{taux d'évolution} est \(t=\dfrac{V_F-V_I}{V_I}\). Il est positif pour une hausse, négatif pour une baisse. Multiplié par \(100\), il donne le pourcentage d'évolution.
+    \item Le \textbf{coefficient multiplicateur} est \(CM=1+t\). Une hausse de \(20\,\%\) correspond à \(t=0{,}2\) et \(CM=1{,}2\) ; une baisse de \(15\,\%\) correspond à \(t=-0{,}15\) et \(CM=0{,}85\).
+    \item On a \(V_F=V_I\times CM\), \quad \(V_I=\dfrac{V_F}{CM}\) \quad et \quad \(CM=\dfrac{V_F}{V_I}\).
+\end{itemize}
+\end{defis}
+\schemaevolution{V_I}{V_F}{t}{\times CM}
+\end{bloc}
+
+\begin{bloc}
+\begin{prop}
+Lors d'évolutions successives, le coefficient multiplicateur global est le \textbf{produit} des coefficients multiplicateurs. Les taux d'évolution ne s'additionnent pas.
+\end{prop}
+\end{bloc}
+
+\begin{bloc}
+\textit{Exemple 1 (calculer une valeur finale).}\enspace Un article coûte \(80\) \euro. Son prix augmente de \(15\,\%\). Calculer son nouveau prix.
+\schemaevolution{80}{92}{+15\,\%}{\times 1{,}15}
+Une hausse de \(15\,\%\) correspond à \(t=0{,}15\), donc \(CM=1+0{,}15=1{,}15\). Alors \(V_F=80\times 1{,}15=92\) : le nouveau prix est \(92\) \euro.
+\end{bloc}
+
+\begin{bloc}
+\textit{Exemple 2 (calculer un taux d'évolution).}\enspace Le prix d'un abonnement passe de \(50\) \euro{} à \(42\) \euro. Calculer le taux d'évolution.
+
+\smallskip
+\(t=\dfrac{V_F-V_I}{V_I}=\dfrac{42-50}{50}=\dfrac{-8}{50}=-0{,}16\) : le prix a baissé de \(16\,\%\). On vérifie avec le coefficient multiplicateur : \(50\times(1-0{,}16)=50\times 0{,}84=42\).
+\end{bloc}
+
+\begin{bloc}
+\textit{Exemple 3 (évolutions successives).}\enspace Un prix de \(80\) \euro{} augmente de \(15\,\%\), puis baisse de \(10\,\%\). Calculer le taux d'évolution global.
+\schemaDeuxevolutions{80}{92}{82{,}8}{+15\,\%}{1{,}15}{-10\,\%}{0{,}9}{\times 1{,}035}{+3{,}5\,\%}
+Le coefficient multiplicateur global est \(1{,}15\times 0{,}9=1{,}035\), donc le taux d'évolution global est \(t=1{,}035-1=0{,}035\) : le prix a augmenté de \(3{,}5\,\%\), et non de \(15-10=5\,\%\).
+\end{bloc}
 
 \end{document}
