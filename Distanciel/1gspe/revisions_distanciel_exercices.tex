@@ -47,12 +47,12 @@
 
 \montitre{Révisions des premiers chapitres}
 
-\textbf{Consignes de travail.} Traiter les sections dans l'ordre. Dans chaque section, commencer par les calculs de début de cours, sans calculatrice, puis lire attentivement le rappel de cours avant de traiter les exercices. Rédiger les réponses sur une copie, en justifiant chaque étape. Chercher d'abord seul, puis lire les indications seulement en cas de blocage. Comparer enfin avec la correction et reprendre ses erreurs d'une autre couleur.
+\textbf{Consignes de travail.} Traiter les sections dans l'ordre. Dans chaque section, commencer par les calculs de début de cours, sans calculatrice, puis traiter les exercices, en s'appuyant si besoin sur les annexes de fin de fiche. Rédiger les réponses sur une copie, en justifiant chaque étape. Chercher d'abord seul, puis lire les indications seulement en cas de blocage. Comparer enfin avec la correction et reprendre ses erreurs d'une autre couleur.
 
 \medskip
 
 \begin{objectifs}
-Développer, factoriser une expression et résoudre une équation produit nul.\par\smallskip
+Développer une expression et résoudre une équation produit nul.\par\smallskip
 Dresser le tableau de signes d'une fonction affine, par le calcul ou graphiquement.\par\smallskip
 Dresser le tableau de signes d'un produit de fonctions affines et résoudre une inéquation produit.\par\smallskip
 Calculer les termes d'une suite définie explicitement ou par récurrence.\par\smallskip
@@ -68,6 +68,10 @@ Construire et utiliser un arbre pondéré (règle du produit).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fonctions affines et produits de fonctions affines}
 
+\textbf{Rappels de cours :} voir les annexes \ref{annexe-developper}, \ref{annexe-produit-nul}, \ref{annexe-signe-affine} et \ref{annexe-signe-produit} à la fin de la fiche.
+\nopagebreak
+
+\begin{bloc}
 \begin{exo}[Calculs de début de cours]
 Sans calculatrice.
 \begin{enumerate}[leftmargin=*]
@@ -77,12 +81,6 @@ Sans calculatrice.
         \task \((x+2)(x-3)\)
         \task \((2x-1)(-x+4)\)
         \task \(-(x-1)(x+5)\)
-    \end{tasks}
-    \item Factoriser :
-    \begin{tasks}(3)
-        \task \(5x-10\)
-        \task \(x^2+3x\)
-        \task \((x+1)(2x-3)+(x+1)(x+4)\)
     \end{tasks}
     \item Pour chacune des égalités suivantes, dire s'il s'agit d'une identité (vraie pour toute valeur de \(x\)) ou d'une équation.
     \begin{tasks}(4)
@@ -94,20 +92,12 @@ Sans calculatrice.
 \end{enumerate}
 \end{exo}
 
-\begin{rappelcours}
-\textbf{Fonction affine} \(f(x)=ax+b\) : sa courbe est une droite de coefficient directeur \(a\) et d'ordonnée à l'origine \(b\). Si \(a>0\), \(f\) est croissante ; si \(a<0\), \(f\) est décroissante.
+\begin{indication}
+    Voir l'annexe \ref{annexe-developper} à la fin de la fiche pour les développements.
+\end{indication}
+\end{bloc}
 
-\smallskip
-
-\textbf{Signe de \(ax+b\)} (avec \(a\neq 0\)) : \(ax+b\) s'annule en \(x=-\dfrac{b}{a}\).
-\begin{itemize}
-    \item \textit{Méthode 1 (par le calcul)} : résoudre \(ax+b\geq 0\). Diviser par un nombre négatif change le sens de l'inégalité.
-    \item \textit{Méthode 2 (graphique)} : tracer l'allure de la droite à l'aide du signe de \(a\) ; \(ax+b\) est du signe de \(a\) à droite de \(-\dfrac{b}{a}\), et du signe contraire à gauche.
-\end{itemize}
-
-\textbf{Signe d'un produit} : on dresse une ligne par facteur, puis on applique la règle des signes sur la dernière ligne. Un produit est nul si et seulement si l'un de ses facteurs est nul.
-\end{rappelcours}
-
+\begin{bloc}
 \begin{exo}[Guidé]
 On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=(3x-2)(-x+4)\). On pose \(u(x)=3x-2\) et \(v(x)=-x+4\).
 \begin{enumerate}[leftmargin=*]
@@ -124,7 +114,9 @@ Pour le signe de \(ax+b\), faire un schéma rapide de la droite : elle monte si 
 
 \checkpoint{\(f(1)=3\), donc \(f(1)\) est positif : le tableau de signes doit indiquer \og \(+\) \fg{} entre les deux valeurs qui annulent \(f\).}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}
 On considère une fonction \(f\) définie sur \([-2,5\ ;\ 3,5]\), dont la représentation graphique est donnée ci-dessous.
 
@@ -158,8 +150,14 @@ node[pos=0.97, left] {\(\mathcal{C}_f\)};
 \end{enumerate}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple corrigé de l'annexe \ref{annexe-signe-produit} à la fin de la fiche pour le tableau de signes.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}
-Les fonctions suivantes sont définies sur \(\mathbb{R}\). Pour chacune, donner son sens de variation, puis dresser son tableau de signes par les deux méthodes du rappel de cours.
+Les fonctions suivantes sont définies sur \(\mathbb{R}\). Pour chacune, donner son sens de variation, puis dresser son tableau de signes par les deux méthodes de l'annexe \ref{annexe-signe-affine}.
 \begin{tasks}(4)
     \task \(f(x)=3x-6\)
     \task \(g(x)=-4x+2\)
@@ -167,7 +165,9 @@ Les fonctions suivantes sont définies sur \(\mathbb{R}\). Pour chacune, donner 
     \task \(k(x)=-x-3\)
 \end{tasks}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}
 Pour chacune des fonctions suivantes, dresser le tableau de signes, puis résoudre l'inéquation demandée.
 \begin{enumerate}[leftmargin=*]
@@ -177,6 +177,12 @@ Pour chacune des fonctions suivantes, dresser le tableau de signes, puis résoud
 \end{enumerate}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple corrigé de l'annexe \ref{annexe-signe-produit} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}[][appro]
 On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=2x^2-3x-2\).
 \begin{enumerate}[leftmargin=*]
@@ -185,6 +191,7 @@ On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=2x^2-3x-2
     \item Dresser le tableau de signes de \(f\), puis résoudre l'inéquation \(f(x)<0\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 6, question 2 : rédiger avec soin (\og on a montré que \ldots{} ; or \ldots{} ; donc \ldots \fg{}). Ouverture sur le chapitre du second degré.
@@ -193,6 +200,10 @@ On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=2x^2-3x-2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Suites, généralités}
 
+\textbf{Rappels de cours :} voir l'annexe \ref{annexe-suites} (et l'annexe \ref{annexe-produit-nul} pour les équations produit nul) à la fin de la fiche.
+\nopagebreak
+
+\begin{bloc}
 \begin{exo}[Calculs de début de cours]
 Sans calculatrice.
 \begin{enumerate}[leftmargin=*]
@@ -201,11 +212,6 @@ Sans calculatrice.
         \task \((x-3)(2x+5)=0\)
         \task \(x(x+7)=0\)
         \task \((4-x)(3x-1)=0\)
-    \end{tasks}
-    \item Factoriser, puis résoudre.
-    \begin{tasks}(2)
-        \task \(x^2-4x=0\)
-        \task \(2x^2+6x=0\)
     \end{tasks}
     \item Dans cette question, \(n\) désigne un entier naturel. Donner le signe de chaque expression.
     \begin{tasks}(4)
@@ -217,22 +223,17 @@ Sans calculatrice.
 \end{enumerate}
 \end{exo}
 
-\begin{rappelcours}
-Une \textbf{suite} \((u_n)\) associe à chaque entier naturel \(n\) un nombre \(u_n\), appelé terme de rang \(n\).
-\begin{itemize}
-    \item \textbf{Définition explicite} : \(u_n=f(n)\). On peut calculer directement n'importe quel terme, par exemple \(u_{100}\).
-    \item \textbf{Définition par récurrence} : on donne le premier terme (par exemple \(u_0\)) et une relation entre \(u_{n+1}\) et \(u_n\). On calcule les termes de proche en proche.
-    \item \textbf{Attention :} \(u_{n+1}\) est le terme qui suit \(u_n\) : on l'obtient en remplaçant \(n\) par \(n+1\). En général, \(u_{n+1}\neq u_n+1\).
-    \item \textbf{Sens de variation} : on étudie le signe de \(u_{n+1}-u_n\). Si, pour tout \(n\), \(u_{n+1}-u_n\geq 0\), la suite est croissante ; si, pour tout \(n\), \(u_{n+1}-u_n\leq 0\), elle est décroissante.
-    \item \textbf{Représentation graphique} : nuage des points de coordonnées \((n\ ;\ u_n)\). Les points sont isolés et ne sont pas reliés.
-\end{itemize}
-\end{rappelcours}
+\begin{indication}
+    Voir l'annexe \ref{annexe-produit-nul} à la fin de la fiche pour les équations produit nul.
+\end{indication}
+\end{bloc}
 
 \begin{exo}[Guidé]
 On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u_n=n^2-4n+3\).
 \begin{enumerate}[leftmargin=*]
     \item Calculer \(u_0\), \(u_1\), \(u_2\), \(u_3\), \(u_4\) et \(u_5\).
-    \item Représenter le nuage de points correspondant dans le repère ci-dessous.
+    \item \begin{minipage}[t]{\linewidth}
+    Représenter le nuage de points correspondant dans le repère ci-dessous.
 
     \begin{center}
     \begin{tikzpicture}
@@ -251,6 +252,7 @@ On considère la suite \((u_n)\) définie pour tout entier naturel \(n\) par \(u
     \end{axis}
     \end{tikzpicture}
     \end{center}
+    \end{minipage}
     \item Conjecturer le sens de variation de la suite à partir du rang \(2\).
     \item Exprimer \(u_{n+1}\) en fonction de \(n\), puis développer et réduire.
     \item Montrer que, pour tout entier naturel \(n\), \(u_{n+1}-u_n=2n-3\).
@@ -264,17 +266,24 @@ Pour obtenir \(u_{n+1}\), remplacer chaque \(n\) par \((n+1)\), avec des parenth
 \checkpoint{pour \(n=0\), la formule de la question 5 donne \(u_1-u_0=-3\), ce que l'on retrouve avec la question 1.}
 \end{exo}
 
+\begin{bloc}
 \begin{exo}
 Pour chacune des suites suivantes, calculer \(u_1\), \(u_2\) et \(u_4\), puis préciser son mode de définition en justifiant par une phrase.
 \begin{enumerate}[leftmargin=*]
     \item \(u_n=3n^2-1\) pour tout entier naturel \(n\).
-    \item \(u_0=1\) et, pour tout entier naturel \(n\), \(u_{n+1}=u_n+2n\).
     \item \(u_n=\dfrac{n+1}{n+2}\) pour tout entier naturel \(n\).
     \item \(u_0=-2\) et, pour tout entier naturel \(n\), \(u_{n+1}=-2u_n+1\).
+    \item[\(\star\)~4.] \(u_0=1\) et, pour tout entier naturel \(n\), \(u_{n+1}=u_n+2n\).
 \end{enumerate}
 Pour la suite 1, exprimer \(u_{n+1}\) en fonction de \(n\).
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple 2 de l'annexe \ref{annexe-suites} à la fin de la fiche pour les suites définies par récurrence.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}
 Pour chacune des suites suivantes, définies pour tout entier naturel \(n\), calculer \(u_{n+1}-u_n\), puis en déduire le sens de variation de la suite.
 \begin{tasks}(3)
@@ -286,6 +295,12 @@ Pour chacune des suites suivantes, définies pour tout entier naturel \(n\), cal
 \end{tasks}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple 1 de l'annexe \ref{annexe-suites} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}[][appro]
 \begin{enumerate}[leftmargin=*]
     \item On donne les premiers termes d'une suite \((u_n)\).
@@ -306,6 +321,7 @@ Pour chacune des suites suivantes, définies pour tout entier naturel \(n\), cal
     \end{enumerate}
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 11 : rappeler que quelques termes ne suffisent pas à prouver une formule ; ici on demande une définition \og cohérente \fg{} avec les valeurs, pas \og la \fg{} définition.
@@ -314,6 +330,10 @@ Pour chacune des suites suivantes, définies pour tout entier naturel \(n\), cal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Probabilités conditionnelles}
 
+\textbf{Rappels de cours :} voir les annexes \ref{annexe-proba-tableau} et \ref{annexe-arbre} à la fin de la fiche.
+\nopagebreak
+
+\begin{bloc}
 \begin{exo}[Calculs de début de cours]
 Sans calculatrice.
 \begin{enumerate}[leftmargin=*]
@@ -323,36 +343,17 @@ Sans calculatrice.
     \renewcommand{\arraystretch}{1.8}
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        Fraction & \(\dfrac{3}{4}\) & \(\dfrac{2}{5}\) & \(\dots\) & \(\dots\) & \(\dfrac{7}{20}\) \\ \hline
-        Décimal & \(\dots\) & \(\dots\) & \(0,15\) & \(\dots\) & \(\dots\) \\ \hline
-        Pourcentage & \(\dots\) & \(\dots\) & \(\dots\) & \(12,5\,\%\) & \(\dots\) \\ \hline
+        Fraction irréductible & \(\dfrac{3}{4}\) & \(\dfrac{2}{5}\) & \(\dots\) & \(\dots\) & \(\dfrac{7}{20}\) \\ \hline
+        Décimal & \(0,75\) & \(\dots\) & \(0,15\) & \(\dots\) & \(\dots\) \\ \hline
+        Pourcentage & \(75\,\%\) & \(\dots\) & \(\dots\) & \(12,5\,\%\) & \(\dots\) \\ \hline
     \end{tabular}
     \end{center}
-    \item On considère l'univers \(\Omega=\{1;2;3;4;5;6;7;8;9;10\}\) et les évènements \(A=\{2;4;6;8;10\}\) et \(B=\{1;2;3;4\}\).
-    \begin{enumerate}
-        \item Écrire les ensembles \(A\cap B\), \(A\cup B\) et \(\overline{A}\).
-        \item Donner \(\mathrm{Card}(A\cap B)\).
-        \item Vrai ou faux : \(4\in A\cap B\) ; \(A\subset B\) ; \(\{2;4\}\subset B\).
-    \end{enumerate}
+    \item On considère l'univers \(\Omega=\{1;2;3;4;5;6;7;8;9;10\}\) et les évènements \(A=\{2;4;6;8;10\}\) et \(B=\{1;2;3;4\}\). Écrire les ensembles \(A\cap B\), \(A\cup B\) et \(\overline{A}\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
-\begin{rappelcours}
-\(P(A\cap B)\) est la probabilité que \(A\) \textbf{et} \(B\) se réalisent.
-
-\smallskip
-
-Si \(P(A)\neq 0\), la \textbf{probabilité de \(B\) sachant \(A\)} est \(P_A(B)=\dfrac{P(A\cap B)}{P(A)}\). Dans un tableau d'effectifs, en situation d'équiprobabilité, on se restreint à la ligne ou à la colonne de \(A\) : \(P_A(B)=\dfrac{\mathrm{Card}(A\cap B)}{\mathrm{Card}(A)}\). En général, \(P_A(B)\neq P_B(A)\).
-
-\smallskip
-
-\textbf{Arbre pondéré} : le premier niveau porte \(P(A)\) et \(P(\overline{A})\) ; le second niveau porte des probabilités conditionnelles, comme \(P_A(B)\). La somme des probabilités des branches issues d'un même nœud vaut \(1\).
-
-\smallskip
-
-\textbf{Règle du produit} : la probabilité d'un chemin est le produit des probabilités portées par ses branches : \(P(A\cap B)=P(A)\times P_A(B)\).
-\end{rappelcours}
-
+\begin{bloc}
 \begin{exo}[Guidé]
 Une médiathèque de Saint-Denis a interrogé \(250\) usagers. Le tableau donne la répartition selon l'âge et l'emprunt de bandes dessinées (BD).
 
@@ -382,7 +383,9 @@ On choisit un usager au hasard. On note \(M\) l'évènement \og l'usager est min
 
 \checkpoint{\(P_M(B)\) et \(P_B(M)\) sont deux nombres différents, tous deux supérieurs à \(0,5\).}
 \end{exo}
+\end{bloc}
 
+\begin{bloc}
 \begin{exo}
 Une plateforme de streaming propose deux offres. \(40\,\%\) des abonnés ont l'offre Premium. Parmi les abonnés Premium, \(75\,\%\) regardent des séries chaque semaine. Parmi les autres abonnés, \(50\,\%\) regardent des séries chaque semaine.
 
@@ -397,6 +400,12 @@ On choisit un abonné au hasard. On note \(P\) l'évènement \og l'abonné a l'o
 \end{enumerate}
 \end{exo}
 
+\begin{indication}
+    Voir l'exemple corrigé de l'annexe \ref{annexe-arbre} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}
 Une entreprise a interrogé ses \(200\) salariés sur la durée de leur trajet et sur le télétravail.
 
@@ -420,6 +429,12 @@ On choisit un salarié au hasard. On note \(L\) l'évènement \og le trajet dure
 \end{enumerate}
 \end{exo}
 
+\begin{indication}
+    Voir les exemples corrigés des annexes \ref{annexe-proba-tableau} et \ref{annexe-arbre} à la fin de la fiche.
+\end{indication}
+\end{bloc}
+
+\begin{bloc}
 \begin{exo}[][appro]
 \begin{enumerate}[leftmargin=*]
     \item Soit \(A\) et \(B\) deux évènements tels que \(P(A)=x\), \(P_A(B)=0,6\) et \(P_{\overline{A}}(B)=0,2\), où \(x\) est un réel de \(]0\ ;\ 1[\). On sait de plus que \(P(A\cap B)=0,24\).
@@ -431,6 +446,7 @@ On choisit un salarié au hasard. On note \(L\) l'évènement \og le trajet dure
     \item Soit \(C\) et \(D\) deux évènements tels que \(P(C)=0,3\), \(P_C(D)=y\) et \(P(C\cap\overline{D})=0,12\). Déterminer \(y\).
 \end{enumerate}
 \end{exo}
+\end{bloc}
 
 \prof{
     Exercice 16 : lien avec les calculs de début de cours (résolution d'équations). Pour la question 2, exprimer d'abord \(P_C(\overline{D})\) en fonction de \(y\).
@@ -440,6 +456,7 @@ On choisit un salarié au hasard. On note \(L\) l'évènement \og le trajet dure
 \section{Problèmes}
 
 Les problèmes suivants mélangent les notions des trois sections précédentes.
+\nopagebreak
 
 \begin{exo}[Abonnés d'une plateforme]
 Au 1\ier{} janvier 2026, une plateforme compte \(2\,000\) abonnés. Chaque mois, \(10\,\%\) des abonnés se désabonnent et \(300\) nouvelles personnes s'abonnent. On note \(a_n\) le nombre d'abonnés \(n\) mois après le 1\ier{} janvier 2026 ; ainsi \(a_0=2\,000\).
@@ -447,6 +464,9 @@ Au 1\ier{} janvier 2026, une plateforme compte \(2\,000\) abonnés. Chaque mois,
     \item Calculer \(a_1\) et \(a_2\).
     \item Justifier que, pour tout entier naturel \(n\), \(a_{n+1}=0,9\,a_n+300\). Préciser le mode de définition de la suite \((a_n)\).
     \item Calculer \(a_3\) et \(a_4\) (arrondir à l'unité), puis conjecturer le sens de variation de la suite \((a_n)\).
+\end{enumerate}
+\begin{bloc}
+\begin{enumerate}[leftmargin=*, start=4]
     \item On admet que, pour tout entier naturel \(n\), \(a_n=3\,000-1\,000\times 0,9^n\).
     \begin{enumerate}
         \item Vérifier cette formule pour \(n=0\) et \(n=1\).
@@ -456,8 +476,9 @@ Au 1\ier{} janvier 2026, une plateforme compte \(2\,000\) abonnés. Chaque mois,
 \end{enumerate}
 
 \begin{indication}
-Pour la question 4b, remarquer que \(0,9^{n+1}=0,9\times 0,9^n\), puis factoriser par \(0,9^n\).
+Pour la question 4b, remarquer que \(1\,000\times 0,9^{n+1}=1\,000\times 0,9\times 0,9^n=900\times 0,9^n\).
 \end{indication}
+\end{bloc}
 \end{exo}
 
 \begin{exo}[Une petite entreprise]
@@ -487,7 +508,7 @@ Réaliser une très longue feuille blanche (1 h, soit \(3\times 20\) minutes) su
 
 \medskip
 
-Développer, factoriser une expression et résoudre une équation produit nul.\par\smallskip
+Développer une expression et résoudre une équation produit nul.\par\smallskip
 Dresser le tableau de signes d'une fonction affine, par le calcul ou graphiquement.\par\smallskip
 Dresser le tableau de signes d'un produit de fonctions affines et résoudre une inéquation produit.\par\smallskip
 Calculer les termes d'une suite définie explicitement ou par récurrence.\par\smallskip
@@ -498,5 +519,311 @@ Construire et utiliser un arbre pondéré (règle du produit).
 \prof{
     Feuille blanche : rappeler qu'elle est personnelle, sans cours ni fiche. Possibilité de la faire en trois temps de 20 minutes, en relisant la fiche entre deux temps.
 }
+
+\newpage
+
+\begin{center}
+    \Huge ANNEXES
+\end{center}
+
+\appendix
+
+\section{Développer une expression} \label{annexe-developper}
+
+\subsection{Distributivité simple}
+
+\begin{bloc}
+\begin{prop}
+Pour tous nombres \(k\), \(a\) et \(b\) :
+\[
+\tikzmarknode{dsk1}{k}\times(\tikzmarknode{dsa1}{a}+\tikzmarknode{dsb1}{b})=k\times a+k\times b
+\qquad\text{et}\qquad
+\tikzmarknode{dsk2}{k}\times(\tikzmarknode{dsa2}{a}-\tikzmarknode{dsb2}{b})=k\times a-k\times b.
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[->, teal] ([yshift=2pt]dsk1.north) to[bend left=70] ([yshift=2pt]dsa1.north);
+    \draw[->, teal] ([yshift=2pt]dsk1.north) to[bend left=70] ([yshift=2pt]dsb1.north);
+    \draw[->, teal] ([yshift=2pt]dsk2.north) to[bend left=70] ([yshift=2pt]dsa2.north);
+    \draw[->, teal] ([yshift=2pt]dsk2.north) to[bend left=70] ([yshift=2pt]dsb2.north);
+\end{tikzpicture}
+\]
+\end{prop}
+
+\begin{exple}
+Développer l'expression \(A=-2(3x-4)\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.45\textwidth}@{}}
+A=(\textcolor{teal}{-2})\times 3x+(\textcolor{teal}{-2})\times(-4) & \(\longrightarrow\) & On distribue le facteur \(-2\) aux termes \(3x\) et \(-4\). \\
+A=-6x+8 & \(\longrightarrow\) & On calcule les produits.
+\end{tabular}}
+\end{exple}
+\end{bloc}
+
+\subsection{Distributivité double}
+
+\begin{bloc}
+\begin{prop}
+Pour tous nombres \(a\), \(b\), \(c\) et \(d\) :
+\[
+(\tikzmarknode{dda}{a}+\tikzmarknode{ddb}{b})(\tikzmarknode{ddc}{c}+\tikzmarknode{ddd}{d})=ac+ad+bc+bd.
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[->, teal] ([yshift=2pt]dda.north) to[bend left=45] ([yshift=2pt]ddc.north);
+    \draw[->, teal] ([yshift=2pt]dda.north) to[bend left=45] ([yshift=2pt]ddd.north);
+    \draw[->, violet] ([yshift=-2pt]ddb.south) to[bend right=45] ([yshift=-2pt]ddc.south);
+    \draw[->, violet] ([yshift=-2pt]ddb.south) to[bend right=45] ([yshift=-2pt]ddd.south);
+\end{tikzpicture}
+\]
+\end{prop}
+
+\begin{exple}
+Développer et réduire l'expression \(B=(2x+3)(x-4)\).
+
+\smallskip
+{\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}>{$}l<{$}@{\quad}l@{\enspace}p{0.4\textwidth}@{}}
+B=\textcolor{teal}{2x}\times x+\textcolor{teal}{2x}\times(-4)+\textcolor{violet}{3}\times x+\textcolor{violet}{3}\times(-4) & \(\longrightarrow\) & On applique la double distributivité. \\
+B=2x^2-8x+3x-12 & \(\longrightarrow\) & On calcule les produits. \\
+B=2x^2-5x-12 & \(\longrightarrow\) & On réduit.
+\end{tabular}}
+\end{exple}
+\end{bloc}
+
+\section{Résoudre une équation produit nul} \label{annexe-produit-nul}
+
+\begin{bloc}
+\begin{prop}
+Un produit est nul si et seulement si l'un au moins de ses facteurs est nul : \(A\times B=0\) équivaut à \(A=0\) ou \(B=0\).
+\end{prop}
+
+\begin{exples}
+\begin{itemize}
+    \item Résoudre \((2x-1)(x+3)=0\).
+
+    Un produit est nul si et seulement si l'un de ses facteurs est nul : \(2x-1=0\) ou \(x+3=0\), c'est-à-dire \(x=\dfrac{1}{2}\) ou \(x=-3\). Donc \(S=\left\{-3\ ;\ \dfrac{1}{2}\right\}\).
+    \item Résoudre \(x(4-x)=0\).
+
+    L'équation est déjà écrite sous forme d'un produit : \(x=0\) ou \(4-x=0\), c'est-à-dire \(x=0\) ou \(x=4\). Donc \(S=\{0\ ;\ 4\}\).
+\end{itemize}
+\end{exples}
+\end{bloc}
+
+\section{Signe d'une fonction affine} \label{annexe-signe-affine}
+
+\begin{bloc}
+\begin{prop}
+Une fonction affine \(f(x)=ax+b\) (avec \(a\neq 0\)) est représentée par une droite de coefficient directeur \(a\). Elle est croissante si \(a>0\), décroissante si \(a<0\), et s'annule en \(x=-\dfrac{b}{a}\).
+\end{prop}
+\end{bloc}
+
+\begin{bloc}
+\begin{exple}
+Dresser le tableau de signes de \(f(x)=-2x+5\).
+
+\smallskip
+\textit{Méthode 1 : par le calcul.}
+\[
+-2x+5\geq 0 \iff -2x\geq -5 \iff x\leq \dfrac{-5}{-2} \iff x\leq \dfrac{5}{2}.
+\]
+On divise les deux membres par \(-2\), qui est \textbf{négatif} : le sens de l'inégalité change. Donc \(f(x)\geq 0\) pour \(x\leq \dfrac{5}{2}\), et \(f(x)<0\) pour \(x>\dfrac{5}{2}\).
+
+\end{exple}
+\end{bloc}
+
+\begin{bloc}
+\begin{minipage}{0.58\linewidth}
+\textit{Méthode 2 : graphique.} Le coefficient directeur \(a=-2\) est négatif : la droite descend. Elle coupe l'axe des abscisses en \(x=-\dfrac{5}{-2}=\dfrac{5}{2}\). La droite est donc au-dessus de l'axe à gauche de \(\dfrac{5}{2}\), et en dessous à droite.
+\end{minipage}\hfill
+\begin{minipage}{0.38\linewidth}
+\centering
+\begin{tikzpicture}[scale=0.8]
+    \draw[->] (-0.5,0)--(4.5,0) node[right] {\(x\)};
+    \draw[->] (0,-1.2)--(0,1.9) node[above] {\(y\)};
+    \node[below left] at (0,0) {\(O\)};
+    \draw[very thick, blue] (-0.3,1.68)--(4.2,-1.02);
+    \fill (2.5,0) circle (1.5pt) node[below left] {\(\frac{5}{2}\)};
+    \node[teal] at (1.2,0.35) {\(+\)};
+    \node[violet] at (3.8,-0.35) {\(-\)};
+\end{tikzpicture}
+\end{minipage}
+
+\smallskip
+Les deux méthodes donnent le même tableau de signes :
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.6,espcl=2]{\(x\) /1, \(-2x+5\) /1}{\(-\infty\),\(\frac{5}{2}\),\(+\infty\)}
+\tkzTabLine{,+,z,-,}
+\end{tikzpicture}
+\end{center}
+\end{bloc}
+
+\section{Signe d'un produit, inéquation produit} \label{annexe-signe-produit}
+
+\begin{bloc}
+\begin{met}
+Pour dresser le tableau de signes d'un produit de fonctions affines :
+\begin{enumerate}
+    \item chercher la valeur qui annule chaque facteur, et les ranger dans l'ordre croissant sur la première ligne ;
+    \item faire une ligne par facteur, avec son signe (annexe \ref{annexe-signe-affine}) ;
+    \item sur la dernière ligne, appliquer la règle des signes du produit, colonne par colonne.
+\end{enumerate}
+\end{met}
+\end{bloc}
+
+\begin{bloc}
+\begin{exple}
+On considère \(f(x)=(x+1)(-2x+6)\). Dresser le tableau de signes de \(f\), puis résoudre l'inéquation \(f(x)>0\).
+
+\smallskip
+\(x+1=0\iff x=-1\) ; le coefficient directeur \(1\) est positif, donc \(x+1\) est négatif, puis positif.
+
+\(-2x+6=0\iff x=3\) ; le coefficient directeur \(-2\) est négatif, donc \(-2x+6\) est positif, puis négatif.
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.8,espcl=2]{\(x\) /1, \(x+1\) /1, \(-2x+6\) /1, \(f(x)\) /1}{\(-\infty\),\(-1\),\(3\),\(+\infty\)}
+\tkzTabLine{,-,z,+,t,+,}
+\tkzTabLine{,+,t,+,z,-,}
+\tkzTabLine{,-,z,+,z,-,}
+\end{tikzpicture}
+\end{center}
+D'après la dernière ligne, \(f(x)>0\) pour \(x\) strictement compris entre \(-1\) et \(3\) : \(S=\left]-1\ ;\ 3\right[\).
+
+\textbf{Contrôle :} \(f(0)=(0+1)(0+6)=6>0\), ce qui est cohérent avec le signe \(+\) entre \(-1\) et \(3\).
+\end{exple}
+\end{bloc}
+
+\section{Suites} \label{annexe-suites}
+
+\begin{bloc}
+\begin{defis}
+Une \textbf{suite} \((u_n)\) associe à chaque entier naturel \(n\) un nombre \(u_n\), appelé terme de rang \(n\).
+\begin{itemize}
+    \item \textbf{Définition explicite} : \(u_n=f(n)\). On peut calculer directement n'importe quel terme, par exemple \(u_{100}\).
+    \item \textbf{Définition par récurrence} : on donne le premier terme (par exemple \(u_0\)) et une relation entre \(u_{n+1}\) et \(u_n\). On calcule les termes de proche en proche.
+    \item \(u_{n+1}\) est le terme qui suit \(u_n\) : dans une définition explicite, on l'obtient en remplaçant \(n\) par \(n+1\). \textbf{Attention :} en général, \(u_{n+1}\neq u_n+1\).
+    \item \textbf{Sens de variation} : si, pour tout \(n\), \(u_{n+1}-u_n\geq 0\), la suite est croissante ; si, pour tout \(n\), \(u_{n+1}-u_n\leq 0\), elle est décroissante.
+    \item \textbf{Représentation graphique} : nuage des points de coordonnées \((n\ ;\ u_n)\). Les points sont isolés et ne sont pas reliés.
+\end{itemize}
+\end{defis}
+\end{bloc}
+
+\begin{bloc}
+\textit{Exemple 1 (suite définie explicitement).}\enspace On considère la suite définie pour tout entier naturel \(n\) par \(u_n=n^2+n\).
+\begin{itemize}
+    \item \(u_0=0^2+0=0\) ; \(u_1=1^2+1=2\) ; \(u_2=2^2+2=6\).
+    \item On remplace \(n\) par \(n+1\), avec des parenthèses : \(u_{n+1}=(n+1)^2+(n+1)=n^2+2n+1+n+1=n^2+3n+2\).
+    \item \(u_{n+1}-u_n=(n^2+3n+2)-(n^2+n)=2n+2\). Pour tout entier naturel \(n\), \(2n+2\geq 2>0\) : la suite \((u_n)\) est croissante.
+\end{itemize}
+\end{bloc}
+
+\begin{bloc}
+\textit{Exemple 2 (suite définie par récurrence).}\enspace On considère la suite définie par \(v_0=3\) et, pour tout entier naturel \(n\), \(v_{n+1}=2v_n-1\).
+
+\smallskip
+On calcule les termes de proche en proche, chacun à partir du précédent :
+\[
+v_1=2v_0-1=2\times 3-1=5 \ ;\quad v_2=2v_1-1=2\times 5-1=9 \ ;\quad v_3=2v_2-1=2\times 9-1=17.
+\]
+Pour obtenir \(v_{10}\), il faut d'abord calculer tous les termes de \(v_1\) à \(v_9\).
+\end{bloc}
+
+\section{Probabilités conditionnelles et tableau croisé} \label{annexe-proba-tableau}
+
+\begin{bloc}
+\begin{defis}
+\begin{itemize}
+    \item \(P(A\cap B)\) est la probabilité que \(A\) \textbf{et} \(B\) se réalisent.
+    \item Si \(P(A)\neq 0\), la \textbf{probabilité de \(B\) sachant \(A\)} est \(P_A(B)=\dfrac{P(A\cap B)}{P(A)}\).
+    \item Dans un tableau d'effectifs, en situation d'équiprobabilité, on se restreint à la ligne ou à la colonne de \(A\) : \(P_A(B)=\dfrac{\mathrm{Card}(A\cap B)}{\mathrm{Card}(A)}\).
+    \item En général, \(P_A(B)\neq P_B(A)\) : on ne se restreint pas à la même sous-population.
+\end{itemize}
+\end{defis}
+\end{bloc}
+
+\begin{bloc}
+\begin{exple}
+Un musée a accueilli \(200\) visiteurs dans la journée. Le tableau les répartit selon leur âge et l'utilisation d'un audioguide.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+    \hline
+    & \textbf{Audioguide} & \textbf{Sans audioguide} & \textbf{Total} \\ \hline
+    \textbf{Enfants} & \(30\) & \(50\) & \(80\) \\ \hline
+    \textbf{Adultes} & \(72\) & \(48\) & \(120\) \\ \hline
+    \textbf{Total} & \(102\) & \(98\) & \(200\) \\ \hline
+\end{tabular}
+\end{center}
+
+On choisit un visiteur au hasard. On note \(E\) l'évènement \og le visiteur est un enfant \fg{} et \(A\) l'évènement \og le visiteur utilise un audioguide \fg{}. Calculer \(P(E)\), \(P(E\cap A)\), \(P_E(A)\) et \(P_A(E)\).
+\end{exple}
+\end{bloc}
+
+\begin{bloc}
+\textbf{Correction :}
+\begin{itemize}
+    \item \(P(E)=\dfrac{80}{200}=0{,}4\).
+    \item \(E\cap A\) : \og le visiteur est un enfant \textbf{et} utilise un audioguide \fg{}. \(P(E\cap A)=\dfrac{30}{200}=0{,}15\).
+    \item \textit{Sachant que le visiteur est un enfant : on se restreint à la ligne des \(80\) enfants.} \(P_E(A)=\dfrac{30}{80}=0{,}375\). Parmi les enfants, \(37{,}5\,\%\) utilisent un audioguide.
+    \item \textit{Sachant que le visiteur utilise un audioguide : on se restreint à la colonne des \(102\) utilisateurs.} \(P_A(E)=\dfrac{30}{102}\approx 0{,}294\). On a bien \(P_E(A)\neq P_A(E)\).
+    \item Vérification avec la formule : \(\dfrac{P(E\cap A)}{P(E)}=\dfrac{0{,}15}{0{,}4}=0{,}375=P_E(A)\).
+\end{itemize}
+\end{bloc}
+
+\section{Arbre pondéré et règle du produit} \label{annexe-arbre}
+
+\begin{bloc}
+\begin{props}
+\begin{itemize}
+    \item Dans un \textbf{arbre pondéré}, le premier niveau porte \(P(A)\) et \(P(\overline{A})\) ; le second niveau porte des probabilités conditionnelles, comme \(P_A(B)\).
+    \item La somme des probabilités des branches issues d'un même nœud vaut \(1\).
+    \item \textbf{Règle du produit} : la probabilité d'un chemin est le produit des probabilités portées par ses branches : \(P(A\cap B)=P(A)\times P_A(B)\).
+\end{itemize}
+\end{props}
+\end{bloc}
+
+\begin{bloc}
+\begin{exple}
+Dans un lycée, \(30\,\%\) des élèves sont internes. Parmi les internes, \(80\,\%\) déjeunent à la cantine ; parmi les autres élèves, \(40\,\%\) déjeunent à la cantine. On choisit un élève au hasard. On note \(I\) l'évènement \og l'élève est interne \fg{} et \(D\) l'évènement \og l'élève déjeune à la cantine \fg{}.
+
+\smallskip
+\begin{minipage}{0.5\linewidth}
+\centering
+\begin{tikzpicture}[
+  grow'=right,
+  level distance=3.2cm,
+  level 1/.style={sibling distance=2.4cm},
+  level 2/.style={sibling distance=1.9cm},
+  edge from parent/.style={draw,-latex},
+  every node/.style={font=\small}
+]
+\node {}
+  child { node {\(I\)}
+    child { node {\(D\)} edge from parent node[above] {\(0{,}8\)} }
+    child { node {\(\overline{D}\)} edge from parent node[below] {\(0{,}2\)} }
+    edge from parent node[above] {\(0{,}3\)}
+  }
+  child { node {\(\overline{I}\)}
+    child { node {\(D\)} edge from parent node[above] {\(0{,}4\)} }
+    child { node {\(\overline{D}\)} edge from parent node[below] {\(0{,}6\)} }
+    edge from parent node[below] {\(0{,}7\)}
+  };
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}{0.46\linewidth}
+\begin{itemize}
+    \item Premier niveau : \(P(I)=0{,}3\), donc \(P(\overline{I})=1-0{,}3=0{,}7\).
+    \item Second niveau : \(P_I(D)=0{,}8\), donc \(P_I(\overline{D})=0{,}2\) ; \(P_{\overline{I}}(D)=0{,}4\), donc \(P_{\overline{I}}(\overline{D})=0{,}6\).
+\end{itemize}
+\end{minipage}
+
+\smallskip
+\textbf{Règle du produit :}
+\begin{itemize}
+    \item \(P(I\cap D)=P(I)\times P_I(D)=0{,}3\times 0{,}8=0{,}24\) : \(24\,\%\) des élèves sont internes et déjeunent à la cantine.
+    \item \(P(\overline{I}\cap\overline{D})=P(\overline{I})\times P_{\overline{I}}(\overline{D})=0{,}7\times 0{,}6=0{,}42\) : \(42\,\%\) des élèves ne sont pas internes et ne déjeunent pas à la cantine.
+\end{itemize}
+\end{exple}
+\end{bloc}
 
 \end{document}
